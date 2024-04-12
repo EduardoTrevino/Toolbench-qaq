@@ -1,0 +1,30 @@
+{
+    "tool_description": "Asks user for an input based on a condition and returns the user's input or a standard message stating no user input is required for answering the query.",
+    "tool_name": "qaq",
+    "title": "qaq",
+    "api_list": [
+        {
+            "name": "get_QAQ",
+            "url": "",
+            "description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "requires_input",
+                    "type": "int",
+                    "description": "A flag to determine if user input is needed (1) or not (0)",
+                    "default": 0
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "input_question",
+                    "type": "string",
+                    "description": "The question to ask the user to gather more information for answering the query",
+                    "default": ""
+                }
+            ]
+        }
+    ],
+    "standardized_name": "qaq"
+}
