@@ -1,6 +1,6 @@
 export CUDA_VISIBLE_DEVICES=0
-export RAPIDAPI_KEY="THE RAPID API KEY"
-export OUTPUT_DIR="output/toolllama-2_qaq_v.0.0.0.3"
+export RAPIDAPI_KEY=$(cat rapidapi.txt)
+export OUTPUT_DIR="outputs/toolllama-2_qaq_v.0.0.0.3"
 export PYTHONPATH=./
 
 mkdir $OUTPUT_DIR
