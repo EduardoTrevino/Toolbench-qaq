@@ -1,0 +1,1698 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "News_Media",
+                "tool_name": "Coronavirus Smartable",
+                "api_name": "GetStats",
+                "api_description": "Get the latest and historic coronavirus stats data (confirmed cases, deaths and recovered cases) for the globe or your selected country or state.",
+                "required_parameters": [
+                    {
+                        "name": "location",
+                        "type": "string",
+                        "description": "ISO 3166-2 location code.  For example, use \"FR\" for coronavirus stats in France; use \"US\" for coronavirus stats in US;  use \"US-CA\" for coronavirus stats in the US California state.  Use \"global\" to retrieve global stats. ",
+                        "default": "US"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "location": {
+                        "long": "float",
+                        "countryOrRegion": "str",
+                        "provinceOrState": "NoneType",
+                        "county": "NoneType",
+                        "isoCode": "str",
+                        "lat": "float"
+                    },
+                    "updatedDateTime": "str",
+                    "stats": {
+                        "totalConfirmedCases": "int",
+                        "newlyConfirmedCases": "int",
+                        "totalDeaths": "int",
+                        "newDeaths": "int",
+                        "totalRecoveredCases": "int",
+                        "newlyRecoveredCases": "int",
+                        "history": [
+                            {
+                                "date": "str",
+                                "confirmed": "int",
+                                "deaths": "int",
+                                "recovered": "int",
+                                "_list_length": 401
+                            }
+                        ],
+                        "breakdowns": [
+                            {
+                                "location": {
+                                    "long": "float",
+                                    "countryOrRegion": "str",
+                                    "provinceOrState": "str",
+                                    "county": "NoneType",
+                                    "isoCode": "NoneType",
+                                    "lat": "float"
+                                },
+                                "totalConfirmedCases": "int",
+                                "newlyConfirmedCases": "int",
+                                "totalDeaths": "int",
+                                "newDeaths": "int",
+                                "totalRecoveredCases": "int",
+                                "newlyRecoveredCases": "int",
+                                "_list_length": 62
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Coronavirus Smartable",
+                "api_name": "GetNews",
+                "api_description": "Get the latest coronavirus news for the globe or your selected country or state.",
+                "required_parameters": [
+                    {
+                        "name": "location",
+                        "type": "string",
+                        "description": "ISO 3166-2 location code.  For example, use \"FR\" for coronavirus news in France; use \"US\" for coronavirus news in US;  use \"US-CA\" for coronavirus news in the US California state.  Use \"global\" to retrieve global news. ",
+                        "default": "US"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "location": {
+                        "long": "float",
+                        "countryOrRegion": "str",
+                        "provinceOrState": "NoneType",
+                        "county": "NoneType",
+                        "isoCode": "str",
+                        "lat": "float"
+                    },
+                    "updatedDateTime": "str",
+                    "news": [
+                        {
+                            "path": "str",
+                            "title": "str",
+                            "excerpt": "str",
+                            "sourceUrl": "NoneType",
+                            "webUrl": "str",
+                            "originalUrl": "str",
+                            "featuredContent": "NoneType",
+                            "highlight": "NoneType",
+                            "heat": "int",
+                            "tags": [
+                                "list of str with length 1"
+                            ],
+                            "images": [
+                                {
+                                    "url": "str",
+                                    "width": "int",
+                                    "height": "int",
+                                    "title": "NoneType",
+                                    "attribution": "NoneType",
+                                    "isCached": "bool",
+                                    "_list_length": 1
+                                }
+                            ],
+                            "content": "str",
+                            "type": "str",
+                            "ampWebUrl": "str",
+                            "cdnAmpWebUrl": "str",
+                            "publishedDateTime": "str",
+                            "updatedDateTime": "NoneType",
+                            "provider": {
+                                "name": "str",
+                                "domain": "str",
+                                "images": "NoneType",
+                                "publishers": "NoneType",
+                                "authors": "NoneType"
+                            },
+                            "locale": "str",
+                            "categories": [
+                                "list of str with length 1"
+                            ],
+                            "topics": [
+                                "list of str with length 2"
+                            ],
+                            "_list_length": 30
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Live Climate Change News_v2",
+                "api_name": "Get Individual news articles from News on Climate Change",
+                "api_description": "Get a news article from specific News resource on Climate Change.",
+                "required_parameters": [
+                    {
+                        "name": "newsPaperId",
+                        "type": "string",
+                        "description": "",
+                        "default": "guardian"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Live Climate Change News_v2",
+                "api_name": "Get All Climate Change News",
+                "api_description": "This endpoint will return all the news about Climate Change from all over the world.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Test_v2",
+                "api_name": "get size",
+                "api_description": "get size",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Covid news_v2",
+                "api_name": "Get news from single source",
+                "api_description": "Get news related to Covid 19 news from a single source which are WHO, CNN, the guardian, etc",
+                "required_parameters": [
+                    {
+                        "name": "newsId",
+                        "type": "string",
+                        "description": "",
+                        "default": "bmj"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Covid news_v2",
+                "api_name": "News from All sources",
+                "api_description": "Get news related to covid 19 from **All sources**",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning a trip to San Francisco next month and I want to stay updated on the latest COVID-19 statistics in the city. Can you provide me with the current number of confirmed cases, deaths, and recovered cases in San Francisco? Additionally, I'm interested in reading news articles about climate change. Fetch me the latest articles from all sources.",
+        "relevant APIs": [
+            [
+                "Coronavirus Smartable",
+                "GetStats"
+            ],
+            [
+                "Coronavirus Smartable",
+                "GetNews"
+            ],
+            [
+                "Live Climate Change News_v2",
+                "Get All Climate Change News"
+            ]
+        ],
+        "query_id": 1
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "Trinidad Covid 19 Statistics",
+                "api_name": "getStatsbyDay",
+                "api_description": "This endpoint fetches Trinidad & Tobago Covid 19 statistics by  day. For a valid response, the months are input as \"01\" or \"12\" and not the actual month name such as \"January\" or \"December\". Th e days are entered in the similar format as months ie \"01\" -\"31\" and not actual days such as \"Thursday\" or \"Monday\",",
+                "required_parameters": [
+                    {
+                        "name": "yearId",
+                        "type": "string",
+                        "description": "",
+                        "default": "2022"
+                    },
+                    {
+                        "name": "monthId",
+                        "type": "string",
+                        "description": "",
+                        "default": "01"
+                    },
+                    {
+                        "name": "dayId",
+                        "type": "string",
+                        "description": "",
+                        "default": "15"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"id\": \"str\", \"latestVax2SinoAZPf\": \"int\", \"lastDeath\": \"int\", \"latestActive\": \"int\", \"latestState\": \"int\", \"lastActive\": \"int\", \"changeStepDown\": \"int\", \"update\": \"str\", \"lastTest\": \"int\", \"lastState\": \"int\", \"lastVax2SinoAZPf\": \"int\", \"changeTest\": \"int\", \"changeActive\": \"int\", \"latestHomeIso\": \"int\", \"latestHospital\": \"int\", \"changeHomeIso\": \"int\", \"changeTotalPos\": \"int\", \"latestRecovery\": \"int\", \"lastStepDown\": \"int\", \"lastVax2\": \"int\", \"changeVax3\": \"int\", \"latestDeath\": \"int\", \"lastVax1\": \"int\", \"lastRecovery\": \"int\", \"changeVax1\": \"int\", \"changeVax2\": \"int\", \"latestVax1\": \"int\", \"latestVax2\": \"int\", \"changeVax2SinoAZPf\": \"int\", \"latestStepDown\": \"int\", \"latestVax3\": \"int\", \"lastHomeIso\": \"int\", \"lastVax3\": \"int\", \"changeVax2JJ\": \"int\", \"latestVax2JJ\": \"int\", \"lastVax2JJ\": \"int\", \"lastHospital\": \"int\", \"latestPos\": \"int\", \"changeHospital\": \"int\", \"lastTotalPos\": \"int\", \"population\": \"int\", \"lastPos\": \"int\", \"timeStamp\": \"str\", \"latestTotalPos\": \"int\", \"latestTest\": \"int\", \"chang"
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Trinidad Covid 19 Statistics",
+                "api_name": "getStatsbyMonth",
+                "api_description": "This endpoint fetches Trinidad & Tobago Covid 19 statistics by month. For a valid response, the months are input as \"01\" or \"12\" and not the actual month name such as \"January\" or \"December\".",
+                "required_parameters": [
+                    {
+                        "name": "yearId",
+                        "type": "string",
+                        "description": "",
+                        "default": "2022"
+                    },
+                    {
+                        "name": "monthId",
+                        "type": "string",
+                        "description": "",
+                        "default": "01"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"id\": \"str\", \"latestVax2SinoAZPf\": \"int\", \"latestActive\": \"int\", \"lastDeath\": \"int\", \"latestState\": \"int\", \"lastActive\": \"int\", \"changeStepDown\": \"int\", \"update\": \"str\", \"lastTest\": \"int\", \"lastState\": \"int\", \"lastVax2SinoAZPf\": \"int\", \"changeActive\": \"int\", \"changeTest\": \"int\", \"latestHomeIso\": \"int\", \"latestHospital\": \"int\", \"changeHomeIso\": \"int\", \"changeTotalPos\": \"int\", \"latestRecovery\": \"int\", \"lastStepDown\": \"int\", \"lastVax2\": \"int\", \"changeVax3\": \"int\", \"lastVax1\": \"int\", \"latestDeath\": \"int\", \"lastRecovery\": \"int\", \"changeVax1\": \"int\", \"changeVax2\": \"int\", \"latestVax1\": \"int\", \"changeVax2SinoAZPf\": \"int\", \"latestVax2\": \"int\", \"latestVax3\": \"int\", \"latestStepDown\": \"int\", \"lastHomeIso\": \"int\", \"lastVax3\": \"int\", \"changeVax2JJ\": \"int\", \"latestVax2JJ\": \"int\", \"lastVax2JJ\": \"int\", \"lastHospital\": \"int\", \"latestPos\": \"int\", \"changeHospital\": \"int\", \"lastTotalPos\": \"int\", \"lastPos\": \"int\", \"population\": \"int\", \"timeStamp\": \"str\", \"latestTest\": \"int\", \"latestTotalPos\": \"int\", \"chang"
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Trinidad Covid 19 Statistics",
+                "api_name": "getMostRecentDay",
+                "api_description": "This endpoint fetches the most recent Trinidad & Tobago Covid 19 statistics.  It returns data for that specific day alone.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"id\": \"str\", \"latestVax2SinoAZPf\": \"int\", \"latestActive\": \"int\", \"lastDeath\": \"int\", \"latestState\": \"int\", \"lastActive\": \"int\", \"changeStepDown\": \"int\", \"update\": \"str\", \"lastTest\": \"int\", \"lastVax2SinoAZPf\": \"int\", \"lastState\": \"int\", \"latestHomeIso\": \"int\", \"changeActive\": \"int\", \"changeTest\": \"int\", \"latestHospital\": \"int\", \"changeHomeIso\": \"int\", \"changeTotalPos\": \"int\", \"latestRecovery\": \"int\", \"lastStepDown\": \"int\", \"lastVax2\": \"int\", \"changeVax3\": \"int\", \"latestDeath\": \"int\", \"lastVax1\": \"int\", \"lastRecovery\": \"int\", \"changeVax1\": \"int\", \"changeVax2\": \"int\", \"latestVax1\": \"int\", \"changeVax2SinoAZPf\": \"int\", \"latestVax2\": \"int\", \"latestStepDown\": \"int\", \"latestVax3\": \"int\", \"lastHomeIso\": \"int\", \"lastVax3\": \"int\", \"changeVax2JJ\": \"int\", \"latestVax2JJ\": \"int\", \"lastVax2JJ\": \"int\", \"latestPos\": \"int\", \"lastHospital\": \"int\", \"changeHospital\": \"int\", \"lastTotalPos\": \"int\", \"population\": \"int\", \"lastPos\": \"int\", \"timeStamp\": \"str\", \"latestTotalPos\": \"int\", \"latestTest\": \"int\", \"chang"
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Airdna",
+                "api_name": "Rental ratings",
+                "api_description": "Returns rental ratings",
+                "required_parameters": [
+                    {
+                        "name": "location",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "santa monica"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "currency",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Airdna",
+                "api_name": "Overview",
+                "api_description": "Returns overview stats (ADR, OCC ,Revenue ..) of a location rental data",
+                "required_parameters": [
+                    {
+                        "name": "location",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "santa monica"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "currency",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Airdna",
+                "api_name": "Property listings",
+                "api_description": "Get rental properties of Airbnb and Vrbo by location and date.",
+                "required_parameters": [
+                    {
+                        "name": "location",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "santa monica"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "room_types",
+                        "type": "STRING",
+                        "description": "You can choose multiple by separating by comma.\nPossible values : **(entire_home, private_room, shared_room)**.\n",
+                        "default": ""
+                    },
+                    {
+                        "name": "number_of_months",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "bedrooms_max",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "accommodates_max",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "start_month",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "bedrooms_min",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "show_regions",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "accommodates_min",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "currency",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "native"
+                    },
+                    {
+                        "name": "start_year",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm a data analyst working on a project and I need the COVID-19 statistics for January 15, 2022 in Trinidad & Tobago. Can you fetch that data for me? Additionally, I'm looking for the rental ratings in Santa Monica. Can you provide me with that information as well?",
+        "relevant APIs": [
+            [
+                "Trinidad Covid 19 Statistics",
+                "getStatsbyDay"
+            ],
+            [
+                "Airdna",
+                "Rental ratings"
+            ]
+        ],
+        "query_id": 2
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "TradingFlow Option Flow",
+                "api_name": "Option Flow",
+                "api_description": "Option Flow",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Payment card numbers generator",
+                "api_name": "Generate",
+                "api_description": "# Generate payment card numbers\n\n## Default values\n\n**scheme**: \"visa\"\n**count**: 5",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "quantity",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "5"
+                    },
+                    {
+                        "name": "scheme",
+                        "type": "ENUM",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "scheme": "str",
+                    "cards": [
+                        "list of str with length 5"
+                    ]
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Unofficial Efteling API",
+                "api_name": "Retrieve the latest blogs",
+                "api_description": "Retrieve the latest blogs, these are updated once every hour",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "updatedAt": "str",
+                    "title": "str",
+                    "description": "str",
+                    "published": "str",
+                    "type": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Unofficial Efteling API",
+                "api_name": "Retrieve all Queue times",
+                "api_description": "Retrieve all the queue times in the efteling, data will be updated every 10 minutes",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "updatedAt": "str",
+                    "name": "str",
+                    "queueLength": "str",
+                    "specialQueueStatus": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Unofficial Efteling API",
+                "api_name": "Retrieve specific Queue time",
+                "api_description": "retrieve a specific queue item based on the ID that can be retrieved from the /queue endpoint",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "12"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "updatedAt": "str",
+                    "name": "str",
+                    "queueLength": "str",
+                    "specialQueueStatus": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "IP and Location Spoofing Detection",
+                "api_name": "GET Call",
+                "api_description": "Used to fetch api result using the request id received in responses.",
+                "required_parameters": [
+                    {
+                        "name": "request_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "68bbb910-da9b-4d8a-9a1d-4bd878b19846"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm planning a trip to the Efteling theme park with my family. Can you fetch the latest blogs about the park and provide me with the specific queue time for attraction ID 12? Also, generate five payment card numbers with the scheme 'visa' for ticket booking.",
+        "relevant APIs": [
+            [
+                "Unofficial Efteling API",
+                "Retrieve the latest blogs"
+            ],
+            [
+                "Unofficial Efteling API",
+                "Retrieve specific Queue time"
+            ],
+            [
+                "Payment card numbers generator",
+                "Generate"
+            ]
+        ],
+        "query_id": 3
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "News_Media",
+                "tool_name": "AI News_v2",
+                "api_name": "Get all AI News",
+                "api_description": "This endpoint will return back all news about artificial intelligence around the world",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "AI News_v2",
+                "api_name": "Get Individual Source News",
+                "api_description": "Gets News about Artificial Intelligence from a specific news resource.",
+                "required_parameters": [
+                    {
+                        "name": "newspaperId",
+                        "type": "string",
+                        "description": "",
+                        "default": "gizmodo"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning a movie night with my family and we want to read articles from multiple publishers. Can you fetch articles from different publishers for us? Also, find some AI news to learn about the latest advancements in artificial intelligence. Thanks!",
+        "relevant APIs": [
+            [
+                "Movie Articles and News",
+                "Get All Articles"
+            ],
+            [
+                "AI News_v2",
+                "Get all AI News"
+            ]
+        ],
+        "query_id": 4
+    },
+    {
+        "api_list": [],
+        "query": "Retrieve the list of claims filed by the user with the case type 'Property Damage'. Also, fetch the document link for the document with the file name 'repair_estimate.pdf'.",
+        "relevant APIs": [
+            [
+                "Get Docs",
+                "RetrieveClaimListByUser"
+            ],
+            [
+                "Get Docs",
+                "case record"
+            ],
+            [
+                "Get Docs",
+                "document"
+            ]
+        ],
+        "query_id": 5
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Business",
+                "tool_name": "AppraisalQC",
+                "api_name": "ValidationReport",
+                "api_description": "The API returns the XML validation report of the Appraisal Report uploaded",
+                "required_parameters": [
+                    {
+                        "name": "OrderNumber",
+                        "type": "STRING",
+                        "description": "OrderNumber of the uploaded PDF file for which validation report needs to be displayed",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "ErrorCode": "int",
+                    "ErrorMessage": "str",
+                    "Status": {
+                        "Type": "str",
+                        "Message": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "SOTI Sync",
+                "api_name": "Total Amount",
+                "api_description": "Total Amount to be paid",
+                "required_parameters": [
+                    {
+                        "name": "totalamount",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "SOTI Sync",
+                "api_name": "Enterprise Customer",
+                "api_description": "Is he a Enterprise Customer?",
+                "required_parameters": [
+                    {
+                        "name": "EntCustomer",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "SOTI Sync",
+                "api_name": "Phone Number",
+                "api_description": "Fetch Customer Phone Number",
+                "required_parameters": [
+                    {
+                        "name": "PNumber",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "Free OFAC Scan",
+                "api_name": "free_ofac.api",
+                "api_description": "This API returns a simple TRUE (target found) or FALSE (target not found) value n response to an OFAC scan request.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "street_address",
+                        "type": "STRING",
+                        "description": "Street Address of individual or business entity target",
+                        "default": "79 ul. Sadovnicheskaya"
+                    },
+                    {
+                        "name": "business_name",
+                        "type": "STRING",
+                        "description": "Name of Business entity target.",
+                        "default": "SME Bank"
+                    },
+                    {
+                        "name": "first_name",
+                        "type": "STRING",
+                        "description": "First Name(s) of individual target.",
+                        "default": "Gener"
+                    },
+                    {
+                        "name": "last_name",
+                        "type": "STRING",
+                        "description": "Last Name(s) of individual target.",
+                        "default": "Garcia Molina"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "target": {
+                        "first_name": "str",
+                        "last_name": "str",
+                        "business_name": "str",
+                        "street_address": "str"
+                    },
+                    "records_found": "str"
+                }
+            }
+        ],
+        "query": "I'm planning a surprise anniversary party for my parents and need to find a venue. Can you check if the proposed venue is associated with any prohibited entities? Additionally, fetch the validation report for the appraisal of the venue to ensure its suitability for the event. Furthermore, provide me with the phone number of the venue to make reservations.",
+        "relevant APIs": [
+            [
+                "Free OFAC Scan",
+                "free_ofac.api"
+            ],
+            [
+                "AppraisalQC",
+                "ValidationReport"
+            ],
+            [
+                "SOTI Sync",
+                "Phone Number"
+            ]
+        ],
+        "query_id": 6
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Gaming",
+                "tool_name": "World of Tanks Stats",
+                "api_name": "Get Stats",
+                "api_description": "Get WN8, WN7, battles, victories, defeats, kills, draws, avereageTier, tanksSpotted, battlesSurvived",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "PasiHD"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "account_id": "int",
+                    "battles": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "averageTier": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "victories": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "defeats": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "draws": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "battlesSurvived": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "kills": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "tanksSpotted": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "wn7": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    },
+                    "wn8": {
+                        "total": "str",
+                        "last24h": "str",
+                        "last7d": "str",
+                        "last30d": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Entertainment",
+                "tool_name": "DOTA 2 Steam Web",
+                "api_name": "Match History",
+                "api_description": "will return the latest 25 public matches in JSON format. You can request it in XML format",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "XML or JSON",
+                        "default": "JSON"
+                    },
+                    {
+                        "name": "start_at_match_id",
+                        "type": "STRING",
+                        "description": "To request the next 25, use the param \"start_at_match_id\" with one less than the last match number you received",
+                        "default": "27110133"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Entertainment",
+                "tool_name": "DOTA 2 Steam Web",
+                "api_name": "Match Details",
+                "api_description": "To retrieve the specific details of a match, use this API:",
+                "required_parameters": [
+                    {
+                        "name": "match_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "27110133"
+                    },
+                    {
+                        "name": "matches_requested",
+                        "type": "STRING",
+                        "description": "Defaults is 25 matches, this can limit to less",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "date_min",
+                        "type": "STRING",
+                        "description": "date in UTC seconds since Jan 1, 1970 (unix time format)",
+                        "default": ""
+                    },
+                    {
+                        "name": "player_name",
+                        "type": "STRING",
+                        "description": "Search matches with a player name, exact match only",
+                        "default": ""
+                    },
+                    {
+                        "name": "hero_id",
+                        "type": "STRING",
+                        "description": "Search for matches with a specific hero being played, hero id's are in dota/scripts/npc/npc_heroes.txt in your Dota install directory",
+                        "default": ""
+                    },
+                    {
+                        "name": "skill",
+                        "type": "STRING",
+                        "description": "0 for any, 1 for normal, 2 for high, 3 for very high skill",
+                        "default": ""
+                    },
+                    {
+                        "name": "date_max",
+                        "type": "STRING",
+                        "description": "date in UTC seconds since Jan 1, 1970 (unix time format)",
+                        "default": ""
+                    },
+                    {
+                        "name": "account_id",
+                        "type": "STRING",
+                        "description": "Steam account id (this is not SteamID, its only the account number portion)",
+                        "default": ""
+                    },
+                    {
+                        "name": "league_id",
+                        "type": "STRING",
+                        "description": "matches for a particular league",
+                        "default": ""
+                    },
+                    {
+                        "name": "start_at_match_id",
+                        "type": "STRING",
+                        "description": "Start the search at the indicated match id, descending",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Entertainment",
+                "tool_name": "Hearthstone",
+                "api_name": "Card Backs",
+                "api_description": "Returns a list of all the card backs.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "callback",
+                        "type": "STRING",
+                        "description": "Request data to be returned as a JsonP callback.",
+                        "default": ""
+                    },
+                    {
+                        "name": "locale",
+                        "type": "STRING",
+                        "description": "What locale to use in the response. Default locale is enUS. Available locales: enUS, enGB, deDE, esES, esMX, frFR, itIT, koKR, plPL, ptBR, ruRU, zhCN, zhTW, jaJP, thTH.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Entertainment",
+                "tool_name": "Hearthstone",
+                "api_name": "Cards by Type",
+                "api_description": "Returns all the cards of a certain type. Example values: Spell, Weapon.",
+                "required_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Card type.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "cost",
+                        "type": "NUMBER",
+                        "description": "Return only cards of a certain cost.",
+                        "default": ""
+                    },
+                    {
+                        "name": "attack",
+                        "type": "NUMBER",
+                        "description": "Return only cards with a certain attack.",
+                        "default": ""
+                    },
+                    {
+                        "name": "durability",
+                        "type": "NUMBER",
+                        "description": "Return only cards with a certain durability.",
+                        "default": ""
+                    },
+                    {
+                        "name": "health",
+                        "type": "NUMBER",
+                        "description": "Return only cards with a certain health.",
+                        "default": ""
+                    },
+                    {
+                        "name": "callback",
+                        "type": "STRING",
+                        "description": "Request data to be returned as a JsonP callback.",
+                        "default": ""
+                    },
+                    {
+                        "name": "collectible",
+                        "type": "NUMBER",
+                        "description": "Set this to 1 to only return collectible cards.",
+                        "default": ""
+                    },
+                    {
+                        "name": "locale",
+                        "type": "STRING",
+                        "description": "What locale to use in the response. Default locale is enUS. Available locales: enUS, enGB, deDE, esES, esMX, frFR, itIT, koKR, plPL, ptBR, ruRU, zhCN, zhTW, jaJP, thTH.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Entertainment",
+                "tool_name": "Hearthstone",
+                "api_name": "Cards by Class",
+                "api_description": "Returns all the cards of a class. Example values: Mage, Paladin.",
+                "required_parameters": [
+                    {
+                        "name": "class",
+                        "type": "STRING",
+                        "description": "Card class.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "health",
+                        "type": "NUMBER",
+                        "description": "Return only cards with a certain health.",
+                        "default": ""
+                    },
+                    {
+                        "name": "durability",
+                        "type": "NUMBER",
+                        "description": "Return only cards with a certain durability.",
+                        "default": ""
+                    },
+                    {
+                        "name": "cost",
+                        "type": "NUMBER",
+                        "description": "Return only cards of a certain cost.",
+                        "default": ""
+                    },
+                    {
+                        "name": "attack",
+                        "type": "NUMBER",
+                        "description": "Return only cards with a certain attack.",
+                        "default": ""
+                    },
+                    {
+                        "name": "callback",
+                        "type": "STRING",
+                        "description": "Request data to be returned as a JsonP callback.",
+                        "default": ""
+                    },
+                    {
+                        "name": "collectible",
+                        "type": "NUMBER",
+                        "description": "Set this to 1 to only return collectible cards.",
+                        "default": ""
+                    },
+                    {
+                        "name": "locale",
+                        "type": "STRING",
+                        "description": "What locale to use in the response. Default locale is enUS. Available locales: enUS, enGB, deDE, esES, esMX, frFR, itIT, koKR, plPL, ptBR, ruRU, zhCN, zhTW, jaJP, thTH.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I am a game collector and I want to expand my collection. Fetch a list of games that contain the title 'Batman' using the List of Games API. Additionally, provide me with the latest match history from the Dota 2 Steam Web API to stay updated on the gaming scene.",
+        "relevant APIs": [
+            [
+                "CheapShark - Game Deals",
+                "List of Games"
+            ],
+            [
+                "DOTA 2 Steam Web",
+                "Match History"
+            ]
+        ],
+        "query_id": 7
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Social",
+                "tool_name": "Snapchat",
+                "api_name": "getFaceLenses",
+                "api_description": "getFaceLenses",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "cursor",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "data": {
+                        "hasMore": "bool",
+                        "nextCursorId": "str",
+                        "topLenses": [
+                            {
+                                "scannableUuid": "str",
+                                "lensName": "str",
+                                "lensCreatorDisplayName": "str",
+                                "lensPreviewImageUrl": "str",
+                                "lensPreviewVideoUrl": "str",
+                                "iconUrl": "str",
+                                "unlockUrl": "str",
+                                "lensResource": {
+                                    "checkSum": "str",
+                                    "archiveLink": "str",
+                                    "signature": "str",
+                                    "lastUpdated": "str"
+                                },
+                                "userProfileUrl": "str",
+                                "lensCreatorUsername": "str",
+                                "lensId": "str",
+                                "lensCreatorSearchTags": [
+                                    "list of str with length 984"
+                                ],
+                                "isOfficialSnapLens": "bool",
+                                "_list_length": 25
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Snapchat",
+                "api_name": "getLensesByHashtag",
+                "api_description": "getLensesByHashtag",
+                "required_parameters": [
+                    {
+                        "name": "hashtag",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "music"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Snapchat",
+                "api_name": "getLensItem",
+                "api_description": "getLensItem",
+                "required_parameters": [
+                    {
+                        "name": "lens_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "41a72e9ae9a44f8891327ce6cf1c344d"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "data": {
+                        "lensDisplayInfo": {
+                            "scannableUuid": "str",
+                            "lensName": "str",
+                            "lensCreatorDisplayName": "str",
+                            "lensPreviewImageUrl": "str",
+                            "lensPreviewVideoUrl": "str",
+                            "iconUrl": "str",
+                            "unlockUrl": "str",
+                            "lensResource": {
+                                "checkSum": "str",
+                                "archiveLink": "str",
+                                "signature": "str",
+                                "lastUpdated": "str"
+                            },
+                            "userProfileUrl": "str",
+                            "lensCreatorUsername": "str",
+                            "lensId": "str",
+                            "lensCreatorSearchTags": [
+                                "list of str with length 995"
+                            ],
+                            "isOfficialSnapLens": "bool"
+                        },
+                        "linkPreview": {
+                            "title": "str",
+                            "description": "str",
+                            "canonicalUrl": "str",
+                            "twitterImage": {
+                                "url": "str",
+                                "size": {
+                                    "width": "int",
+                                    "height": "int"
+                                }
+                            },
+                            "facebookImage": {
+                                "url": "str",
+                                "size": {
+                                    "width": "int",
+                                    "height": "int"
+                                }
+                            }
+                        },
+                        "pageMetadata": {
+                            "pageType": "int",
+                            "pageTitle": "str",
+                            "pageDescription": {
+                                "value": "str"
+                            },
+                            "shareId": "str"
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Instagram_v6",
+                "api_name": "GetSuggestedUser",
+                "api_description": "get suggested user by user id",
+                "required_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "25025320"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Instagram_v6",
+                "api_name": "MediaInfo",
+                "api_description": "get media info",
+                "required_parameters": [
+                    {
+                        "name": "short_code",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "CA_ifcxMjFR"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Instagram_v6",
+                "api_name": "MediaComments",
+                "api_description": "Get one media's comments, batch_size range from 1 to 50.",
+                "required_parameters": [
+                    {
+                        "name": "short_code",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "CB_B4z_s-0r"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "batch_size",
+                        "type": "STRING",
+                        "description": "Range from 1 to 50.",
+                        "default": "20"
+                    },
+                    {
+                        "name": "next_cursor",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Twitter AIO",
+                "api_name": "Tweets by userId",
+                "api_description": "Receive all tweets ordered by most recent. You can use the cursor and count to navigate around.",
+                "required_parameters": [
+                    {
+                        "name": "userId",
+                        "type": "string",
+                        "description": "The userId of the user. You can get it by converting a username to the userId or by searching a user and extracting the restId.",
+                        "default": "44196397"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "cursor",
+                        "type": "STRING",
+                        "description": "At the end of the entries array you'll find two objects with the type TimelineTimelineCursor. There is one cursor to go up (Top) and one for going down (bottom) the list. You just need to provide the value as the cursor parameter to get the next page of the pagination.",
+                        "default": ""
+                    },
+                    {
+                        "name": "count",
+                        "type": "STRING",
+                        "description": "The default count is 20. You can specify a custom one here.",
+                        "default": "20"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Twitter AIO",
+                "api_name": "User Followers by userId",
+                "api_description": "Receive all followers of a user. You can use the cursor and count to navigate around.",
+                "required_parameters": [
+                    {
+                        "name": "userId",
+                        "type": "string",
+                        "description": "The userId of the user. You can get it by converting a username to the userId or by searching a user and extracting the restId.",
+                        "default": "44196397"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "count",
+                        "type": "STRING",
+                        "description": "The default count is 20. You can specify a custom one here.",
+                        "default": "20"
+                    },
+                    {
+                        "name": "cursor",
+                        "type": "STRING",
+                        "description": "At the end of the entries array you'll find two objects with the type TimelineTimelineCursor. There is one cursor to go up (Top) and one for going down (bottom) the list. You just need to provide the value as the cursor parameter to get the next page of the pagination.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "data": {
+                        "user": {
+                            "result": {
+                                "__typename": "str",
+                                "timeline": {
+                                    "timeline": {
+                                        "instructions": [
+                                            {
+                                                "type": "str",
+                                                "_list_length": 3
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Twitter AIO",
+                "api_name": "Media by userId",
+                "api_description": "Receive all media items ordered by most recent. You can use the cursor and count to navigate around.",
+                "required_parameters": [
+                    {
+                        "name": "userId",
+                        "type": "string",
+                        "description": "The userId of the user. You can get it by converting a username to the userId or by searching a user and extracting the restId.",
+                        "default": "44196397"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "cursor",
+                        "type": "STRING",
+                        "description": "At the end of the entries array you'll find two objects with the type TimelineTimelineCursor. There is one cursor to go up (Top) and one for going down (bottom) the list. You just need to provide the value as the cursor parameter to get the next page of the pagination.",
+                        "default": ""
+                    },
+                    {
+                        "name": "count",
+                        "type": "STRING",
+                        "description": "The default count is 20. You can specify a custom one here.",
+                        "default": "20"
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"data\": {\"user\": {\"result\": {\"__typename\": \"str\", \"timeline_v2\": {\"timeline\": {\"instructions\": [{\"type\": \"str\", \"entries\": [{\"entryId\": \"str\", \"sortIndex\": \"str\", \"content\": {\"entryType\": \"str\", \"__typename\": \"str\", \"itemContent\": {\"itemType\": \"str\", \"__typename\": \"str\", \"tweet_results\": {\"result\": {\"__typename\": \"str\", \"rest_id\": \"str\", \"core\": {\"user_results\": {\"result\": {\"__typename\": \"str\", \"id\": \"str\", \"rest_id\": \"str\", \"affiliates_highlighted_label\": {\"label\": {\"url\": {\"url\": \"str\", \"urlType\": \"str\"}, \"badge\": {\"url\": \"str\"}, \"description\": \"str\", \"userLabelType\": \"str\", \"userLabelDisplayType\": \"str\"}}, \"has_graduated_access\": \"bool\", \"is_blue_verified\": \"bool\", \"profile_image_shape\": \"str\", \"legacy\": {\"can_dm\": \"bool\", \"can_media_tag\": \"bool\", \"created_at\": \"str\", \"default_profile\": \"bool\", \"default_profile_image\": \"bool\", \"description\": \"str\", \"entities\": {\"description\": {\"urls\": \"empty list\"}}, \"fast_followers_count\": \"int\", \"favourites_count\": \"int\", \"followers_count\": \"int\""
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "funny emojis",
+                "api_name": "emoji api Instructions",
+                "api_description": "emoji api Instructions",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "funny emojis",
+                "api_name": "get emoji category list",
+                "api_description": "get emoji category list",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "funny emojis",
+                "api_name": "using emoji_name to get emoji",
+                "api_description": "using emoji_name to get emoji",
+                "required_parameters": [
+                    {
+                        "name": "emoji_name",
+                        "type": "string",
+                        "description": "",
+                        "default": "grinning-face"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning a photoshoot with my friends and need some cool face lenses. Find me the latest face lenses on Snapchat. Also, provide me with the media information of a popular Instagram post that has amazing photography.",
+        "relevant APIs": [
+            [
+                "Snapchat",
+                "getFaceLenses"
+            ],
+            [
+                "Instagram_v6",
+                "MediaInfo"
+            ]
+        ],
+        "query_id": 8
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "News_Media",
+                "tool_name": "Book Cover API",
+                "api_name": "getBookCoverUrl",
+                "api_description": "Get a book cover image url by isbn and language code",
+                "required_parameters": [
+                    {
+                        "name": "languageCode",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "en"
+                    },
+                    {
+                        "name": "isbn",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "9781526606198"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "url": "str"
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Book Cover API",
+                "api_name": "getBookCoverImage",
+                "api_description": "Get a book cover image by isbn and language code",
+                "required_parameters": [
+                    {
+                        "name": "isbn",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "9781526606198"
+                    },
+                    {
+                        "name": "languageCode",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "en"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Moka News",
+                "api_name": "by Category",
+                "api_description": "get the recent 50 news by category , EX :   Sport , World  .... etc",
+                "required_parameters": [
+                    {
+                        "name": "cat",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Sport"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Error": "str"
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Moka News",
+                "api_name": "Recent 100",
+                "api_description": "GET the recent  100 news",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Moka News",
+                "api_name": "Sources List (New)",
+                "api_description": "Use this endpoint to get the list of all source.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "sourceName": "str",
+                    "source": "str"
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Instant Cameroon News",
+                "api_name": "Retrieve data",
+                "api_description": "Endpoint, which you use to retrieve the data you need. This endpoint can accept some parameters like page, search key and data range",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "rank",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "search",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Instant Cameroon News",
+                "api_name": "Home page",
+                "api_description": "Home and Welcome page that introduces the API",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Green Gold",
+                "api_name": "all articles",
+                "api_description": "Endpoint to gather all articles from all listed publications detailed in API",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "title": "str",
+                    "url": "str",
+                    "source": "str"
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Green Gold",
+                "api_name": "specific publication articles",
+                "api_description": "Gets news articles from specific publications",
+                "required_parameters": [
+                    {
+                        "name": "newspaperId",
+                        "type": "string",
+                        "description": "",
+                        "default": "guardian"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "title": "str",
+                    "url": "str",
+                    "source": "str"
+                }
+            }
+        ],
+        "query": "I want to create a book cover collage as a gift for my literature professor. Can you fetch book cover URLs for classic literature novels? Also, find news articles about famous literature professors for inspiration.",
+        "relevant APIs": [
+            [
+                "Book Cover API",
+                "getBookCoverUrl"
+            ],
+            [
+                "Moka News",
+                "Recent 100"
+            ]
+        ],
+        "query_id": 9
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "News_Media",
+                "tool_name": "Targeted Keyword trend",
+                "api_name": "Keyword",
+                "api_description": "Returns \u201cMonthly Data\u201d and \u201cSearch count\u201d for a given keyword",
+                "required_parameters": [
+                    {
+                        "name": "keyword",
+                        "type": "string",
+                        "description": "",
+                        "default": "digital marketing"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Your Targeted Keyword is ": "str"
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Climate Change Live_v3",
+                "api_name": "Get All Climate Change News",
+                "api_description": "This endpoint will return back  all news about the climate change from all over world.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Climate Change Live_v3",
+                "api_name": "Get Indivisual News Source News",
+                "api_description": "Get News about climate change from a specific news resource.",
+                "required_parameters": [
+                    {
+                        "name": "newspaperId",
+                        "type": "string",
+                        "description": "",
+                        "default": "guardian"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning a digital marketing campaign and I need to gather some insights. Can you provide me with the monthly data and search count for the keyword 'digital marketing'? Additionally, fetch all the articles about movies from various publishers to get some inspiration for my campaign.",
+        "relevant APIs": [
+            [
+                "Targeted Keyword trend",
+                "Keyword"
+            ],
+            [
+                "Movie Articles and News",
+                "Get All Articles"
+            ]
+        ],
+        "query_id": 10
+    }
+]
