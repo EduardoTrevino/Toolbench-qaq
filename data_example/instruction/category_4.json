@@ -2,261 +2,75 @@
     {
         "api_list": [
             {
-                "category_name": "Finance",
-                "tool_name": "Afterbanks PSD2 payments and bank reader",
-                "api_name": "Listofsupportedbanks",
-                "api_description": "Get a complete list of supported banks, as well as the names of the fields needed to draw a login form similar to the bank's original.",
+                "category_name": "Data",
+                "tool_name": "Avito Scraper",
+                "api_name": "SingleOffer",
+                "api_description": "API  that get info for a single offer",
                 "required_parameters": [
                     {
-                        "name": "countryCode",
+                        "name": "singleav",
                         "type": "STRING",
-                        "description": "Country code, ISO 3166-1 alpha-2 format (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). For example ES for Spain. If no code is provided, the entire list will be returned.",
-                        "default": ""
+                        "description": "",
+                        "default": "https://www.avito.ma/fr/autre_secteur/maisons_et_villas/Villa_OCP_4_faces_sur_550_metre_de_terrain_49107436.htm"
                     }
                 ],
                 "optional_parameters": [],
                 "method": "GET",
-                "template_response": {
-                    "countryCode": "str",
-                    "service": "str",
-                    "swift": "str",
-                    "fullname": "str",
-                    "image": "str",
-                    "imageSVG": "str",
-                    "paymentsSupported": "str"
-                }
+                "template_response": "{\"id\": \"NoneType\", \"listId\": \"NoneType\", \"subject\": \"NoneType\", \"description\": \"NoneType\", \"price\": \"NoneType\", \"listTime\": \"NoneType\", \"isPhoneHidden\": \"bool\", \"phone\": \"NoneType\", \"phoneImageUrl\": \"NoneType\", \"isPhoneVerified\": \"bool\", \"hasShipping\": \"bool\", \"friendlyUrl\": \"NoneType\", \"vertical\": \"NoneType\", \"isEligibleToExpertize\": \"bool\", \"rentalBlockedDates\": \"NoneType\", \"isExpertizeSent\": \"bool\", \"seller\": {\"type\": \"NoneType\", \"regTime\": \"NoneType\", \"img\": \"NoneType\", \"website\": \"NoneType\", \"address\": \"NoneType\", \"name\": \"NoneType\", \"uuId\": \"NoneType\", \"id\": \"NoneType\", \"slug\": \"NoneType\"}, \"location\": {\"city\": {\"id\": \"NoneType\", \"name\": \"NoneType\", \"slug\": \"NoneType\"}, \"area\": {\"id\": \"NoneType\", \"name\": \"NoneType\", \"slug\": \"NoneType\"}, \"coordinates\": {\"longitude\": \"NoneType\", \"latitude\": \"NoneType\"}}, \"category\": {\"id\": \"NoneType\", \"name\": \"NoneType\", \"slug\": \"NoneType\", \"parent\": {\"id\": \"NoneType\", \"name\": \"NoneType\", \"slug\": \"NoneType\"}, \"parentsNames\": \"NoneType\"}, \"params\": "
             },
             {
-                "category_name": "Finance",
-                "tool_name": "Afterbanks PSD2 payments and bank reader",
-                "api_name": "Categorieslist.Onlyforthoseservicekeythatincludethisoption.",
-                "api_description": "Returns a list with all the categories retrieved by Afterbanks own categorizer.",
+                "category_name": "Data",
+                "tool_name": "Avito Scraper",
+                "api_name": "FastSearchFull",
+                "api_description": "this is a beta test of fast API of Full info Search",
                 "required_parameters": [
                     {
-                        "name": "countryCode",
+                        "name": "fastav",
                         "type": "STRING",
-                        "description": "Country code, format ISO 3166-1 alpha-2 (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). For example ES for Spain. If no code is given, the full list is returned.",
-                        "default": ""
+                        "description": "",
+                        "default": "https://www.avito.ma/fr/maroc/jeux_vid%C3%A9o_et_consoles-%C3%A0_vendre?cities=8,5&price_min=350&price_max=1200"
                     }
                 ],
                 "optional_parameters": [],
                 "method": "GET",
-                "template_response": {
-                    "id": "str",
-                    "description": "str",
-                    "color": "str",
-                    "icon": "str"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "vatlayer",
-                "api_name": "Request list of types of goods",
-                "api_description": "Request an entire list of all available \"types of goods\", which fall into reduced VAT categories in specific EU member states",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "success": "bool",
-                    "error": {
-                        "code": "int",
-                        "type": "str",
-                        "info": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "vatlayer",
-                "api_name": "Request all EU VAT Rates",
-                "api_description": "Use the API's \"rate_list\" endpoint to obtain standard & reduced VAT rates for all 28 current member states",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "success": "bool",
-                    "error": {
-                        "code": "int",
-                        "type": "str",
-                        "info": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "vatlayer",
-                "api_name": "Validate VAT Number",
-                "api_description": "Using the \"validate\" endpoint, you may request the API to validate any EU VAT number and obtain information about the company it is assigned to",
-                "required_parameters": [
-                    {
-                        "name": "vat_number",
-                        "type": "STRING",
-                        "description": "\"vat_number\" parameter - append the VAT number you want to validate",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "success": "bool",
-                    "error": {
-                        "code": "int",
-                        "type": "str",
-                        "info": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Investing",
-                "api_name": "Grains Futures Prices",
-                "api_description": "page source : https://www.investing.com/commodities/grains",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Investing",
-                "api_name": "IPO calendar",
-                "api_description": "This endpoint provides information about the IPO calendar.",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "data": [
-                        {
-                            "Company": "str",
-                            "Exchange": "str",
-                            "IPO Listing": "str",
-                            "IPO Price": "str",
-                            "IPO Value": "NoneType",
-                            "Last": "str",
-                            "_list_length": 10
-                        }
-                    ],
-                    "message": "str",
-                    "status": "int"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Investing",
-                "api_name": "Energy Futures Prices",
-                "api_description": "page source: https://www.investing.com/commodities/energy",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "data": {
-                        "MCX Futures Market Quotes": [
-                            {
-                                "Area": "str",
-                                "Chg.": "float",
-                                "Chg. %": "str",
-                                "Commodity": "str",
-                                "High": "float",
-                                "Last": "float",
-                                "Low": "float",
-                                "Month": "str",
-                                "Prev.": "float",
-                                "Time": "str",
-                                "_list_length": 3
-                            }
-                        ],
-                        "Real Time Streaming Futures Quotes": [
-                            {
-                                "Area": "str",
-                                "Chg.": "float",
-                                "Chg. %": "str",
-                                "Commodity": "str",
-                                "High": "float",
-                                "Last": "float",
-                                "Low": "float",
-                                "Month": "str",
-                                "Prev.": "float",
-                                "Time": "str",
-                                "_list_length": 7
-                            }
-                        ],
-                        "US Futures Market Quotes (10-minute Delayed)": [
-                            {
-                                "Chg.": "float",
-                                "High": "float",
-                                "Last": "str",
-                                "Low": "float",
-                                "Month": "str",
-                                "Name": "str",
-                                "Open": "float",
-                                "Time": "str",
-                                "_list_length": 13
-                            }
-                        ]
-                    },
-                    "message": "str",
-                    "status": "int"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Mortgage Monthly Payment Calculator",
-                "api_name": "Monthly Payment",
-                "api_description": "calculate monthly payment. Add all input to the query parameter string.\nloanAmount, interestRate, and terms.",
-                "required_parameters": [
-                    {
-                        "name": "interestRate",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "0.05"
-                    },
-                    {
-                        "name": "terms",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "360"
-                    },
-                    {
-                        "name": "loanAmount",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "300000"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "monthlyPayment": "float"
-                }
+                "template_response": "{\"pageNumber\": \"int\", \"itemsCount\": \"int\", \"previousPage\": \"NoneType\", \"currentPage\": \"str\", \"items\": [{\"id\": \"str\", \"listId\": \"str\", \"subject\": \"str\", \"description\": \"str\", \"price\": {\"value\": \"int\", \"currency\": \"str\"}, \"listTime\": \"str\", \"location\": {\"city\": {\"id\": \"str\", \"name\": \"str\", \"trackingValue\": \"str\", \"slug\": \"str\", \"trackingName\": \"str\"}, \"area\": {\"id\": \"str\", \"name\": \"str\", \"trackingValue\": \"str\", \"slug\": \"str\", \"trackingName\": \"str\"}, \"address\": \"NoneType\"}, \"type\": {\"key\": \"str\", \"label\": \"str\"}, \"category\": {\"id\": \"str\", \"name\": \"str\", \"trackingValue\": \"str\", \"parent\": {\"id\": \"str\", \"name\": \"str\", \"trackingValue\": \"str\", \"trackingName\": \"str\"}, \"trackingName\": \"str\", \"parentsNames\": [\"list of str with length 2\"]}, \"vertical\": \"str\", \"seller\": {\"id\": \"str\", \"uuid\": \"str\", \"type\": \"str\", \"regTime\": \"int\", \"name\": \"str\", \"isEcommerce\": \"bool\"}, \"isImmoneuf\": \"bool\", \"immoneufProjectId\": \"NoneType\", \"isPhoneHidden\": \"bool\", \"phone\": \"str\", \"isPhoneVerified\": \"bool\", \"hasShip"
             },
             {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "I'm a frequent traveler and I need to find a bank that supports international payments. Can you provide me with a list of supported banks? Additionally, I would like to get the latest grain futures prices and energy futures prices for investment purposes.",
+        "query": "Can you help me find some affordable video games and consoles in Casablanca and Rabat? I'm looking for items with prices between 350 and 1200 Moroccan Dirhams. Also, I need your help in solving a captcha for an image at this URL: http://www.metropolisapi.com/temp/metropolis_api.jpg.",
         "relevant APIs": [
             [
-                "Afterbanks PSD2 payments and bank reader",
-                "Listofsupportedbanks"
+                "Captcha",
+                "solve"
             ],
             [
-                "Investing",
-                "Grains Futures Prices"
-            ],
-            [
-                "Investing",
-                "Energy Futures Prices"
+                "Avito Scraper",
+                "FastSearchFull"
             ],
             [
                 "qaq",
@@ -268,292 +82,45 @@
     {
         "api_list": [
             {
-                "category_name": "Finance",
-                "tool_name": "Latest Stock Price",
-                "api_name": "price",
-                "api_description": "Fetch latest stock price based on indices",
-                "required_parameters": [
-                    {
-                        "name": "Indices",
-                        "type": "ENUM",
-                        "description": "Define Stock Indices",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "Identifier",
-                        "type": "STRING",
-                        "description": "Define Stock Identifier\nSupports multiple comma separated Identifier",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "error": "str",
-                    "error_code": "str",
-                    "link": "str"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Latest Stock Price",
-                "api_name": "prices",
-                "api_description": "Fetch latest stock price based on indices",
-                "required_parameters": [
-                    {
-                        "name": "Indices",
-                        "type": "ENUM",
-                        "description": "Define Stock Indices",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "Identifier",
-                        "type": "STRING",
-                        "description": "Define Stock Identifier\nSupports multiple comma separated Identifier",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "error": "str",
-                    "error_code": "str",
-                    "link": "str"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Latest Stock Price",
-                "api_name": "price_all",
-                "api_description": "Fetch latest stock price",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "Identifier",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "symbol": "str",
-                    "identifier": "str",
-                    "open": "float",
-                    "dayHigh": "float",
-                    "dayLow": "int",
-                    "lastPrice": "float",
-                    "previousClose": "float",
-                    "change": "float",
-                    "pChange": "float",
-                    "yearHigh": "float",
-                    "yearLow": "float",
-                    "totalTradedVolume": "int",
-                    "totalTradedValue": "float",
-                    "lastUpdateTime": "str",
-                    "perChange365d": "float",
-                    "perChange30d": "float"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Currency Quake",
-                "api_name": "Pair Strength",
-                "api_description": "Exposes the underlying calculations that are performed on each pair to get a currency\u2019s combined strength.",
-                "required_parameters": [
-                    {
-                        "name": "timeframe",
-                        "type": "STRING",
-                        "description": "Timeframe (h1, h4, d1 or w1)",
-                        "default": "h1"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "pair": "str",
-                    "change": "float"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Currency Quake",
-                "api_name": "Symbol Strength",
-                "api_description": "Exposes the combined strength of 8 individual currencies using calculations applied to 28 Forex pairs.",
-                "required_parameters": [
-                    {
-                        "name": "timeframe",
-                        "type": "STRING",
-                        "description": "Timeframe (h1, h4, d1 or w1)",
-                        "default": "h1"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "symbol": "str",
-                    "change": "float"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Currency Quake",
-                "api_name": "Market Status",
-                "api_description": "Is the market open?",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "market_is_open": "bool"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Date Calculator",
-                "api_name": "datedif",
-                "api_description": "Computes the number of  years, months, days, hours, minutes, seconds or microseconds between two dates (end_date - start_date).",
-                "required_parameters": [
-                    {
-                        "name": "end_date",
-                        "type": "STRING",
-                        "description": "The start date w/ or w/o the time part in  [ISO 8601 format](https://www.w3.org/TR/NOTE-datetime)",
-                        "default": "2021-09-30T14:00:55"
-                    },
-                    {
-                        "name": "start_date",
-                        "type": "STRING",
-                        "description": "The start date w/ or w/o the time part in  [ISO 8601 format](https://www.w3.org/TR/NOTE-datetime)",
-                        "default": "2021-08-30T08:01:00"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "datedif": {
-                        "months": "int",
-                        "hours": "int",
-                        "minutes": "int",
-                        "seconds": "int"
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Date Calculator",
-                "api_name": "now",
-                "api_description": "Computes and returns local time zone taking into account Daylight Saving Time (DST).",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "tzname",
-                        "type": "STRING",
-                        "description": "The time zone name",
-                        "default": "UTC"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "timezone": "str",
-                    "now": "str"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Date Calculator",
-                "api_name": "time_zone_converter",
-                "api_description": "Converts time from time zone to another taking into account Daylight Saving Time (DST) and accepts present, past, or future dates.",
-                "required_parameters": [
-                    {
-                        "name": "datetime",
-                        "type": "STRING",
-                        "description": "The date time in  [ISO 8601 format](https://www.w3.org/TR/NOTE-datetime)",
-                        "default": "2021-03-21T20:10:00"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "from_tzname",
-                        "type": "STRING",
-                        "description": "The time zone name",
-                        "default": "UTC"
-                    },
-                    {
-                        "name": "to_tzname",
-                        "type": "STRING",
-                        "description": "The time zone name",
-                        "default": "UTC"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "tzconversion": {
-                        "from": {
-                            "timezone": "str",
-                            "datetime": "str"
-                        },
-                        "to": {
-                            "timezone": "str",
-                            "datetime": "str"
-                        }
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Mineable coins",
-                "api_name": "Get coins' data",
-                "api_description": "With this endpoint you can get a collection of all coins.\n\n**API alterations**\n- **Get one coin:** https://api.minerstat.com/v2/coins?list=BTC\n- **Get list of coins:** https://api.minerstat.com/v2/coins?list=BTC,BCH,BSV\n- **Get all coins from one algorithm:** https://api.minerstat.com/v2/coins?algo=SHA-256\n- **Get all coins from multiple algorithms:** https://api.minerstat.com/v2/coins?algo=SHA-256,Scrypt,Ethash",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "id": "str",
-                    "coin": "str",
-                    "name": "str",
-                    "type": "str",
-                    "algorithm": "str",
-                    "network_hashrate": "int",
-                    "difficulty": "int",
-                    "reward": "float",
-                    "reward_unit": "str",
-                    "reward_block": "int",
-                    "price": "float",
-                    "volume": "float",
-                    "updated": "int"
-                }
-            },
-            {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "Find the block height and timestamp of the closest block to the timestamp 1541548802 on the Ethereum blockchain. Moreover, fetch the total value locked (TVL) of the Aave protocol and the TVL of each chain it supports. Lastly, fetch the latest stock price for the CAC 40 index.",
+        "query": "I'm a car enthusiast and I'm looking for a specific car model. Can you provide me with a list of supported makes, types, and years? I'm particularly interested in finding a 2020 sedan from a renowned make like BMW.",
         "relevant APIs": [
             [
-                "Defi Data",
-                "Block"
+                "Car Data",
+                "Makes"
             ],
             [
-                "Defi Data",
-                "Protocols"
+                "Car Data",
+                "Types"
             ],
             [
-                "Currency Quake",
-                "Market Status"
-            ],
-            [
-                "Latest Stock Price",
-                "price_all"
+                "Car Data",
+                "Years"
             ],
             [
                 "qaq",
@@ -566,286 +133,72 @@
         "api_list": [
             {
                 "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get exchange coins",
-                "api_description": "Find coins listed on a specific exchange.\nThis endpoint requires the **ultra** plan or higher.",
-                "required_parameters": [
-                    {
-                        "name": "uuid",
-                        "type": "string",
-                        "description": "UUID of the exchange you want to request",
-                        "default": "-zdvbieRdZ"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "offset",
-                        "type": "NUMBER",
-                        "description": "Offset. Used for pagination\n\nDefault value: 0",
-                        "default": "0"
-                    },
-                    {
-                        "name": "search",
-                        "type": "STRING",
-                        "description": "Filter the results by searching for coin names or symbols.",
-                        "default": ""
-                    },
-                    {
-                        "name": "orderBy",
-                        "type": "STRING",
-                        "description": "Index to sort on. Default is 24h volume\n\nDefault value: 24hVolume\nAllowed values:\n24hVolume price numberOfMarkets",
-                        "default": "24hVolume"
-                    },
-                    {
-                        "name": "orderDirection",
-                        "type": "STRING",
-                        "description": "Order in ascending or descending order\n\nDefault value: desc\nAllowed values:\nasc desc",
-                        "default": "desc"
-                    },
-                    {
-                        "name": "referenceCurrencyUuid",
-                        "type": "STRING",
-                        "description": "UUID of reference currency, which rate is used to calculate the volume. Defaults to US Dollar\n\nDefault value: yhjMzLPhuIDl",
-                        "default": "yhjMzLPhuIDl"
-                    },
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "Limit. Used for pagination\n\nDefault value: 50\nSize range: 0-100",
-                        "default": "50"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "status": "str",
-                    "data": {
-                        "stats": {
-                            "total": "int"
-                        },
-                        "coins": [
-                            {
-                                "coinrankingUrl": "str",
-                                "rank": "int",
-                                "uuid": "str",
-                                "symbol": "str",
-                                "name": "str",
-                                "iconUrl": "str",
-                                "numberOfMarkets": "int",
-                                "price": "str",
-                                "btcPrice": "str",
-                                "24hVolume": "str",
-                                "_list_length": 50
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get exchanges index",
-                "api_description": "List of all exchanges currently available on Coinranking, for indexing purposes.\nThis endpoint requires the **ultra** plan or higher.",
+                "tool_name": "Crypto Asset Cold Wallet Create",
+                "api_name": "GetActiveCurrencyList",
+                "api_description": "The Current Active Currency List REST API allows clients to retrieve a list of currently active currencies by sending a GET request to the endpoint. The endpoint should be in the following format:",
                 "required_parameters": [],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "message": "str"
+                    "_id": "str",
+                    "n_id": "int",
+                    "display_name": "str",
+                    "name": "str",
+                    "alt_name": "str",
+                    "network_name": "NoneType",
+                    "short_description": "NoneType",
+                    "decimals": "int",
+                    "display_decimals": "int",
+                    "status": "int",
+                    "deletedAt": "NoneType",
+                    "createdAt": "str",
+                    "updatedAt": "str"
                 }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get search suggestions",
-                "api_description": "Search suggestions are a quick and easy way to find data on coinranking. The endpoint only accepts one parameter; a query. With this query you can find currencies (including fiat), exchanges and markets, by their symbol or name. The response always returns a set of the most prominent coins, exchanges and markets matching your query.",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "query",
-                        "type": "STRING",
-                        "description": "Value to search on",
-                        "default": ""
-                    },
-                    {
-                        "name": "referenceCurrencyUuid",
-                        "type": "STRING",
-                        "description": "UUID of reference currency, in which the coin prices are calculated. Defaults to US Dollar\n\nDefault value: yhjMzLPhuIDl",
-                        "default": "yhjMzLPhuIDl"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "status": "str",
-                    "data": {
-                        "coins": [
-                            {
-                                "uuid": "str",
-                                "iconUrl": "str",
-                                "name": "str",
-                                "symbol": "str",
-                                "price": "str",
-                                "_list_length": 8
-                            }
-                        ],
-                        "exchanges": [
-                            {
-                                "uuid": "str",
-                                "iconUrl": "str",
-                                "name": "str",
-                                "recommended": "bool",
-                                "_list_length": 3
-                            }
-                        ],
-                        "markets": [
-                            {
-                                "uuid": "str",
-                                "baseSymbol": "str",
-                                "quoteSymbol": "str",
-                                "baseUuid": "str",
-                                "quoteUuid": "str",
-                                "exchangeIconUrl": "str",
-                                "exchangeName": "str",
-                                "exchangeUuid": "str",
-                                "recommended": "bool",
-                                "_list_length": 3
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Coinmill Currency",
-                "api_name": "Coinmill",
-                "api_description": "",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "History",
-                "api_description": "Display the currency conversions historical rates for a particular day",
-                "required_parameters": [
-                    {
-                        "name": "date",
-                        "type": "DATE (YYYY-MM-DD)",
-                        "description": "Display the single date you wish to get the historical data from. Eg 2010-12-25",
-                        "default": ""
-                    },
-                    {
-                        "name": "base",
-                        "type": "STRING",
-                        "description": "The currency code you wish to get the historical rates of. Eg, USD",
-                        "default": "USD"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "output",
-                        "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "valid": "bool",
-                    "error": {
-                        "code": "int",
-                        "message": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "Timeframe",
-                "api_description": "Display a currency conversion's historical rates within a given timeframe",
-                "required_parameters": [
-                    {
-                        "name": "end_date",
-                        "type": "DATE (YYYY-MM-DD)",
-                        "description": "Display the start date you wish to get the historical data from. Eg 2010-12-29",
-                        "default": ""
-                    },
-                    {
-                        "name": "base",
-                        "type": "STRING",
-                        "description": "The currency code you want to get the historical data of. Eg, USD",
-                        "default": "USD"
-                    },
-                    {
-                        "name": "start_date",
-                        "type": "DATE (YYYY-MM-DD)",
-                        "description": "Display the start date you wish to get the historical data from. Eg 2010-12-25",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "output",
-                        "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "valid": "bool",
-                    "error": {
-                        "code": "int",
-                        "message": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "Currencies",
-                "api_description": "Gets list of currencies we support",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "output",
-                        "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
-                    }
-                ],
-                "method": "GET",
-                "template_response": "{\"valid\": \"bool\", \"currencies\": {\"AED\": \"str\", \"AFN\": \"str\", \"ALL\": \"str\", \"AMD\": \"str\", \"ANG\": \"str\", \"AOA\": \"str\", \"ARS\": \"str\", \"AUD\": \"str\", \"AWG\": \"str\", \"AZN\": \"str\", \"BAM\": \"str\", \"BBD\": \"str\", \"BCH\": \"str\", \"BDT\": \"str\", \"BGN\": \"str\", \"BHD\": \"str\", \"BIF\": \"str\", \"BMD\": \"str\", \"BND\": \"str\", \"BOB\": \"str\", \"BRL\": \"str\", \"BSD\": \"str\", \"BTC\": \"str\", \"BTG\": \"str\", \"BWP\": \"str\", \"BZD\": \"str\", \"CAD\": \"str\", \"CDF\": \"str\", \"CHF\": \"str\", \"CLP\": \"str\", \"CNH\": \"str\", \"CNY\": \"str\", \"COP\": \"str\", \"CRC\": \"str\", \"CUC\": \"str\", \"CUP\": \"str\", \"CVE\": \"str\", \"CZK\": \"str\", \"DASH\": \"str\", \"DJF\": \"str\", \"DKK\": \"str\", \"DOP\": \"str\", \"DZD\": \"str\", \"EGP\": \"str\", \"EOS\": \"str\", \"ETB\": \"str\", \"ETH\": \"str\", \"EUR\": \"str\", \"FJD\": \"str\", \"GBP\": \"str\", \"GEL\": \"str\", \"GHS\": \"str\", \"GIP\": \"str\", \"GMD\": \"str\", \"GNF\": \"str\", \"GTQ\": \"str\", \"GYD\": \"str\", \"HKD\": \"str\", \"HNL\": \"str\", \"HRK\": \"str\", \"HTG\": \"str\", \"HUF\": \"str\", \"IDR\": \"str\", \"ILS\": \"str\", \"INR\": \"str\", \"IQD\": \"str\", \"IRR\": \"str\", \"ISK\": \"str\", \"JMD\": \"str\", "
             },
             {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "I want to surprise my family with a cryptocurrency-themed dinner. Can you suggest some popular cryptocurrencies and their market details? Also, provide me with the historical rates of Bitcoin for the past week using the CurrencyAPI.net.",
+        "query": "My family and I are planning a vacation to the US and we want to ensure a stable economic environment. Can you fetch the monthly non-manufacturing Purchasing Managers' Index, the 10-Year government bond yields, and the weekly not seasonally adjusted M2 monetary aggregate? Also, provide the list of currently active currencies for our financial planning.",
         "relevant APIs": [
             [
-                "BraveNewCoin",
-                "Asset"
+                "U.S. Economic Indicators",
+                "Non-Manufacturing PMI"
             ],
             [
-                "BraveNewCoin",
-                "Market"
+                "U.S. Economic Indicators",
+                "10-Year Bond Yield"
             ],
             [
-                "CurrencyAPI.net",
-                "Currencies"
+                "U.S. Economic Indicators",
+                "M2 Money Stock Not Adjusted"
             ],
             [
-                "CurrencyAPI.net",
-                "Timeframe"
+                "Crypto Asset Cold Wallet Create",
+                "GetActiveCurrencyList"
             ],
             [
                 "qaq",
@@ -857,77 +210,41 @@
     {
         "api_list": [
             {
-                "category_name": "Finance",
-                "tool_name": "Coinmill Currency",
-                "api_name": "Coinmill",
-                "api_description": "",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Mineable coins",
-                "api_name": "Get coins' data",
-                "api_description": "With this endpoint you can get a collection of all coins.\n\n**API alterations**\n- **Get one coin:** https://api.minerstat.com/v2/coins?list=BTC\n- **Get list of coins:** https://api.minerstat.com/v2/coins?list=BTC,BCH,BSV\n- **Get all coins from one algorithm:** https://api.minerstat.com/v2/coins?algo=SHA-256\n- **Get all coins from multiple algorithms:** https://api.minerstat.com/v2/coins?algo=SHA-256,Scrypt,Ethash",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "id": "str",
-                    "coin": "str",
-                    "name": "str",
-                    "type": "str",
-                    "algorithm": "str",
-                    "network_hashrate": "int",
-                    "difficulty": "int",
-                    "reward": "float",
-                    "reward_unit": "str",
-                    "reward_block": "int",
-                    "price": "float",
-                    "volume": "float",
-                    "updated": "int"
-                }
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Coin Flip",
-                "api_name": "Heads / Tails",
-                "api_description": "Returns an outcome. Either heads or tails",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "I'm conducting research on the health benefits of sports and I need specific cricket articles for reference. Can you provide me with articles that discuss the impact of exercise on overall well-being? Additionally, I'm curious to know which chemical elements are associated with exercising, such as their effects on bone marrow. Thank you!",
+        "query": "What is the current GDP growth rate? Can you also provide me with the monthly consumer price index for the month of August 2023?",
         "relevant APIs": [
             [
-                "Coin Flip",
-                "Heads / Tails"
+                "U.S. Economic Indicators",
+                "GDP Growth"
             ],
             [
-                "BraveNewCoin",
-                "MarketById"
-            ],
-            [
-                "BraveNewCoin",
-                "AssetTicker"
-            ],
-            [
-                "BraveNewCoin",
-                "DailyOHLCV"
+                "U.S. Economic Indicators",
+                "Consumer Price Index"
             ],
             [
                 "qaq",
@@ -939,102 +256,63 @@
     {
         "api_list": [
             {
-                "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get coin modifiers",
-                "api_description": "Get the modifiers of a coin's supply and their balance.\nThis endpoint requires the **ultra** plan or higher.",
+                "category_name": "Data",
+                "tool_name": "GeoAPI",
+                "api_name": "Get City Detail",
+                "api_description": "Get details of a city from its name.",
                 "required_parameters": [
                     {
-                        "name": "uuid",
-                        "type": "string",
-                        "description": "UUID of the coin you want to request the modifiers for",
-                        "default": "Qwsogvtv82FCd"
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
                     }
                 ],
-                "optional_parameters": [
-                    {
-                        "name": "offset",
-                        "type": "NUMBER",
-                        "description": "Offset. Used for pagination\n\nDefault value: 0",
-                        "default": "0"
-                    },
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "Limit. Used for pagination\n\nDefault value: 50\nSize range: 0-100",
-                        "default": "50"
-                    }
-                ],
+                "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "status": "str",
-                    "data": {
-                        "total": "int",
-                        "modifiers": "empty list"
-                    }
+                    "count": "int",
+                    "message": "str",
+                    "cities": "empty list"
                 }
             },
             {
-                "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get coin price history",
-                "api_description": "Coinranking keeps track of prices on all listed assets. The history endpoint lists prices and their timestamp for the requested time period, useful for making a chart.",
+                "category_name": "Data",
+                "tool_name": "GeoAPI",
+                "api_name": "Get Cities in a Country",
+                "api_description": "Get cities in a country based on population.",
                 "required_parameters": [
                     {
-                        "name": "uuid",
-                        "type": "string",
-                        "description": "UUID of the coin you want to request",
-                        "default": "Qwsogvtv82FCd"
+                        "name": "country_iso2",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
                     }
                 ],
                 "optional_parameters": [
                     {
-                        "name": "referenceCurrencyUuid",
-                        "type": "STRING",
-                        "description": "UUID of reference currency, in which all the prices are calculated. Defaults to US Dollar\n\nDefault value: yhjMzLPhuIDl",
-                        "default": "yhjMzLPhuIDl"
+                        "name": "page_size",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": 20
                     },
                     {
-                        "name": "timePeriod",
-                        "type": "STRING",
-                        "description": "Timeperiod where the change and history are based on\n\nDefault value: 24h\nAllowed values:\n3h 24h 7d 30d 3m 1y 3y 5y",
-                        "default": "24h"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "status": "str",
-                    "data": {
-                        "change": "str",
-                        "history": [
-                            {
-                                "price": "str",
-                                "timestamp": "int",
-                                "_list_length": 288
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get market",
-                "api_description": "Find information on a specific market listed on Coinranking.\nThis endpoint requires the **ultra** plan or higher.",
-                "required_parameters": [
+                        "name": "population_min",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": 0
+                    },
                     {
-                        "name": "uuid",
-                        "type": "string",
-                        "description": "Uuid of the market you want to request",
-                        "default": "MP77r-vKf4"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "referenceCurrencyUuid",
+                        "name": "next_token",
                         "type": "STRING",
-                        "description": "Uuid of reference currency, in which all the prices are calculated. Defaults to US Dollar\n\nDefault value: yhjMzLPhuIDl",
-                        "default": "yhjMzLPhuIDl"
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "population_max",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": 100000000
                     }
                 ],
                 "method": "GET",
@@ -1043,112 +321,186 @@
                 }
             },
             {
-                "category_name": "Finance",
-                "tool_name": "Coinmill Currency",
-                "api_name": "Coinmill",
-                "api_description": "",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "Convert",
-                "api_description": "Convert a custom amount value from one currency to another",
+                "category_name": "Data",
+                "tool_name": "GeoAPI",
+                "api_name": "Get Country Details",
+                "api_description": "Get details of country from its name and prefix.",
                 "required_parameters": [
                     {
-                        "name": "to",
+                        "name": "name",
                         "type": "STRING",
-                        "description": "Currency code of the currency you want to convert to. Eg, USD if you want to convert GBP to USD",
-                        "default": ""
-                    },
-                    {
-                        "name": "amount",
-                        "type": "STRING",
-                        "description": "The value you want to convert. Eg 10.99 or 15",
-                        "default": ""
-                    },
-                    {
-                        "name": "from",
-                        "type": "STRING",
-                        "description": "Currency code of the currency you want to convert from. Eg, GBP if you want to convert GBP to USD",
+                        "description": "",
                         "default": ""
                     }
                 ],
                 "optional_parameters": [
                     {
-                        "name": "output",
-                        "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
+                        "name": "prefix_match",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "false"
                     }
                 ],
                 "method": "GET",
                 "template_response": {
-                    "valid": "bool",
-                    "error": {
-                        "code": "int",
-                        "message": "str"
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Emotional Poem",
+                "api_name": "getPoem",
+                "api_description": "/app/api/getPoem\nmethod:only: [\"cos\", \"dot\", \"cross\", \"euler\"]\ntype:only: [\"max\", \"min\"]\ndelight:0.0-1.0\nanger:0.0-1.0\nsorrow:0.0-1.0\npleasure:0.0-1.0",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "type:only: [\\\"max\\\", \\\"min\\\"]\n",
+                        "default": "max"
+                    },
+                    {
+                        "name": "method",
+                        "type": "STRING",
+                        "description": "only: [\\\"cos\\\", \\\"dot\\\", \\\"cross\\\", \\\"euler\\\"]\ndefault:\\\"cos\\\"",
+                        "default": "cos"
+                    },
+                    {
+                        "name": "pleasure",
+                        "type": "NUMBER",
+                        "description": "pleasure:0.0-1.0\ndefault:0.0",
+                        "default": "0.01"
+                    },
+                    {
+                        "name": "delight",
+                        "type": "NUMBER",
+                        "description": "delight:0.0-1.0\ndefault:0.0",
+                        "default": "0.0"
+                    },
+                    {
+                        "name": "sorrow",
+                        "type": "NUMBER",
+                        "description": "sorrow:0.0-1.0\ndefault:0.0",
+                        "default": "0.1"
+                    },
+                    {
+                        "name": "anger",
+                        "type": "NUMBER",
+                        "description": "anger:0.0-1.0\ndefault:0.0",
+                        "default": "0.0"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "record": {
+                        "poem": {
+                            "type": "str",
+                            "value": "str"
+                        },
+                        "poemId": {
+                            "type": "str",
+                            "value": "str"
+                        },
+                        "auther": {
+                            "type": "str",
+                            "value": "str"
+                        },
+                        "$revision": {
+                            "type": "str",
+                            "value": "str"
+                        },
+                        "$id": {
+                            "type": "str",
+                            "value": "str"
+                        }
                     }
                 }
             },
             {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "Rates",
-                "api_description": "Get live currency conversion rates of a given currency",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "output",
-                        "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
-                    },
-                    {
-                        "name": "base",
-                        "type": "STRING",
-                        "description": "Change the base currency. Eg GBP or BTC",
-                        "default": "USD"
-                    }
-                ],
-                "method": "GET",
-                "template_response": "{\"valid\": \"bool\", \"updated\": \"int\", \"base\": \"str\", \"rates\": {\"AED\": \"float\", \"AFN\": \"float\", \"ALL\": \"float\", \"AMD\": \"float\", \"ANG\": \"float\", \"AOA\": \"float\", \"ARS\": \"float\", \"AUD\": \"float\", \"AWG\": \"float\", \"AZN\": \"float\", \"BAM\": \"float\", \"BBD\": \"float\", \"BCH\": \"float\", \"BDT\": \"float\", \"BGN\": \"float\", \"BHD\": \"float\", \"BIF\": \"float\", \"BMD\": \"int\", \"BND\": \"float\", \"BOB\": \"float\", \"BRL\": \"float\", \"BSD\": \"float\", \"BTC\": \"float\", \"BTG\": \"float\", \"BWP\": \"float\", \"BZD\": \"float\", \"CAD\": \"float\", \"CDF\": \"float\", \"CHF\": \"float\", \"CLP\": \"float\", \"CNH\": \"float\", \"CNY\": \"float\", \"COP\": \"float\", \"CRC\": \"float\", \"CUC\": \"int\", \"CUP\": \"float\", \"CVE\": \"float\", \"CZK\": \"float\", \"DASH\": \"float\", \"DJF\": \"float\", \"DKK\": \"float\", \"DOP\": \"float\", \"DZD\": \"float\", \"EGP\": \"float\", \"EOS\": \"float\", \"ETB\": \"float\", \"ETH\": \"float\", \"EUR\": \"float\", \"FJD\": \"float\", \"GBP\": \"float\", \"GEL\": \"float\", \"GHS\": \"float\", \"GIP\": \"float\", \"GMD\": \"float\", \"GNF\": \"float\", \"GTQ\": \"float\", \"GYD\": \"float\", \"HKD\": \"float\", \"HNL\": \"float\""
-            },
-            {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "History",
-                "api_description": "Display the currency conversions historical rates for a particular day",
+                "category_name": "Data",
+                "tool_name": "Vibrant DNS",
+                "api_name": "Get DNS Records",
+                "api_description": "Get a domains DNS records",
                 "required_parameters": [
                     {
-                        "name": "date",
-                        "type": "DATE (YYYY-MM-DD)",
-                        "description": "Display the single date you wish to get the historical data from. Eg 2010-12-25",
-                        "default": ""
-                    },
-                    {
-                        "name": "base",
+                        "name": "domain",
                         "type": "STRING",
-                        "description": "The currency code you wish to get the historical rates of. Eg, USD",
-                        "default": "USD"
+                        "description": "",
+                        "default": "rapidapi.com"
                     }
                 ],
                 "optional_parameters": [
                     {
-                        "name": "output",
+                        "name": "record_type",
                         "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
+                        "description": "Can be a comma seperated string with any of the following options:\na\nns\nmx\ntxt\ncname\n\nTo request multiple record types sample:\na,mx,cname",
+                        "default": "a,mx"
+                    },
+                    {
+                        "name": "response_type_seperator",
+                        "type": "STRING",
+                        "description": "When response_type is set to target, you can set the response_type_seperator here. Default is \\\\\\\\\\\\\\\\n (newline) but you can do comma or pipe delimited if you want.",
+                        "default": ","
+                    },
+                    {
+                        "name": "response_type",
+                        "type": "STRING",
+                        "description": "If response_type = target, will respond with either ip, txt or target of the requested dns record type. Useful when used in conjunction with response_type_seperator",
+                        "default": "target"
                     }
                 ],
                 "method": "GET",
                 "template_response": {
-                    "valid": "bool",
-                    "error": {
-                        "code": "int",
-                        "message": "str"
+                    "a": "str",
+                    "mx": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "All information about IP",
+                "api_name": "Get IP information",
+                "api_description": "Get IP information",
+                "required_parameters": [
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "188.68.223.26"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "en"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "data": {
+                        "query": "str",
+                        "continent": "str",
+                        "continentCode": "str",
+                        "country": "str",
+                        "countryCode": "str",
+                        "currency": "str",
+                        "regionName": "str",
+                        "city": "str",
+                        "timezone": "str",
+                        "mobile": "bool",
+                        "proxy": "bool",
+                        "lat": "float",
+                        "lon": "float",
+                        "org": "str",
+                        "as": "str",
+                        "asname": "str",
+                        "isp": "str",
+                        "zip": "str",
+                        "region": "str",
+                        "district": "str",
+                        "hosting": "bool"
                     }
                 }
             },
@@ -1156,24 +508,38 @@
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "I'm planning a trip to Europe and I need to convert 1000 USD to EUR. Can you please provide me with the current exchange rate using CurrencyAPI.net? Additionally, I would like to know the historical price data for Bitcoin and Ethereum on Coinranking for the past month.",
+        "query": "I'm organizing a company event and I want to gather information about the IP addresses of the attendees. Can you provide me with the IP information of the attendees, including their country, region, and city? Additionally, recommend some electric vehicle charging stations near the event venue.",
         "relevant APIs": [
             [
-                "CurrencyAPI.net",
-                "Convert"
+                "All information about IP",
+                "Get IP information"
             ],
             [
-                "Coinranking",
-                "Get coin price history"
+                "Electric Vehicle Charging Stations",
+                "GetByCordsAdv"
             ],
             [
                 "qaq",
@@ -1185,226 +551,103 @@
     {
         "api_list": [
             {
-                "category_name": "Video_Images",
-                "tool_name": "TikTok",
-                "api_name": "tikapi",
-                "api_description": "test",
+                "category_name": "Data",
+                "tool_name": "Historical Figures by API-Ninjas",
+                "api_name": "/v1/historicalfigures",
+                "api_description": "API Ninjas Historical Figures API endpoint. Returns a list of up to 10 people that match the search parameters. Either **name** and/or **title** parameter is required.",
                 "required_parameters": [],
                 "optional_parameters": [
                     {
-                        "name": "tiktok",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ","
-                    }
-                ],
-                "method": "GET"
-            },
-            {
-                "category_name": "Video_Images",
-                "tool_name": "dagpi",
-                "api_name": "Blur",
-                "api_description": "Blur Image",
-                "required_parameters": [
-                    {
-                        "name": "url",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "https://picsum.photos/400/300"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Video_Images",
-                "tool_name": "Pattern Monster",
-                "api_name": "Get SVG Pattern",
-                "api_description": "Get SVG Pattern",
-                "required_parameters": [],
-                "optional_parameters": [
+                        "name": "offset",
+                        "type": "NUMBER",
+                        "description": "number of results to offset pagination.",
+                        "default": ""
+                    },
                     {
                         "name": "name",
                         "type": "STRING",
-                        "description": "Name of the pattern specified at https://pattern.monster/api\n(Default: Random name if not specified)",
-                        "default": "waves-1"
-                    },
-                    {
-                        "name": "scale",
-                        "type": "NUMBER",
-                        "description": "0.5 to Max Scale of the pattern specified at https://pattern.monster/api\n(Default: Random scale if not specified)",
-                        "default": "2"
-                    },
-                    {
-                        "name": "moveLeft",
-                        "type": "NUMBER",
-                        "description": "0 - 100 ( Default: 0 )",
-                        "default": "0"
-                    },
-                    {
-                        "name": "angle",
-                        "type": "NUMBER",
-                        "description": "0 - 360 (Default: Random angle if not specified)",
-                        "default": "100"
-                    },
-                    {
-                        "name": "strokeJoin",
-                        "type": "STRING",
-                        "description": "round or square \n(Default: round)\nValid only for patterns with Stroke Join as specified at https://pattern.monster/api",
-                        "default": "round"
-                    },
-                    {
-                        "name": "moveTop",
-                        "type": "NUMBER",
-                        "description": "0 - 100 ( Default: 0 )",
-                        "default": "0"
-                    },
-                    {
-                        "name": "colors",
-                        "type": "STRING",
-                        "description": "2 to Max Colors of the pattern specified at https://pattern.monster/api\nFormat: Color1|Color2|Color3|Color4|Color5\nAt least, two colors are required if specified\n(Default: Random colors if not specified)\nAccepted color values: \nCSS colors ( eg. aqua, red )\nRGB or RGBA colors ( eg. rgb(59,130,246), rgba(234,179,8,0.7) )\nHSL or HSLA colors ( eg. hsl(300, 76%, 72%), hsla(147,50%,47%,0.5) )\nHEX colors without the hash symbol ( eg. E11D48, 2563eb )",
-                        "default": "E11D48|rgb(234,179,8)"
-                    },
-                    {
-                        "name": "spacing",
-                        "type": "STRING",
-                        "description": "Horizontal Spacing | Vertical Spacing\n(Default: 0|0)\nMax Spacing of the pattern specified at https://pattern.monster/api\nValid only for patterns with Max Spacing other than 0|0\n",
-                        "default": "0|0"
-                    },
-                    {
-                        "name": "stroke",
-                        "type": "NUMBER",
-                        "description": "0.5 to Max Stroke of the pattern specified at https://pattern.monster/api\n(Default: Random stroke if not specified)\nValid only for patterns with Mode as Stroke",
-                        "default": "3"
+                        "description": "name of the person to search. Includes partial results (e.g. julius will match Julius Caesar).",
+                        "default": "julius caesar"
                     }
                 ],
                 "method": "GET",
                 "template_response": {
-                    "input": {
-                        "name": "str",
-                        "colors": [
+                    "name": "str",
+                    "title": "str",
+                    "info": {
+                        "born": "str",
+                        "died": "str",
+                        "years": "str",
+                        "awards": "str",
+                        "office": [
                             "list of str with length 2"
                         ],
-                        "stroke": "str",
-                        "scale": "str",
-                        "spacing": [
+                        "parents": [
                             "list of str with length 2"
                         ],
-                        "angle": "str",
-                        "strokeJoin": "str",
-                        "moveLeft": "str",
-                        "moveTop": "str"
-                    },
-                    "output": {
-                        "name": "str",
-                        "colors": [
+                        "spouses": "str",
+                        "children": [
+                            "list of str with length 3"
+                        ],
+                        "partners": "str",
+                        "conflicts": [
+                            "list of str with length 32"
+                        ],
+                        "occupation": [
                             "list of str with length 2"
                         ],
-                        "stroke": "str",
-                        "scale": "str",
-                        "spacing": [
+                        "notable_work": [
                             "list of str with length 2"
                         ],
-                        "angle": "str",
-                        "strokeJoin": "str",
-                        "moveLeft": "str",
-                        "moveTop": "str"
-                    },
-                    "svg": "str",
-                    "status": "int"
-                }
-            },
-            {
-                "category_name": "Video_Images",
-                "tool_name": "Image",
-                "api_name": "wanted_image_wanted__get",
-                "api_description": " ",
-                "required_parameters": [
-                    {
-                        "name": "url",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
+                        "resting_place": "str",
+                        "cause_of_death": "str"
                     }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "message": "str",
-                    "link": "str"
-                }
-            },
-            {
-                "category_name": "Video_Images",
-                "tool_name": "Image",
-                "api_name": "sat_image_satan__get",
-                "api_description": " ",
-                "required_parameters": [
-                    {
-                        "name": "url",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "message": "str",
-                    "link": "str"
-                }
-            },
-            {
-                "category_name": "Video_Images",
-                "tool_name": "Image",
-                "api_name": "get_thought_image_thoughtimage__get",
-                "api_description": " ",
-                "required_parameters": [
-                    {
-                        "name": "url",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "text",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "message": "str",
-                    "link": "str"
                 }
             },
             {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "I am planning a surprise birthday party for my sister and want to create personalized invitations. Can you blur the image of her favorite actress from the URL 'https://example.com/actress.jpg'? Additionally, I need a random SVG pattern with the name 'dots-3' and a scale of 1.5 for decorating the party venue.",
+        "query": "My friends and I are organizing a car show and we need a diverse range of cars. Can you suggest some popular cars from different years and models? Additionally, provide us with some interesting facts about historical figures who had a passion for cars.",
         "relevant APIs": [
             [
-                "dagpi",
-                "Blur"
+                "Car Data",
+                "Cars"
             ],
             [
-                "Pattern Monster",
-                "Get SVG Pattern"
+                "Car Data",
+                "Years"
+            ],
+            [
+                "Car Data",
+                "Types"
+            ],
+            [
+                "Historical Figures by API-Ninjas",
+                "/v1/historicalfigures"
             ],
             [
                 "qaq",
@@ -1416,462 +659,169 @@
     {
         "api_list": [
             {
-                "category_name": "Data",
-                "tool_name": "Weather",
-                "api_name": "Current Weather Data of a location.",
-                "api_description": "Returns the current (most recent) weather observation of a given location",
-                "required_parameters": [
-                    {
-                        "name": "lat",
-                        "type": "NUMBER",
-                        "description": "Latitude",
-                        "default": "-78.5"
-                    },
-                    {
-                        "name": "lon",
-                        "type": "NUMBER",
-                        "description": "Longitude",
-                        "default": "38.5"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "lang",
-                        "type": "ENUM",
-                        "description": "Language",
-                        "default": ""
-                    },
-                    {
-                        "name": "units",
-                        "type": "ENUM",
-                        "description": "I = Imperial, S = Scientific, M = Metric (Default)",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "count": "int",
-                    "data": [
-                        {
-                            "app_temp": "float",
-                            "aqi": "int",
-                            "city_name": "str",
-                            "clouds": "int",
-                            "country_code": "str",
-                            "datetime": "str",
-                            "dewpt": "int",
-                            "dhi": "int",
-                            "dni": "int",
-                            "elev_angle": "float",
-                            "ghi": "int",
-                            "gust": "float",
-                            "h_angle": "NoneType",
-                            "lat": "float",
-                            "lon": "float",
-                            "ob_time": "str",
-                            "pod": "str",
-                            "precip": "int",
-                            "pres": "float",
-                            "rh": "int",
-                            "slp": "float",
-                            "snow": "int",
-                            "solar_rad": "int",
-                            "sources": [
-                                "list of str with length 1"
-                            ],
-                            "state_code": "str",
-                            "station": "str",
-                            "sunrise": "str",
-                            "sunset": "str",
-                            "temp": "float",
-                            "timezone": "str",
-                            "ts": "int",
-                            "uv": "int",
-                            "vis": "int",
-                            "weather": {
-                                "description": "str",
-                                "code": "int",
-                                "icon": "str"
-                            },
-                            "wind_cdir": "str",
-                            "wind_cdir_full": "str",
-                            "wind_dir": "int",
-                            "wind_spd": "float",
-                            "_list_length": 1
-                        }
-                    ]
-                }
+                "category_name": "Social",
+                "tool_name": "Marryme",
+                "api_name": "Alexander",
+                "api_description": "123",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
             },
             {
-                "category_name": "Data",
-                "tool_name": "Weather",
-                "api_name": "120 Hour Forecast",
-                "api_description": "Returns a forecast for up to 120 hours in the future (default 48 hours)",
+                "category_name": "Social",
+                "tool_name": "TikTok Bulletproof",
+                "api_name": "/user-feed",
+                "api_description": "Retrieves 30 latest feed items from TikTok account, by username",
                 "required_parameters": [
                     {
-                        "name": "lat",
-                        "type": "NUMBER",
-                        "description": "Latitude",
-                        "default": "38.5"
-                    },
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "realmadrid"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"feed\": [{\"id\": \"str\", \"desc\": \"str\", \"createTime\": \"str\", \"scheduleTime\": \"int\", \"video\": {\"id\": \"str\", \"height\": \"int\", \"width\": \"int\", \"duration\": \"int\", \"ratio\": \"str\", \"cover\": \"str\", \"originCover\": \"str\", \"dynamicCover\": \"str\", \"playAddr\": \"str\", \"downloadAddr\": \"str\", \"shareCover\": [\"list of str with length 1\"], \"reflowCover\": \"str\", \"bitrate\": \"int\", \"encodedType\": \"str\", \"format\": \"str\", \"videoQuality\": \"str\", \"encodeUserTag\": \"str\", \"codecType\": \"str\", \"definition\": \"str\", \"subtitleInfos\": \"empty list\", \"zoomCover\": {\"240\": \"str\", \"480\": \"str\", \"720\": \"str\", \"960\": \"str\"}, \"volumeInfo\": {\"Loudness\": \"float\", \"Peak\": \"int\"}, \"bitrateInfo\": [{\"GearName\": \"str\", \"Bitrate\": \"int\", \"QualityType\": \"int\", \"PlayAddr\": {\"Uri\": \"str\", \"UrlList\": [\"list of str with length 2\"], \"DataSize\": \"str\", \"UrlKey\": \"str\", \"FileHash\": \"str\", \"FileCs\": \"str\"}, \"CodecType\": \"str\", \"_list_length\": 3}]}, \"author\": \"str\", \"music\": {\"id\": \"str\", \"title\": \"str\", \"playUrl\": \"str\", \"coverLarge\": \"str\", \"c"
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "TikTok Bulletproof",
+                "api_name": "/user-info",
+                "api_description": "Retrieve TikTok user info by username",
+                "required_parameters": [
                     {
-                        "name": "lon",
-                        "type": "NUMBER",
-                        "description": "Longitude",
-                        "default": "-78.5"
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "therock"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"user\": {\"id\": \"str\", \"shortId\": \"str\", \"uniqueId\": \"str\", \"nickname\": \"str\", \"avatarLarger\": \"str\", \"avatarMedium\": \"str\", \"avatarThumb\": \"str\", \"signature\": \"str\", \"createTime\": \"int\", \"verified\": \"bool\", \"secUid\": \"str\", \"ftc\": \"bool\", \"relation\": \"int\", \"openFavorite\": \"bool\", \"bioLink\": {\"link\": \"str\", \"risk\": \"int\"}, \"commentSetting\": \"int\", \"commerceUserInfo\": {\"commerceUser\": \"bool\"}, \"duetSetting\": \"int\", \"stitchSetting\": \"int\", \"privateAccount\": \"bool\", \"secret\": \"bool\", \"isADVirtual\": \"bool\", \"roomId\": \"str\", \"uniqueIdModifyTime\": \"int\", \"ttSeller\": \"bool\", \"region\": \"str\", \"downloadSetting\": \"int\", \"profileTab\": {\"showMusicTab\": \"bool\", \"showQuestionTab\": \"bool\", \"showPlayListTab\": \"bool\"}, \"followingVisibility\": \"int\", \"recommendReason\": \"str\", \"nowInvitationCardUrl\": \"str\", \"nickNameModifyTime\": \"int\", \"isEmbedBanned\": \"bool\", \"canExpPlaylist\": \"bool\", \"profileEmbedPermission\": \"int\", \"language\": \"str\", \"extraInfo\": {\"statusCode\": \"int\"}}, \"stats\": {\"followerCount\": \"int"
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Instagram_v13",
+                "api_name": "User Data",
+                "api_description": "Get instagram user info by username.",
+                "required_parameters": [
+                    {
+                        "name": "username",
+                        "type": "string",
+                        "description": "",
+                        "default": "instagram"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Instagram_v13",
+                "api_name": "User Tagged Posts",
+                "api_description": "Get instagram user tagged posts by user id.",
+                "required_parameters": [
+                    {
+                        "name": "userid",
+                        "type": "string",
+                        "description": "",
+                        "default": "25025320"
                     }
                 ],
                 "optional_parameters": [
                     {
-                        "name": "lang",
-                        "type": "ENUM",
-                        "description": "Language for weather description",
-                        "default": ""
-                    },
-                    {
-                        "name": "hours",
-                        "type": "STRING",
-                        "description": "Limit number of forecast hours",
-                        "default": "48"
-                    },
-                    {
-                        "name": "units",
-                        "type": "ENUM",
-                        "description": "I = Imperial, S = Scientific, M = Metric (Default)",
+                        "name": "end_cursor",
+                        "type": "string",
+                        "description": "",
                         "default": ""
                     }
                 ],
                 "method": "GET"
             },
             {
-                "category_name": "Data",
-                "tool_name": "Weather",
-                "api_name": "Severe Weather Alerts",
-                "api_description": "Get servere weather alerts from local meteorlogical agencies (US, EU, and Isreal supported )",
+                "category_name": "Social",
+                "tool_name": "Instagram_v13",
+                "api_name": "User Highlights List",
+                "api_description": "Get instagram user highlights list by user id.",
                 "required_parameters": [
                     {
-                        "name": "lat",
-                        "type": "NUMBER",
-                        "description": "Latitude",
-                        "default": "38.5"
-                    },
-                    {
-                        "name": "lon",
-                        "type": "NUMBER",
-                        "description": "Longitude",
-                        "default": "-78.5"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "alerts": "empty list",
-                    "city_name": "str",
-                    "country_code": "str",
-                    "lat": "float",
-                    "lon": "float",
-                    "state_code": "str",
-                    "timezone": "str"
-                }
-            },
-            {
-                "category_name": "Sports",
-                "tool_name": "Live Sports Odds",
-                "api_name": "/v4/sports/{sport}/scores",
-                "api_description": "Returns list of live and upcoming games for a given sport, and optionally recently completed games. Live and completed games will contain scores. **Currently in beta** and only available for selected sports. For more info, see the [list of available sports](https://the-odds-api.com/sports-odds-data/sports-apis.html)",
-                "required_parameters": [
-                    {
-                        "name": "sport",
-                        "type": "STRING",
-                        "description": "sport key for which to return games and odds",
-                        "default": "americanfootball_nfl"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "daysFrom",
-                        "type": "NUMBER",
-                        "description": "The number of days in the past from which to return completed games. Valid values are integers from `1` to `3`. If this field is missing, only live and upcoming games are returned.",
-                        "default": 3
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "id": "str",
-                    "sport_key": "str",
-                    "sport_title": "str",
-                    "commence_time": "str",
-                    "completed": "bool",
-                    "home_team": "str",
-                    "away_team": "str",
-                    "scores": "NoneType",
-                    "last_update": "NoneType"
-                }
-            },
-            {
-                "category_name": "Sports",
-                "tool_name": "Live Sports Odds",
-                "api_name": "/v4/sports",
-                "api_description": "Returns a list of available sports and tournaments. Use the `sports_key` in requests for /odds and /scores endpoints.",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "all",
-                        "type": "BOOLEAN",
-                        "description": "When excluded, only recently updated (in-season) sports appear. Include this paramter to see all available sports",
-                        "default": "true"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "key": "str",
-                    "group": "str",
-                    "title": "str",
-                    "description": "str",
-                    "active": "bool",
-                    "has_outrights": "bool"
-                }
-            },
-            {
-                "category_name": "Sports",
-                "tool_name": "Live Sports Odds",
-                "api_name": "/v4/sports/{sport}/odds",
-                "api_description": "Returns list of live and upcoming games for a given sport, showing bookmaker odds for the specified region and markets. Set the `sport` to a `sport_key` from the /sports endpoint. Alternatively if `sport=upcoming`, it will return a list of the next 8 upcoming games across all sports, as well as any live games. For more info, see [list of available sports](https://the-odds-api.com/sports-odds-data/sports-apis.html) and [list of available bookmakers](https://the-odds-api.com/sports-odds-data/bookmaker-apis.html).",
-                "required_parameters": [
-                    {
-                        "name": "sport",
-                        "type": "STRING",
-                        "description": "sport key for which to return games and odds",
-                        "default": "upcoming"
-                    },
-                    {
-                        "name": "regions",
-                        "type": "STRING",
-                        "description": "Determines which bookmakers appear in the response. Can be a comma delimited list of regions. Each region will count as 1 request against the usage quota for each market. Most use cases will only need to specify one region. For a list of bookmakers by region, see https://the-odds-api.com/sports-odds-data/bookmaker-apis.html",
-                        "default": "us"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "oddsFormat",
-                        "type": "STRING",
-                        "description": "Format of returned odds.",
-                        "default": "decimal"
-                    },
-                    {
-                        "name": "markets",
-                        "type": "STRING",
-                        "description": "The odds market to return. Can be a comma delimited list of odds markets. Defaults to h2h (head to head / moneyline). Outrights only avaialable for select sports. Note each market counts as 1 request against the usage quota.",
-                        "default": "h2h,spreads"
-                    },
-                    {
-                        "name": "dateFormat",
-                        "type": "STRING",
-                        "description": "Format of returned timestamps. Can be iso (ISO8601) or unix timestamp (seconds since epoch)",
-                        "default": "iso"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "id": "str",
-                    "sport_key": "str",
-                    "sport_title": "str",
-                    "commence_time": "str",
-                    "home_team": "str",
-                    "away_team": "str",
-                    "bookmakers": [
-                        {
-                            "key": "str",
-                            "title": "str",
-                            "last_update": "str",
-                            "markets": [
-                                {
-                                    "key": "str",
-                                    "last_update": "str",
-                                    "outcomes": [
-                                        {
-                                            "name": "str",
-                                            "price": "float",
-                                            "_list_length": 2
-                                        }
-                                    ],
-                                    "_list_length": 1
-                                }
-                            ],
-                            "_list_length": 1
-                        }
-                    ]
-                }
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "GeoDB Cities",
-                "api_name": "Locales",
-                "api_description": "Get all known locales.",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "hateoasMode",
-                        "type": "BOOLEAN",
-                        "description": "Include HATEOAS-style links in results",
-                        "default": ""
-                    },
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "The maximum number of results to retrieve",
-                        "default": ""
-                    },
-                    {
-                        "name": "offset",
-                        "type": "NUMBER",
-                        "description": "The zero-ary offset index into the results",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "GeoDB Cities",
-                "api_name": "Languages",
-                "api_description": "Get all supported languages",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "hateoasMode",
-                        "type": "BOOLEAN",
-                        "description": "Include HATEOAS-style links in results",
-                        "default": ""
-                    },
-                    {
-                        "name": "offset",
-                        "type": "NUMBER",
-                        "description": "The zero-ary offset index into the results",
-                        "default": ""
-                    },
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "The maximum number of results to retrieve",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "GeoDB Cities",
-                "api_name": "Place Details",
-                "api_description": "Get the details for a specific place, including location coordinates, population, and elevation above sea-level (if available).",
-                "required_parameters": [
-                    {
-                        "name": "placeId",
+                        "name": "userid",
                         "type": "string",
                         "description": "",
-                        "default": ""
+                        "default": "25025320"
                     }
                 ],
-                "optional_parameters": [
-                    {
-                        "name": "asciiMode",
-                        "type": "BOOLEAN",
-                        "description": "Display results using ASCII characters",
-                        "default": ""
-                    },
-                    {
-                        "name": "languageCode",
-                        "type": "STRING",
-                        "description": "Display results in this language",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
+                "optional_parameters": [],
+                "method": "GET"
             },
             {
-                "category_name": "Food",
-                "tool_name": "The Cocktail DB",
-                "api_name": "List of Cocktails",
-                "api_description": "This endpoint responds with a list of cocktails that includes their names and images, as well as their IDs, which must be provided in the \"Detailed Cocktail Recipe by ID\" endpoint to receive the detailed cocktail recipe.",
+                "category_name": "Social",
+                "tool_name": "YouTooSound",
+                "api_name": "https://www.youtoosound.com/sound",
+                "api_description": "https://www.youtoosound.com/sound",
                 "required_parameters": [],
                 "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "id": "str",
-                    "title": "str",
-                    "difficulty": "str",
-                    "image": "str"
-                }
+                "method": "GET"
             },
             {
-                "category_name": "Food",
-                "tool_name": "The Cocktail DB",
-                "api_name": "Detailed Cocktail Recipe by ID",
-                "api_description": "Get Cocktail by ID",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "string",
-                        "description": "",
-                        "default": "45"
-                    }
-                ],
+                "category_name": "Social",
+                "tool_name": "YouTooSound",
+                "api_name": "YouTooSound",
+                "api_description": "YouTooSound Chiede di poter usare la tua mail e Nome",
+                "required_parameters": [],
                 "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "id": "str",
-                    "title": "str",
-                    "difficulty": "str",
-                    "portion": "str",
-                    "time": "str",
-                    "description": "str",
-                    "ingredients": [
-                        "list of str with length 5"
-                    ],
-                    "method": [
-                        {
-                            "Step 1": "str",
-                            "_list_length": 3
-                        }
-                    ],
-                    "image": "str"
-                }
+                "method": "GET"
             },
             {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "My family and I are planning a beach picnic this weekend. Can you provide me with any severe weather alerts for our location? Also, suggest some cocktails and a recipe for a refreshing drink.",
+        "query": "I'm a content creator and I need some inspiration. Retrieve the latest feed items from popular TikTok accounts in the entertainment industry. Additionally, provide me with the user info and tagged posts of famous Instagram influencers. Also, suggest some sound effects from YouTooSound that can be used in my videos.",
         "relevant APIs": [
             [
-                "Weather",
-                "Severe Weather Alerts"
+                "TikTok Bulletproof",
+                "/user-feed"
             ],
             [
-                "The Cocktail DB",
-                "List of Cocktails"
+                "TikTok Bulletproof",
+                "/user-info"
             ],
             [
-                "The Cocktail DB",
-                "Detailed Cocktail Recipe by ID"
+                "Instagram_v13",
+                "User Data"
+            ],
+            [
+                "Instagram_v13",
+                "User Tagged Posts"
+            ],
+            [
+                "YouTooSound",
+                "https://www.youtoosound.com/sound"
             ],
             [
                 "qaq",
@@ -1883,593 +833,49 @@
     {
         "api_list": [
             {
-                "category_name": "Sports",
-                "tool_name": "Free NBA",
-                "api_name": "Get All Players",
-                "api_description": "This endpoint retrieves all players from all seasons.",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "page",
-                        "type": "STRING",
-                        "description": "The page number, used for pagination.",
-                        "default": "0"
-                    },
-                    {
-                        "name": "per_page",
-                        "type": "STRING",
-                        "description": "The number of results returned per call, used for pagination.",
-                        "default": "25"
-                    },
-                    {
-                        "name": "search",
-                        "type": "STRING",
-                        "description": "Used to filter players based on their name. For example, ?search=davis will return players that have 'davis' in their first or last name.",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "data": [
-                        {
-                            "id": "int",
-                            "first_name": "str",
-                            "height_feet": "NoneType",
-                            "height_inches": "NoneType",
-                            "last_name": "str",
-                            "position": "str",
-                            "team": {
-                                "id": "int",
-                                "abbreviation": "str",
-                                "city": "str",
-                                "conference": "str",
-                                "division": "str",
-                                "full_name": "str",
-                                "name": "str"
-                            },
-                            "weight_pounds": "NoneType",
-                            "_list_length": 25
-                        }
-                    ],
-                    "meta": {
-                        "total_pages": "int",
-                        "current_page": "int",
-                        "next_page": "int",
-                        "per_page": "int",
-                        "total_count": "int"
-                    }
-                }
-            },
-            {
-                "category_name": "Sports",
-                "tool_name": "Free NBA",
-                "api_name": "Get All Games",
-                "api_description": "This endpoint retrieves all games.  Seasons are represented by the year they began. For example, 2018 represents season 2018-2019.",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "page",
-                        "type": "STRING",
-                        "description": "The page number, used for pagination.",
-                        "default": "0"
-                    },
-                    {
-                        "name": "per_page",
-                        "type": "STRING",
-                        "description": "The number of results returned per call, used for pagination.",
-                        "default": "25"
-                    },
-                    {
-                        "name": "team_ids",
-                        "type": "STRING",
-                        "description": "An array of team_ids",
-                        "default": ""
-                    },
-                    {
-                        "name": "date",
-                        "type": "STRING",
-                        "description": "An array of dates formatted in 'YYYY-MM-DD'",
-                        "default": ""
-                    },
-                    {
-                        "name": "Seasons",
-                        "type": "STRING",
-                        "description": "An array of seasons",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "data": [
-                        {
-                            "id": "int",
-                            "date": "str",
-                            "home_team": {
-                                "id": "int",
-                                "abbreviation": "str",
-                                "city": "str",
-                                "conference": "str",
-                                "division": "str",
-                                "full_name": "str",
-                                "name": "str"
-                            },
-                            "home_team_score": "int",
-                            "period": "int",
-                            "postseason": "bool",
-                            "season": "int",
-                            "status": "str",
-                            "time": "str",
-                            "visitor_team": {
-                                "id": "int",
-                                "abbreviation": "str",
-                                "city": "str",
-                                "conference": "str",
-                                "division": "str",
-                                "full_name": "str",
-                                "name": "str"
-                            },
-                            "visitor_team_score": "int",
-                            "_list_length": 25
-                        }
-                    ],
-                    "meta": {
-                        "total_pages": "int",
-                        "current_page": "int",
-                        "next_page": "int",
-                        "per_page": "int",
-                        "total_count": "int"
-                    }
-                }
-            },
-            {
-                "category_name": "Sports",
-                "tool_name": "Free NBA",
-                "api_name": "Get a Specific Team",
-                "api_description": "This endpoint retrieves a specific team",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The ID of the team",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "GeoDB Cities",
-                "api_name": "City Located In",
-                "api_description": "Get the details for the containing populated place (e.g., its county or other administrative division), including location coordinates, population, and elevation above sea-level  (if available). \n\nCurrently, this data is highly dependent on whether the Wikidata **locatedIn** relation is properly defined. If you see an issue, please propose a change to the corresponding Wikidata entry.",
-                "required_parameters": [
-                    {
-                        "name": "cityId",
-                        "type": "string",
-                        "description": "",
-                        "default": "Q65"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "GeoDB Cities",
-                "api_name": "Places Near Location",
-                "api_description": "Get places near the given location, filtering by optional criteria.",
-                "required_parameters": [
-                    {
-                        "name": "radius",
-                        "type": "STRING",
-                        "description": "The location radius within which to find places",
-                        "default": "100"
-                    },
-                    {
-                        "name": "locationid",
-                        "type": "STRING",
-                        "description": "Only cities near this location. Latitude/longitude in ISO-6709 format: \u00b1DD.DDDD\u00b1DDD.DDDD",
-                        "default": "33.832213-118.387099"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "offset",
-                        "type": "NUMBER",
-                        "description": "The zero-ary offset into the results",
-                        "default": ""
-                    },
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "The maximum number of results to retrieve",
-                        "default": ""
-                    },
-                    {
-                        "name": "languageCode",
-                        "type": "STRING",
-                        "description": "Display results in this language",
-                        "default": ""
-                    },
-                    {
-                        "name": "timeZoneIds",
-                        "type": "STRING",
-                        "description": "Only places in these time-zones",
-                        "default": ""
-                    },
-                    {
-                        "name": "asciiMode",
-                        "type": "BOOLEAN",
-                        "description": "Display results using ASCII characters",
-                        "default": ""
-                    },
-                    {
-                        "name": "includeDeleted",
-                        "type": "STRING",
-                        "description": "Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
-                        "default": ""
-                    },
-                    {
-                        "name": "maxPopulation",
-                        "type": "NUMBER",
-                        "description": "Only places having no more than this population",
-                        "default": ""
-                    },
-                    {
-                        "name": "sort",
-                        "type": "STRING",
-                        "description": "How to sort the results. Format: \u00b1SORT_FIELD,\u00b1SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
-                        "default": ""
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "type": "BOOLEAN",
-                        "description": "Include HATEOAS-style links in results",
-                        "default": ""
-                    },
-                    {
-                        "name": "excludedCountryIds",
-                        "type": "STRING",
-                        "description": "Only places NOT in these countries (comma-delimited country codes or WikiData ids)",
-                        "default": ""
-                    },
-                    {
-                        "name": "namePrefixDefaultLangResults",
-                        "type": "BOOLEAN",
-                        "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default language is requested",
-                        "default": ""
-                    },
-                    {
-                        "name": "countryIds",
-                        "type": "STRING",
-                        "description": "Only places in these countries (comma-delimited country codes or WikiData ids)",
-                        "default": ""
-                    },
-                    {
-                        "name": "distanceUnit",
-                        "type": "STRING",
-                        "description": "The unit of distance to use: MI | KM",
-                        "default": ""
-                    },
-                    {
-                        "name": "namePrefix",
-                        "type": "STRING",
-                        "description": "Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
-                        "default": ""
-                    },
-                    {
-                        "name": "types",
-                        "type": "STRING",
-                        "description": "Only places for these types (comma-delimited): ADM2 | CITY | ISLAND",
-                        "default": ""
-                    },
-                    {
-                        "name": "minPopulation",
-                        "type": "NUMBER",
-                        "description": "Only places having at least this population",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "GeoDB Cities",
-                "api_name": "Admin Divisions",
-                "api_description": "Find administrative divisions, filtering by optional criteria. If no criteria are set, you will get back all known divisions with a population of at least 1000",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "sort",
-                        "type": "STRING",
-                        "description": "How to sort the results. Format: \u00b1SORT_FIELD,\u00b1SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
-                        "default": ""
-                    },
-                    {
-                        "name": "excludedCountryIds",
-                        "type": "STRING",
-                        "description": "Only divisions NOT in these countries (comma-delimited country codes or WikiData ids)",
-                        "default": ""
-                    },
-                    {
-                        "name": "radius",
-                        "type": "NUMBER",
-                        "description": "The location radius within which to find divisions",
-                        "default": ""
-                    },
-                    {
-                        "name": "timeZoneIds",
-                        "type": "STRING",
-                        "description": "Only divisions in these time-zones",
-                        "default": ""
-                    },
-                    {
-                        "name": "distanceUnit",
-                        "type": "STRING",
-                        "description": "The unit of distance to use: MI | KM",
-                        "default": ""
-                    },
-                    {
-                        "name": "offset",
-                        "type": "NUMBER",
-                        "description": "The zero-ary offset into the results",
-                        "default": ""
-                    },
-                    {
-                        "name": "location",
-                        "type": "STRING",
-                        "description": "Only divisions near this location. Latitude/longitude in ISO-6709 format: \u00b1DD.DDDD\u00b1DDD.DDDD",
-                        "default": ""
-                    },
-                    {
-                        "name": "namePrefix",
-                        "type": "STRING",
-                        "description": "Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
-                        "default": ""
-                    },
-                    {
-                        "name": "maxPopulation",
-                        "type": "NUMBER",
-                        "description": "Only divisions having no more than this population",
-                        "default": ""
-                    },
-                    {
-                        "name": "countryIds",
-                        "type": "STRING",
-                        "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
-                        "default": ""
-                    },
-                    {
-                        "name": "asciiMode",
-                        "type": "BOOLEAN",
-                        "description": "Display results using ASCII characters",
-                        "default": ""
-                    },
-                    {
-                        "name": "namePrefixDefaultLangResults",
-                        "type": "BOOLEAN",
-                        "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default language is requested",
-                        "default": ""
-                    },
-                    {
-                        "name": "minPopulation",
-                        "type": "NUMBER",
-                        "description": "Only divisions having at least this population",
-                        "default": ""
-                    },
-                    {
-                        "name": "includeDeleted",
-                        "type": "STRING",
-                        "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
-                        "default": ""
-                    },
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "The maximum number of results to retrieve",
-                        "default": ""
-                    },
-                    {
-                        "name": "languageCode",
-                        "type": "STRING",
-                        "description": "Display results in this language",
-                        "default": ""
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "type": "BOOLEAN",
-                        "description": "Include HATEOAS-style links in results",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "Weather",
-                "api_name": "1 Hour / Minutely Forecast (Nowcast)",
-                "api_description": "Retrieve a 60 minute \"Nowcast\" for precipitation, and snowfall",
-                "required_parameters": [
-                    {
-                        "name": "lat",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "35.5"
-                    },
-                    {
-                        "name": "lon",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "-78.5"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "units",
-                        "type": "ENUM",
-                        "description": "metric (Default), imperial",
-                        "default": ""
-                    }
-                ],
-                "method": "GET"
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "Weather",
-                "api_name": "5 day Forecast",
-                "api_description": "3 hour interval - 5 day forecast for a given lat/lon",
-                "required_parameters": [
-                    {
-                        "name": "lat",
-                        "type": "NUMBER",
-                        "description": "Latitude (Degrees)",
-                        "default": "35.5"
-                    },
-                    {
-                        "name": "lon",
-                        "type": "NUMBER",
-                        "description": "Longitude (degrees)",
-                        "default": "-78.5"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "units",
-                        "type": "ENUM",
-                        "description": "I = Imperial, S = Scientific, M = Metric (Default)",
-                        "default": ""
-                    },
-                    {
-                        "name": "lang",
-                        "type": "ENUM",
-                        "description": "Language for weather condition",
-                        "default": ""
-                    }
-                ],
-                "method": "GET"
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "Weather",
-                "api_name": "Current Weather Data of a location.",
-                "api_description": "Returns the current (most recent) weather observation of a given location",
-                "required_parameters": [
-                    {
-                        "name": "lat",
-                        "type": "NUMBER",
-                        "description": "Latitude",
-                        "default": "-78.5"
-                    },
-                    {
-                        "name": "lon",
-                        "type": "NUMBER",
-                        "description": "Longitude",
-                        "default": "38.5"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "lang",
-                        "type": "ENUM",
-                        "description": "Language",
-                        "default": ""
-                    },
-                    {
-                        "name": "units",
-                        "type": "ENUM",
-                        "description": "I = Imperial, S = Scientific, M = Metric (Default)",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "count": "int",
-                    "data": [
-                        {
-                            "app_temp": "float",
-                            "aqi": "int",
-                            "city_name": "str",
-                            "clouds": "int",
-                            "country_code": "str",
-                            "datetime": "str",
-                            "dewpt": "int",
-                            "dhi": "int",
-                            "dni": "int",
-                            "elev_angle": "float",
-                            "ghi": "int",
-                            "gust": "float",
-                            "h_angle": "NoneType",
-                            "lat": "float",
-                            "lon": "float",
-                            "ob_time": "str",
-                            "pod": "str",
-                            "precip": "int",
-                            "pres": "float",
-                            "rh": "int",
-                            "slp": "float",
-                            "snow": "int",
-                            "solar_rad": "int",
-                            "sources": [
-                                "list of str with length 1"
-                            ],
-                            "state_code": "str",
-                            "station": "str",
-                            "sunrise": "str",
-                            "sunset": "str",
-                            "temp": "float",
-                            "timezone": "str",
-                            "ts": "int",
-                            "uv": "int",
-                            "vis": "int",
-                            "weather": {
-                                "description": "str",
-                                "code": "int",
-                                "icon": "str"
-                            },
-                            "wind_cdir": "str",
-                            "wind_cdir_full": "str",
-                            "wind_dir": "int",
-                            "wind_spd": "float",
-                            "_list_length": 1
-                        }
-                    ]
-                }
-            },
-            {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "I'm planning a family trip to attend an NBA game. Can you find the upcoming games in our desired city and provide me with the team details? Also, suggest some family-friendly activities to do in the city.",
+        "query": "I'm a car collector and I'm interested in adding more cars to my collection. Can you provide a list of supported car makes, types, and years? Additionally, I would like to retrieve and filter a list of cars based on specific criteria such as make, year, and type.",
         "relevant APIs": [
             [
-                "Free NBA",
-                "Get All Games"
+                "Car Data",
+                "Cars"
             ],
             [
-                "Free NBA",
-                "Get a Specific Team"
+                "Car Data",
+                "Types"
             ],
             [
-                "GeoDB Cities",
-                "Places Near Location"
+                "Car Data",
+                "Makes"
+            ],
+            [
+                "Car Data",
+                "Years"
             ],
             [
                 "qaq",
@@ -2481,275 +887,45 @@
     {
         "api_list": [
             {
-                "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get global stats",
-                "api_description": "These global statistics tell about the data available on coinranking.",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "referenceCurrencyUuid",
-                        "type": "STRING",
-                        "description": "UUID of reference currency, in which all the prices are calculated. Defaults to US Dollar\n\nDefault value: yhjMzLPhuIDl",
-                        "default": "yhjMzLPhuIDl"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "status": "str",
-                    "data": {
-                        "referenceCurrencyRate": "int",
-                        "totalCoins": "int",
-                        "totalMarkets": "int",
-                        "totalExchanges": "int",
-                        "totalMarketCap": "str",
-                        "total24hVolume": "str",
-                        "btcDominance": "float",
-                        "bestCoins": [
-                            {
-                                "uuid": "str",
-                                "symbol": "str",
-                                "name": "str",
-                                "iconUrl": "str",
-                                "coinrankingUrl": "str",
-                                "_list_length": 3
-                            }
-                        ],
-                        "newestCoins": [
-                            {
-                                "uuid": "str",
-                                "symbol": "str",
-                                "name": "str",
-                                "iconUrl": "str",
-                                "coinrankingUrl": "str",
-                                "_list_length": 3
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get coin OHLC data",
-                "api_description": "Get OHLC (Open High Low Close) data for the coin throughout time.\nThis endpoint requires the **ultra** plan or higher.\n\n**Beta**\nThe OHLC endpoint is currently in beta. This means we might make some changes that could be considered breaking for your application, and we expect to have downtime every now and then while we are still in beta.",
-                "required_parameters": [
-                    {
-                        "name": "uuid",
-                        "type": "string",
-                        "description": "UUID of the coin you want to request. UUIDs of coins can be found using the Get coins endpoint or by checking the URL on coinranking.com, e.g. https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc is the URL for Bitcoin, and the part before the + (Qwsogvtv82FCd) is the UUID.",
-                        "default": "Qwsogvtv82FCd"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "referenceCurrencyUuid",
-                        "type": "STRING",
-                        "description": "UUID of reference currency, in which all the prices are calculated. Defaults to US Dollar.\n\nDefault value: yhjMzLPhuIDl",
-                        "default": "yhjMzLPhuIDl"
-                    },
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "Limit the amount of time periods for which the OHLC data is retrieved. For example, when interval=hour and limit is 10, data will be returned for the last 10 hours.\n\nDefault value: 50\nSize range: 0-100",
-                        "default": ""
-                    },
-                    {
-                        "name": "interval",
-                        "type": "STRING",
-                        "description": "The interval determines the time period over which each OHLC item is determined.\n\nDefault value: day\nAllowed values:\nminute 5minutes hour 8hours day week month",
-                        "default": "day"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "status": "str",
-                    "type": "str",
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Coinranking",
-                "api_name": "Get exchange markets",
-                "api_description": "Find markets on a specific exchange.\nThis endpoint requires the **ultra** plan or higher.",
-                "required_parameters": [
-                    {
-                        "name": "uuid",
-                        "type": "string",
-                        "description": "UUID of the exchange you want to request markets for",
-                        "default": "-zdvbieRdZ"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "referenceCurrencyUuid",
-                        "type": "STRING",
-                        "description": "UUID of reference currency, which rate is used to calculate the volume. Defaults to US Dollar\n\nDefault value: yhjMzLPhuIDl",
-                        "default": "yhjMzLPhuIDl"
-                    },
-                    {
-                        "name": "offset",
-                        "type": "NUMBER",
-                        "description": "Offset. Used for pagination\n\nDefault value: 0",
-                        "default": "0"
-                    },
-                    {
-                        "name": "orderBy",
-                        "type": "STRING",
-                        "description": "Index to sort on. Default is 24h volume.\n\nDefault value: 24hVolume\nAllowed values:\n24hVolume price",
-                        "default": "24hVolume"
-                    },
-                    {
-                        "name": "search",
-                        "type": "STRING",
-                        "description": "Value to search for within results, e.g. exchange names, currency names, or currency symbols",
-                        "default": ""
-                    },
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "Limit. Used for pagination\n\nDefault value: 50\nSize range: 0-100",
-                        "default": "50"
-                    },
-                    {
-                        "name": "orderDirection",
-                        "type": "STRING",
-                        "description": "Order in ascending or descending order\n\nDefault value: desc\nAllowed values:\ndesc asc",
-                        "default": "desc"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "Currencies",
-                "api_description": "Gets list of currencies we support",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "output",
-                        "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
-                    }
-                ],
-                "method": "GET",
-                "template_response": "{\"valid\": \"bool\", \"currencies\": {\"AED\": \"str\", \"AFN\": \"str\", \"ALL\": \"str\", \"AMD\": \"str\", \"ANG\": \"str\", \"AOA\": \"str\", \"ARS\": \"str\", \"AUD\": \"str\", \"AWG\": \"str\", \"AZN\": \"str\", \"BAM\": \"str\", \"BBD\": \"str\", \"BCH\": \"str\", \"BDT\": \"str\", \"BGN\": \"str\", \"BHD\": \"str\", \"BIF\": \"str\", \"BMD\": \"str\", \"BND\": \"str\", \"BOB\": \"str\", \"BRL\": \"str\", \"BSD\": \"str\", \"BTC\": \"str\", \"BTG\": \"str\", \"BWP\": \"str\", \"BZD\": \"str\", \"CAD\": \"str\", \"CDF\": \"str\", \"CHF\": \"str\", \"CLP\": \"str\", \"CNH\": \"str\", \"CNY\": \"str\", \"COP\": \"str\", \"CRC\": \"str\", \"CUC\": \"str\", \"CUP\": \"str\", \"CVE\": \"str\", \"CZK\": \"str\", \"DASH\": \"str\", \"DJF\": \"str\", \"DKK\": \"str\", \"DOP\": \"str\", \"DZD\": \"str\", \"EGP\": \"str\", \"EOS\": \"str\", \"ETB\": \"str\", \"ETH\": \"str\", \"EUR\": \"str\", \"FJD\": \"str\", \"GBP\": \"str\", \"GEL\": \"str\", \"GHS\": \"str\", \"GIP\": \"str\", \"GMD\": \"str\", \"GNF\": \"str\", \"GTQ\": \"str\", \"GYD\": \"str\", \"HKD\": \"str\", \"HNL\": \"str\", \"HRK\": \"str\", \"HTG\": \"str\", \"HUF\": \"str\", \"IDR\": \"str\", \"ILS\": \"str\", \"INR\": \"str\", \"IQD\": \"str\", \"IRR\": \"str\", \"ISK\": \"str\", \"JMD\": \"str\", "
-            },
-            {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "Timeframe",
-                "api_description": "Display a currency conversion's historical rates within a given timeframe",
-                "required_parameters": [
-                    {
-                        "name": "end_date",
-                        "type": "DATE (YYYY-MM-DD)",
-                        "description": "Display the start date you wish to get the historical data from. Eg 2010-12-29",
-                        "default": ""
-                    },
-                    {
-                        "name": "base",
-                        "type": "STRING",
-                        "description": "The currency code you want to get the historical data of. Eg, USD",
-                        "default": "USD"
-                    },
-                    {
-                        "name": "start_date",
-                        "type": "DATE (YYYY-MM-DD)",
-                        "description": "Display the start date you wish to get the historical data from. Eg 2010-12-25",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "output",
-                        "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "valid": "bool",
-                    "error": {
-                        "code": "int",
-                        "message": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Financial",
-                "tool_name": "CurrencyAPI.net",
-                "api_name": "History",
-                "api_description": "Display the currency conversions historical rates for a particular day",
-                "required_parameters": [
-                    {
-                        "name": "date",
-                        "type": "DATE (YYYY-MM-DD)",
-                        "description": "Display the single date you wish to get the historical data from. Eg 2010-12-25",
-                        "default": ""
-                    },
-                    {
-                        "name": "base",
-                        "type": "STRING",
-                        "description": "The currency code you wish to get the historical rates of. Eg, USD",
-                        "default": "USD"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "output",
-                        "type": "STRING",
-                        "description": "The output of the response. Either JSON or XML",
-                        "default": "JSON"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "valid": "bool",
-                    "error": {
-                        "code": "int",
-                        "message": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Coin Flip",
-                "api_name": "Heads / Tails",
-                "api_description": "Returns an outcome. Either heads or tails",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "I want to surprise my friends with a cryptocurrency-themed movie night. Can you fetch the latest details for an asset using the BraveNewCoin API? Additionally, provide me with the outcome of a coin flip using the Coin Flip API to determine which cryptocurrency-themed movie we should watch.",
+        "query": "I am a sports journalist writing an article about the WNBA. Can you provide me with the team list for the WNBA? I also want to get the team information for the team with the ID '5' and the team standings for the year '2022'.",
         "relevant APIs": [
             [
-                "BraveNewCoin",
-                "AssetById"
+                "WNBA API",
+                "WNBA Teams."
             ],
             [
-                "Coin Flip",
-                "Heads / Tails"
+                "WNBA API",
+                "WNBA TEAM INFO"
+            ],
+            [
+                "WNBA API",
+                "WNBA Standings"
             ],
             [
                 "qaq",
@@ -2761,234 +937,45 @@
     {
         "api_list": [
             {
-                "category_name": "eCommerce",
-                "tool_name": "Redbubble scraper",
-                "api_name": "/redbubble",
-                "api_description": "Get items per page, you can optionally specify a search term, specific categories or ordering",
-                "required_parameters": [
-                    {
-                        "name": "page",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "1"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "category",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "all-departments"
-                    },
-                    {
-                        "name": "search_term",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "orange cat"
-                    },
-                    {
-                        "name": "sort_order",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "relevant"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "eCommerce",
-                "tool_name": "IHerb Product Data Api",
-                "api_name": "Get Product By Brand Name",
-                "api_description": "Lists all products by brand, and allows you to filter in all ways!",
-                "required_parameters": [
-                    {
-                        "name": "brandName",
-                        "type": "string",
-                        "description": "",
-                        "default": "4th-heart"
-                    },
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": 1
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "maxPrice",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": 999
-                    },
-                    {
-                        "name": "minRating",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "0"
-                    },
-                    {
-                        "name": "hasStock",
-                        "type": "BOOLEAN",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "minDiscountPercent",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "isSpecial",
-                        "type": "BOOLEAN",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "minShippingWeight",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "0"
-                    },
-                    {
-                        "name": "isTrial",
-                        "type": "BOOLEAN",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "hasNewProductFlag",
-                        "type": "BOOLEAN",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "hasDiscount",
-                        "type": "BOOLEAN",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "maxShippingWeight",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": 999
-                    },
-                    {
-                        "name": "minPrice",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "0"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "eCommerce",
-                "tool_name": "IHerb Product Data Api",
-                "api_name": "Get Solicitation",
-                "api_description": "Retrieves a download link containing all over 30,000 products, in json format in a .zip file. Remember, the protocol expires in 24 hours! Download your .zip ASAP!",
-                "required_parameters": [
-                    {
-                        "name": "protocol",
-                        "type": "string",
-                        "description": "",
-                        "default": "3877908a2fb546228178436800372368"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "eCommerce",
-                "tool_name": "IHerb Product Data Api",
-                "api_name": "Get All Brands",
-                "api_description": "Lists all available brands",
-                "required_parameters": [
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": 1
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "currentPage": "int",
-                    "totalPages": "int",
-                    "allBrands": [
-                        "list of str with length 10"
-                    ]
-                }
-            },
-            {
-                "category_name": "eCommerce",
-                "tool_name": "website screenshot",
-                "api_name": "Screenshot",
-                "api_description": "Take a screenshot from a webpage url.",
-                "required_parameters": [
-                    {
-                        "name": "height",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "1080"
-                    },
-                    {
-                        "name": "width",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "1920"
-                    },
-                    {
-                        "name": "url",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "https://rapidapi.com/marketplace"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "fullscreen",
-                        "type": "STRING",
-                        "description": "",
-                        "default": true
-                    }
-                ],
-                "method": "GET"
-            },
-            {
                 "category_name": "QAQ",
                 "tool_name": "qaq",
                 "api_name": "get_qaq",
-                "api_description": "Request additional details from the user",
-                "required_parameters": [],
-                "optional_parameters": [],
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
                 "method": "GET",
                 "template_response": {
                     "message": "str"
                 }
             }
         ],
-        "query": "I need some inspiration for my art project. Can you find unique and creative designs related to cats on Redbubble? Specifically, designs related to orange cats. It would be great if you could provide me with the title, price, image, and tags of the items. Additionally, I'm interested in exploring products from the brand '4th-heart' on iHerb. Please fetch the product details, including the title, price, link, rating, and image. Thank you!",
+        "query": "As a basketball fan, I'm interested in the team information, standings, and scoreboard data for the Minnesota Lynx. Could you please provide me with this information using the WNBA TEAM INFO, WNBA Standings, and WNBA ScoreBoard APIs?",
         "relevant APIs": [
             [
-                "Redbubble scraper",
-                "/redbubble"
+                "WNBA API",
+                "WNBA TEAM INFO"
             ],
             [
-                "IHerb Product Data Api",
-                "Get Product By Brand Name"
+                "WNBA API",
+                "WNBA Standings"
+            ],
+            [
+                "WNBA API",
+                "WNBA ScoreBoard"
             ],
             [
                 "qaq",
