@@ -2,210 +2,238 @@
     {
         "api_list": [
             {
-                "category_name": "Data",
-                "tool_name": "Redfin Base",
-                "api_name": "Get location infomation by zipcode",
-                "api_description": "Get location infomation by zipcode",
+                "category_name": "Music",
+                "tool_name": "Halsey Lyric Snippets",
+                "api_name": "random song & song's album information out of {artist}",
+                "api_description": "Returns album information and random song information",
                 "required_parameters": [
                     {
-                        "name": "zipcode",
-                        "type": "STRING",
+                        "name": "artist",
+                        "type": "string",
                         "description": "",
-                        "default": "01003"
+                        "default": "Halsey"
                     }
                 ],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "data": [
-                        {
-                            "zipCode": "str",
-                            "regionId": "NoneType",
-                            "city": "str",
-                            "county": "str",
-                            "state": "str",
-                            "usps": "str",
-                            "stateCapital": "str",
-                            "countryName": "str",
-                            "countryCode": "str",
-                            "lat": "NoneType",
-                            "lng": "NoneType",
-                            "northLat": "NoneType",
-                            "southLat": "NoneType",
-                            "westLng": "NoneType",
-                            "eastLng": "NoneType",
-                            "fieldType": "NoneType",
-                            "_list_length": 1
-                        }
-                    ]
+                    "albumId": "str",
+                    "albumName": "str",
+                    "releaseDate": "str",
+                    "albumArtist": "str",
+                    "song": {
+                        "_id": "str",
+                        "name": "str",
+                        "lyrics": [
+                            "list of str with length 25"
+                        ]
+                    }
                 }
             },
             {
-                "category_name": "Data",
-                "tool_name": "Redfin Base",
-                "api_name": "Get ZipCode by City",
-                "api_description": "Get ZipCode by City",
+                "category_name": "Music",
+                "tool_name": "Halsey Lyric Snippets",
+                "api_name": "all songs from {artist}",
+                "api_description": "This endpoint retrieves all songs by the specified artist and returns them in the response.",
                 "required_parameters": [
                     {
-                        "name": "city",
-                        "type": "STRING",
+                        "name": "artist",
+                        "type": "string",
                         "description": "",
-                        "default": "Holtsville"
+                        "default": "Halsey"
                     }
                 ],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "data": [
-                        {
-                            "zipCode": "str",
-                            "regionId": "NoneType",
-                            "city": "str",
-                            "county": "str",
-                            "state": "str",
-                            "usps": "str",
-                            "stateCapital": "str",
-                            "countryName": "str",
-                            "countryCode": "str",
-                            "lat": "NoneType",
-                            "lng": "NoneType",
-                            "northLat": "NoneType",
-                            "southLat": "NoneType",
-                            "westLng": "NoneType",
-                            "eastLng": "NoneType",
-                            "fieldType": "NoneType",
-                            "_list_length": 3
-                        }
+                    "_id": "str",
+                    "name": "str",
+                    "lyrics": [
+                        "list of str with length 14"
                     ]
                 }
             },
             {
-                "category_name": "Data",
-                "tool_name": "Redfin Base",
-                "api_name": "Get region info",
-                "api_description": "This API will return `region_type_id`, `region_id`\n\u279e Will use for API \u3010Search by region\u3011",
+                "category_name": "Music",
+                "tool_name": "Halsey Lyric Snippets",
+                "api_name": "album by {id}",
+                "api_description": "returns album information when searched by {id}",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "63b88a2bc8450e8550fa6d5c"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_id": "str",
+                    "name": "str",
+                    "releaseDate": "str",
+                    "songs": [
+                        "list of str with length 14"
+                    ],
+                    "artist": "str"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Billboard",
+                "api_name": "Artist 100",
+                "api_description": "Provide the Artist 100 chart information.",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "Set the date for which you want to get a chart.",
+                        "default": "2020-03-18"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "artist": "str",
+                    "last_week": "str",
+                    "rank": "str",
+                    "award": "bool",
+                    "image": "str",
+                    "peak_position": "str",
+                    "weeks_on_chart": "str"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Billboard",
+                "api_name": "Billboard Global Excl. US",
+                "api_description": "Billboard Global Excl. US. Available from SEPTEMBER 19, 2020",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "Set the date for which you want to get a chart.",
+                        "default": "2020-09-19"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "artist": "str",
+                    "title": "str",
+                    "last_week": "str",
+                    "rank": "str",
+                    "award": "bool",
+                    "image": "str",
+                    "peak_position": "str",
+                    "weeks_on_chart": "str"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Billboard",
+                "api_name": "Hot 100",
+                "api_description": "Provide the Hot 100 chart information",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "Set the date for which you want to get a chart.",
+                        "default": "2020-03-18"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "artist": "str",
+                    "title": "str",
+                    "last_week": "str",
+                    "rank": "str",
+                    "award": "bool",
+                    "image": "str",
+                    "peak_position": "str",
+                    "weeks_on_chart": "str"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Bandamp Downloader API",
+                "api_name": "Get Album Details",
+                "api_description": "Fetch:\n- Album Name\n- 2. Album Description\n- 3. Album Thumbnail URL\n- 4. Artist Name\n- 3. Total Tracks Count\n- 4. Each Track URLs\n- 5. Each Track Names\n- 6. Each Track Durations",
                 "required_parameters": [
                     {
                         "name": "url",
                         "type": "STRING",
-                        "description": "The input value can be full URL or sub URL\n- **Full URL**: `https://www.redfin.com/zipcode/01026`\n- **Sub URL**: `/zipcode/01026` (use the Auto-complete API to get the value, it is a property URL)",
-                        "default": "https://www.redfin.com/zipcode/01026"
+                        "description": "",
+                        "default": "https://hammeredhulls.bandcamp.com/album/s-t"
                     }
                 ],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "data": {
-                        "region_type_id": "str",
-                        "region_id": "str"
+                    "track_details": {
+                        "0": {
+                            "link": "str",
+                            "track_name": "str",
+                            "id": "int",
+                            "duration": "str"
+                        },
+                        "1": {
+                            "link": "str",
+                            "track_name": "str",
+                            "id": "int",
+                            "duration": "str"
+                        },
+                        "2": {
+                            "link": "str",
+                            "track_name": "str",
+                            "id": "int",
+                            "duration": "str"
+                        },
+                        "album_thumb": "str",
+                        "album_date_published": "str",
+                        "album_name": "str",
+                        "album_artist_name": "str",
+                        "album_desc": "str",
+                        "count": "int"
                     }
                 }
             },
             {
-                "category_name": "Data",
-                "tool_name": "climate-change-live-api",
-                "api_name": "Get individual publication's news about climate change",
-                "api_description": "Get individual publication's news about climate change all over the world.",
+                "category_name": "Music",
+                "tool_name": "Bandamp Downloader API",
+                "api_name": "Download Bandcamp Track",
+                "api_description": "Supply any Bandcamp track URL & get downloadable links, alongwith:\n\n- Track name\n- Related Album Name\n- Track Published date\n- Duration\n- Thumbnail\n- Artist name\n- Downloadable Mp3 file link",
                 "required_parameters": [
                     {
-                        "name": "newspaperId",
-                        "type": "string",
+                        "name": "url",
+                        "type": "STRING",
                         "description": "",
-                        "default": "Guardian"
+                        "default": "https://scntstlab.bandcamp.com/track/mwidit-edit"
                     }
                 ],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "at": "str",
-                    "method": "str",
-                    "hostname": "str",
-                    "ip": "str",
-                    "query": {},
-                    "headers": {
-                        "accept": "str",
-                        "accept-encoding": "str",
-                        "content-length": "str",
-                        "host": "str",
-                        "user-agent": "str",
-                        "x-amzn-trace-id": "str",
-                        "x-forwarded-for": "str",
-                        "x-forwarded-host": "str",
-                        "x-forwarded-port": "str",
-                        "x-forwarded-proto": "str",
-                        "x-mashape-proxy-secret": "str",
-                        "x-mashape-subscription": "str",
-                        "x-mashape-user": "str",
-                        "x-mashape-version": "str",
-                        "x-rapidapi-host": "str",
-                        "x-rapidapi-proxy-secret": "str",
-                        "x-rapidapi-request-id": "str",
-                        "x-rapidapi-subscription": "str",
-                        "x-rapidapi-tenant-name": "str",
-                        "x-rapidapi-user": "str",
-                        "x-rapidapi-version": "str",
-                        "x-real-ip": "str",
-                        "connection": "str"
-                    },
-                    "params": {
-                        "0": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Data",
-                "tool_name": "climate-change-live-api",
-                "api_name": "Get All Climate Change News",
-                "api_description": "Get climate change news all over the world",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "at": "str",
-                    "method": "str",
-                    "hostname": "str",
-                    "ip": "str",
-                    "query": {},
-                    "headers": {
-                        "accept": "str",
-                        "accept-encoding": "str",
-                        "content-length": "str",
-                        "host": "str",
-                        "user-agent": "str",
-                        "x-amzn-trace-id": "str",
-                        "x-forwarded-for": "str",
-                        "x-forwarded-host": "str",
-                        "x-forwarded-port": "str",
-                        "x-forwarded-proto": "str",
-                        "x-mashape-proxy-secret": "str",
-                        "x-mashape-subscription": "str",
-                        "x-mashape-user": "str",
-                        "x-mashape-version": "str",
-                        "x-rapidapi-host": "str",
-                        "x-rapidapi-proxy-secret": "str",
-                        "x-rapidapi-request-id": "str",
-                        "x-rapidapi-subscription": "str",
-                        "x-rapidapi-tenant-name": "str",
-                        "x-rapidapi-user": "str",
-                        "x-rapidapi-version": "str",
-                        "x-real-ip": "str",
-                        "connection": "str"
-                    },
-                    "params": {
-                        "0": "str"
-                    }
+                    "track_name": "str",
+                    "length": "str",
+                    "published": "str",
+                    "thumb": "str",
+                    "album_name": "str",
+                    "artist": "str",
+                    "download_link": "str"
                 }
             }
         ],
-        "query": "I'm planning a solo trip to explore different locations. Can you help me find the zip code for Holtsville? Additionally, I would like to stay updated on the latest climate change news from The Guardian.",
+        "query": "I'm organizing a music-themed party for my family. Can you suggest popular songs from various artists based on the Billboard Global Excl. US chart? Additionally, fetch the album details and track durations for a specific album to create a playlist for the event.",
         "relevant APIs": [
             [
-                "Redfin Base",
-                "Get ZipCode by City"
+                "Billboard",
+                "Billboard Global Excl. US"
             ],
             [
-                "climate-change-live-api",
-                "Get individual publication's news about climate change"
+                "Halsey Lyric Snippets",
+                "album by {id}"
             ]
         ],
         "query_id": 1
@@ -213,268 +241,217 @@
     {
         "api_list": [
             {
-                "category_name": "eCommerce",
-                "tool_name": "natural milk",
-                "api_name": "natural-milk",
-                "api_description": "natural-milk",
+                "category_name": "Education",
+                "tool_name": "Hadiths API",
+                "api_name": "Get category by id",
+                "api_description": "Each category have a unique ID. These ID can be used to get the category",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_id": "str",
+                    "Chapter_Number": "int",
+                    "Chapter_English": "str",
+                    "Collection": "str",
+                    "Hadith_Total": "int",
+                    "Created_By": "str",
+                    "__v": "int",
+                    "createdAt": "str",
+                    "updatedAt": "str"
+                }
+            },
+            {
+                "category_name": "Education",
+                "tool_name": "Hadiths API",
+                "api_name": "Get all collections",
+                "api_description": "Get all collections from the database, by default limit is 10 and page is 1. the limit and page can be altered to suit your taste.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "total": "int",
+                    "collections": [
+                        {
+                            "_id": "str",
+                            "Collection": "str",
+                            "Volume": "int",
+                            "Hadith_Total": "int",
+                            "Categories": "int",
+                            "Book": "str",
+                            "Author": "str",
+                            "Publisher": "str",
+                            "DownloadLink": "str",
+                            "Description": "str",
+                            "__v": "int",
+                            "createdAt": "str",
+                            "updatedAt": "str",
+                            "Image": "str",
+                            "_list_length": 6
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Education",
+                "tool_name": "Hadiths API",
+                "api_name": "Get all categories",
+                "api_description": "Get all categories from the database, by default limit is 10 and page is 1. the limit and page can be altered to suit your taste.",
                 "required_parameters": [],
                 "optional_parameters": [],
                 "method": "GET"
             },
             {
-                "category_name": "eCommerce",
-                "tool_name": "yiwugo product data",
-                "api_name": "search shops",
-                "api_description": "search shops by keyword.\nThe source of the data can be controlled through the 'lan' field (en: English website, cn: Chinese website)",
+                "category_name": "Education",
+                "tool_name": "Uncovered Treasure",
+                "api_name": "/search/{searchterm}",
+                "api_description": "Search for treasure by term, e.g. \"wisdom\"",
                 "required_parameters": [
                     {
-                        "name": "keyword",
+                        "name": "searchterm",
                         "type": "STRING",
-                        "description": "",
+                        "description": "e.g. \"God's plan\"",
                         "default": ""
                     }
                 ],
                 "optional_parameters": [
                     {
-                        "name": "lan",
-                        "type": "ENUM",
-                        "description": "",
+                        "name": "callback",
+                        "type": "STRING",
+                        "description": "Optional JSONP callback",
                         "default": ""
-                    },
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "1"
-                    },
-                    {
-                        "name": "pageSize",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "10"
                     }
                 ],
                 "method": "GET",
                 "template_response": {
-                    "code": "int",
-                    "msg": "str",
-                    "detail": [
+                    "results": "empty list"
+                }
+            },
+            {
+                "category_name": "Education",
+                "tool_name": "Uncovered Treasure",
+                "api_name": "/random",
+                "api_description": "Get random treasure",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "callback",
+                        "type": "STRING",
+                        "description": "Optional JSONP callback",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "results": [
                         {
-                            "loc": [
-                                "list of str with length 2"
+                            "date": "str",
+                            "context": "str",
+                            "scriptures": [
+                                "list of str with length 1"
                             ],
-                            "msg": "str",
-                            "type": "str",
-                            "ctx": {
-                                "given": "str",
-                                "permitted": [
-                                    "list of str with length 2"
-                                ]
-                            },
+                            "text": "str",
+                            "topics": "empty list",
+                            "bookOrder": "int",
                             "_list_length": 1
                         }
                     ]
                 }
             },
             {
-                "category_name": "eCommerce",
-                "tool_name": "yiwugo product data",
-                "api_name": "search products",
-                "api_description": "search products\nThe source of the data can be controlled through the 'lan' field (en: English website, cn: Chinese website)",
+                "category_name": "Education",
+                "tool_name": "Uncovered Treasure",
+                "api_name": "/topic/{topic}",
+                "api_description": "Get entries from a specific topic",
                 "required_parameters": [
                     {
-                        "name": "keyword",
+                        "name": "topic",
                         "type": "STRING",
-                        "description": "",
+                        "description": "\"seek God\"",
                         "default": ""
                     }
                 ],
                 "optional_parameters": [
                     {
-                        "name": "lan",
-                        "type": "ENUM",
-                        "description": "",
+                        "name": "callback",
+                        "type": "STRING",
+                        "description": "Optional JSONP callback",
                         "default": ""
-                    },
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "1"
-                    },
-                    {
-                        "name": "pageSize",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "10"
                     }
                 ],
                 "method": "GET",
                 "template_response": {
-                    "message": "str"
+                    "results": "empty list"
                 }
             },
             {
-                "category_name": "eCommerce",
-                "tool_name": "yiwugo product data",
-                "api_name": "get product detail",
-                "api_description": "get product detail by item_id,\nThe source of the data can be controlled through the 'lan' field (en: English website, cn: Chinese website)",
+                "category_name": "Education",
+                "tool_name": "Bhagavad Gita_v3",
+                "api_name": "Get all verse of chapter by chapter id",
+                "api_description": "Get all verse of chapter by chapter id",
                 "required_parameters": [
                     {
-                        "name": "item_id",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "930783722"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "lan",
-                        "type": "ENUM",
+                        "name": "chapterId",
+                        "type": "string",
                         "description": "",
                         "default": ""
                     }
                 ],
-                "method": "GET",
-                "template_response": {
-                    "code": "int",
-                    "msg": "str",
-                    "detail": [
-                        {
-                            "loc": [
-                                "list of str with length 2"
-                            ],
-                            "msg": "str",
-                            "type": "str",
-                            "ctx": {
-                                "given": "str",
-                                "permitted": [
-                                    "list of str with length 2"
-                                ]
-                            },
-                            "_list_length": 1
-                        }
-                    ]
-                }
+                "optional_parameters": [],
+                "method": "GET"
             },
             {
-                "category_name": "eCommerce",
-                "tool_name": "Ecommerce Product API",
-                "api_name": "Product Data",
-                "api_description": "The /data endpoint is a part of the Ecommerce Product API that allows you to retrieve information about a specific product in your ecommerce store. By making a GET request to this endpoint and specifying the product name, you can access a wide range of information about the product, including its name, description, images, and more. The response to the request will be in JSON format and will include all relevant product data. This endpoint is an essential tool for retrieving information about products in your store, and is designed to be fast and efficient, ensuring that you receive the information you need quickly and easily.",
+                "category_name": "Education",
+                "tool_name": "Bhagavad Gita_v3",
+                "api_name": "Get chapter details  by id",
+                "api_description": "Get chapter details  by id",
                 "required_parameters": [
                     {
-                        "name": "product",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "phone"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "1"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "eCommerce",
-                "tool_name": "Get Promo Codes",
-                "api_name": "Get Stores",
-                "api_description": "Get Stores",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "1"
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "message": "str"
-                }
-            },
-            {
-                "category_name": "eCommerce",
-                "tool_name": "Get Promo Codes",
-                "api_name": "Get Coupons",
-                "api_description": "Get Coupons",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "sort",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "update_time_desc"
-                    },
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "1"
-                    },
-                    {
-                        "name": "store_id",
-                        "type": "NUMBER",
+                        "name": "chapterId",
+                        "type": "string",
                         "description": "",
                         "default": ""
                     }
                 ],
-                "method": "GET",
-                "template_response": {
-                    "request": {
-                        "page": "str",
-                        "store_id": "str",
-                        "sort": "str",
-                        "type": "str"
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Education",
+                "tool_name": "Bhagavad Gita_v3",
+                "api_name": "Get verse details by verse id",
+                "api_description": "Get verse details by verse id",
+                "required_parameters": [
+                    {
+                        "name": "chapterId",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
                     },
-                    "time": "float",
-                    "data": [
-                        {
-                            "id": "str",
-                            "title": "str",
-                            "description": "str",
-                            "terms": "str",
-                            "code": "str",
-                            "url": "str",
-                            "store_id": "str",
-                            "language": "str",
-                            "status": "str",
-                            "add_time": "str",
-                            "start_time": "str",
-                            "end_time": "str",
-                            "update_time": "str",
-                            "_list_length": 98
-                        }
-                    ]
-                }
+                    {
+                        "name": "verseId",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
             }
         ],
-        "query": "I'm redecorating my living room and I need some inspiration. Can you help me find trendy home decor items and furniture? Additionally, provide me with interior design tips and tricks to create a stylish and cozy living space. It would be great if you could suggest some famous interior designers to follow for inspiration.",
+        "query": "My family and I are embarking on a spiritual journey and we want to explore the teachings of the Bhagavad Gita. Can you provide us with a random treasure? Additionally, fetch the details of Chapter 15 from the Bhagavad Gita and share all the verses from this chapter.",
         "relevant APIs": [
             [
-                "yiwugo product data",
-                "search products"
+                "Uncovered Treasure",
+                "/random"
             ],
             [
-                "yiwugo product data",
-                "search shops"
+                "Bhagavad Gita_v3",
+                "Get chapter details  by id"
             ],
             [
-                "Ecommerce Product API",
-                "Product Data"
-            ],
-            [
-                "natural milk",
-                "natural-milk"
+                "Bhagavad Gita_v3",
+                "Get all verse of chapter by chapter id"
             ]
         ],
         "query_id": 2
@@ -482,91 +459,159 @@
     {
         "api_list": [
             {
-                "category_name": "Translation",
-                "tool_name": "Translate All Languages",
-                "api_name": "Translate",
-                "api_description": "Translates input text, returning translated text",
+                "category_name": "Advertising",
+                "tool_name": "PrivatePublicAPI",
+                "api_name": "getPetById",
+                "api_description": "Returns a single pet",
                 "required_parameters": [
                     {
-                        "name": "text",
-                        "type": "STRING",
-                        "description": "The input text to translate.",
-                        "default": "If you don\u2019t know what language the text is written in, our API will detect the language of the original request."
-                    },
-                    {
-                        "name": "toLang",
-                        "type": "STRING",
-                        "description": "The language to use for translation of the input text, set to one of the language codes listed in the overview tab",
-                        "default": "fr"
+                        "name": "petId",
+                        "type": "NUMBER",
+                        "description": "ID of pet to return",
+                        "default": 0
                     }
                 ],
-                "optional_parameters": [
-                    {
-                        "name": "fromLang",
-                        "type": "STRING",
-                        "description": "The language of the fromLang, set to one of the language codes listed in Language Support. If the source language is not specified, the API will attempt to detect the source language automatically and return it within the response.",
-                        "default": "en"
-                    }
-                ],
+                "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "status": "int",
-                    "langDetect": "str",
-                    "translatedText": "str"
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
                 }
             },
             {
-                "category_name": "Translation",
-                "tool_name": "Translate All Languages",
-                "api_name": "Languages",
-                "api_description": "Returns a list of supported languages for translation.",
+                "category_name": "Advertising",
+                "tool_name": "PrivatePublicAPI",
+                "api_name": "getInventory",
+                "api_description": "Returns a map of status codes to quantities",
                 "required_parameters": [],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "status": "int",
-                    "languages": [
-                        {
-                            "af": "str",
-                            "_list_length": 91
-                        }
-                    ]
+                    "Sale": "int",
+                    "totvs": "int",
+                    "sold": "int",
+                    "string": "int",
+                    "pending": "int",
+                    "cat": "int",
+                    "dgdfgdf": "int",
+                    "available": "int",
+                    "not available": "int",
+                    "Available": "int",
+                    "peric": "int",
+                    "disponible": "int"
                 }
             },
             {
-                "category_name": "Translation",
-                "tool_name": "Translate All Languages",
-                "api_name": "Detect",
-                "api_description": "Detects the language of text within a request.",
+                "category_name": "Advertising",
+                "tool_name": "PrivatePublicAPI",
+                "api_name": "getOrderById",
+                "api_description": "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
                 "required_parameters": [
                     {
-                        "name": "text",
-                        "type": "STRING",
-                        "description": "The input text upon which to perform language detection. Repeat this parameter to perform language detection on multiple text inputs.",
-                        "default": "If you don\u2019t know what language the text is written in, our API will detect the language of the original request."
+                        "name": "orderId",
+                        "type": "NUMBER",
+                        "description": "ID of pet that needs to be fetched",
+                        "default": 0
                     }
                 ],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "status": "int",
-                    "langDetect": "str"
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
                 }
+            },
+            {
+                "category_name": "Advertising",
+                "tool_name": "ThisshouldbeFREE",
+                "api_name": "getPetById",
+                "api_description": "Returns a single pet",
+                "required_parameters": [
+                    {
+                        "name": "petId",
+                        "type": "NUMBER",
+                        "description": "ID of pet to return",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Advertising",
+                "tool_name": "ThisshouldbeFREE",
+                "api_name": "getOrderById",
+                "api_description": "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
+                "required_parameters": [
+                    {
+                        "name": "orderId",
+                        "type": "NUMBER",
+                        "description": "ID of pet that needs to be fetched",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Advertising",
+                "tool_name": "ThisshouldbeFREE",
+                "api_name": "logoutUser",
+                "api_description": "",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Advertising",
+                "tool_name": "People Lookup",
+                "api_name": "lookup",
+                "api_description": "Lookup people by name and US state (optional)",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Warren Buffett"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "State",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "NE"
+                    }
+                ],
+                "method": "GET"
             }
         ],
-        "query": "Translate this email from Japanese to English and detect the language used. Additionally, provide me with a list of supported languages for translation.",
+        "query": "I'm organizing a family reunion and I need some assistance. Can you find a spacious venue in a park or garden that can accommodate a large group? It would be great if you could also provide me with the park's amenities and any rental costs. Additionally, I would like to plan some outdoor games for the reunion. Can you suggest some fun and engaging games for both kids and adults? Finally, I need some inspirational quotes to include in the family reunion slideshow.",
         "relevant APIs": [
             [
-                "Translate All Languages",
-                "Translate"
+                "PrivatePublicAPI",
+                "getPetById"
             ],
             [
-                "Translate All Languages",
-                "Detect"
+                "PrivatePublicAPI",
+                "getInventory"
             ],
             [
-                "Translate All Languages",
-                "Languages"
+                "People Lookup",
+                "lookup"
             ]
         ],
         "query_id": 3
@@ -574,175 +619,236 @@
     {
         "api_list": [
             {
-                "category_name": "Education",
-                "tool_name": "Random Words",
-                "api_name": "Get a random word",
-                "api_description": "Returns a random words from a list of more than 5500+ words\n\nImportant Note: \n1. *wordLength* must not be used with minLength and/or maxLength",
+                "category_name": "Media",
+                "tool_name": "Music Trivia",
+                "api_name": "/getgamelevel",
+                "api_description": "get a game level with a level parameter. The level this does not imply difficulty",
                 "required_parameters": [],
                 "optional_parameters": [
                     {
-                        "name": "wordLength",
+                        "name": "level",
                         "type": "NUMBER",
-                        "description": "",
+                        "description": "paginated level",
                         "default": ""
                     },
                     {
-                        "name": "excludes",
+                        "name": "output",
                         "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "beginsWith",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "endsWith",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "includes",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "maxLength",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "minLength",
-                        "type": "NUMBER",
-                        "description": "",
+                        "description": "set output format type , 'xml' or 'json'",
                         "default": ""
                     }
                 ],
                 "method": "GET"
             },
             {
-                "category_name": "Education",
-                "tool_name": "Random Words",
-                "api_name": "Get multiple random words",
-                "api_description": "Get multiple random words (i.e. min 2 and max 20) from a list of 5500+ words\n\nImportant Notes:\n1. *count* must be a valid number between 2 and 20 (both 2 and 20 included)\n2. *wordLength* must not be used with minLength and/or maxLength",
+                "category_name": "Media",
+                "tool_name": "Images Infos - API2",
+                "api_name": "/extracttext",
+                "api_description": "Extract text from an image",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Images Infos - API2",
+                "api_name": "/getMetadataFromImage",
+                "api_description": "Get metadata from image",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Images Infos - API2",
+                "api_name": "/extracthandwriting",
+                "api_description": "Extract text from an image",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Shazam",
+                "api_name": "Top Track by City",
+                "api_description": "This endpoint will give the top song in specific city",
                 "required_parameters": [
                     {
-                        "name": "count",
-                        "type": "NUMBER",
-                        "description": "The word count must be between 2 and 20",
-                        "default": "5"
+                        "name": "city_name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Moscow"
+                    },
+                    {
+                        "name": "country_code",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "RU"
                     }
                 ],
                 "optional_parameters": [
                     {
-                        "name": "maxLength",
+                        "name": "limit",
                         "type": "NUMBER",
                         "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "endsWith",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "wordLength",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "includes",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "beginsWith",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "minLength",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": ""
-                    },
-                    {
-                        "name": "excludes",
-                        "type": "STRING",
-                        "description": "",
-                        "default": ""
+                        "default": "2"
                     }
                 ],
                 "method": "GET",
-                "template_response": {}
+                "template_response": "{\"next\": \"str\", \"properties\": {}, \"tracks\": [{\"artists\": [{\"adamid\": \"str\", \"alias\": \"str\", \"follow\": {\"followkey\": \"str\"}, \"id\": \"str\", \"_list_length\": 1}], \"highlightsurls\": {\"artisthighlightsurl\": \"str\", \"relatedhighlightsurl\": \"str\"}, \"hub\": {\"actions\": [{\"id\": \"str\", \"name\": \"str\", \"type\": \"str\", \"_list_length\": 2}], \"displayname\": \"str\", \"explicit\": \"bool\", \"image\": \"str\", \"options\": [{\"actions\": [{\"name\": \"str\", \"type\": \"str\", \"uri\": \"str\", \"_list_length\": 2}], \"beacondata\": {\"providername\": \"str\", \"type\": \"str\"}, \"caption\": \"str\", \"colouroverflowimage\": \"bool\", \"image\": \"str\", \"listcaption\": \"str\", \"overflowimage\": \"str\", \"providername\": \"str\", \"type\": \"str\", \"_list_length\": 1}], \"type\": \"str\"}, \"images\": {\"background\": \"str\", \"coverart\": \"str\", \"coverarthq\": \"str\", \"joecolor\": \"str\"}, \"key\": \"str\", \"layout\": \"str\", \"properties\": {}, \"share\": {\"href\": \"str\", \"html\": \"str\", \"image\": \"str\", \"snapchat\": \"str\", \"subject\": \"str\", \"text\": \"str\", \"twitter\": \"str\"}, \"subtitle\": \"str\", "
             },
             {
-                "category_name": "Education",
-                "tool_name": "Miraisoft Training",
-                "api_name": "dashboard",
-                "api_description": "dashboard",
-                "required_parameters": [],
+                "category_name": "Media",
+                "tool_name": "Shazam",
+                "api_name": "Search Track",
+                "api_description": "This endpoint will search for the name of any song and return similar songs with the name.",
+                "required_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "5"
+                    },
+                    {
+                        "name": "track",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Love Yourself"
+                    }
+                ],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "data": {
-                        "VN30": {
-                            "stocks": {
-                                "items": [
+                    "tracks": {
+                        "hits": [
+                            {
+                                "actions": [
                                     {
-                                        "symbol": "str",
-                                        "buyPrice3": "float",
-                                        "buyVolume3": "int",
-                                        "buyPrice2": "float",
-                                        "buyVolume2": "int",
-                                        "buyPrice1": "int",
-                                        "buyVolume1": "int",
-                                        "change": "float",
-                                        "currentPrice": "float",
-                                        "currentVolume": "float",
-                                        "totalVolume": "int",
-                                        "sellPrice3": "float",
-                                        "sellVolume3": "int",
-                                        "sellPrice2": "float",
-                                        "sellVolume2": "int",
-                                        "sellPrice1": "int",
-                                        "sellVolume1": "int",
-                                        "highPrice": "float",
-                                        "lowPrice": "float",
-                                        "foreignBuyVolume": "int",
-                                        "foreignSellVolume": "int",
-                                        "floorPrice": "float",
-                                        "ceilPrice": "int",
-                                        "referencePrice": "float",
-                                        "foreignBuyValue": "int",
-                                        "foreignSellValue": "int",
-                                        "_list_length": 5
+                                        "id": "str",
+                                        "name": "str",
+                                        "type": "str",
+                                        "_list_length": 1
                                     }
-                                ]
+                                ],
+                                "alias": "str",
+                                "artists": [
+                                    {
+                                        "adamid": "str",
+                                        "alias": "str",
+                                        "follow": {
+                                            "followkey": "str"
+                                        },
+                                        "id": "str",
+                                        "_list_length": 1
+                                    }
+                                ],
+                                "heading": {
+                                    "subtitle": "str",
+                                    "title": "str"
+                                },
+                                "images": {
+                                    "blurred": "str",
+                                    "default": "str",
+                                    "play": "str"
+                                },
+                                "key": "str",
+                                "share": {
+                                    "avatar": "str",
+                                    "href": "str",
+                                    "html": "str",
+                                    "image": "str",
+                                    "snapchat": "str",
+                                    "subject": "str",
+                                    "text": "str",
+                                    "twitter": "str"
+                                },
+                                "stores": {
+                                    "apple": {
+                                        "actions": [
+                                            {
+                                                "type": "str",
+                                                "uri": "str",
+                                                "_list_length": 1
+                                            }
+                                        ],
+                                        "coverarturl": "str",
+                                        "explicit": "bool",
+                                        "previewurl": "str",
+                                        "productid": "str",
+                                        "trackid": "str"
+                                    }
+                                },
+                                "streams": {},
+                                "type": "str",
+                                "url": "str",
+                                "urlparams": {},
+                                "_list_length": 1
                             }
-                        }
+                        ],
+                        "next": "str"
                     }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Shazam",
+                "api_name": "Artist Info",
+                "api_description": "This endpoint will extract information of any artist from https://www.shazam.com.",
+                "required_parameters": [
+                    {
+                        "name": "artist_id",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "40543550"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "actions": [
+                        {
+                            "id": "str",
+                            "type": "str",
+                            "_list_length": 2
+                        }
+                    ],
+                    "adamid": "str",
+                    "alias": "str",
+                    "avatar": "str",
+                    "genres": {
+                        "primary": "str",
+                        "secondaries": [
+                            "list of str with length 10"
+                        ]
+                    },
+                    "id": "str",
+                    "layout": "str",
+                    "name": "str",
+                    "share": {
+                        "href": "str",
+                        "image": "str",
+                        "subject": "str",
+                        "text": "str",
+                        "twitter": "str"
+                    },
+                    "toptracks": {
+                        "url": "str"
+                    },
+                    "url": "str",
+                    "verified": "bool",
+                    "weburl": "str"
                 }
             }
         ],
-        "query": "I'm a teacher planning a fun activity for my students and I need some ideas for a game. Can you suggest some random words that I can use as themes for the game? Also, find me the nearest store that sells educational supplies.",
+        "query": "I'm planning a road trip with my friends and we need some good music for the journey. Can you recommend the top tracks in the cities we'll be passing through? Also, extract the text from images of famous landmarks in each city.",
         "relevant APIs": [
             [
-                "Random Words",
-                "Get multiple random words"
+                "Shazam",
+                "Top Track by City"
             ],
             [
-                "Miraisoft Training",
-                "dashboard"
+                "Images Infos - API2",
+                "/extracttext"
             ]
         ],
         "query_id": 4
@@ -750,404 +856,29 @@
     {
         "api_list": [
             {
-                "category_name": "Finance",
-                "tool_name": "Daily-Sec-Financial-Statement-Dataset",
-                "api_name": "basic_daily",
-                "api_description": "This endpoints delivers the daily zip files of filed 10-q and 10-k reports. With the basic subcription, you only have access to daily zip files older than 21 days.\n\nThe structure of the data is similar as in the SEC financial statement dataset (https://www.sec.gov/files/aqfs.pdf), with the exception  that not TAG file is present and that the SUB file only contains a subset of the attributes.\n\nPlease not that the https-url has to end with a \"/\": \nhttps://daily-sec-financial-statement-dataset.p.rapidapi.com/basic/day/2022-11-10**/**",
+                "category_name": "Music",
+                "tool_name": "Spotify Scraper",
+                "api_name": "List Podcast Episodes",
+                "api_description": "This endpoint lists all episodes of a podcast.",
                 "required_parameters": [
                     {
-                        "name": "date",
-                        "type": "string",
-                        "description": "",
-                        "default": "2022-11-10"
+                        "name": "showId",
+                        "type": "STRING",
+                        "description": "Show ID.",
+                        "default": "4oTBzqC3DHbaKNFq2YXpQw"
                     }
                 ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Daily-Sec-Financial-Statement-Dataset",
-                "api_name": "premium_daily",
-                "api_description": "This endpoints delivers the daily zip files of filed 10-q and 10-k reports. The files are published daily (resp. once or twice a week during the beta phase).\n\nThe structure of the data is similar as in the SEC financial statement dataset (https://www.sec.gov/files/aqfs.pdf), with the exception  that not TAG file is present and that the SUB file only contains a subset of the attributes.\n\nPlease not that the https-url has to end with a \"/\": \nhttps://daily-sec-financial-statement-dataset.p.rapidapi.com/basic/day/2022-11-10**/**",
-                "required_parameters": [
-                    {
-                        "name": "date",
-                        "type": "string",
-                        "description": "",
-                        "default": "2022-11-10"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Daily-Sec-Financial-Statement-Dataset",
-                "api_name": "content",
-                "api_description": "This endpoint delivers the a json that shows which dates are available with which subscription. The format is as follows:\n\n```\n{\n  \"daily\": [\n  {  \n    \"date\": \"2022-01-03\",\n    \"file\": \"20220103.zip\",\n    \"subscription\": \"basic\"\n  },\n...\n  {  \n    \"date\": \"2022-12-02\",\n    \"file\": \"20221202.zip\",\n    \"subscription\": \"premium\"\n  },\n\n```\nEntries marked with \"subscription: premium\" are only accessible with the premium plan. All other entries are available with basic and premium plan",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "daily": [
-                        {
-                            "date": "str",
-                            "file": "str",
-                            "subscription": "str",
-                            "_list_length": 220
-                        }
-                    ]
-                }
-            },
-            {
-                "category_name": "Finance",
-                "tool_name": "Daily-Sec-Financial-Statement-Dataset",
-                "api_name": "heartbeat",
-                "api_description": "A simple heartbeat that returns the time of the server to check if the connection to the server is working.",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "time": "str"
-                }
-            }
-        ],
-        "query": "As a researcher, I require the basic daily zip files of filed 10-q and 10-k reports. Could you please provide me with the basic daily data for the date '2022-11-10'? Moreover, I would like to check the availability of dates for both basic and premium subscriptions using the content endpoint. Could you also provide the server time using the heartbeat endpoint?",
-        "relevant APIs": [
-            [
-                "Daily-Sec-Financial-Statement-Dataset",
-                "basic_daily"
-            ],
-            [
-                "Daily-Sec-Financial-Statement-Dataset",
-                "content"
-            ],
-            [
-                "Daily-Sec-Financial-Statement-Dataset",
-                "heartbeat"
-            ]
-        ],
-        "query_id": 5
-    },
-    {
-        "api_list": [
-            {
-                "category_name": "Transportation",
-                "tool_name": "Motorcycles by API-Ninjas",
-                "api_name": "/v1/motorcycles",
-                "api_description": "API Ninjas Motorcycles API endpoint. Returns up to 30 motorcycle results matching the input name parameters. For searches that yield > 30 results, please use the offset parameter.\n\nEither **make** or **model** parameter must be set.",
-                "required_parameters": [],
                 "optional_parameters": [
                     {
-                        "name": "model",
-                        "type": "STRING",
-                        "description": "name of motorcycle model. Supports partial matching (e.g. Ninja will match Ninja 650).",
-                        "default": "Ninja"
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "The max number of items returned per request. Defaults to `100`.",
+                        "default": ""
                     },
                     {
                         "name": "offset",
                         "type": "NUMBER",
-                        "description": "number of results to offset for pagination. Default is 0.",
-                        "default": ""
-                    },
-                    {
-                        "name": "make",
-                        "type": "STRING",
-                        "description": "name of manufacturer/brand. Supports partial matching (e.g. Harley will match Harley-Davidson).",
-                        "default": "Kawasaki"
-                    },
-                    {
-                        "name": "year",
-                        "type": "STRING",
-                        "description": "release year of motorcycle model. Must be in the form of YYYY (e.g. 2022).",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "make": "str",
-                    "model": "str",
-                    "year": "str",
-                    "type": "str",
-                    "displacement": "str",
-                    "engine": "str",
-                    "power": "str",
-                    "torque": "str",
-                    "compression": "str",
-                    "bore_stroke": "str",
-                    "valves_per_cylinder": "str",
-                    "fuel_system": "str",
-                    "fuel_control": "str",
-                    "ignition": "str",
-                    "lubrication": "str",
-                    "cooling": "str",
-                    "gearbox": "str",
-                    "transmission": "str",
-                    "clutch": "str",
-                    "frame": "str",
-                    "front_suspension": "str",
-                    "front_wheel_travel": "str",
-                    "rear_suspension": "str",
-                    "rear_wheel_travel": "str",
-                    "front_tire": "str",
-                    "rear_tire": "str",
-                    "front_brakes": "str",
-                    "rear_brakes": "str",
-                    "total_weight": "str",
-                    "seat_height": "str",
-                    "total_height": "str",
-                    "total_length": "str",
-                    "total_width": "str",
-                    "ground_clearance": "str",
-                    "wheelbase": "str",
-                    "fuel_capacity": "str",
-                    "starter": "str"
-                }
-            },
-            {
-                "category_name": "Transportation",
-                "tool_name": "Airports by API-Ninjas",
-                "api_name": "/v1/airports",
-                "api_description": "API Ninjas Airports API endpoint. At least one of the optional parameters must be provided.",
-                "required_parameters": [],
-                "optional_parameters": [
-                    {
-                        "name": "offset",
-                        "type": "NUMBER",
-                        "description": "number of results to offset for pagination.",
-                        "default": ""
-                    },
-                    {
-                        "name": "max_elevation",
-                        "type": "NUMBER",
-                        "description": "maximum airport elevation in feet.",
-                        "default": ""
-                    },
-                    {
-                        "name": "region",
-                        "type": "STRING",
-                        "description": "administrative region such as state or province within a country (e.g. California)",
-                        "default": ""
-                    },
-                    {
-                        "name": "min_elevation",
-                        "type": "NUMBER",
-                        "description": "minimum airport elevation in feet.",
-                        "default": ""
-                    },
-                    {
-                        "name": "city",
-                        "type": "STRING",
-                        "description": "airport city (e.g. London)",
-                        "default": ""
-                    },
-                    {
-                        "name": "country",
-                        "type": "STRING",
-                        "description": "airport country. Must be 2-character ISO-2 country code (e.g. GB)",
-                        "default": ""
-                    },
-                    {
-                        "name": "timezone",
-                        "type": "STRING",
-                        "description": "airport timezone (e.g. Europe/London)\n\n",
-                        "default": ""
-                    },
-                    {
-                        "name": "name",
-                        "type": "STRING",
-                        "description": "airport name. This parameter supports partial matching (e.g. Heathrow will match London Heathrow Airport)",
-                        "default": "London Heathrow"
-                    },
-                    {
-                        "name": "icao",
-                        "type": "STRING",
-                        "description": "International Civil Aviation Organization (ICAO) 4-character airport code.",
-                        "default": ""
-                    },
-                    {
-                        "name": "iata",
-                        "type": "STRING",
-                        "description": "International Air Transport Association (IATA) 3-character airport code.",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "icao": "str",
-                    "iata": "str",
-                    "name": "str",
-                    "city": "str",
-                    "region": "str",
-                    "country": "str",
-                    "elevation_ft": "str",
-                    "latitude": "str",
-                    "longitude": "str",
-                    "timezone": "str"
-                }
-            },
-            {
-                "category_name": "Transportation",
-                "tool_name": "Vehicle RC Information_v2",
-                "api_name": "Vehicle Information",
-                "api_description": "Fetch Vehicle Information using Registration Number.",
-                "required_parameters": [
-                    {
-                        "name": "VehicleNumber",
-                        "type": "string",
-                        "description": "",
-                        "default": "PB65AM0008"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Transportation",
-                "tool_name": "Canadian Gas Prices",
-                "api_name": "States",
-                "api_description": "Returns the average price of gas in all American states.",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "prices": [
-                        {
-                            "state": "str",
-                            "price": "float",
-                            "_list_length": 51
-                        }
-                    ]
-                }
-            },
-            {
-                "category_name": "Transportation",
-                "tool_name": "Canadian Gas Prices",
-                "api_name": "City List",
-                "api_description": "Returns a list of valid cities for this API when provided a valid province. Ex: 'Ontario'",
-                "required_parameters": [
-                    {
-                        "name": "province",
-                        "type": "ENUM",
-                        "description": "",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "error": "str"
-                }
-            },
-            {
-                "category_name": "Transportation",
-                "tool_name": "Canadian Gas Prices",
-                "api_name": "State",
-                "api_description": "Endpoint to provide average gas price of a given American State.",
-                "required_parameters": [
-                    {
-                        "name": "state",
-                        "type": "ENUM",
-                        "description": "",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "type",
-                        "type": "ENUM",
-                        "description": "Type of fuel you want the price for. Default is unleaded.",
-                        "default": ""
-                    }
-                ],
-                "method": "GET",
-                "template_response": {
-                    "error": "str"
-                }
-            },
-            {
-                "category_name": "Transportation",
-                "tool_name": "Datamo",
-                "api_name": "/specs/v1/getMakes",
-                "api_description": "This endpoint will return all the vehicle makes available, as an array of strings.",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {}
-            },
-            {
-                "category_name": "Transportation",
-                "tool_name": "Datamo",
-                "api_name": "/specs/v1/tier3",
-                "api_description": "Pull requested vehicle data for specific field parameters. Tier 3 access grants to filter by any of the 100+ fields in the database\n\nAt least one query parameter is required for a successful call.",
-                "required_parameters": [
-                    {
-                        "name": "make",
-                        "type": "STRING",
-                        "description": "At least 1 query parameter is required to make a successful call. For purpose of testing through the RapidAPI interface, this is required. Normally, only one of any additional query parameters is required. i.e. make, model, engineType, ...",
-                        "default": "Tesla"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "bodyType",
-                        "type": "STRING",
-                        "description": "At least 1 query parameter is required to make a successful call.",
-                        "default": ""
-                    },
-                    {
-                        "name": "msrp",
-                        "type": "STRING",
-                        "description": "At least 1 query parameter is required to make a successful call.",
-                        "default": ""
-                    },
-                    {
-                        "name": "engineType",
-                        "type": "STRING",
-                        "description": "At least 1 query parameter is required to make a successful call.",
-                        "default": ""
-                    },
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "The page of data returned, starting with index 1 (Default 1).",
-                        "default": ""
-                    },
-                    {
-                        "name": "search",
-                        "type": "STRING",
-                        "description": "Text search by the make, model, or year.",
-                        "default": ""
-                    },
-                    {
-                        "name": "model",
-                        "type": "STRING",
-                        "description": "At least 1 query parameter is required to make a successful call.",
-                        "default": "Model 3"
-                    },
-                    {
-                        "name": "order",
-                        "type": "STRING",
-                        "description": "The sort order of the specified field.",
-                        "default": ""
-                    },
-                    {
-                        "name": "sortBy",
-                        "type": "STRING",
-                        "description": "The field you would like to sort by.",
-                        "default": ""
-                    },
-                    {
-                        "name": "per_page",
-                        "type": "NUMBER",
-                        "description": "The number of entries returned per query. The default is 10 per page. The max per page is 250. ",
-                        "default": ""
-                    },
-                    {
-                        "name": "fields",
-                        "type": "STRING",
-                        "description": "Over 100+ returnable fields including: make, model, year, engineType, bodyType, etc. See the Datamo website for a full list. Leave blank to return all fields.",
+                        "description": "The number of items omitted before the results. Defaults to `0`.",
                         "default": ""
                     }
                 ],
@@ -1157,69 +888,271 @@
                 }
             },
             {
-                "category_name": "Transportation",
-                "tool_name": "Datamo",
-                "api_name": "/specs/v1/tier1",
-                "api_description": "Pull requested vehicle data for specific field parameters. Tier 1 allows the following to be queried by:  \n1. make\n2. model\n\nAt least one query parameter is required for a successful call.",
+                "category_name": "Music",
+                "tool_name": "Spotify Scraper",
+                "api_name": "Search",
+                "api_description": "This endpoint searches for albums, artists, episodes, genres, playlists, podcasts, and users. Pagination scraping is supported.",
                 "required_parameters": [
                     {
-                        "name": "make",
+                        "name": "term",
                         "type": "STRING",
-                        "description": "At least 1 query parameter is required to make a successful call. For purpose of testing through the RapidAPI interface, this is required. Normally, only one of any additional query parameters is required. i.e. make, model, engineType, ...",
-                        "default": "Tesla"
+                        "description": "Search Term.",
+                        "default": "Jazz"
                     }
                 ],
                 "optional_parameters": [
                     {
-                        "name": "sortBy",
-                        "type": "STRING",
-                        "description": "The field you would like to sort by.",
-                        "default": ""
-                    },
-                    {
-                        "name": "order",
-                        "type": "STRING",
-                        "description": "The sort order of the specified field.",
-                        "default": ""
-                    },
-                    {
-                        "name": "model",
-                        "type": "STRING",
-                        "description": "At least 1 query parameter is required to make a successful call.",
-                        "default": "Model 3"
-                    },
-                    {
-                        "name": "page",
+                        "name": "offset",
                         "type": "NUMBER",
-                        "description": "The page of data returned, starting with index 1 (Default 1)",
+                        "description": "The number of items omitted before the results. Defaults to `0`.",
                         "default": ""
                     },
                     {
-                        "name": "per_page",
+                        "name": "limit",
                         "type": "NUMBER",
-                        "description": "The number of entries returned per query. The default is 10 per page. The max per page is 250. ",
+                        "description": "The max number of items returned per request. Defaults to `50`.",
                         "default": ""
                     },
                     {
-                        "name": "fields",
-                        "type": "STRING",
-                        "description": "Over 100+ returnable fields including: make, model, engineType, bodyType, msrp, etc. See the Datamo website for a full list. Leave blank to return all fields.",
+                        "name": "type",
+                        "type": "ENUM",
+                        "description": "Search type. Defaults to `all`.",
                         "default": ""
                     }
                 ],
                 "method": "GET",
-                "template_response": "{\"totalItems\": \"int\", \"totalPages\": \"int\", \"data\": [{\"_id\": \"str\", \"angleOfApproach\": \"str\", \"angleOfDeparture\": \"str\", \"body\": \"str\", \"bodyType\": \"str\", \"camType\": \"str\", \"carClassification\": \"str\", \"cargoCapacity\": \"str\", \"chargeTime\": \"str\", \"colorsExterior\": \"str\", \"colorsInterior\": \"str\", \"comfort\": \"str\", \"convenience\": \"str\", \"countryOfOrigin\": \"str\", \"curbWeight\": \"str\", \"cylinders\": \"str\", \"dateAdded\": \"str\", \"domesticOrImported\": \"str\", \"doorFeatures\": \"str\", \"doors\": \"str\", \"dragCoefficient\": \"str\", \"driveType\": \"str\", \"eRange\": \"str\", \"energyConsumption\": \"str\", \"engineSize\": \"str\", \"engineType\": \"str\", \"expertRatingComfort\": \"str\", \"expertRatingDriving\": \"str\", \"expertRatingEconomy\": \"str\", \"expertRatingInterior\": \"str\", \"expertRatingStorage\": \"str\", \"expertRatingTechnology\": \"str\", \"expertRatingValue\": \"str\", \"expertRatingVerdict \": \"str\", \"expertRatingWildcard\": \"str\", \"exteriorOptions\": \"str\", \"frontHeadRoom\": \"str\", \"frontHipRoom\": \"str\", \"frontLegRoom\": \"str\", \"frontS"
+                "template_response": "{\"status\": \"bool\", \"albums\": {\"totalCount\": \"int\", \"items\": [{\"type\": \"str\", \"id\": \"str\", \"name\": \"str\", \"shareUrl\": \"str\", \"date\": \"str\", \"artists\": [{\"type\": \"str\", \"id\": \"str\", \"name\": \"str\", \"shareUrl\": \"str\", \"_list_length\": 1}], \"cover\": [{\"url\": \"str\", \"width\": \"int\", \"height\": \"int\", \"_list_length\": 3}], \"_list_length\": 50}]}, \"artists\": {\"totalCount\": \"int\", \"items\": [{\"type\": \"str\", \"id\": \"str\", \"name\": \"str\", \"shareUrl\": \"str\", \"verified\": \"bool\", \"visuals\": {\"avatar\": [{\"url\": \"str\", \"width\": \"int\", \"height\": \"int\", \"_list_length\": 3}]}, \"_list_length\": 50}]}, \"episodes\": {\"totalCount\": \"int\", \"items\": [{\"type\": \"str\", \"id\": \"str\", \"name\": \"str\", \"shareUrl\": \"str\", \"date\": \"str\", \"description\": \"str\", \"durationMs\": \"int\", \"durationText\": \"str\", \"cover\": [{\"url\": \"str\", \"width\": \"int\", \"height\": \"int\", \"_list_length\": 3}], \"podcast\": {\"type\": \"str\", \"id\": \"str\", \"name\": \"str\", \"shareUrl\": \"str\", \"publisherName\": \"str\", \"cover\": [{\"url\": \"str\", \"width\": \"int\", \"height\": \"int\""
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Spotify Scraper",
+                "api_name": "Download Track on SoundCloud (3-4 Quotas)",
+                "api_description": "Provides a solution to download a Spotify track on SoundCloud. HQ (4 Quotas) and SQ (3 Quotas) audios. (Tutorial: [How to Use SoundCloud Audio URLs](https://rapidapi.com/DataFanatic/api/soundcloud-scraper/tutorials/how-to-use-audio-urls)) (Powered by [SoundCloud Scraper](https://rapidapi.com/DataFanatic/api/soundcloud-scraper/). Get a better price by subscribing to and using it directly.)",
+                "required_parameters": [
+                    {
+                        "name": "track",
+                        "type": "STRING",
+                        "description": "Track ID, track share URL, track name, or other search term.",
+                        "default": "Photograph Ed Sheeran"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "quality",
+                        "type": "ENUM",
+                        "description": "Download quality. Defaults to `sq`.\n* **`hq`**: High and standard quality - 4 quotas\n* **`sq`**: Standard quality - 3 quotas\n\nThe final price depends on the existence of the file of the corresponding quality. For example, if `hq` is requested but the high-quality file does not exist, then the price will be 3 quotas if the standard one exists.",
+                        "default": ""
+                    },
+                    {
+                        "name": "candidate",
+                        "type": "NUMBER",
+                        "description": "The number of the most related SoundCloud tracks among which a track with the nearest duration will be selected to generate downloadable audio URLs. Defaults to `3`.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "bool",
+                    "soundcloudTrack": {
+                        "searchTerm": "str",
+                        "id": "int",
+                        "permalink": "str",
+                        "title": "str",
+                        "user": {
+                            "id": "int",
+                            "permalink": "str",
+                            "name": "str",
+                            "verified": "bool"
+                        },
+                        "audio": [
+                            {
+                                "quality": "str",
+                                "url": "str",
+                                "durationMs": "int",
+                                "durationText": "str",
+                                "mimeType": "str",
+                                "format": "str",
+                                "_list_length": 2
+                            }
+                        ]
+                    },
+                    "spotifyTrack": {
+                        "type": "str",
+                        "id": "str",
+                        "name": "str",
+                        "shareUrl": "str",
+                        "durationMs": "int",
+                        "durationText": "str",
+                        "artists": [
+                            {
+                                "type": "str",
+                                "id": "str",
+                                "name": "str",
+                                "shareUrl": "str",
+                                "_list_length": 1
+                            }
+                        ],
+                        "album": {
+                            "type": "str",
+                            "id": "str",
+                            "name": "str",
+                            "shareUrl": "str",
+                            "cover": [
+                                {
+                                    "url": "str",
+                                    "width": "int",
+                                    "height": "int",
+                                    "_list_length": 3
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "L-yrics",
+                "api_name": "Main endpoint",
+                "api_description": "Get the song lyrics",
+                "required_parameters": [
+                    {
+                        "name": "song",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Ashes"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "artist",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Stellar"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "song": "str",
+                    "artist": "str",
+                    "lyrics": "str"
+                }
             }
         ],
-        "query": "I'm a car enthusiast and I want to learn more about motorcycles. Can you provide me with the specifications of motorcycles with the make 'Kawasaki' and year '2022' to broaden my knowledge? Additionally, suggest some airports where motorcycle events are frequently held.",
+        "query": "I'm organizing a jazz-themed party for my family. Can you suggest some popular jazz albums and artists? Moreover, provide me with the lyrics of the song 'Ashes' by Stellar to add to the party playlist.",
         "relevant APIs": [
             [
-                "Motorcycles by API-Ninjas",
-                "/v1/motorcycles"
+                "Spotify Scraper",
+                "Search"
             ],
             [
-                "Airports by API-Ninjas",
-                "/v1/airports"
+                "L-yrics",
+                "Main endpoint"
+            ]
+        ],
+        "query_id": 5
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "Hashing-Api",
+                "api_name": "SHA Text Hash",
+                "api_description": "Hash text (as query-string-parameter) using SHA1, SHA256, SHA384 or SHA512 algorithm according to selected mode path-parameter [1, 256, 384, 512].",
+                "required_parameters": [
+                    {
+                        "name": "dataString",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "enter-your-string-here"
+                    },
+                    {
+                        "name": "mode",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "256"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "hashHexString": "str",
+                    "hashBase64String": "str",
+                    "result": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Hashing-Api",
+                "api_name": "MD5 Text Hash",
+                "api_description": "Hash text (as query-string-parameter) using MD5 algorithm.",
+                "required_parameters": [
+                    {
+                        "name": "dataString",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "enter-your-string-here"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Hashing-Api",
+                "api_name": "Blake2B Text Hash with Key",
+                "api_description": "Hash text (as query-string-parameter) with private-key (as query-string-parameter) using blake2b algorithm.",
+                "required_parameters": [
+                    {
+                        "name": "dataString",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "enter-your-string-here"
+                    },
+                    {
+                        "name": "keyString",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "enter-your-key-here"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Hashing-Api",
+                "api_name": "Blake2B Text Hash",
+                "api_description": "Hash text (as query-string-parameter) using blake2b algorithm.",
+                "required_parameters": [
+                    {
+                        "name": "dataString",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "enter-your-string-here"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My friend needs to hash a text using the MD5 algorithm. The text to be hashed is 'Hello, friend!'. Can you generate the hash result for him? Furthermore, he wants to hash another text using the SHA384 algorithm. The text is 'Goodbye, friend!'. Can you provide the hash result for him?",
+        "relevant APIs": [
+            [
+                "Hashing-Api",
+                "MD5 Text Hash"
+            ],
+            [
+                "Hashing-Api",
+                "SHA Text Hash"
             ]
         ],
         "query_id": 6
@@ -1227,27 +1160,216 @@
     {
         "api_list": [
             {
-                "category_name": "Tools",
-                "tool_name": "Todo",
-                "api_name": "getTodoUsingGET",
-                "api_description": "Get todo from id",
-                "required_parameters": [
+                "category_name": "Gaming",
+                "tool_name": "Estrelabet Aviator API",
+                "api_name": "estrelabet-aviator-latest",
+                "api_description": "Will retrieve the latest results from Aviator at Estrelabet.\n\n- The first result is the most recent\n- The last result is the oldest",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Gaming",
+                "tool_name": "Bet7k Aviator API",
+                "api_name": "bet7k-aviator-latest",
+                "api_description": "Will retrieve the latest results from Aviator at BET7K.\n\n- The first result is the most recent\n- The last result is the oldest",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Gaming",
+                "tool_name": "Pictionary Charades Word Generator",
+                "api_name": "Get Pictionary Word",
+                "api_description": "Get a random pictionary word with the specified difficulty. If not difficulty is supplied, a random difficulty will be used.",
+                "required_parameters": [],
+                "optional_parameters": [
                     {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "id",
+                        "name": "difficulty",
+                        "type": "ENUM",
+                        "description": "",
                         "default": ""
                     }
                 ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "difficulty": "str",
+                    "word": "str"
+                }
+            },
+            {
+                "category_name": "Gaming",
+                "tool_name": "Pictionary Charades Word Generator",
+                "api_name": "Get Charades Word",
+                "api_description": "Get a random charades word with the specified difficulty. If not difficulty is supplied, a random difficulty will be used.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "difficulty",
+                        "type": "ENUM",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "difficulty": "str",
+                    "word": "str"
+                }
+            },
+            {
+                "category_name": "Gaming",
+                "tool_name": "Hearthstone",
+                "api_name": "Get Card By Slug",
+                "api_description": "get card information by slug",
+                "required_parameters": [
+                    {
+                        "name": "slug",
+                        "type": "string",
+                        "description": "",
+                        "default": "a-light-in-the-darkness"
+                    }
+                ],
                 "optional_parameters": [],
-                "method": "GET"
+                "method": "GET",
+                "template_response": {
+                    "collectible": "int",
+                    "slug": "str",
+                    "artistName": "str",
+                    "manaCost": "int",
+                    "name": "str",
+                    "text": "str",
+                    "flavorText": "str",
+                    "duels": {
+                        "relevant": "bool",
+                        "constructed": "bool"
+                    },
+                    "hasImage": "bool",
+                    "hasImageGold": "bool",
+                    "hasCropImage": "bool",
+                    "keywords": [
+                        {
+                            "slug": "str",
+                            "name": "str",
+                            "refText": "str",
+                            "text": "str",
+                            "gameModes": [
+                                {
+                                    "slug": "str",
+                                    "name": "str",
+                                    "_list_length": 4
+                                }
+                            ],
+                            "_list_length": 1
+                        }
+                    ],
+                    "rarity": {
+                        "slug": "str",
+                        "craftingCost": [
+                            "list of int with length 2"
+                        ],
+                        "dustValue": [
+                            "list of int with length 2"
+                        ],
+                        "name": "str"
+                    },
+                    "class": {
+                        "slug": "str",
+                        "name": "str"
+                    },
+                    "type": {
+                        "slug": "str",
+                        "name": "str",
+                        "gameModes": [
+                            {
+                                "slug": "str",
+                                "name": "str",
+                                "_list_length": 4
+                            }
+                        ]
+                    },
+                    "cardSet": {
+                        "name": "str",
+                        "slug": "str",
+                        "type": "str",
+                        "collectibleCount": "int",
+                        "collectibleRevealedCount": "int",
+                        "nonCollectibleCount": "int",
+                        "nonCollectibleRevealedCount": "int"
+                    },
+                    "spellSchool": {
+                        "slug": "str",
+                        "name": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Gaming",
+                "tool_name": "Hearthstone",
+                "api_name": "Get Cards",
+                "api_description": "get a list of all the cards available in hearthstone",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "pageSize",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"cards\": [{\"collectible\": \"int\", \"slug\": \"str\", \"artistName\": \"str\", \"manaCost\": \"int\", \"name\": \"str\", \"text\": \"str\", \"flavorText\": \"str\", \"duels\": {\"relevant\": \"bool\", \"constructed\": \"bool\"}, \"hasImage\": \"bool\", \"hasImageGold\": \"bool\", \"hasCropImage\": \"bool\", \"keywords\": [{\"slug\": \"str\", \"name\": \"str\", \"refText\": \"str\", \"text\": \"str\", \"gameModes\": [{\"slug\": \"str\", \"name\": \"str\", \"_list_length\": 4}], \"_list_length\": 1}], \"rarity\": {\"slug\": \"str\", \"craftingCost\": [\"list of int with length 2\"], \"dustValue\": [\"list of int with length 2\"], \"name\": \"str\"}, \"class\": {\"slug\": \"str\", \"name\": \"str\"}, \"type\": {\"slug\": \"str\", \"name\": \"str\", \"gameModes\": [{\"slug\": \"str\", \"name\": \"str\", \"_list_length\": 4}]}, \"cardSet\": {\"name\": \"str\", \"slug\": \"str\", \"type\": \"str\", \"collectibleCount\": \"int\", \"collectibleRevealedCount\": \"int\", \"nonCollectibleCount\": \"int\", \"nonCollectibleRevealedCount\": \"int\"}, \"spellSchool\": {\"slug\": \"str\", \"name\": \"str\"}, \"_list_length\": 1}], \"cardCount\": \"int\", \"pageCount\": \"int\""
+            },
+            {
+                "category_name": "Gaming",
+                "tool_name": "CROSSWORD Solver",
+                "api_name": "CROSS",
+                "api_description": "**Using this API is easy! An example?**\n\nSearch string:\n- must contain letters (a-z) AND at least one _ (underscore) for unknown letters.\n- must have a minimum length of 3 and a maximum lenght of 65 characters.\n- is a required parameter.\n\nExample request:   `word=u_b_l_e_a_l_`\n\nLanguage:\n- en, es, de (English, Spanish, German)\n- is a optional parameter. If not set /en/ is used. \n\nExample request:   `lang=en`\n\n**This is fun!**",
+                "required_parameters": [
+                    {
+                        "name": "word",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "u_b_l_e_a_l_"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
             }
         ],
-        "query": "I need to update the status of a task in my todo list. Can you fetch the todo with id 1234 and provide me with the necessary information to make the update?",
+        "query": "I am planning a surprise party for my family and I need some ideas for games. Can you provide a random Charades word with the difficulty set to 'easy'? It would be great if you could also fetch the latest results from Aviator at Estrelabet and Bet7k.",
         "relevant APIs": [
             [
-                "Todo",
-                "getTodoUsingGET"
+                "Pictionary Charades Word Generator",
+                "Get Charades Word"
+            ],
+            [
+                "Estrelabet Aviator API",
+                "estrelabet-aviator-latest"
+            ],
+            [
+                "Bet7k Aviator API",
+                "bet7k-aviator-latest"
             ]
         ],
         "query_id": 7
@@ -1255,261 +1377,30 @@
     {
         "api_list": [
             {
-                "category_name": "Science",
-                "tool_name": "manatee jokes",
-                "api_name": "random",
-                "api_description": "retrieves a random manatee joke",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "id": "int",
-                    "setup": "str",
-                    "punchline": "str",
-                    "createdAt": "str",
-                    "updatedAt": "str"
-                }
-            },
-            {
-                "category_name": "Science",
-                "tool_name": "manatee jokes",
-                "api_name": "find all",
-                "api_description": "retrieves all available jokes",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "id": "int",
-                    "setup": "str",
-                    "punchline": "str",
-                    "createdAt": "str",
-                    "updatedAt": "str"
-                }
-            },
-            {
-                "category_name": "Science",
-                "tool_name": "manatee jokes",
-                "api_name": "get by id",
-                "api_description": "gets a specific joke by id",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "string",
-                        "description": "",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Programming Memes Images",
-                "api_name": "v1/memes",
-                "api_description": "Get Random Programming Memes",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "World of Jokes",
-                "api_name": "Get Jokes By Specific Category",
-                "api_description": "Access our huge collection of jokes of specific category and paginate through them based on your desired limit and sorting criteria.",
-                "required_parameters": [
-                    {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": 100
-                    },
-                    {
-                        "name": "page",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": 1
-                    },
-                    {
-                        "name": "category",
-                        "type": "STRING",
-                        "description": "Category of joke based on the jokes categories API",
-                        "default": "Women"
-                    }
-                ],
-                "optional_parameters": [
-                    {
-                        "name": "sortBy",
-                        "type": "STRING",
-                        "description": "Valid format to sort is `field:order`\ne.g. `score:desc` for highest score first sorting\nwhere `asc` for sorting in ascending order\n`desc` for sorting in descending order",
-                        "default": "score:desc"
-                    }
-                ],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "World of Jokes",
-                "api_name": "Get Random Joke By Category",
-                "api_description": "Get the random joke by category from a collection of most rated and most popular jokes.",
-                "required_parameters": [
-                    {
-                        "name": "category",
-                        "type": "STRING",
-                        "description": "Category of joke based on the jokes categories API",
-                        "default": "Political"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "World of Jokes",
-                "api_name": "Get Joke of the Day By Category",
-                "api_description": "Get the joke of the day of specific category from a collection of most rated and most popular jokes.",
-                "required_parameters": [
-                    {
-                        "name": "category",
-                        "type": "STRING",
-                        "description": "Category of joke based on the jokes categories API",
-                        "default": "Money"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Social",
-                "tool_name": "Chuck Norris",
-                "api_name": "/jokes/random",
-                "api_description": "Retrieve a random chuck joke in JSON format.",
+                "category_name": "Medical",
+                "tool_name": "Nguy\u1ec5n H\u1eefu Kh\u01b0\u01a1ng",
+                "api_name": "test",
+                "api_description": "test n\u00e8",
                 "required_parameters": [],
                 "optional_parameters": [
                     {
-                        "name": "category",
+                        "name": "name",
                         "type": "STRING",
-                        "description": "Specifies the category of the random joke.",
+                        "description": "",
                         "default": ""
                     }
                 ],
                 "method": "GET",
                 "template_response": {
-                    "timestamp": "str",
-                    "status": "int",
-                    "error": "str",
-                    "message": "str",
-                    "path": "str"
+                    "message": "str"
                 }
-            },
-            {
-                "category_name": "Social",
-                "tool_name": "Chuck Norris",
-                "api_name": "/jokes/search",
-                "api_description": "Free text search",
-                "required_parameters": [
-                    {
-                        "name": "query",
-                        "type": "STRING",
-                        "description": "The search term.",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "timestamp": "str",
-                    "status": "int",
-                    "error": "str",
-                    "message": "str",
-                    "violations": {
-                        "search.query": "str"
-                    }
-                }
-            },
-            {
-                "category_name": "Social",
-                "tool_name": "Chuck Norris",
-                "api_name": "/jokes/categories",
-                "api_description": "Retrieve a list of available joke categories.",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {}
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Memeados",
-                "api_name": "Sponge bob",
-                "api_description": "Generate Sponge Bob meme",
-                "required_parameters": [
-                    {
-                        "name": "text",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "Example test"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Memeados",
-                "api_name": "Google Fake Autocomplete",
-                "api_description": "Generate Fake google autocomplete",
-                "required_parameters": [
-                    {
-                        "name": "text1",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "Search"
-                    },
-                    {
-                        "name": "text3",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "search autocomplete 2"
-                    },
-                    {
-                        "name": "text2",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "search autocomplete 1"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Memeados",
-                "api_name": "Pet Pet",
-                "api_description": "Generate My Pet Pet meme GIF",
-                "required_parameters": [
-                    {
-                        "name": "image",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "https://i.pravatar.cc/300"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
             }
         ],
-        "query": "I'm hosting a virtual party for my friends and I need some funny jokes to share. Can you give me a random joke from the 'Political' category and a manatee joke? Also, generate a hilarious fake Google autocomplete for the phrase 'search autocomplete 1 search autocomplete 2'.",
+        "query": "Hey there! I'm looking for a tool that can assist with medical queries. Could you help me find accurate and reliable information on various health conditions? It would be awesome if the tool could provide details on diseases, symptoms, and treatments.",
         "relevant APIs": [
             [
-                "World of Jokes",
-                "Get Random Joke By Category"
-            ],
-            [
-                "manatee jokes",
-                "random"
-            ],
-            [
-                "Memeados",
-                "Google Fake Autocomplete"
+                "Nguy\u1ec5n H\u1eefu Kh\u01b0\u01a1ng",
+                "test"
             ]
         ],
         "query_id": 8
@@ -1517,172 +1408,201 @@
     {
         "api_list": [
             {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Infos",
-                "api_description": "Get the infos about the api in the current country",
+                "category_name": "Email",
+                "tool_name": "Mail Temple",
+                "api_name": "Some",
+                "api_description": "nothing",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "deo",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Email",
+                "tool_name": "fast Email verifier",
+                "api_name": "EmailVerifications",
+                "api_description": "He is  a simple way  to verify a list of email addresses with different dimensions.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "emailsimple",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "mbavazijoshua@gmail.com,apisolution@gmail.com"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "email": "str",
+                    "reachable": "str",
+                    "syntax": {
+                        "username": "str",
+                        "domain": "str",
+                        "valid": "bool"
+                    },
+                    "smtp": "NoneType",
+                    "gravatar": "NoneType",
+                    "suggestion": "str",
+                    "disposable": "bool",
+                    "role_account": "bool",
+                    "free": "bool",
+                    "has_mx_records": "bool"
+                }
+            },
+            {
+                "category_name": "Email",
+                "tool_name": "fast Email verifier",
+                "api_name": "Role Account",
+                "api_description": "Check the rols account of your domain",
+                "required_parameters": [
+                    {
+                        "name": "domain",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "domain.org"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "RoleAccount": "str"
+                }
+            },
+            {
+                "category_name": "Email",
+                "tool_name": "fast Email verifier",
+                "api_name": "EmailVerification",
+                "api_description": "Basic usage\nIt is a simple way to verify an email address with different dimensions.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "emailsimple",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "mbavazijoshua@gmail.com"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Email",
+                "tool_name": "Ishan",
+                "api_name": "GetUsersRelatedPeople",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "users('UserName')",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "users('UserName')"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Email",
+                "tool_name": "Ishan",
+                "api_name": "GetUsers",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "error": {
+                        "code": "str",
+                        "message": "str",
+                        "innerError": {
+                            "date": "str",
+                            "request-id": "str",
+                            "client-request-id": "str"
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Email",
+                "tool_name": "Ishan",
+                "api_name": "AllPlannerTasksforaPlan",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "PlanId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "PlanId"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "error": {
+                        "code": "str",
+                        "message": "str",
+                        "innerError": {
+                            "date": "str",
+                            "request-id": "str",
+                            "client-request-id": "str"
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Email",
+                "tool_name": "Email Verifier/Validator",
+                "api_name": "Email",
+                "api_description": "## The status attribute will be:\n\nOK  - Only if the smtp server explicitly confirms the availability of the mailbox address.\n\nINVALID - If the smtp server explicitly confirms the mailbox is not available.\n\nUNKNOWN - For every other scenario (The mailbox may or may not be available).",
+                "required_parameters": [
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "support@rapidapi.com"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Email",
+                "tool_name": "MatinApi",
+                "api_name": "9939c2c0-7fad-11e9-8019-f5bb8c5310ff",
+                "api_description": "a",
                 "required_parameters": [],
                 "optional_parameters": [],
                 "method": "GET"
             },
             {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Radio",
-                "api_description": "A radio object",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The radio deezer ID",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Genre",
-                "api_description": "A genre object",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The editorial's Deezer id",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "* Search",
-                "api_description": "Search tracks",
-                "required_parameters": [
-                    {
-                        "name": "q",
-                        "type": "STRING",
-                        "description": "",
-                        "default": "eminem"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Playlist",
-                "api_description": "A playlist object",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The playlist's Deezer id",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Artist",
-                "api_description": "An artist object",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The artist's Deezer id",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Editorial",
-                "api_description": "An editorial object",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The editorial's Deezer id",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Track",
-                "api_description": "A track object",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The track's Deezer id",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Comment",
-                "api_description": "A comment object",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The playlist's Deezer id",
-                        "default": ""
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Deezer",
-                "api_name": "Album",
-                "api_description": "An album object",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "STRING",
-                        "description": "The Deezer album id",
-                        "default": ""
-                    }
-                ],
+                "category_name": "Email",
+                "tool_name": "MatinApi",
+                "api_name": "end1",
+                "api_description": "none",
+                "required_parameters": [],
                 "optional_parameters": [],
                 "method": "GET"
             }
         ],
-        "query": "I want to discover new music genres that match my taste. Can you provide me with a playlist that includes tracks from various genres? Additionally, I would like to read comments from other users about a specific playlist using the Comment API.",
+        "query": "I'm organizing a family reunion and need to gather information about all the attendees. Can you fetch the contact details of all the users related to our family members using the Ishan API? Also, I would like to verify the email addresses of the attendees using the fast Email verifier API.",
         "relevant APIs": [
             [
-                "Deezer",
-                "Genre"
+                "Ishan",
+                "GetUsersRelatedPeople"
             ],
             [
-                "Deezer",
-                "Playlist"
-            ],
-            [
-                "Deezer",
-                "Comment"
+                "fast Email verifier",
+                "EmailVerifications"
             ]
         ],
         "query_id": 9
@@ -1690,186 +1610,198 @@
     {
         "api_list": [
             {
-                "category_name": "Entertainment",
-                "tool_name": "mydailyinspiration",
-                "api_name": "helloworld",
-                "api_description": "Test the API",
+                "category_name": "Food",
+                "tool_name": "The Cocktail DB",
+                "api_name": "Detailed Cocktail Recipe by ID",
+                "api_description": "Get Cocktail by ID",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "45"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "title": "str",
+                    "difficulty": "str",
+                    "portion": "str",
+                    "time": "str",
+                    "description": "str",
+                    "ingredients": [
+                        "list of str with length 5"
+                    ],
+                    "method": [
+                        {
+                            "Step 1": "str",
+                            "_list_length": 3
+                        }
+                    ],
+                    "image": "str"
+                }
+            },
+            {
+                "category_name": "Food",
+                "tool_name": "The Cocktail DB",
+                "api_name": "List of Cocktails",
+                "api_description": "This endpoint responds with a list of cocktails that includes their names and images, as well as their IDs, which must be provided in the \"Detailed Cocktail Recipe by ID\" endpoint to receive the detailed cocktail recipe.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "title": "str",
+                    "difficulty": "str",
+                    "image": "str"
+                }
+            },
+            {
+                "category_name": "Commerce",
+                "tool_name": "Direct Wines",
+                "api_name": "Cart",
+                "api_description": "",
                 "required_parameters": [],
                 "optional_parameters": [],
                 "method": "GET"
             },
             {
-                "category_name": "Entertainment",
-                "tool_name": "ASE's Quiz API",
-                "api_name": "Get random 20 questions by category",
-                "api_description": "Get random 20 questions by category",
-                "required_parameters": [
-                    {
-                        "name": "categoryId",
-                        "type": "string",
-                        "description": "",
-                        "default": "63357adc3ab81af9ad154eb4"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "ASE's Quiz API",
-                "api_name": "Get all difficulties",
-                "api_description": "Get all difficulties",
+                "category_name": "Commerce",
+                "tool_name": "Direct Wines",
+                "api_name": "Profile",
+                "api_description": "Profile",
                 "required_parameters": [],
                 "optional_parameters": [],
                 "method": "GET"
             },
             {
-                "category_name": "Entertainment",
-                "tool_name": "ASE's Quiz API",
-                "api_name": "Get random 20 questions by difficulty",
-                "api_description": "Get random 20 questions by difficulty",
-                "required_parameters": [
-                    {
-                        "name": "difficultyId",
-                        "type": "string",
-                        "description": "",
-                        "default": "63343ba898b44503fecc49e9"
-                    }
-                ],
+                "category_name": "Commerce",
+                "tool_name": "Direct Wines",
+                "api_name": "Recommendations",
+                "api_description": "",
+                "required_parameters": [],
                 "optional_parameters": [],
                 "method": "GET"
             },
             {
-                "category_name": "Entertainment",
-                "tool_name": "Watchmode",
-                "api_name": "Title Streaming Sources",
-                "api_description": "Get all of the streaming sources this title is available on and direct links to watch the title (web, iOS deeplinks and Android deeplinks for paid users). Streaming sources are limited to USA only for free plans.",
+                "category_name": "Food",
+                "tool_name": "Recipe Search and Diet",
+                "api_name": "Recipe Search and Recommendations",
+                "api_description": "Search 2 million recipes using keywords, 28 nutrients and 40 diet and health filters",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "chicken"
+                    },
+                    {
+                        "name": "r",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"q\": \"str\", \"from\": \"int\", \"to\": \"int\", \"more\": \"bool\", \"count\": \"int\", \"hits\": [{\"recipe\": {\"uri\": \"str\", \"label\": \"str\", \"image\": \"str\", \"source\": \"str\", \"url\": \"str\", \"shareAs\": \"str\", \"yield\": \"float\", \"dietLabels\": [\"list of str with length 1\"], \"healthLabels\": [\"list of str with length 3\"], \"cautions\": [\"list of str with length 1\"], \"ingredientLines\": [\"list of str with length 10\"], \"ingredients\": [{\"text\": \"str\", \"weight\": \"float\", \"foodCategory\": \"str\", \"foodId\": \"str\", \"image\": \"str\", \"_list_length\": 11}], \"calories\": \"float\", \"totalWeight\": \"float\", \"totalTime\": \"float\", \"cuisineType\": [\"list of str with length 1\"], \"mealType\": [\"list of str with length 1\"], \"dishType\": [\"list of str with length 1\"], \"totalNutrients\": {\"ENERC_KCAL\": {\"label\": \"str\", \"quantity\": \"float\", \"unit\": \"str\"}, \"FAT\": {\"label\": \"str\", \"quantity\": \"float\", \"unit\": \"str\"}, \"FASAT\": {\"label\": \"str\", \"quantity\": \"float\", \"unit\": \"str\"}, \"FATRN\": {\"label\": \"str\", \"quantity\": \"float\", \"unit\": \"str\"}, \"FAMS"
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Open Brewery DB",
+                "api_name": "Get a brewery",
+                "api_description": "Get Brewery by ID",
                 "required_parameters": [
                     {
                         "name": "id",
                         "type": "STRING",
-                        "description": "This ID can be the Watchmode ID of the title (returned by other endpoints such as the list-titles endpoint), or found in the mapping file: https://api.watchmode.com/datasets/title_id_map.csv.\n\nYou can also pass an IMDB ID here instead, or a TMDB type and TMDB ID combination. For example, the TMDB combination for The Shawshank Redemption is movie-278 and for Breaking Bad is tv-1396. ",
-                        "default": "3173903"
+                        "description": "ID of Brewery",
+                        "default": "5494"
                     }
                 ],
                 "optional_parameters": [],
                 "method": "GET",
                 "template_response": {
-                    "source_id": "int",
-                    "name": "str",
-                    "type": "str",
-                    "region": "str",
-                    "ios_url": "str",
-                    "android_url": "str",
-                    "web_url": "str",
-                    "format": "str",
-                    "price": "float",
-                    "seasons": "NoneType",
-                    "episodes": "NoneType"
+                    "message": "str"
                 }
             },
             {
-                "category_name": "Entertainment",
-                "tool_name": "Watchmode",
-                "api_name": "Streaming Release Dates",
-                "api_description": "Get a listing of recently released or coming soon releases on the major streaming services. Only major services and US releases dates included, however most of the major services (Netflix, Hulu, etc) release original content on the same days in all countries they support. We return is_original field to indicate wheter the title is an original release on that streaming service.",
+                "category_name": "Data",
+                "tool_name": "Open Brewery DB",
+                "api_name": "Autocomplete",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "Autocomplete a query",
+                        "default": "dog"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "name": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Open Brewery DB",
+                "api_name": "Breweries",
+                "api_description": "List of Breweries",
                 "required_parameters": [],
                 "optional_parameters": [
                     {
-                        "name": "start_date",
-                        "type": "NUMBER",
-                        "description": "By default, this endpoint will return release dates from the current date through the next 30 days. Populate this parameter to manually set a start date to include releases from a specific date range, format is YYYYMMDD (eg 20210101 for January 1st, 2021), or for more granular results down to the second YYYYMMDDHHMMSS (eg 20210101123459 for January 1st, 2021 12:24pm and 59 seconds). Hours are in 24 hour format and in Eastern Standard Time. Month, day, hour, minutes and seconds use leading zeros for single digit values.",
-                        "default": "20220301"
+                        "name": "by_state",
+                        "type": "STRING",
+                        "description": "Search by State",
+                        "default": "NY"
                     },
                     {
-                        "name": "limit",
-                        "type": "NUMBER",
-                        "description": "Set how many release dates to return, default is 500.",
-                        "default": "250"
+                        "name": "by_name",
+                        "type": "STRING",
+                        "description": "Search by Name",
+                        "default": "cooper"
                     },
                     {
-                        "name": "end_date",
-                        "type": "NUMBER",
-                        "description": "By default, this endpoint will return release dates from the current date through the next 30 days. Populate this parameter to manually set a end date to include releases from a specific date range, format is YYYYMMDD (eg 20210101 for January 1st, 2021), or for more granular results down to the second YYYYMMDDHHMMSS (eg 20210101123459 for January 1st, 2021 12:24pm and 59 seconds). Hours are in 24 hour format and in Eastern Standard Time. Month, day, hour, minutes and seconds use leading zeros for single digit values.",
-                        "default": "20220312"
+                        "name": "by_type",
+                        "type": "STRING",
+                        "description": "Must be one of: micro, regional, brewpub, large, planning, bar, contract, proprietor",
+                        "default": "micro"
+                    },
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "+ for acending order (default order); - for decending order comma-separated. Example: sort=-name,+type,city",
+                        "default": ""
+                    },
+                    {
+                        "name": "by_tag",
+                        "type": "STRING",
+                        "description": "Must be one of: dog-friendly, patio, food-service, food-truck, tours",
+                        "default": "patio"
                     }
                 ],
                 "method": "GET",
-                "template_response": {
-                    "success": "bool",
-                    "statusCode": "int",
-                    "statusMessage": "str"
-                }
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Watchmode",
-                "api_name": "Regions",
-                "api_description": "Return a listing of all regions (countries) that Watchmode currently supports and their 2 letter country codes used in the return data of other endpoints.",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET",
-                "template_response": {
-                    "country": "str",
-                    "name": "str",
-                    "flag": "str",
-                    "data_tier": "int",
-                    "plan_enabled": "bool"
-                }
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "New York Lottery",
-                "api_name": "Get Draw Results",
-                "api_description": "Return all draw results for all games.",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Game of Thrones",
-                "api_name": "Get continents",
-                "api_description": "Returns all GOT continents",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Game of Thrones",
-                "api_name": "Get character by ID",
-                "api_description": "Returns a character by their ID",
-                "required_parameters": [
-                    {
-                        "name": "id",
-                        "type": "NUMBER",
-                        "description": "",
-                        "default": "0"
-                    }
-                ],
-                "optional_parameters": [],
-                "method": "GET"
-            },
-            {
-                "category_name": "Entertainment",
-                "tool_name": "Game of Thrones",
-                "api_name": "Get all characters",
-                "api_description": "Returns all of the GOT characters",
-                "required_parameters": [],
-                "optional_parameters": [],
-                "method": "GET"
+                "template_response": {}
             }
         ],
-        "query": "Hello! I'm hosting a trivia night for my friends and I need some random questions. Can you fetch twenty random questions from the ASE's Quiz API based on the 'Music' category? Also, provide me with the streaming release dates for the upcoming titles.",
+        "query": "I want to surprise my family with a homemade cocktail. Can you give me a detailed recipe for a cocktail with ID '45' from The Cocktail DB? Additionally, I would like to explore some breweries in the area to discover unique ingredients for the cocktail. Finally, please suggest some food recipes that pair well with the cocktail.",
         "relevant APIs": [
             [
-                "ASE's Quiz API",
-                "Get random 20 questions by category"
+                "The Cocktail DB",
+                "Detailed Cocktail Recipe by ID"
             ],
             [
-                "Watchmode",
-                "Streaming Release Dates"
+                "Open Brewery DB",
+                "Breweries"
+            ],
+            [
+                "Recipe Search and Diet",
+                "Recipe Search and Recommendations"
             ]
         ],
         "query_id": 10
