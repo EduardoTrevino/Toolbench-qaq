@@ -9,10 +9,11 @@ python toolbench/inference/qa_pipeline.py \
     --backbone_model toolllama \
     --model_path toolllama-2 \
     --max_observation_length 1024 \
-    --obse --method DFS_woFilter_w2 \
+    --observ_compress_method truncate \
+    --method DFS_woFilter_w2 \
     --input_query_file data/instruction/G3_instruction_type3_no_qaq.json \
     --output_answer_file $OUTPUT_DIR \
-    --rv_compress_method truncate \
-   rapidapi_key $RAPIDAPI_KEY \
+    --rapidapi_key $RAPIDAPI_KEY \
     --use_rapidapi_key
+
 
