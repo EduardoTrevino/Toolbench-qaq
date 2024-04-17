@@ -1,0 +1,1060 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Logistics",
+                "tool_name": "Orderful",
+                "api_name": "Transactions",
+                "api_description": "Get Transaction by ID",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Orderful Transaction ID",
+                        "default": "8209520"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "ref": "str",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Pack & Send",
+                "api_name": "/api/Tracking/",
+                "api_description": "If you support your Pack & Send Reference Number, we can provide your with some relevant information.",
+                "required_parameters": [
+                    {
+                        "name": "reference",
+                        "type": "string",
+                        "description": "",
+                        "default": "ReferenceNumberHere"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int",
+                    "traceId": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "Health",
+                "api_description": "Get the API's health",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "checks": "empty list"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "All",
+                "api_description": "Tout l'historique du colis depuis son envoi jusqu'au dernier \u00e9tat en cours.",
+                "required_parameters": [
+                    {
+                        "name": "colisid",
+                        "type": "string",
+                        "description": "",
+                        "default": "CA107308006SI"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "country": {
+                        "code": "str",
+                        "iso": "str",
+                        "name": "str"
+                    },
+                    "date": "str",
+                    "informations": "str",
+                    "itemId": "str",
+                    "localisation": "str",
+                    "localization": {
+                        "longName": "str",
+                        "name": "str",
+                        "url": "str"
+                    },
+                    "pays": "str",
+                    "rawDateHeure": "str",
+                    "status": "str",
+                    "typeEvenement": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "Latest",
+                "api_description": "L'\u00e9tat courant (ie. le dernier \u00e9tat du colis).",
+                "required_parameters": [
+                    {
+                        "name": "colisId",
+                        "type": "string",
+                        "description": "",
+                        "default": "CA107308006SI"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "country": {
+                        "code": "str",
+                        "iso": "str",
+                        "name": "str"
+                    },
+                    "date": "str",
+                    "informations": "str",
+                    "itemId": "str",
+                    "localisation": "str",
+                    "localization": {
+                        "longName": "str",
+                        "name": "str",
+                        "url": "str"
+                    },
+                    "pays": "str",
+                    "rawDateHeure": "str",
+                    "status": "str",
+                    "typeEvenement": "str"
+                }
+            }
+        ],
+        "query": "My friends and I are eagerly awaiting the delivery of a package. Can you please track the package? Additionally, I'm interested in the latest status of the package.",
+        "relevant APIs": [
+            [
+                "Pack & Send",
+                "/api/Tracking/"
+            ],
+            [
+                "suivi-colis",
+                "Latest"
+            ]
+        ],
+        "query_id": 43
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "DAILY OVRLL 0822202141203",
+                "api_name": "/status/200",
+                "api_description": "Testing",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Abir82 Bollywood Recommendations",
+                "api_name": "Fetch Movies",
+                "api_description": "This Endpoint allows to get a list of movies from 2000 to 2019 based on the genre selected by the user.",
+                "required_parameters": [
+                    {
+                        "name": "year",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "2018"
+                    },
+                    {
+                        "name": "genre",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Comedy"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "data": [
+                        {
+                            "Movie_ID": "str",
+                            "Title": "str",
+                            "Year": "str",
+                            "Genre": "str",
+                            "_list_length": 18
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDb top 100 movies",
+                "api_name": "Get a specific  Movie  by id",
+                "api_description": "get top x movie by id 'top46' :\nThe Cover image, Rank, Title, Thumbnail, Rating, Id, Year, Images, Description, Genre, Director, Writer and IMDb ID .",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "top13"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_id": "str",
+                    "id": "str",
+                    "__v": "int",
+                    "description": "str",
+                    "director": [
+                        "list of str with length 1"
+                    ],
+                    "genre": [
+                        "list of str with length 3"
+                    ],
+                    "image": [
+                        "list of list with length 3"
+                    ],
+                    "imdbid": "str",
+                    "rank": "int",
+                    "rating": "str",
+                    "thumbnail": "str",
+                    "title": "str",
+                    "writers": [
+                        "list of str with length 3"
+                    ],
+                    "year": "int"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDb top 100 movies",
+                "api_name": "Get Top 100 Movies according to IMDb",
+                "api_description": "Get Top 100 Movies according to IMDb",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_id": "str",
+                    "id": "str",
+                    "__v": "int",
+                    "description": "str",
+                    "director": [
+                        "list of str with length 1"
+                    ],
+                    "genre": [
+                        "list of str with length 1"
+                    ],
+                    "image": [
+                        "list of list with length 3"
+                    ],
+                    "imdbid": "str",
+                    "rank": "int",
+                    "rating": "str",
+                    "thumbnail": "str",
+                    "title": "str",
+                    "writers": [
+                        "list of str with length 2"
+                    ],
+                    "year": "int"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "MoviesDatabase",
+                "api_name": "/titles/{id}",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Imdb Id of title ex: tt0000002",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "info",
+                        "type": "STRING",
+                        "description": "Info type structure (default: base-info) -> base_info / mini_info / image / ...",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "error": "str",
+                    "stack": "str",
+                    "results": "NoneType"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "MoviesDatabase",
+                "api_name": "/actors",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "Page number",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Number of titles per page (default: 10) -> 10 max ",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "page": "int",
+                    "next": "str",
+                    "entries": "int",
+                    "results": [
+                        {
+                            "_id": "str",
+                            "nconst": "str",
+                            "primaryName": "str",
+                            "birthYear": "int",
+                            "deathYear": "int",
+                            "primaryProfession": "str",
+                            "knownForTitles": "str",
+                            "_list_length": 10
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "MoviesDatabase",
+                "api_name": "/titles/series/{seriesId}",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "seriesId",
+                        "type": "STRING",
+                        "description": "Series Imdb Id",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "error": "str",
+                    "stack": "str",
+                    "results": "NoneType"
+                }
+            }
+        ],
+        "query": "I'm looking for some Bollywood movie recommendations. I would like a list of movies to watch and possibly figure out what are currently top ranked films.",
+        "relevant APIs": [
+            [
+                "Abir82 Bollywood Recommendations",
+                "Fetch Movies"
+            ],
+            [
+                "IMDb top 100 movies",
+                "Get Top 100 Movies according to IMDb"
+            ]
+        ],
+        "query_id": 3640
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Logistics",
+                "tool_name": "Kargom Nerede",
+                "api_name": "companies",
+                "api_description": "Companies",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "value": [
+                        {
+                            "id": "int",
+                            "name": "str",
+                            "image": "str",
+                            "info": "NoneType",
+                            "additionalDatas": "NoneType",
+                            "_list_length": 31
+                        }
+                    ],
+                    "success": "bool",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/tracking/correo_argentino/create_task/:service/:tracking_code",
+                "api_description": "Create task to get the history.\nThe result of the trace can be obtained after approximately 20-60 seconds by calling the endpoint: /tracking/correo_argentino/result_task/:task_id\n**IMPORTANT: ** The result will only be stored for approx 1 hour.",
+                "required_parameters": [
+                    {
+                        "name": "service",
+                        "type": "STRING",
+                        "description": "Service: ecommerce, mercadolibre, national, national-plus or national-international",
+                        "default": "ecommerce"
+                    },
+                    {
+                        "name": "tracking_code",
+                        "type": "STRING",
+                        "description": "Tracking code",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/quotes/postcode/oca/:cuit/:operativa/:cost/:weight/:volume/:postCodeSrc/:postCodeDst",
+                "api_description": "Quote for postcode in OCA e-Pack.",
+                "required_parameters": [
+                    {
+                        "name": "postCodeDst",
+                        "type": "NUMBER",
+                        "description": "Postcode Destination",
+                        "default": ""
+                    },
+                    {
+                        "name": "cuit",
+                        "type": "STRING",
+                        "description": "CUIT of your account in OCA e-Pack",
+                        "default": ""
+                    },
+                    {
+                        "name": "operativa",
+                        "type": "STRING",
+                        "description": "Operativa number of your account in OCA e-Pack",
+                        "default": ""
+                    },
+                    {
+                        "name": "cost",
+                        "type": "NUMBER",
+                        "description": "Cost of products in ARS",
+                        "default": ""
+                    },
+                    {
+                        "name": "postCodeSrc",
+                        "type": "NUMBER",
+                        "description": "Postcode Source",
+                        "default": ""
+                    },
+                    {
+                        "name": "volume",
+                        "type": "NUMBER",
+                        "description": "Volume in cm3",
+                        "default": ""
+                    },
+                    {
+                        "name": "weight",
+                        "type": "NUMBER",
+                        "description": "Weight in KG",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str",
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/offices/postcode/:service/:postCode",
+                "api_description": "List of offices for iso state and postcode.",
+                "required_parameters": [
+                    {
+                        "name": "service",
+                        "type": "STRING",
+                        "description": "Service Name: correo_argentino, oca, andreani",
+                        "default": ""
+                    },
+                    {
+                        "name": "postCode",
+                        "type": "NUMBER",
+                        "description": "Postcode",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Air Cargo CO2 Track And Trace",
+                "api_name": "PULL (track)",
+                "api_description": "By providing a valid AWB, you can get tracking information for the shipment.",
+                "required_parameters": [
+                    {
+                        "name": "awb",
+                        "type": "STRING",
+                        "description": "provide valid AWB number",
+                        "default": "000-99999970"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "awb": "str",
+                    "weight": "str",
+                    "pieces": "str",
+                    "origin": "str",
+                    "destination": "str",
+                    "events": [
+                        {
+                            "code": "str",
+                            "eventDate": "str",
+                            "eventLocation": "str",
+                            "eventLocationCoord": "str",
+                            "flight": {
+                                "number": "str",
+                                "origin": "str",
+                                "destination": "str",
+                                "originCoord": "str",
+                                "destinationCoord": "str",
+                                "scheduledDeparture": "str",
+                                "actualDeparture": "str",
+                                "scheduledArrival": "str",
+                                "actualArrival": "str",
+                                "carbonEmission": "str",
+                                "distance": "str",
+                                "duration": "str"
+                            },
+                            "weight": "str",
+                            "pieces": "str",
+                            "isPlanned": "bool",
+                            "distance": "str",
+                            "origin": "str",
+                            "destination": "str",
+                            "time": "str",
+                            "flightNumber": "str",
+                            "scheduledDepartureDate": "str",
+                            "carbonEmission": "str",
+                            "originCoord": "str",
+                            "destinationCoord": "str",
+                            "_list_length": 13
+                        }
+                    ],
+                    "status": "str",
+                    "originCoord": "str",
+                    "destinationCoord": "str",
+                    "carbonEmission": "str",
+                    "distance": "str",
+                    "time": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "Health",
+                "api_description": "Get the API's health",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "checks": "empty list"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "Count",
+                "api_description": "Compte le nombre d'\u00e9tapes de l'historique, pratique pour limiter la consommation r\u00e9seau ou les ressources sur un IoT. Permet par exemple de poller un \u00e9tat de mani\u00e8re optimale.",
+                "required_parameters": [
+                    {
+                        "name": "colisId",
+                        "type": "string",
+                        "description": "",
+                        "default": "CA107308006SI"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "nbSteps": "int"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "Latest",
+                "api_description": "L'\u00e9tat courant (ie. le dernier \u00e9tat du colis).",
+                "required_parameters": [
+                    {
+                        "name": "colisId",
+                        "type": "string",
+                        "description": "",
+                        "default": "CA107308006SI"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "country": {
+                        "code": "str",
+                        "iso": "str",
+                        "name": "str"
+                    },
+                    "date": "str",
+                    "informations": "str",
+                    "itemId": "str",
+                    "localisation": "str",
+                    "localization": {
+                        "longName": "str",
+                        "name": "str",
+                        "url": "str"
+                    },
+                    "pays": "str",
+                    "rawDateHeure": "str",
+                    "status": "str",
+                    "typeEvenement": "str"
+                }
+            }
+        ],
+        "query": "My family and I are relocating to Buenos Aires, Argentina. We need to find a suitable office space. Can you provide me with a list of offices?  Additionally,  I want to check the out an API.",
+        "relevant APIs": [
+            [
+                "Transportistas de Argentina",
+                "/offices/postcode/:service/:postCode"
+            ],
+            [
+                "suivi-colis",
+                "Health"
+            ]
+        ],
+        "query_id": 58738
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Youtube Video Download Info",
+                "api_name": "Get Video Info",
+                "api_description": "Provides the video download links and other relevant information in the JSON format.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Youtube Video Id.",
+                        "default": "UxxajLWwzqY"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "geo",
+                        "type": "STRING",
+                        "description": "Country code in ISO 3166 format of the end user.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"id\": \"str\", \"title\": \"str\", \"lengthsec\": \"str\", \"keywords\": \"str\", \"author\": \"str\", \"channelid\": \"str\", \"description\": \"str\", \"allowRatings\": \"bool\", \"viewCount\": \"NoneType\", \"isPrivate\": \"bool\", \"isUnpluggedCorpus\": \"bool\", \"isLiveContent\": \"bool\", \"lexp\": \"str\", \"link\": {\"17\": [\"list of str with length 5\"], \"18\": [\"list of str with length 5\"], \"22\": [\"list of str with length 5\"], \"136\": [\"list of str with length 5\"], \"247\": [\"list of str with length 5\"], \"398\": [\"list of str with length 5\"], \"135\": [\"list of str with length 5\"], \"244\": [\"list of str with length 5\"], \"397\": [\"list of str with length 5\"], \"134\": [\"list of str with length 5\"], \"243\": [\"list of str with length 5\"], \"396\": [\"list of str with length 5\"], \"133\": [\"list of str with length 5\"], \"242\": [\"list of str with length 5\"], \"395\": [\"list of str with length 5\"], \"160\": [\"list of str with length 5\"], \"278\": [\"list of str with length 5\"], \"394\": [\"list of str with length 5\"], \"597\": [\"list of str with "
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "HackerRank",
+                "api_name": "Languages",
+                "api_description": "This method provides you with information regarding the language codes which our code checker supports",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Password Generator API",
+                "api_name": "Base",
+                "api_description": "Only this endpoint is currently supported which gives you a random password",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "password": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Password Generator API",
+                "api_name": "Password of length 50",
+                "api_description": "Gives you length 50 password",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "length",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "50"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "password": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "YouTube Video Summarizer",
+                "api_name": "/v1/youtube/summarizeVideoWithToken",
+                "api_description": "Create a video summary of a given YouTube video. The summary is provided in markdown format.",
+                "required_parameters": [
+                    {
+                        "name": "videoURL",
+                        "type": "STRING",
+                        "description": "The URL of the YouTube video to summarize.",
+                        "default": "https://www.youtube.com/watch?v=Yzx7ihtCGBs"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "YouTube Video Summarizer",
+                "api_name": "/v1/youtube/summarizeVideoFromCache",
+                "api_description": "Return the video summary of a given YouTube video that has already been summarized. The summary is provided in markdown format.",
+                "required_parameters": [
+                    {
+                        "name": "videoURL",
+                        "type": "STRING",
+                        "description": "The URL of the YouTube video to get from the summary cache.",
+                        "default": "https://www.youtube.com/watch?v=ykY69lSpDdo"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "summary": "str",
+                    "videoTitle": "str",
+                    "videoAuthor": "str",
+                    "videoId": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code Generator_v14",
+                "api_name": "Generate QR Code",
+                "api_description": "Simply Provide Url or Text in url parameter.",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://farhanaliofficial.github.io"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "Could you fetch infromation regarding HackerRank API ? I also need to summarize a Youtube video.",
+        "relevant APIs": [
+            [
+                "HackerRank",
+                "Languages"
+            ],
+            [
+                "YouTube Video Summarizer",
+                "/v1/youtube/summarizeVideoFromCache"
+            ]
+        ],
+        "query_id": 71387
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "SEO Fast Audit",
+                "api_name": "Scraper",
+                "api_description": "Gets the text of any html selector",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://docteurseo.fr/"
+                    },
+                    {
+                        "name": "selector",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "h1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "result": [
+                        "list of str with length 1"
+                    ]
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "SEO Fast Audit",
+                "api_name": "Analysis",
+                "api_description": "Analyse the content from URL",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://docteurseo.fr/"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"result\": {\"wordsCounts\": \"int\", \"googleAnalytics\": \"bool\", \"facebookPixel\": \"bool\", \"wordpress\": \"bool\", \"shopify\": \"bool\", \"prestashop\": \"bool\", \"links\": {\"noFollow\": \"int\", \"follow\": \"int\", \"internal\": \"int\", \"external\": \"int\"}, \"title\": {\"tag\": \"str\", \"counts\": \"int\", \"data\": [{\"text\": \"str\", \"words\": \"int\", \"_list_length\": 1}]}, \"h1\": {\"tag\": \"str\", \"counts\": \"int\", \"data\": [{\"text\": \"str\", \"words\": \"int\", \"_list_length\": 1}]}, \"a\": {\"tag\": \"str\", \"counts\": \"int\", \"data\": [{\"href\": \"str\", \"text\": \"str\", \"words\": \"int\", \"_list_length\": 53}]}, \"img\": {\"tag\": \"str\", \"counts\": \"int\", \"data\": [{\"src\": \"str\", \"alt\": \"str\", \"_list_length\": 8}]}, \"meta\": {\"tag\": \"str\", \"counts\": \"int\", \"data\": [{\"charset\": \"str\", \"_list_length\": 29}]}, \"b\": {\"tag\": \"str\", \"counts\": \"int\", \"data\": \"empty list\"}, \"strong\": {\"tag\": \"str\", \"counts\": \"int\", \"data\": \"empty list\"}, \"h2\": {\"tag\": \"str\", \"counts\": \"int\", \"data\": [{\"text\": \"str\", \"words\": \"int\", \"_list_length\": 5}]}, \"h3\": {\"tag\": \"str\", \"counts\":"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Ephemeral Proxies",
+                "api_name": "Obtain a new residential proxy",
+                "api_description": "The connection proxy details are `proxy.host` and `proxy.port` from the response fields.\nThe proxy will allow connections from the same source IP as the one making this API call. Make use of the `whitelist_ip` parameter to allow an additional ip.\nCountries can be selected by using the `countries` parameter, otherwise the country is randomly selected. A list of countries is available on *Service Status* endpoint.\nThe proxy is available for 30 mins.\n",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "countries",
+                        "type": "STRING",
+                        "description": "List of countries, separate it by comma, that you would like the proxies to be located.\nExample: GB,US,PL,RU\n",
+                        "default": ""
+                    },
+                    {
+                        "name": "whitelist_ip",
+                        "type": "STRING",
+                        "description": "The proxy that this endpoint returns will allow connections from the source ip that is making this API call.\nAdditionally, you can allow an extra ip to connect to the proxy by setting this parameter to the ip that you would like to whitelist.\nThe list of ips that the proxy has whitelisted is returned in the API response.\n",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Ephemeral Proxies",
+                "api_name": "Extend expiration time of a datacenter proxy",
+                "api_description": "By calling this endpoint the expiration time of an already allocated proxy will be extended by 30 mins.\nSuccessive calls will keep incrementing the expiration time, up to a maximum of 24 hours.\n",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "The proxy identifier to extend the expiration time. This identifier can be obtained from the response of /v2/datacenter/proxy, field proxy.id.\n",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Ephemeral Proxies",
+                "api_name": "Check residential proxies service status",
+                "api_description": "It returns the current status of the service, including the total number of residential proxies available and grouped by country.\n",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "service_status": {
+                        "availability": {
+                            "total": {
+                                "proxies": "int"
+                            },
+                            "by_country": [
+                                {
+                                    "country_iso": "str",
+                                    "proxies": "int",
+                                    "_list_length": 32
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "SEO - Count website pages in Google index",
+                "api_name": "countPages",
+                "api_description": "Count website pages in Google index",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "GUID generator",
+                "api_name": "BulkGenerateGuids",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "batch_size",
+                        "type": "NUMBER",
+                        "description": "The number of GUIDs to return. Must be between 1 and 10000. If the parameter is not provided, the default batch size is 20.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "GUID generator",
+                "api_name": "GenerateGuid",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning to launch a new website and I need to analyze its content. Can you help me with this? Additionally, provide me with a proxy for secure web browsing.",
+        "relevant APIs": [
+            [
+                "SEO Fast Audit",
+                "Analysis"
+            ],
+            [
+                "Ephemeral Proxies",
+                "Obtain a new residential proxy"
+            ]
+        ],
+        "query_id": 71760
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "giflayer",
+                "api_name": "/capture",
+                "api_description": "Main API endpoint used to generate GIFs",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "The video URL you would like to generate a GIF from",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "type": "NUMBER",
+                        "description": "The starting time (in seconds) of your GIF",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "type": "NUMBER",
+                        "description": "The ending time (in seconds) of your GIF",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "duration",
+                        "type": "NUMBER",
+                        "description": "The duration (in seconds) of your GIF",
+                        "default": ""
+                    },
+                    {
+                        "name": "size",
+                        "type": "STRING",
+                        "description": "resize the GIF to the dimensions of your choice (accepts width and height in pixels) (Default: 300x200)",
+                        "default": ""
+                    },
+                    {
+                        "name": "crop",
+                        "type": "STRING",
+                        "description": "Crop the GIF to the size of your choice (accepts width and height in pixels)",
+                        "default": ""
+                    },
+                    {
+                        "name": "fps",
+                        "type": "NUMBER",
+                        "description": "specify a GIF quality (Frames per Second) of your choice (Default: 15)",
+                        "default": "15"
+                    },
+                    {
+                        "name": "trailer",
+                        "type": "NUMBER",
+                        "description": "Set to \"1\" to create default trailer, or specify custom trailer parameters",
+                        "default": "0"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "error": {
+                        "code": "int",
+                        "type": "str",
+                        "info": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "YTStream - Download YouTube Videos",
+                "api_name": "Download/Stream",
+                "api_description": "Stream or download info.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Youtube Video Id.",
+                        "default": "UxxajLWwzqY"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "cgeo",
+                        "type": "STRING",
+                        "description": "Country code in ISO 3166 format of the end user.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"id\": \"str\", \"title\": \"str\", \"lengthSeconds\": \"str\", \"keywords\": [\"list of str with length 18\"], \"channelTitle\": \"str\", \"channelId\": \"str\", \"description\": \"str\", \"thumbnail\": [{\"url\": \"str\", \"width\": \"int\", \"height\": \"int\", \"_list_length\": 4}], \"allowRatings\": \"bool\", \"viewCount\": \"NoneType\", \"isPrivate\": \"bool\", \"isUnpluggedCorpus\": \"bool\", \"isLiveContent\": \"bool\", \"storyboards\": [{\"width\": \"str\", \"height\": \"str\", \"thumbsCount\": \"str\", \"columns\": \"str\", \"rows\": \"str\", \"interval\": \"str\", \"storyboardCount\": \"int\", \"url\": [\"list of str with length 1\"], \"_list_length\": 3}], \"expiresInSeconds\": \"str\", \"formats\": [{\"itag\": \"int\", \"url\": \"str\", \"mimeType\": \"str\", \"bitrate\": \"int\", \"width\": \"int\", \"height\": \"int\", \"lastModified\": \"str\", \"contentLength\": \"str\", \"quality\": \"str\", \"fps\": \"int\", \"qualityLabel\": \"str\", \"projectionType\": \"str\", \"averageBitrate\": \"int\", \"audioQuality\": \"str\", \"approxDurationMs\": \"str\", \"audioSampleRate\": \"str\", \"audioChannels\": \"int\", \"_list_length"
+            }
+        ],
+        "query": "I'm planning a vacation to a tropical destination and would like to create a GIF showcasing the beautiful beaches. Can you generate a GIF from a video of a beach in Bali? Also give me a download link for a youtube video.",
+        "relevant APIs": [
+            [
+                "giflayer",
+                "/capture"
+            ],
+            [
+                "YTStream - Download YouTube Videos",
+                "Download/Stream"
+            ]
+        ],
+        "query_id": 71819
+    }
+]
