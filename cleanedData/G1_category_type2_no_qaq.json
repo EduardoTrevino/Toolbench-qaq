@@ -1,0 +1,4350 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 CE",
+                "api_name": "About",
+                "api_description": "Get general information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "version": "str",
+                    "homepage": "str",
+                    "source_code": "str",
+                    "maintainer": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 CE",
+                "api_name": "Get a Language",
+                "api_description": "Get a language.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "52"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "name": "str",
+                    "is_archived": "bool",
+                    "source_file": "str",
+                    "compile_cmd": "str",
+                    "run_cmd": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 CE",
+                "api_name": "Get Configuration",
+                "api_description": "Configuration information gives you detailed information about the configuration of Judge0.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"maintenance_mode\": \"bool\", \"enable_wait_result\": \"bool\", \"enable_compiler_options\": \"bool\", \"allowed_languages_for_compile_options\": \"empty list\", \"enable_command_line_arguments\": \"bool\", \"enable_submission_delete\": \"bool\", \"enable_callbacks\": \"bool\", \"callbacks_max_tries\": \"int\", \"callbacks_timeout\": \"float\", \"enable_additional_files\": \"bool\", \"max_queue_size\": \"int\", \"cpu_time_limit\": \"float\", \"max_cpu_time_limit\": \"float\", \"cpu_extra_time\": \"float\", \"max_cpu_extra_time\": \"float\", \"wall_time_limit\": \"float\", \"max_wall_time_limit\": \"float\", \"memory_limit\": \"int\", \"max_memory_limit\": \"int\", \"stack_limit\": \"int\", \"max_stack_limit\": \"int\", \"max_processes_and_or_threads\": \"int\", \"max_max_processes_and_or_threads\": \"int\", \"enable_per_process_and_thread_time_limit\": \"bool\", \"allow_enable_per_process_and_thread_time_limit\": \"bool\", \"enable_per_process_and_thread_memory_limit\": \"bool\", \"allow_enable_per_process_and_thread_memory_limit\": \"bool\", \"max_file_size\": \"int\", \"max_max_file_size\": \""
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 CE",
+                "api_name": "Get Languages",
+                "api_description": "Get active languages.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "name": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 CE",
+                "api_name": "Get Statuses",
+                "api_description": "Get statuses.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "description": "str"
+                }
+            }
+        ],
+        "query": "I am a developer working on an online code execution project. Can you provide me with the general information about Judge0 CE? Additionally, I would like to know the available languages and their respective compile and run commands.",
+        "relevant APIs": [
+            [
+                "Judge0 CE",
+                "About"
+            ],
+            [
+                "Judge0 CE",
+                "Get Languages"
+            ]
+        ],
+        "query_id": 12884
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Trending Movies",
+                "api_description": "return movie results with title , year , id",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Now Playing Movies",
+                "api_description": "return movie results with title, year, id",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Popular Movies by Year",
+                "api_description": "return movie results with title , year , id",
+                "required_parameters": [
+                    {
+                        "name": "year",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "2020"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Movie Aliases by ID",
+                "api_description": "A valid Movie ID (e.g. tt1375666)\nreturn movie aliases",
+                "required_parameters": [
+                    {
+                        "name": "movieid",
+                        "type": "STRING",
+                        "description": "A valid Movie ID (e.g. tt1375666)",
+                        "default": "tt1375666"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Movie Images by ID",
+                "api_description": "A valid Movie ID (e.g. tt1375666)\nreturn title, id, poster, fanart",
+                "required_parameters": [
+                    {
+                        "name": "movieid",
+                        "type": "STRING",
+                        "description": "A valid Movie ID (e.g. tt1375666)",
+                        "default": "tt1375666"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Movies By Title",
+                "api_description": "Result set includes all search results\nEach item includes fields:\nTitle\nYear\nMovie  ID",
+                "required_parameters": [
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Harry Potter"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Movie by ID",
+                "api_description": "A valid Movie ID (e.g. tt1375666)\nreturn Title, Description, Year, Release Date, Rated, Runtime, Genre, Directors, Actors, Languages, Country\n Rating, votes, Popularity, id",
+                "required_parameters": [
+                    {
+                        "name": "movieid",
+                        "type": "STRING",
+                        "description": "A valid Movie ID (e.g. tt1375666)",
+                        "default": "tt1375666"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Upcoming Movies",
+                "api_description": "return movie results with title, year, id",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get TV Series Seasons By ID",
+                "api_description": "A valid TV Series ID (e.g. tt2741602)\nreturn Season number, season air date, Episode count, Season trailer",
+                "required_parameters": [
+                    {
+                        "name": "seriesid",
+                        "type": "STRING",
+                        "description": "A valid Series ID (e.g. tt2741602)",
+                        "default": "tt2741602"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Similar TV Shows",
+                "api_description": "return tv series results with title, id, release date",
+                "required_parameters": [
+                    {
+                        "name": "seriesid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "tt2741602"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm a filmmaker and I'm looking for inspiration for my next project. Can you give me a list of popular movies from the year 2020? I would also like to know the movie aliases and images for a specific movie with the ID tt1375666. Additionally, I'm interested in the TV series seasons and similar TV shows related to this movie.",
+        "relevant APIs": [
+            [
+                "Movies Tv Shows Database",
+                "Get Popular Movies by Year"
+            ],
+            [
+                "Movies Tv Shows Database",
+                "Get Movie Aliases by ID"
+            ],
+            [
+                "Movies Tv Shows Database",
+                "Get Movie Images by ID"
+            ],
+            [
+                "Movies Tv Shows Database",
+                "Get TV Series Seasons By ID"
+            ],
+            [
+                "Movies Tv Shows Database",
+                "Get Similar TV Shows"
+            ]
+        ],
+        "query_id": 77108
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "User Event Timeline",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "event_type",
+                        "type": "STRING",
+                        "description": "The type of event you wish to see the user's activity for.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Create a User With Only an Email",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "description": "The user's email.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Account Event Timeline",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "event_type",
+                        "type": "STRING",
+                        "description": "The specific event type you want to query for.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_secret",
+                        "type": "STRING",
+                        "description": "Your client secret key, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Find a User",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_secret",
+                        "type": "STRING",
+                        "description": "Your client secret key, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The user's dailycred user id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "description": "The user's email.",
+                        "default": ""
+                    },
+                    {
+                        "name": "access_token",
+                        "type": "STRING",
+                        "description": "An access token for your user.",
+                        "default": ""
+                    },
+                    {
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "The user's username.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Connect an Existing User with a New Identity Provider",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "identity_provider",
+                        "type": "STRING",
+                        "description": "The desired social network your user to authenticate with. If no identity_provider parameter is provided, it will default to email and password authentication. You can also set identity_provider to gateway to use our UI to let the user choose who to sign in with.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your DailyCred client ID",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "redirect_uri",
+                        "type": "STRING",
+                        "description": "After authentication, the user will be redirected to this url. The url must be within one of your approved domains in your account settings. If omitted we will use your account default callback.",
+                        "default": ""
+                    },
+                    {
+                        "name": "state",
+                        "type": "STRING",
+                        "description": "You can include a state parameter to help prevent cross-site request forgery. When your user is redirected back to your site after authenticating, the state parameter will be included.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I need to find a user using their email address 'admin@example.com' and view their activity timeline. Additionally, I would like to retrieve their account event timeline. Please assist me with this.",
+        "relevant APIs": [
+            [
+                "DailyCred",
+                "Find a User"
+            ],
+            [
+                "DailyCred",
+                "User Event Timeline"
+            ],
+            [
+                "DailyCred",
+                "Account Event Timeline"
+            ]
+        ],
+        "query_id": 71823
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "With RT Ratings",
+                "api_description": "Returns the list with the Rotten Tomatoes rating included",
+                "required_parameters": [
+                    {
+                        "name": "with_rt_ratings",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "false"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"status_message\": \"str\", \"data\": {\"movie_count\": \"int\", \"limit\": \"int\", \"page_number\": \"int\", \"movies\": [{\"id\": \"int\", \"url\": \"str\", \"imdb_code\": \"str\", \"title\": \"str\", \"title_english\": \"str\", \"title_long\": \"str\", \"slug\": \"str\", \"year\": \"int\", \"rating\": \"float\", \"runtime\": \"int\", \"genres\": [\"list of str with length 1\"], \"summary\": \"str\", \"description_full\": \"str\", \"synopsis\": \"str\", \"yt_trailer_code\": \"str\", \"language\": \"str\", \"mpa_rating\": \"str\", \"background_image\": \"str\", \"background_image_original\": \"str\", \"small_cover_image\": \"str\", \"medium_cover_image\": \"str\", \"large_cover_image\": \"str\", \"state\": \"str\", \"torrents\": [{\"url\": \"str\", \"hash\": \"str\", \"quality\": \"str\", \"type\": \"str\", \"seeds\": \"int\", \"peers\": \"int\", \"size\": \"str\", \"size_bytes\": \"int\", \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 2}], \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 20}]}, \"@meta\": {\"server_time\": \"int\", \"server_timezone\": \"str\", \"api_version\":"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Order By",
+                "api_description": "Orders the results by either Ascending or Descending order",
+                "required_parameters": [
+                    {
+                        "name": "order_by",
+                        "type": "string",
+                        "description": "",
+                        "default": "desc"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Sort By",
+                "api_description": "Sorts the results by choosen value",
+                "required_parameters": [
+                    {
+                        "name": "sort_by",
+                        "type": "string",
+                        "description": "",
+                        "default": "date_added"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Genre",
+                "api_description": "Used to filter by a given genre (See http://www.imdb.com/genre/ for full list)",
+                "required_parameters": [
+                    {
+                        "name": "genre",
+                        "type": "string",
+                        "description": "",
+                        "default": "all"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Query Term",
+                "api_description": "Used for movie search, matching on: Movie Title/IMDb Code, Actor Name/IMDb Code, Director Name/IMDb Code",
+                "required_parameters": [
+                    {
+                        "name": "query_term",
+                        "type": "string",
+                        "description": "",
+                        "default": "0"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"status_message\": \"str\", \"data\": {\"movie_count\": \"int\", \"limit\": \"int\", \"page_number\": \"int\", \"movies\": [{\"id\": \"int\", \"url\": \"str\", \"imdb_code\": \"str\", \"title\": \"str\", \"title_english\": \"str\", \"title_long\": \"str\", \"slug\": \"str\", \"year\": \"int\", \"rating\": \"float\", \"runtime\": \"int\", \"genres\": [\"list of str with length 1\"], \"summary\": \"str\", \"description_full\": \"str\", \"synopsis\": \"str\", \"yt_trailer_code\": \"str\", \"language\": \"str\", \"mpa_rating\": \"str\", \"background_image\": \"str\", \"background_image_original\": \"str\", \"small_cover_image\": \"str\", \"medium_cover_image\": \"str\", \"large_cover_image\": \"str\", \"state\": \"str\", \"torrents\": [{\"url\": \"str\", \"hash\": \"str\", \"quality\": \"str\", \"type\": \"str\", \"seeds\": \"int\", \"peers\": \"int\", \"size\": \"str\", \"size_bytes\": \"int\", \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 2}], \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 20}]}, \"@meta\": {\"server_time\": \"int\", \"server_timezone\": \"str\", \"api_version\":"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Minimum Rating",
+                "api_description": "Used to filter movie by a given minimum IMDb rating",
+                "required_parameters": [
+                    {
+                        "name": "minimum_rating",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "0"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"status_message\": \"str\", \"data\": {\"movie_count\": \"int\", \"limit\": \"int\", \"page_number\": \"int\", \"movies\": [{\"id\": \"int\", \"url\": \"str\", \"imdb_code\": \"str\", \"title\": \"str\", \"title_english\": \"str\", \"title_long\": \"str\", \"slug\": \"str\", \"year\": \"int\", \"rating\": \"float\", \"runtime\": \"int\", \"genres\": [\"list of str with length 1\"], \"summary\": \"str\", \"description_full\": \"str\", \"synopsis\": \"str\", \"yt_trailer_code\": \"str\", \"language\": \"str\", \"mpa_rating\": \"str\", \"background_image\": \"str\", \"background_image_original\": \"str\", \"small_cover_image\": \"str\", \"medium_cover_image\": \"str\", \"large_cover_image\": \"str\", \"state\": \"str\", \"torrents\": [{\"url\": \"str\", \"hash\": \"str\", \"quality\": \"str\", \"type\": \"str\", \"seeds\": \"int\", \"peers\": \"int\", \"size\": \"str\", \"size_bytes\": \"int\", \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 2}], \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 20}]}, \"@meta\": {\"server_time\": \"int\", \"server_timezone\": \"str\", \"api_version\":"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Quality",
+                "api_description": "Used to filter by a given quality",
+                "required_parameters": [
+                    {
+                        "name": "quality",
+                        "type": "string",
+                        "description": "",
+                        "default": "all"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Page",
+                "api_description": "Used to see the next page of movies, eg limit=15 and page=2 will show you movies 15-30",
+                "required_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Limit",
+                "api_description": "The limit of results per page that has been set",
+                "required_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "20"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "List Movies",
+                "api_description": "Used to list and search through out all the available movies. Can sort, filter, search and order the results",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I want to find movies with high ratings. Can you provide me with a list of top-rated movies along with their IMDb ratings and summaries? Please sort the results by their IMDb ratings in descending order.",
+        "relevant APIs": [
+            [
+                "List Movies",
+                "Sort By"
+            ],
+            [
+                "List Movies",
+                "List Movies"
+            ]
+        ],
+        "query_id": 1301
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources/{datasource_id}/variables",
+                "api_description": "This resource list the variables of a specified data source, showing all the fields of the variables.",
+                "required_parameters": [
+                    {
+                        "name": "datasource_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables/{variable_id}",
+                "api_description": "This resource returns a variable and its details. It shows additional fields than the ones required during the creation of the variable:  last_value: Shows the last value written to the variable.",
+                "required_parameters": [
+                    {
+                        "name": "variable_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables",
+                "api_description": "Retrieves the list of all the variables owned by a user. The header X-Auth-Token is needed to have the permissions for this endpoint.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources",
+                "api_description": "This resource lists all the existing data sources of a user.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources/{datasource_id}",
+                "api_description": "This resource obtains an existing data source and its details. Also, it returns additional fields besides the ones required during the creation of the data source:  number_of_variables: Shows the number of variables contained by the data source. last_activity: Returns the date of the last activity",
+                "required_parameters": [
+                    {
+                        "name": "datasource_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables/{variable_id}/values",
+                "api_description": "This resource returns the values of the specified variable.  Every value will have a timestamp which is a value in milliseconds according to the POSIX standard.",
+                "required_parameters": [
+                    {
+                        "name": "variable_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I need to retrieve the list of variables for my data source with ID 'abc123'. Additionally, I want to obtain the details of the variable with ID 'xyz789'.",
+        "relevant APIs": [
+            [
+                "Ubidots",
+                "GET /datasources/{datasource_id}/variables"
+            ],
+            [
+                "Ubidots",
+                "GET /variables/{variable_id}"
+            ]
+        ],
+        "query_id": 6504
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "All Purpose Complex Converter",
+                "api_name": "Convert Number To Speech| Provide Any Integer Number",
+                "api_description": "Converting any integer number to Speech",
+                "required_parameters": [
+                    {
+                        "name": "number",
+                        "type": "NUMBER",
+                        "description": "Pass Only Integer Number!",
+                        "default": "12345345483453456434354131"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "string",
+                        "description": "Select Language , By default  ( en-us ) is supported, \nHit GET Languages Endpoint to get a list of all supported languages.",
+                        "default": "en"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "All Purpose Complex Converter",
+                "api_name": "Convert Text To Speech || Provide Any Text",
+                "api_description": "Convert Any Text To Speech.",
+                "required_parameters": [
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "description": "Support Both Text and Numbers. \nCan Pass Text Such as (\\\"any Thing to convert\\\")\nor \nCan Pass Any Number such as 1029383833384474",
+                        "default": "I am using All Purpose Complex Converter API for My Daily Tasks."
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "string",
+                        "description": "Select Language , By default  ( en-us ) is supported, \nHit GET Languages Endpoint to get a list of all supported languages.",
+                        "default": "en"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "All Purpose Complex Converter",
+                "api_name": "Convert Numbers To Words | Provide Any Integer Number",
+                "api_description": "Convert any number to words.",
+                "required_parameters": [
+                    {
+                        "name": "number",
+                        "type": "NUMBER",
+                        "description": "Pass only Integer Numbers! ",
+                        "default": "2356564546548979878435435453456464"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "to_convert",
+                        "type": "STRING",
+                        "description": "By Default the number will be converted to cardinal, if you wan to convert it into specific format such as ordinal, ordinal_num, year or currency than you can specify it here. ",
+                        "default": "ordinal"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "Provided Number": "int",
+                    "Converted to Words": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "All Purpose Complex Converter",
+                "api_name": "GET Languages",
+                "api_description": "Get All The Supported Languages.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "af": "str",
+                    "ar": "str",
+                    "bg": "str",
+                    "bn": "str",
+                    "bs": "str",
+                    "ca": "str",
+                    "cs": "str",
+                    "da": "str",
+                    "de": "str",
+                    "el": "str",
+                    "en": "str",
+                    "es": "str",
+                    "et": "str",
+                    "fi": "str",
+                    "fr": "str",
+                    "gu": "str",
+                    "hi": "str",
+                    "hr": "str",
+                    "hu": "str",
+                    "id": "str",
+                    "is": "str",
+                    "it": "str",
+                    "iw": "str",
+                    "ja": "str",
+                    "jw": "str",
+                    "km": "str",
+                    "kn": "str",
+                    "ko": "str",
+                    "la": "str",
+                    "lv": "str",
+                    "ml": "str",
+                    "mr": "str",
+                    "ms": "str",
+                    "my": "str",
+                    "ne": "str",
+                    "nl": "str",
+                    "no": "str",
+                    "pl": "str",
+                    "pt": "str",
+                    "ro": "str",
+                    "ru": "str",
+                    "si": "str",
+                    "sk": "str",
+                    "sq": "str",
+                    "sr": "str",
+                    "su": "str",
+                    "sv": "str",
+                    "sw": "str",
+                    "ta": "str",
+                    "te": "str",
+                    "th": "str",
+                    "tl": "str",
+                    "tr": "str",
+                    "uk": "str",
+                    "ur": "str",
+                    "vi": "str",
+                    "zh-CN": "str",
+                    "zh-TW": "str"
+                }
+            }
+        ],
+        "query": "I'm planning a surprise anniversary party for my parents and I want to create a special invitation. Can you convert the text 'Join us in celebrating 25 years of love!' into speech? Also, I need your assistance in converting the number '50' into words. Can you help me with that?",
+        "relevant APIs": [
+            [
+                "All Purpose Complex Converter",
+                "Convert Text To Speech || Provide Any Text"
+            ],
+            [
+                "All Purpose Complex Converter",
+                "Convert Numbers To Words | Provide Any Integer Number"
+            ]
+        ],
+        "query_id": 12805
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Text to speech",
+                "api_name": "get language",
+                "api_description": "get list of available language for text to speech",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "af": "str",
+                    "sq": "str",
+                    "ar": "str",
+                    "hy": "str",
+                    "ca": "str",
+                    "zh": "str",
+                    "zh-cn": "str",
+                    "zh-tw": "str",
+                    "zh-yue": "str",
+                    "hr": "str",
+                    "cs": "str",
+                    "da": "str",
+                    "nl": "str",
+                    "en": "str",
+                    "en-au": "str",
+                    "en-uk": "str",
+                    "en-us": "str",
+                    "eo": "str",
+                    "fi": "str",
+                    "fr": "str",
+                    "de": "str",
+                    "el": "str",
+                    "ht": "str",
+                    "hi": "str",
+                    "hu": "str",
+                    "is": "str",
+                    "id": "str",
+                    "it": "str",
+                    "ja": "str",
+                    "ko": "str",
+                    "la": "str",
+                    "lv": "str",
+                    "mk": "str",
+                    "no": "str",
+                    "pl": "str",
+                    "pt": "str",
+                    "pt-br": "str",
+                    "ro": "str",
+                    "ru": "str",
+                    "sr": "str",
+                    "sk": "str",
+                    "es": "str",
+                    "es-es": "str",
+                    "es-us": "str",
+                    "sw": "str",
+                    "sv": "str",
+                    "ta": "str",
+                    "th": "str",
+                    "tr": "str",
+                    "vi": "str",
+                    "cy": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Text to speech",
+                "api_name": "send text to speech stream",
+                "api_description": "text to speech \n\ntext = the text you want to speak\n\nlanguage = default en , get the list of supported language for get /tts/speech/lang\n\n\n```\nconsole.log(response);\n        audio.pause();\n        audio.src = URL.createObjectURL(response.data);\n        audio.play();\n\n```",
+                "required_parameters": [
+                    {
+                        "name": "text",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "hello world"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "STRING",
+                        "description": "default is en-us\nlist can be get by /speech/lang\n\ne.g. zh-tw",
+                        "default": "en-us"
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I need to send a text to the text-to-speech API and get the speech output in English. Can you help me with this task? I want to make sure the API supports the English language.",
+        "relevant APIs": [
+            [
+                "Text to speech",
+                "send text to speech stream"
+            ],
+            [
+                "Text to speech",
+                "get language"
+            ]
+        ],
+        "query_id": 4273
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "New mlem",
+                "api_description": "Returns one most recently published mlem image in JSON",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "url": "str",
+                    "width": "int",
+                    "height": "int",
+                    "orientation": "str",
+                    "brightness": "str",
+                    "tags": [
+                        "list of str with length 1"
+                    ],
+                    "code": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "Mlem ID",
+                "api_description": "Returns one mlem image by ID in JSON",
+                "required_parameters": [
+                    {
+                        "name": "mlemid",
+                        "type": "NUMBER",
+                        "description": "Mlem ID",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "Tags",
+                "api_description": "Returns all tags in JSON",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "Random mlem",
+                "api_description": "Returns one random mlem image in JSON",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "brightness",
+                        "type": "STRING",
+                        "description": "Image brightness: dark or bright",
+                        "default": ""
+                    },
+                    {
+                        "name": "maxheight",
+                        "type": "NUMBER",
+                        "description": "Maximum height",
+                        "default": ""
+                    },
+                    {
+                        "name": "minwidth",
+                        "type": "NUMBER",
+                        "description": "Maximum width",
+                        "default": ""
+                    },
+                    {
+                        "name": "minheight",
+                        "type": "NUMBER",
+                        "description": "Minimum height",
+                        "default": ""
+                    },
+                    {
+                        "name": "tag",
+                        "type": "STRING",
+                        "description": "Tag of mlem",
+                        "default": ""
+                    },
+                    {
+                        "name": "maxwidth",
+                        "type": "NUMBER",
+                        "description": "Minimum width",
+                        "default": ""
+                    },
+                    {
+                        "name": "orientation",
+                        "type": "STRING",
+                        "description": "Image orientation: square, landscape, portrait",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "url": "str",
+                    "width": "int",
+                    "height": "int",
+                    "orientation": "str",
+                    "brightness": "str",
+                    "tags": [
+                        "list of str with length 1"
+                    ],
+                    "code": "int"
+                }
+            }
+        ],
+        "query": "I'm writing an article about the cutest animal expressions and I need some visual examples. Can you provide me with a random mlem image with a dark brightness and portrait orientation? Also, please include the tags associated with the image.",
+        "relevant APIs": [
+            [
+                "MlemAPI",
+                "Random mlem"
+            ],
+            [
+                "MlemAPI",
+                "Tags"
+            ]
+        ],
+        "query_id": 77171
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "About info (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nThis endpoint will return the `About` info of the number, and the time when the value was set.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34655719560"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Is a business? (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nRequests to this endpoint will return `true` if the number is a **Whatsapp for Business** account, or `false` if it's not.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34655719560"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Validate WA number (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nThe response is `true` if the phone is registered on whatsapp.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34605797764"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Validate WA number",
+                "api_description": "enter the number you want to validate.\nLearn how to use it on this [video](https://youtu.be/_h5ybzp9UNU).",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The whatsapp number must be written as: number (including countrycode); do **NOT** include any non-number character, spaces, or anything which is not a number. Otherwise, the request will not be processed.\nExamples: of correct numbers are: 34123456789 (for spain) or 491234567890 (for Germany).\nTIPS:\n    Do NOT include '+' before your countrycode,\n    Do NOT include a '-', or any other character or space (anything which is not a number) as part of your phone number.\n    If you do not know which is your country code check this: https://countrycode.org/\n",
+                        "default": "34605797764"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Is a business?",
+                "api_description": "Requests to this endpoint will return `true` if the number is a **Whatsapp for Business** account, or `false` if it's not.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The whatsapp number must be written as: `countrycode` and `number`; do NOT include any non-number character, spaces, or anything which is not a number.\nExamples: of correct numbers are: `34123456789` (for spain) or `491234567890` (for Germany).\nCountry codes can be checked here: https://countrycode.org/",
+                        "default": "34655719560"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "About info",
+                "api_description": "This endpoint will return the *About* state of the WA number on the query.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "34605797764"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I want to check if my company's WhatsApp numbers are valid. The numbers are +1234567890, +9876543210, and +4567891230. Can you verify if they are registered on WhatsApp and provide me with the 'About' info? Additionally, let me know if any of them are business accounts.",
+        "relevant APIs": [
+            [
+                "Bulk Whatsapp Validator",
+                "Validate WA number"
+            ],
+            [
+                "Bulk Whatsapp Validator",
+                "About info"
+            ],
+            [
+                "Bulk Whatsapp Validator",
+                "Is a business?"
+            ]
+        ],
+        "query_id": 38099
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Waktu Solat",
+                "api_name": "/solat/time",
+                "api_description": "Display the prayer time based on selected zone.\nData in json format.",
+                "required_parameters": [
+                    {
+                        "name": "code",
+                        "type": "STRING",
+                        "description": "zone code, get from API /solat/list",
+                        "default": "SWK07"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "title": "str",
+                    "description": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Waktu Solat",
+                "api_name": "/solat/list",
+                "api_description": "List of zones in each state along with the zone code.\nData in json format.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"Johor\": {\"JHR01\": \"str\", \"JHR02\": \"str\", \"JHR03\": \"str\", \"JHR04\": \"str\"}, \"Kedah\": {\"KDH01\": \"str\", \"KDH02\": \"str\", \"KDH03\": \"str\", \"KDH04\": \"str\", \"KDH05\": \"str\", \"KDH06\": \"str\", \"KDH07\": \"str\"}, \"Kelantan\": {\"KTN01\": \"str\", \"KTN02\": \"str\"}, \"Melaka\": {\"MLK01\": \"str\"}, \"Negeri Sembilan\": {\"NGS01\": \"str\", \"NGS02\": \"str\", \"NGS03\": \"str\"}, \"Pahang\": {\"PHG01\": \"str\", \"PHG02\": \"str\", \"PHG03\": \"str\", \"PHG04\": \"str\", \"PHG05\": \"str\", \"PHG06\": \"str\"}, \"Perlis\": {\"PLS01\": \"str\"}, \"Pulau Pinang\": {\"PNG01\": \"str\"}, \"Perak\": {\"PRK01\": \"str\", \"PRK02\": \"str\", \"PRK03\": \"str\", \"PRK04\": \"str\", \"PRK05\": \"str\", \"PRK06\": \"str\", \"PRK07\": \"str\"}, \"Sabah\": {\"SBH01\": \"str\", \"SBH02\": \"str\", \"SBH03\": \"str\", \"SBH04\": \"str\", \"SBH05\": \"str\", \"SBH06\": \"str\", \"SBH07\": \"str\", \"SBH08\": \"str\", \"SBH09\": \"str\"}, \"Selangor\": {\"SGR01\": \"str\", \"SGR02\": \"str\", \"SGR03\": \"str\"}, \"Sarawak\": {\"SWK01\": \"str\", \"SWK02\": \"str\", \"SWK03\": \"str\", \"SWK04\": \"str\", \"SWK05\": \"str\", \"SWK06\": \"str\", \"SWK07\": \"str\", \"SWK08\": \"str\", \"SWK09\":"
+            }
+        ],
+        "query": "I'm planning a trip to Langkawi. Can you give me the prayer times for Langkawi? Additionally, I need the prayer times for Penang and Perak on the same day.",
+        "relevant APIs": [
+            [
+                "Waktu Solat",
+                "/solat/time"
+            ],
+            [
+                "Waktu Solat",
+                "/solat/list"
+            ]
+        ],
+        "query_id": 62960
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "GUID generator",
+                "api_name": "GenerateGuid",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "GUID generator",
+                "api_name": "BulkGenerateGuids",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "batch_size",
+                        "type": "NUMBER",
+                        "description": "The number of GUIDs to return. Must be between 1 and 10000. If the parameter is not provided, the default batch size is 20.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I need to generate 50 unique GUIDs for my company's new project. Can you help me with that? Also, provide the default batch size for generating GUIDs.",
+        "relevant APIs": [
+            [
+                "GUID generator",
+                "GenerateGuid"
+            ],
+            [
+                "GUID generator",
+                "BulkGenerateGuids"
+            ]
+        ],
+        "query_id": 4424
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Discord Lookup",
+                "api_name": "Get Invite Data",
+                "api_description": "Fetches detailed data, including hidden data of invites or vanities",
+                "required_parameters": [
+                    {
+                        "name": "invite",
+                        "type": "string",
+                        "description": "",
+                        "default": "minecraft"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "data": {
+                        "code": "str",
+                        "type": "int",
+                        "expires_at": "NoneType",
+                        "guild": {
+                            "id": "str",
+                            "name": "str",
+                            "splash": "str",
+                            "banner": "str",
+                            "description": "str",
+                            "icon": "str",
+                            "features": [
+                                "list of str with length 26"
+                            ],
+                            "verification_level": "int",
+                            "vanity_url_code": "str",
+                            "premium_subscription_count": "int",
+                            "nsfw": "bool",
+                            "nsfw_level": "int",
+                            "welcome_screen": {
+                                "description": "str",
+                                "welcome_channels": [
+                                    {
+                                        "channel_id": "str",
+                                        "description": "str",
+                                        "emoji_id": "NoneType",
+                                        "emoji_name": "str",
+                                        "_list_length": 4
+                                    }
+                                ]
+                            }
+                        },
+                        "channel": {
+                            "id": "str",
+                            "name": "str",
+                            "type": "int"
+                        },
+                        "uses": "int",
+                        "max_uses": "int",
+                        "max_age": "int",
+                        "temporary": "bool",
+                        "created_at": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Discord Lookup",
+                "api_name": "Get User Data",
+                "api_description": "Fetches user data by their ID. Automatically handles rate limits and bypasses them and it parses their creation date automatically",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "25458687581618176"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "data": {
+                        "id": "str",
+                        "username": "str",
+                        "avatar": "str",
+                        "discriminator": "str",
+                        "public_flags": "int",
+                        "flags": "int",
+                        "banner": "str",
+                        "accent_color": "NoneType",
+                        "global_name": "str",
+                        "avatar_decoration": "str",
+                        "display_name": "str",
+                        "banner_color": "NoneType",
+                        "created_at": "int"
+                    }
+                }
+            }
+        ],
+        "query": "I'm a Discord server moderator and need to gather information about a specific invite. Fetch detailed data, including hidden data and the server's features, for the 'minecraft' invite. Also, provide me with the user data for the user with ID '25458687581618176'.",
+        "relevant APIs": [
+            [
+                "Discord Lookup",
+                "Get Invite Data"
+            ],
+            [
+                "Discord Lookup",
+                "Get User Data"
+            ]
+        ],
+        "query_id": 21518
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Devices",
+                "tool_name": "Mobile Phone Specs Database",
+                "api_name": "Get {Phone Image ids} by {Custom id}",
+                "api_description": "Get up to 10 phone images (IDs). \nUse these IDs in the Endpoint:  Get {Image} by {Phone Image id}\nThe image IDs expire after 30 minutes.",
+                "required_parameters": [
+                    {
+                        "name": "phoneCustomId",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "103693"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "imageOrder": "int",
+                    "imageId": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Mobile Phone Specs Database",
+                "api_name": "Get {Specifications} by {Brand Name} and {Model Name}",
+                "api_description": "Get all phone specifications by brand name and model name",
+                "required_parameters": [
+                    {
+                        "name": "brandName",
+                        "type": "string",
+                        "description": "",
+                        "default": "Samsung"
+                    },
+                    {
+                        "name": "modelName",
+                        "type": "string",
+                        "description": "",
+                        "default": "Galaxy S22 Ultra 5G"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"phoneDetails\": {\"customId\": \"int\", \"yearValue\": \"str\", \"brandValue\": \"str\", \"modelValue\": \"str\"}, \"gsmNetworkDetails\": {\"networkTechnology\": \"str\", \"network2GBands\": \"str\", \"network3GBands\": \"str\", \"network4GBands\": \"str\", \"network5GBands\": \"str\", \"networkSpeed\": \"str\"}, \"gsmLaunchDetails\": {\"launchAnnounced\": \"str\", \"launchStatus\": \"str\"}, \"gsmBodyDetails\": {\"bodyDimensions\": \"str\", \"bodyWeight\": \"str\", \"bodySim\": \"str\", \"bodyBuild\": \"str\", \"bodyOther1\": \"str\", \"bodyOther2\": \"str\", \"bodyOther3\": \"str\"}, \"gsmDisplayDetails\": {\"displayType\": \"str\", \"displaySize\": \"str\", \"displayResolution\": \"str\", \"displayProtection\": \"str\", \"displayOther1\": \"str\"}, \"gsmPlatformDetails\": {\"platformChipset\": \"str\", \"platformCpu\": \"str\", \"platformGpu\": \"str\", \"platformOs\": \"str\"}, \"gsmMemoryDetails\": {\"memoryCardSlot\": \"str\", \"memoryInternal\": \"str\", \"memoryOther1\": \"str\"}, \"gsmMainCameraDetails\": {\"mainCameraFeatures\": \"str\", \"mainCameraQuad\": \"str\", \"mainCameraVideo\": \"str\"}, \"gsmSelfieCameraDetails\":"
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Mobile Phone Specs Database",
+                "api_name": "Get {Image} by {Phone Image id}",
+                "api_description": "- Get Image by Id\n- Paste image ID from this api \"Get all phone image ids by phone custom id\" and image media content is returned\n- ex of image id : \"Z2RjOG80Smk2WVV2R0wwR1F1RjRNZG5TR1ZqUUZuU1JhU1pNT0FjNG94UT0=\"",
+                "required_parameters": [
+                    {
+                        "name": "imageId",
+                        "type": "string",
+                        "description": "",
+                        "default": "Z2RjOG80Smk2WVV2R0wwR1F1RjRNZG5TR1ZqUUZuU1JhU1pNT0FjNG94UT0="
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Mobile Phone Specs Database",
+                "api_name": "Get {Specifications} by {Custom id}",
+                "api_description": "Get all phone specifications by phone custom id",
+                "required_parameters": [
+                    {
+                        "name": "phoneCustomId",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "103693"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"phoneDetails\": {\"customId\": \"int\", \"yearValue\": \"str\", \"brandValue\": \"str\", \"modelValue\": \"str\"}, \"gsmNetworkDetails\": {\"networkTechnology\": \"str\", \"network2GBands\": \"str\", \"network3GBands\": \"str\", \"network4GBands\": \"str\", \"network5GBands\": \"str\", \"networkSpeed\": \"str\"}, \"gsmLaunchDetails\": {\"launchAnnounced\": \"str\", \"launchStatus\": \"str\"}, \"gsmBodyDetails\": {\"bodyDimensions\": \"str\", \"bodyWeight\": \"str\", \"bodySim\": \"str\", \"bodyBuild\": \"str\", \"bodyOther1\": \"str\", \"bodyOther2\": \"str\", \"bodyOther3\": \"str\"}, \"gsmDisplayDetails\": {\"displayType\": \"str\", \"displaySize\": \"str\", \"displayResolution\": \"str\", \"displayProtection\": \"str\", \"displayOther1\": \"str\"}, \"gsmPlatformDetails\": {\"platformChipset\": \"str\", \"platformCpu\": \"str\", \"platformGpu\": \"str\", \"platformOs\": \"str\"}, \"gsmMemoryDetails\": {\"memoryCardSlot\": \"str\", \"memoryInternal\": \"str\", \"memoryOther1\": \"str\"}, \"gsmMainCameraDetails\": {\"mainCameraFeatures\": \"str\", \"mainCameraQuad\": \"str\", \"mainCameraVideo\": \"str\"}, \"gsmSelfieCameraDetails\":"
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Mobile Phone Specs Database",
+                "api_name": "List  all {Models} by {Phone Brand}",
+                "api_description": "List Models By Phone Brand name",
+                "required_parameters": [
+                    {
+                        "name": "brandName",
+                        "type": "string",
+                        "description": "",
+                        "default": "Samsung"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "modelValue": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Mobile Phone Specs Database",
+                "api_name": "List all {Phone Brands}",
+                "api_description": "1. List all Phone Brands",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "brandValue": "str"
+                }
+            }
+        ],
+        "query": "I'm writing a blog post about the latest mobile phone models, and I would like to include images of the Samsung Galaxy S22 Ultra 5G. Can you please provide me with up to 10 images of the phone? Additionally, I would like to know the specifications of the Samsung Galaxy S22 Ultra 5G, including the display size, processor, memory, camera specifications, and battery capacity.",
+        "relevant APIs": [
+            [
+                "Mobile Phone Specs Database",
+                "Get {Phone Image ids} by {Custom id}"
+            ],
+            [
+                "Mobile Phone Specs Database",
+                "Get {Specifications} by {Brand Name} and {Model Name}"
+            ]
+        ],
+        "query_id": 15137
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET_analytics-videos-videoId",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "videoId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "metadata",
+                        "type": "ARRAY",
+                        "description": "Metadata and Dynamic Metadata filter.\n(Dynamic metadata filter are available for  Business plans only)",
+                        "default": "[]"
+                    },
+                    {
+                        "name": "period",
+                        "type": "STRING",
+                        "description": "Period must have one of the following formats: \n\n- For a day : 2018-01-01,\n- For a week: 2018-W01, \n- For a month: 2018-01\n- For a year: 2018\n\nFor a range period: \n-  Date range: 2018-01-01/2018-01-15\n",
+                        "default": ""
+                    },
+                    {
+                        "name": "currentPage",
+                        "type": "NUMBER",
+                        "description": "Number of the page to display",
+                        "default": 1
+                    },
+                    {
+                        "name": "pageSize",
+                        "type": "NUMBER",
+                        "description": "Expected number of items to display on the page. Might be lower on the last page",
+                        "default": 25
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET_analytics-sessions-sessionId-events",
+                "api_description": "Useful to track and measure video's engagement.",
+                "required_parameters": [
+                    {
+                        "name": "sessionId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "currentPage",
+                        "type": "NUMBER",
+                        "description": "Number of the page to display",
+                        "default": 1
+                    },
+                    {
+                        "name": "pageSize",
+                        "type": "NUMBER",
+                        "description": "Expected number of items to display on the page. Might be lower on the last page",
+                        "default": 25
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET_videos-videoId-chapters-language",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "videoId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "language",
+                        "type": "STRING",
+                        "description": "A valid BCP 47 language representation",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET_players",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "pageSize",
+                        "type": "NUMBER",
+                        "description": "Expected number of items to display on the page. Might be lower on the last page",
+                        "default": 25
+                    },
+                    {
+                        "name": "sortBy",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "createdAt"
+                    },
+                    {
+                        "name": "currentPage",
+                        "type": "NUMBER",
+                        "description": "Number of the page to display",
+                        "default": 1
+                    },
+                    {
+                        "name": "sortOrder",
+                        "type": "STRING",
+                        "description": "Allowed: asc, desc",
+                        "default": "asc"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET_live-streams-liveStreamId",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "liveStreamId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "LIST-videos",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "currentPage",
+                        "type": "NUMBER",
+                        "description": "Search results page. Minimum value: 1",
+                        "default": "1"
+                    },
+                    {
+                        "name": "liveStreamId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "sortOrder",
+                        "type": "STRING",
+                        "description": "Allowed: asc, desc",
+                        "default": ""
+                    },
+                    {
+                        "name": "tags",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "pageSize",
+                        "type": "NUMBER",
+                        "description": "Results per page. Allowed values 1-100, default is 25.",
+                        "default": "25"
+                    },
+                    {
+                        "name": "sortBy",
+                        "type": "STRING",
+                        "description": "Allowed: publishedAt, title",
+                        "default": ""
+                    },
+                    {
+                        "name": "description",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "metadata",
+                        "type": "ARRAY",
+                        "description": "metadata[foo]=bar",
+                        "default": "[]"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET-video-status",
+                "api_description": "This API provides upload status & encoding status to determine when the video is uploaded or ready to playback.\n\nOnce encoding is completed, the response also lists the available stream qualities.",
+                "required_parameters": [
+                    {
+                        "name": "videoId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET_live-streams",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "currentPage",
+                        "type": "NUMBER",
+                        "description": "Number of the page to display",
+                        "default": 1
+                    },
+                    {
+                        "name": "sortBy",
+                        "type": "STRING",
+                        "description": "Allowed: createdAt, publishedAt, name",
+                        "default": ""
+                    },
+                    {
+                        "name": "streamKey",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "pageSize",
+                        "type": "NUMBER",
+                        "description": "Expected number of items to display on the page. Might be lower on the last page",
+                        "default": 25
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET_players-playerId",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "playerId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "api.video",
+                "api_name": "GET-video",
+                "api_description": "This call provides the same JSON information provided on video creation. For private videos, it will generate a unique token url.",
+                "required_parameters": [
+                    {
+                        "name": "videoId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "type": "str",
+                    "title": "str",
+                    "status": "int"
+                }
+            }
+        ],
+        "query": "My company is planning to host live streams and we need to choose a player. Can you provide us with the available players? Display them on the first page with 20 items per page, sorted by their creation date in ascending order.",
+        "relevant APIs": [
+            [
+                "api.video",
+                "GET_players"
+            ],
+            [
+                "api.video",
+                "GET_live-streams"
+            ]
+        ],
+        "query_id": 26661
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code - Dynamic and Static",
+                "api_name": "List Specific QR Code",
+                "api_description": "From this endpoint is to get the information of a specific registered qr code, related to the respective api key",
+                "required_parameters": [
+                    {
+                        "name": "ref",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "msg": "str",
+                    "err": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code - Dynamic and Static",
+                "api_name": "List All QR Code's",
+                "api_description": "From this endpoint is to list all registered qr codes, related to their api key.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "msg": "str",
+                    "err": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code - Dynamic and Static",
+                "api_name": "Generate API Key",
+                "api_description": "From this endpoint you can generate a single api key.\n\nIt will be used to link all the qr code created, and allow any changes.\n\nImportant: Keep in mind that once generated, it is necessary that you store this key well, since it is not possible to recover it, and without it, you do not have access to change any of your QR Codes.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "msg": "str",
+                    "data": "str"
+                }
+            }
+        ],
+        "query": "I need assistance with generating a dynamic QR code for my company's website. Can you provide me with an API key that will link all the QR codes created and allow future changes? Also, can you list all the registered QR codes associated with my API key?",
+        "relevant APIs": [
+            [
+                "QR Code - Dynamic and Static",
+                "Generate API Key"
+            ],
+            [
+                "QR Code - Dynamic and Static",
+                "List All QR Code's"
+            ]
+        ],
+        "query_id": 80449
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Trending",
+                "api_description": "Get currently trending videos.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "instrumentation": {
+                        "_type": "str"
+                    },
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Video Details",
+                "api_description": "Get insights about a video, such as related videos.",
+                "required_parameters": [
+                    {
+                        "name": "modules",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "A comma-delimited list of one or more insights to request."
+                    },
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "An ID that uniquely identifies a video. The Video object's videoId field contains the ID that you set this parameter to."
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "instrumentation": {
+                        "_type": "str"
+                    },
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "value": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Video Search",
+                "api_description": "Get videos relevant for a given query.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "The user's search query string",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "safeSearch",
+                        "type": "STRING",
+                        "description": "A filter used to filter results for adult content.",
+                        "default": ""
+                    },
+                    {
+                        "name": "mkt",
+                        "type": "STRING",
+                        "description": "The market where the results come from. Typically, this is the country where the user is making the request from; however, it could be a different country if the user is not located in a country where Bing delivers results. The market must be in the form -. For example, en-US.\n\nFull list of supported markets:\nes-AR, en-AU, de-AT, nl-BE, fr-BE, pt-BR, en-CA, fr-CA, es-CL, da-DK, fi-FI, fr-FR, de-DE, zh-HK, en-IN, en-ID, en-IE, it-IT, ja-JP, ko-KR, en-MY, es-MX, nl-NL, en-NZ, no-NO, zh-CN, pl-PL, pt-PT, en-PH, ru-RU, ar-SA, en-ZA, es-ES, sv-SE, fr-CH, de-CH, zh-TW, tr-TR, en-GB, en-US, es-US",
+                        "default": ""
+                    },
+                    {
+                        "name": "count",
+                        "type": "NUMBER",
+                        "description": "The number of video results to return in the response. The actual number delivered may be less than requested.",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "type": "NUMBER",
+                        "description": "The zero-based offset that indicates the number of video results to skip before returning results.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "value": "str",
+                            "_list_length": 3
+                        }
+                    ]
+                }
+            }
+        ],
+        "query": "I'm working on a research project and need to find videos related to a specific topic. Can you help me with that? I would like to search for videos relevant to my query using the Video Search API. It would also be helpful to get insights about a video, such as related videos, using the Video Details API.",
+        "relevant APIs": [
+            [
+                "Bing Video Search",
+                "Video Search"
+            ],
+            [
+                "Bing Video Search",
+                "Video Details"
+            ]
+        ],
+        "query_id": 59905
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Discord Lookup",
+                "api_name": "Get Invite Data",
+                "api_description": "Fetches detailed data, including hidden data of invites or vanities",
+                "required_parameters": [
+                    {
+                        "name": "invite",
+                        "type": "string",
+                        "description": "",
+                        "default": "minecraft"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "data": {
+                        "code": "str",
+                        "type": "int",
+                        "expires_at": "NoneType",
+                        "guild": {
+                            "id": "str",
+                            "name": "str",
+                            "splash": "str",
+                            "banner": "str",
+                            "description": "str",
+                            "icon": "str",
+                            "features": [
+                                "list of str with length 26"
+                            ],
+                            "verification_level": "int",
+                            "vanity_url_code": "str",
+                            "premium_subscription_count": "int",
+                            "nsfw": "bool",
+                            "nsfw_level": "int",
+                            "welcome_screen": {
+                                "description": "str",
+                                "welcome_channels": [
+                                    {
+                                        "channel_id": "str",
+                                        "description": "str",
+                                        "emoji_id": "NoneType",
+                                        "emoji_name": "str",
+                                        "_list_length": 4
+                                    }
+                                ]
+                            }
+                        },
+                        "channel": {
+                            "id": "str",
+                            "name": "str",
+                            "type": "int"
+                        },
+                        "uses": "int",
+                        "max_uses": "int",
+                        "max_age": "int",
+                        "temporary": "bool",
+                        "created_at": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Discord Lookup",
+                "api_name": "Get User Data",
+                "api_description": "Fetches user data by their ID. Automatically handles rate limits and bypasses them and it parses their creation date automatically",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "25458687581618176"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "data": {
+                        "id": "str",
+                        "username": "str",
+                        "avatar": "str",
+                        "discriminator": "str",
+                        "public_flags": "int",
+                        "flags": "int",
+                        "banner": "str",
+                        "accent_color": "NoneType",
+                        "global_name": "str",
+                        "avatar_decoration": "str",
+                        "display_name": "str",
+                        "banner_color": "NoneType",
+                        "created_at": "int"
+                    }
+                }
+            }
+        ],
+        "query": "I'm considering joining a Discord server and would like to know more about the invite code 'xyz789'. Could you fetch the invite data for this code? Additionally, please provide the username, discriminator, and avatar of the user with ID '9876543210'. Thank you!",
+        "relevant APIs": [
+            [
+                "Discord Lookup",
+                "Get Invite Data"
+            ],
+            [
+                "Discord Lookup",
+                "Get User Data"
+            ]
+        ],
+        "query_id": 46760
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Alt Bichinhos",
+                "api_name": "Get All Languages",
+                "api_description": "This endpoint will return back all languages available for the image.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "file": "str",
+                    "portuguese": "str",
+                    "english": "str",
+                    "spanish": "str",
+                    "german": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Alt Bichinhos",
+                "api_name": "Get German Alt Text.",
+                "api_description": "This endpoint will return back a pet image with alt text in **German.**",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "file": "str",
+                    "alt": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Alt Bichinhos",
+                "api_name": "Get Spanish Alt Text",
+                "api_description": "This endpoint will return back a pet image with alt text in **Spanish.**",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "file": "str",
+                    "alt": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Alt Bichinhos",
+                "api_name": "Get Portuguese Alt Text.",
+                "api_description": "This endpoint will return back a pet image with **Brazilian Portuguese** alt text.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "file": "str",
+                    "alt": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Alt Bichinhos",
+                "api_name": "Get English Alt Text.",
+                "api_description": "This endpoint will return back a pet image with alt text in **English.**",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "file": "str",
+                    "alt": "str"
+                }
+            }
+        ],
+        "query": "I'm working on a research project about pet images and their alt text in different languages. Can you provide me with a comprehensive dataset of pet images and their alt text in English, Spanish, Portuguese, and German?",
+        "relevant APIs": [
+            [
+                "Alt Bichinhos",
+                "Get All Languages"
+            ],
+            [
+                "Alt Bichinhos",
+                "Get English Alt Text."
+            ],
+            [
+                "Alt Bichinhos",
+                "Get Spanish Alt Text"
+            ],
+            [
+                "Alt Bichinhos",
+                "Get Portuguese Alt Text."
+            ],
+            [
+                "Alt Bichinhos",
+                "Get German Alt Text."
+            ]
+        ],
+        "query_id": 77247
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Logistics",
+                "tool_name": "TrackingMore_v2",
+                "api_name": "carriers/list",
+                "api_description": "List all supported carriers",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "TrackingMore_v2",
+                "api_name": "packages/track (Deprecated)",
+                "api_description": "Get tracking information of specific package",
+                "required_parameters": [
+                    {
+                        "name": "carrierCode",
+                        "type": "STRING",
+                        "description": "Carrier code gotten from .../carriers/list or carriers/detect endpoint",
+                        "default": "yunexpress"
+                    },
+                    {
+                        "name": "trackingNumber",
+                        "type": "STRING",
+                        "description": "Tracking number of package",
+                        "default": "YT2003521266065328"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "STRING",
+                        "description": "One of the following : en|cn|es|it|ru",
+                        "default": "en"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "TrackingMore_v2",
+                "api_name": "packages/v2/track",
+                "api_description": "Get tracking information of specific package",
+                "required_parameters": [
+                    {
+                        "name": "trackingNumber",
+                        "type": "STRING",
+                        "description": "Tracking number of package",
+                        "default": "NY323068698GB"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "TrackingMore_v2",
+                "api_name": "carriers/detect",
+                "api_description": "Detect carrier by providing tracking number",
+                "required_parameters": [
+                    {
+                        "name": "trackingNumber",
+                        "type": "STRING",
+                        "description": "The tracking number of parcel",
+                        "default": "YT2003521266065328"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm curious about the supported carriers for international shipping. Can you provide me with the list? Also, I want to track a package with the tracking number NY323068698GB. Can you give me the tracking information?",
+        "relevant APIs": [
+            [
+                "TrackingMore_v2",
+                "carriers/list"
+            ],
+            [
+                "TrackingMore_v2",
+                "packages/v2/track"
+            ]
+        ],
+        "query_id": 25341
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources/{datasource_id}/variables",
+                "api_description": "This resource list the variables of a specified data source, showing all the fields of the variables.",
+                "required_parameters": [
+                    {
+                        "name": "datasource_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables/{variable_id}",
+                "api_description": "This resource returns a variable and its details. It shows additional fields than the ones required during the creation of the variable:  last_value: Shows the last value written to the variable.",
+                "required_parameters": [
+                    {
+                        "name": "variable_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables",
+                "api_description": "Retrieves the list of all the variables owned by a user. The header X-Auth-Token is needed to have the permissions for this endpoint.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources",
+                "api_description": "This resource lists all the existing data sources of a user.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources/{datasource_id}",
+                "api_description": "This resource obtains an existing data source and its details. Also, it returns additional fields besides the ones required during the creation of the data source:  number_of_variables: Shows the number of variables contained by the data source. last_activity: Returns the date of the last activity",
+                "required_parameters": [
+                    {
+                        "name": "datasource_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables/{variable_id}/values",
+                "api_description": "This resource returns the values of the specified variable.  Every value will have a timestamp which is a value in milliseconds according to the POSIX standard.",
+                "required_parameters": [
+                    {
+                        "name": "variable_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My company is developing an IoT application and needs to gather insights from the sensor data. Can you help us by providing the variables of a specified data source on Ubidots and their corresponding details, including the last value written to each variable?",
+        "relevant APIs": [
+            [
+                "Ubidots",
+                "GET /datasources/{datasource_id}/variables"
+            ],
+            [
+                "Ubidots",
+                "GET /variables/{variable_id}"
+            ]
+        ],
+        "query_id": 65185
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Helper Function",
+                "api_name": "Random",
+                "api_description": "Generate Random String with custom length\nBASIC: 20 \nPRO: 30\nULTRA: 70\nMEGA: 150",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "length",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "20"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "result": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Helper Function",
+                "api_name": "Generate UUID",
+                "api_description": "Generate UUID v4 with dash or not.\nmax\nBASIC: 3\nPRO: 20\nULTRA: 50\nMEGA: 150",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "timestamp_first",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "false"
+                    },
+                    {
+                        "name": "remove_dash",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "true"
+                    },
+                    {
+                        "name": "count",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "5"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "result": [
+                        "list of str with length 3"
+                    ]
+                }
+            }
+        ],
+        "query": "I'm looking for a random string of 70 characters. Could you also generate 150 UUIDs with dashes? Thank you!",
+        "relevant APIs": [
+            [
+                "Helper Function",
+                "Random"
+            ],
+            [
+                "Helper Function",
+                "Generate UUID"
+            ]
+        ],
+        "query_id": 54801
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code API_v67",
+                "api_name": "QR Code Image Copy",
+                "api_description": "This end point takes a 'GET' request with url / string as a parameter and returns QR code image.",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "www.duckduckgo.com"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "Create a QR code image for my friend's blog. Please use the URL 'www.blog.com' to generate the QR code.",
+        "relevant APIs": [
+            [
+                "QR Code API_v67",
+                "QR Code Image Copy"
+            ]
+        ],
+        "query_id": 86297
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/tracking/correo_argentino/result_task/:task_id",
+                "api_description": "Result for one Task ID.",
+                "required_parameters": [
+                    {
+                        "name": "task_id",
+                        "type": "STRING",
+                        "description": "Task ID",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/cities/states/:stateIsoCode",
+                "api_description": "List of city for iso state.",
+                "required_parameters": [
+                    {
+                        "name": "stateIsoCode",
+                        "type": "STRING",
+                        "description": "State ISO Code",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str",
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/cities/postcode/:stateIsoCode/:postCode",
+                "api_description": "List of city for iso state and postcode.",
+                "required_parameters": [
+                    {
+                        "name": "stateIsoCode",
+                        "type": "STRING",
+                        "description": "State ISO Code",
+                        "default": ""
+                    },
+                    {
+                        "name": "postCode",
+                        "type": "STRING",
+                        "description": "Postcode",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str",
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/cities/search/:stateIsoCode/:keyword",
+                "api_description": "Search city for iso state and keyword name.",
+                "required_parameters": [
+                    {
+                        "name": "stateIsoCode",
+                        "type": "STRING",
+                        "description": "State ISO Code",
+                        "default": ""
+                    },
+                    {
+                        "name": "keyword",
+                        "type": "STRING",
+                        "description": "Keyword to search, example: Caballito",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str",
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/cities/states",
+                "api_description": "List of states for Argentina with iso code.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "iso_code": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/quotes/city/correo_argentino/:weight/:stateIsoCodeSrc/:normalizeCityNameSrc/:stateIsoCodeDst/:normalizeCityNameDst",
+                "api_description": "List of quote for iso state and city keyword name in Correo Argentino.",
+                "required_parameters": [
+                    {
+                        "name": "normalizeCityNameSrc",
+                        "type": "STRING",
+                        "description": "Normalize City Name of Source",
+                        "default": ""
+                    },
+                    {
+                        "name": "stateIsoCodeDst",
+                        "type": "STRING",
+                        "description": "State ISO Code of Destination",
+                        "default": ""
+                    },
+                    {
+                        "name": "normalizeCityNameDst",
+                        "type": "STRING",
+                        "description": "Normalize City Name of Destination",
+                        "default": ""
+                    },
+                    {
+                        "name": "weight",
+                        "type": "NUMBER",
+                        "description": "Weight in KG",
+                        "default": ""
+                    },
+                    {
+                        "name": "stateIsoCodeSrc",
+                        "type": "STRING",
+                        "description": "State ISO Code of Source",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str",
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/quotes/postcode/oca/:cuit/:operativa/:cost/:weight/:volume/:postCodeSrc/:postCodeDst",
+                "api_description": "Quote for postcode in OCA e-Pack.",
+                "required_parameters": [
+                    {
+                        "name": "postCodeDst",
+                        "type": "NUMBER",
+                        "description": "Postcode Destination",
+                        "default": ""
+                    },
+                    {
+                        "name": "cuit",
+                        "type": "STRING",
+                        "description": "CUIT of your account in OCA e-Pack",
+                        "default": ""
+                    },
+                    {
+                        "name": "operativa",
+                        "type": "STRING",
+                        "description": "Operativa number of your account in OCA e-Pack",
+                        "default": ""
+                    },
+                    {
+                        "name": "cost",
+                        "type": "NUMBER",
+                        "description": "Cost of products in ARS",
+                        "default": ""
+                    },
+                    {
+                        "name": "postCodeSrc",
+                        "type": "NUMBER",
+                        "description": "Postcode Source",
+                        "default": ""
+                    },
+                    {
+                        "name": "volume",
+                        "type": "NUMBER",
+                        "description": "Volume in cm3",
+                        "default": ""
+                    },
+                    {
+                        "name": "weight",
+                        "type": "NUMBER",
+                        "description": "Weight in KG",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str",
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/quotes/postcode/correo_argentino/:weight/:postCodeSrc/:postCodeDst",
+                "api_description": "List of quote for postcode in Correo Argentino.",
+                "required_parameters": [
+                    {
+                        "name": "postCodeDst",
+                        "type": "NUMBER",
+                        "description": "Postcode Destination",
+                        "default": ""
+                    },
+                    {
+                        "name": "postCodeSrc",
+                        "type": "NUMBER",
+                        "description": "Postcode Source",
+                        "default": ""
+                    },
+                    {
+                        "name": "weight",
+                        "type": "NUMBER",
+                        "description": "Weight in KG",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str",
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/tracking/correo_argentino/create_task/:service/:tracking_code",
+                "api_description": "Create task to get the history.\nThe result of the trace can be obtained after approximately 20-60 seconds by calling the endpoint: /tracking/correo_argentino/result_task/:task_id\n**IMPORTANT: ** The result will only be stored for approx 1 hour.",
+                "required_parameters": [
+                    {
+                        "name": "service",
+                        "type": "STRING",
+                        "description": "Service: ecommerce, mercadolibre, national, national-plus or national-international",
+                        "default": "ecommerce"
+                    },
+                    {
+                        "name": "tracking_code",
+                        "type": "STRING",
+                        "description": "Tracking code",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transportistas de Argentina",
+                "api_name": "/offices/postcode/:service/:postCode",
+                "api_description": "List of offices for iso state and postcode.",
+                "required_parameters": [
+                    {
+                        "name": "service",
+                        "type": "STRING",
+                        "description": "Service Name: correo_argentino, oca, andreani",
+                        "default": ""
+                    },
+                    {
+                        "name": "postCode",
+                        "type": "NUMBER",
+                        "description": "Postcode",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm starting an e-commerce business in Argentina and need to track the shipping status of my orders. Can you help me create a tracking task for a package with the tracking code '123456789' using the Correo Argentino service? I want to retrieve the result for this task.",
+        "relevant APIs": [
+            [
+                "Transportistas de Argentina",
+                "/tracking/correo_argentino/create_task/:service/:tracking_code"
+            ],
+            [
+                "Transportistas de Argentina",
+                "/tracking/correo_argentino/result_task/:task_id"
+            ]
+        ],
+        "query_id": 67087
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources/{datasource_id}/variables",
+                "api_description": "This resource list the variables of a specified data source, showing all the fields of the variables.",
+                "required_parameters": [
+                    {
+                        "name": "datasource_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables/{variable_id}",
+                "api_description": "This resource returns a variable and its details. It shows additional fields than the ones required during the creation of the variable:  last_value: Shows the last value written to the variable.",
+                "required_parameters": [
+                    {
+                        "name": "variable_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables",
+                "api_description": "Retrieves the list of all the variables owned by a user. The header X-Auth-Token is needed to have the permissions for this endpoint.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources",
+                "api_description": "This resource lists all the existing data sources of a user.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources/{datasource_id}",
+                "api_description": "This resource obtains an existing data source and its details. Also, it returns additional fields besides the ones required during the creation of the data source:  number_of_variables: Shows the number of variables contained by the data source. last_activity: Returns the date of the last activity",
+                "required_parameters": [
+                    {
+                        "name": "datasource_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables/{variable_id}/values",
+                "api_description": "This resource returns the values of the specified variable.  Every value will have a timestamp which is a value in milliseconds according to the POSIX standard.",
+                "required_parameters": [
+                    {
+                        "name": "variable_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My company is interested in retrieving the list of variables for a data source with ID 'xyz789'. Additionally, we would like to obtain the details of the variable with ID 'abc123'.",
+        "relevant APIs": [
+            [
+                "Ubidots",
+                "GET /datasources/{datasource_id}/variables"
+            ],
+            [
+                "Ubidots",
+                "GET /variables/{variable_id}"
+            ]
+        ],
+        "query_id": 6511
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "GUID generator",
+                "api_name": "GenerateGuid",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "GUID generator",
+                "api_name": "BulkGenerateGuids",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "batch_size",
+                        "type": "NUMBER",
+                        "description": "The number of GUIDs to return. Must be between 1 and 10000. If the parameter is not provided, the default batch size is 20.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "Can you help me generate 5 GUIDs to use as unique IDs for my friends' online gaming profiles? Additionally, let me know if there is a limit to the number of GUIDs that can be generated at once.",
+        "relevant APIs": [
+            [
+                "GUID generator",
+                "GenerateGuid"
+            ],
+            [
+                "GUID generator",
+                "BulkGenerateGuids"
+            ]
+        ],
+        "query_id": 4428
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "charcoal_image_charcoal__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "delete_image_delete__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "rainbow_manip_rainbow__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "test_app_deepfry__get",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://dagbot-is.the-be.st/logo.png"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "wasted_image_wasted__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "fedora_image_fedora__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "get_thought_image_thoughtimage__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "text",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "obama_image_obama__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "get_captcha_image_captcha__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "text",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "gay_image_gay__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            }
+        ],
+        "query": "I'm developing a photo editing app and I want to offer users the option to apply a charcoal filter to their images. Is there an API that can apply a charcoal effect to images? Additionally, I'd like to provide a 'wasted' effect where an image is distorted and overlaid with text. Is there an API that can help with that?",
+        "relevant APIs": [
+            [
+                "Image",
+                "charcoal_image_charcoal__get"
+            ],
+            [
+                "Image",
+                "wasted_image_wasted__get"
+            ]
+        ],
+        "query_id": 77208
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Demo Project_v13",
+                "api_name": "Get Products in Category",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "skip",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Demo Project_v13",
+                "api_name": "Me",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Demo Project_v13",
+                "api_name": "Get Product",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Demo Project_v13",
+                "api_name": "Get Categories",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Demo Project_v13",
+                "api_name": "Get User Orders",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Demo Project_v13",
+                "api_name": "Get Products",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "skip",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Demo Project_v13",
+                "api_name": "Get Order",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I want to explore the catalog of products available in the 'Electronics' category. Please provide me with the list of products along with their details.",
+        "relevant APIs": [
+            [
+                "\ud83d\udc4b Demo Project_v13",
+                "Get Products in Category"
+            ],
+            [
+                "\ud83d\udc4b Demo Project_v13",
+                "Get Product"
+            ]
+        ],
+        "query_id": 12642
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "About info (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nThis endpoint will return the `About` info of the number, and the time when the value was set.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34655719560"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Is a business? (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nRequests to this endpoint will return `true` if the number is a **Whatsapp for Business** account, or `false` if it's not.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34655719560"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Validate WA number (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nThe response is `true` if the phone is registered on whatsapp.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34605797764"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Validate WA number",
+                "api_description": "enter the number you want to validate.\nLearn how to use it on this [video](https://youtu.be/_h5ybzp9UNU).",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The whatsapp number must be written as: number (including countrycode); do **NOT** include any non-number character, spaces, or anything which is not a number. Otherwise, the request will not be processed.\nExamples: of correct numbers are: 34123456789 (for spain) or 491234567890 (for Germany).\nTIPS:\n    Do NOT include '+' before your countrycode,\n    Do NOT include a '-', or any other character or space (anything which is not a number) as part of your phone number.\n    If you do not know which is your country code check this: https://countrycode.org/\n",
+                        "default": "34605797764"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Is a business?",
+                "api_description": "Requests to this endpoint will return `true` if the number is a **Whatsapp for Business** account, or `false` if it's not.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The whatsapp number must be written as: `countrycode` and `number`; do NOT include any non-number character, spaces, or anything which is not a number.\nExamples: of correct numbers are: `34123456789` (for spain) or `491234567890` (for Germany).\nCountry codes can be checked here: https://countrycode.org/",
+                        "default": "34655719560"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "About info",
+                "api_description": "This endpoint will return the *About* state of the WA number on the query.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "34605797764"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I want to know if my friend's phone number, 34631428039, is registered on WhatsApp. Can you validate the number and provide the 'About' info? Also, let me know if it is a business account.",
+        "relevant APIs": [
+            [
+                "Bulk Whatsapp Validator",
+                "Validate WA number"
+            ],
+            [
+                "Bulk Whatsapp Validator",
+                "About info"
+            ]
+        ],
+        "query_id": 21453
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Pattern Monster",
+                "api_name": "Get SVG Pattern",
+                "api_description": "Get SVG Pattern",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "Name of the pattern specified at https://pattern.monster/api\n(Default: Random name if not specified)",
+                        "default": "waves-1"
+                    },
+                    {
+                        "name": "scale",
+                        "type": "NUMBER",
+                        "description": "0.5 to Max Scale of the pattern specified at https://pattern.monster/api\n(Default: Random scale if not specified)",
+                        "default": "2"
+                    },
+                    {
+                        "name": "moveLeft",
+                        "type": "NUMBER",
+                        "description": "0 - 100 ( Default: 0 )",
+                        "default": "0"
+                    },
+                    {
+                        "name": "angle",
+                        "type": "NUMBER",
+                        "description": "0 - 360 (Default: Random angle if not specified)",
+                        "default": "100"
+                    },
+                    {
+                        "name": "strokeJoin",
+                        "type": "STRING",
+                        "description": "round or square \n(Default: round)\nValid only for patterns with Stroke Join as specified at https://pattern.monster/api",
+                        "default": "round"
+                    },
+                    {
+                        "name": "moveTop",
+                        "type": "NUMBER",
+                        "description": "0 - 100 ( Default: 0 )",
+                        "default": "0"
+                    },
+                    {
+                        "name": "colors",
+                        "type": "STRING",
+                        "description": "2 to Max Colors of the pattern specified at https://pattern.monster/api\nFormat: Color1|Color2|Color3|Color4|Color5\nAt least, two colors are required if specified\n(Default: Random colors if not specified)\nAccepted color values: \nCSS colors ( eg. aqua, red )\nRGB or RGBA colors ( eg. rgb(59,130,246), rgba(234,179,8,0.7) )\nHSL or HSLA colors ( eg. hsl(300, 76%, 72%), hsla(147,50%,47%,0.5) )\nHEX colors without the hash symbol ( eg. E11D48, 2563eb )",
+                        "default": "E11D48|rgb(234,179,8)"
+                    },
+                    {
+                        "name": "spacing",
+                        "type": "STRING",
+                        "description": "Horizontal Spacing | Vertical Spacing\n(Default: 0|0)\nMax Spacing of the pattern specified at https://pattern.monster/api\nValid only for patterns with Max Spacing other than 0|0\n",
+                        "default": "0|0"
+                    },
+                    {
+                        "name": "stroke",
+                        "type": "NUMBER",
+                        "description": "0.5 to Max Stroke of the pattern specified at https://pattern.monster/api\n(Default: Random stroke if not specified)\nValid only for patterns with Mode as Stroke",
+                        "default": "3"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "input": {
+                        "name": "str",
+                        "colors": [
+                            "list of str with length 2"
+                        ],
+                        "stroke": "str",
+                        "scale": "str",
+                        "spacing": [
+                            "list of str with length 2"
+                        ],
+                        "angle": "str",
+                        "strokeJoin": "str",
+                        "moveLeft": "str",
+                        "moveTop": "str"
+                    },
+                    "output": {
+                        "name": "str",
+                        "colors": [
+                            "list of str with length 2"
+                        ],
+                        "stroke": "str",
+                        "scale": "str",
+                        "spacing": [
+                            "list of str with length 2"
+                        ],
+                        "angle": "str",
+                        "strokeJoin": "str",
+                        "moveLeft": "str",
+                        "moveTop": "str"
+                    },
+                    "svg": "str",
+                    "status": "int"
+                }
+            }
+        ],
+        "query": "Hey, Pattern Monster! Could you create an SVG pattern with the name 'waves-1'? I want the pattern to have a scale of 1.5, an angle of 120, and stroke join set to square. Also, please move it 20% to the left and 10% down. Thanks a lot!",
+        "relevant APIs": [
+            [
+                "Pattern Monster",
+                "Get SVG Pattern"
+            ]
+        ],
+        "query_id": 84974
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "ColorMe",
+                "api_name": "SpecificColorSet",
+                "api_description": "Get a set of colors based on input color like - \"yellow\" / \"red\"",
+                "required_parameters": [
+                    {
+                        "name": "colorname",
+                        "type": "string",
+                        "description": "",
+                        "default": "yellow"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "ColorMe",
+                "api_name": "RandomColorSet",
+                "api_description": "Get a random set of colors",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm an artist looking for inspiration for my next painting. Can you generate a random set of colors for me? Also, I would like to explore a set of colors based on the input color 'yellow'.",
+        "relevant APIs": [
+            [
+                "ColorMe",
+                "RandomColorSet"
+            ],
+            [
+                "ColorMe",
+                "SpecificColorSet"
+            ]
+        ],
+        "query_id": 29816
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Check page or website loading speed",
+                "api_name": "getPageSpeed",
+                "api_description": "Get page or website loading speed in seconds",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "My friend is a web developer and wants to check the loading speed of his personal blog. Can you help him by providing the page or website loading speed in seconds for the URL 'www.blog.com'? It would be great if he could get recommendations to improve the loading speed as well.",
+        "relevant APIs": [
+            [
+                "Check page or website loading speed",
+                "getPageSpeed"
+            ]
+        ],
+        "query_id": 86394
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Nexweave",
+                "api_name": "GetCampaignDetails",
+                "api_description": "This API will return the Campaign details including variables used in the overall Campaign.",
+                "required_parameters": [
+                    {
+                        "name": "campaignId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "campaignId"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Nexweave",
+                "api_name": "GetAllTemplates",
+                "api_description": "This API will return all the templates associated with the user's account, including Images & Video.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Nexweave",
+                "api_name": "GetTemplateDetails",
+                "api_description": "This API will return the template details including variables for a valid template.",
+                "required_parameters": [
+                    {
+                        "name": "templateId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "templateId"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Nexweave",
+                "api_name": "GetAllCampaigns",
+                "api_description": "The API will return all the CSV Campaigns associated with the user's account, including Images, Videos &  Image+Video Campaign.\n\nNote: The campaigns must be in Success state.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I am a graphic designer and I want to explore the templates available in my Nexweave account. Can you provide me with the details of all the templates? Also, give me the campaign details for the campaign with the ID 'lmn321'.",
+        "relevant APIs": [
+            [
+                "Nexweave",
+                "GetAllTemplates"
+            ],
+            [
+                "Nexweave",
+                "GetCampaignDetails"
+            ]
+        ],
+        "query_id": 18268
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Pagepeeker",
+                "api_name": "2. Thumbnail ready",
+                "api_description": "Poll this API until it returns that the image is available.  If available, you can download through endpoint 1.  Rendering an image depends largely on how fast a particular web page is loaded (and if it contains Flash).  Average waiting time is around 20 - 60 seconds",
+                "required_parameters": [
+                    {
+                        "name": "size",
+                        "type": "STRING",
+                        "description": "t = Tiny, 90 x 68 pixels;  s= Small, 120 x 90 pixels;  m = Medium, 200 x 150 pixels; l = Large, 400 x 300 pixels;  x = Extra large, 480 x 360 pixels",
+                        "default": "m"
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "The URL to generate the thumbnail from",
+                        "default": "http://www.mashape.com/"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Pagepeeker",
+                "api_name": "1. Shoot thumbnail",
+                "api_description": "Issues a reset API call if refresh is set to 1. Else it will download if the image is ready (see endpoint 2.)",
+                "required_parameters": [
+                    {
+                        "name": "size",
+                        "type": "STRING",
+                        "description": "t = Tiny, 90 x 68 pixels;  s= Small, 120 x 90 pixels;  m = Medium, 200 x 150 pixels; l = Large, 400 x 300 pixels;  x = Extra large, 480 x 360 pixels",
+                        "default": "m"
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "The URL to generate the thumbnail from",
+                        "default": "http://www.mashape.com/"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "refresh",
+                        "type": "STRING",
+                        "description": "This parameter forces the currently generate d thumbnail to be regenerated.  It is optional and will be ignored unless it contains the value 1",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "Could you please generate a small-sized thumbnail image for my friend's blog? Check if the thumbnail is ready and download it for me if it is. The blog URL is 'www.blogexample.com'.",
+        "relevant APIs": [
+            [
+                "Pagepeeker",
+                "1. Shoot thumbnail"
+            ],
+            [
+                "Pagepeeker",
+                "2. Thumbnail ready"
+            ]
+        ],
+        "query_id": 4179
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "UUID generator",
+                "api_name": "UUIDv4 generator",
+                "api_description": "Generate UUIDv4",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "uuid": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "UUID generator",
+                "api_name": "UUIDv5 generator",
+                "api_description": "UUIDv5 generator",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "test"
+                    },
+                    {
+                        "name": "namespace",
+                        "type": "STRING",
+                        "description": "Allowed values: \n\n- dns\n- url\n- oid\n- x500\n- nil",
+                        "default": "nil"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "uuid": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "UUID generator",
+                "api_name": "UUIDv3 generator",
+                "api_description": "UUIDv3 generator",
+                "required_parameters": [
+                    {
+                        "name": "namespace",
+                        "type": "STRING",
+                        "description": "Allowed values: \n\n- dns\n- url\n- oid\n- x500\n- nil",
+                        "default": "nil"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "test"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My company is building an online platform that requires creating unique identifiers for various entities. Can you suggest an API that can generate UUIDv5 using the 'dns' namespace and the entity name as 'www.example.com'? Furthermore, we need to generate a UUIDv4 for internal tracking purposes.",
+        "relevant APIs": [
+            [
+                "UUID generator",
+                "UUIDv5 generator"
+            ],
+            [
+                "UUID generator",
+                "UUIDv4 generator"
+            ]
+        ],
+        "query_id": 71741
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Reword PDF",
+                "api_name": "download",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "pdfId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Reword PDF",
+                "api_name": "getPdf",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "pdfId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Reword PDF",
+                "api_name": "getTask",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "taskId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Reword PDF",
+                "api_name": "getById",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "textId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "pdfId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Reword PDF",
+                "api_name": "getAll",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "pdfId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Reword PDF",
+                "api_name": "getInPage",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "pdfId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "pageNum",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm analyzing the content of a PDF document. I need to retrieve all the texts in the PDF, along with their corresponding page numbers. Additionally, I would like to extract the texts on a specific page. Can you assist me with these tasks?",
+        "relevant APIs": [
+            [
+                "Reword PDF",
+                "getAll"
+            ],
+            [
+                "Reword PDF",
+                "getInPage"
+            ]
+        ],
+        "query_id": 54839
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "logoutUser",
+                "api_description": "",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "loginUser",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "password",
+                        "type": "STRING",
+                        "description": "The password for login in clear text",
+                        "default": ""
+                    },
+                    {
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "The user name for login",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "getUserByName",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "The name that needs to be fetched. Use user1 for testing. ",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "getPetById",
+                "api_description": "Returns a single pet",
+                "required_parameters": [
+                    {
+                        "name": "petId",
+                        "type": "NUMBER",
+                        "description": "ID of pet to return",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "getInventory",
+                "api_description": "Returns a map of status codes to quantities",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Sale": "int",
+                    "totvs": "int",
+                    "sold": "int",
+                    "string": "int",
+                    "pending": "int",
+                    "dgdfgdf": "int",
+                    "available": "int",
+                    "peric": "int",
+                    "cat": "int",
+                    "not available": "int",
+                    "new-2": "int",
+                    "Available": "int",
+                    "disponible": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "getOrderById",
+                "api_description": "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
+                "required_parameters": [
+                    {
+                        "name": "orderId",
+                        "type": "NUMBER",
+                        "description": "ID of pet that needs to be fetched",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My company is conducting a survey and we need to retrieve user details by their username 'survey123'. Can you provide us with the API call for this? Additionally, we would like to get the pet details by their ID '56789' and retrieve the inventory status of the store.",
+        "relevant APIs": [
+            [
+                "tes",
+                "getUserByName"
+            ],
+            [
+                "tes",
+                "getPetById"
+            ],
+            [
+                "tes",
+                "getInventory"
+            ]
+        ],
+        "query_id": 59890
+    }
+]

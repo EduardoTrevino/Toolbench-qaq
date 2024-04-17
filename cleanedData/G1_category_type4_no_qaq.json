@@ -1,0 +1,4497 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "User Event Timeline",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "event_type",
+                        "type": "STRING",
+                        "description": "The type of event you wish to see the user's activity for.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Create a User With Only an Email",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "description": "The user's email.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Account Event Timeline",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "event_type",
+                        "type": "STRING",
+                        "description": "The specific event type you want to query for.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_secret",
+                        "type": "STRING",
+                        "description": "Your client secret key, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Find a User",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_secret",
+                        "type": "STRING",
+                        "description": "Your client secret key, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The user's dailycred user id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "description": "The user's email.",
+                        "default": ""
+                    },
+                    {
+                        "name": "access_token",
+                        "type": "STRING",
+                        "description": "An access token for your user.",
+                        "default": ""
+                    },
+                    {
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "The user's username.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Connect an Existing User with a New Identity Provider",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "identity_provider",
+                        "type": "STRING",
+                        "description": "The desired social network your user to authenticate with. If no identity_provider parameter is provided, it will default to email and password authentication. You can also set identity_provider to gateway to use our UI to let the user choose who to sign in with.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your DailyCred client ID",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "redirect_uri",
+                        "type": "STRING",
+                        "description": "After authentication, the user will be redirected to this url. The url must be within one of your approved domains in your account settings. If omitted we will use your account default callback.",
+                        "default": ""
+                    },
+                    {
+                        "name": "state",
+                        "type": "STRING",
+                        "description": "You can include a state parameter to help prevent cross-site request forgery. When your user is redirected back to your site after authenticating, the state parameter will be included.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I need to find a user using their email address 'admin@example.com' and view their activity timeline. Additionally, I would like to retrieve their account event timeline. Please assist me with this.",
+        "relevant APIs": [
+            [
+                "DailyCred",
+                "Find a User"
+            ],
+            [
+                "DailyCred",
+                "User Event Timeline"
+            ],
+            [
+                "DailyCred",
+                "Account Event Timeline"
+            ]
+        ],
+        "query_id": 71823
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "Health",
+                "api_description": "Get the API's health",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "checks": "empty list"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "Latest",
+                "api_description": "L'\u00e9tat courant (ie. le dernier \u00e9tat du colis).",
+                "required_parameters": [
+                    {
+                        "name": "colisId",
+                        "type": "string",
+                        "description": "",
+                        "default": "CA107308006SI"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "country": {
+                        "code": "str",
+                        "iso": "str",
+                        "name": "str"
+                    },
+                    "date": "str",
+                    "informations": "str",
+                    "itemId": "str",
+                    "localisation": "str",
+                    "localization": {
+                        "longName": "str",
+                        "name": "str",
+                        "url": "str"
+                    },
+                    "pays": "str",
+                    "rawDateHeure": "str",
+                    "status": "str",
+                    "typeEvenement": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "Count",
+                "api_description": "Compte le nombre d'\u00e9tapes de l'historique, pratique pour limiter la consommation r\u00e9seau ou les ressources sur un IoT. Permet par exemple de poller un \u00e9tat de mani\u00e8re optimale.",
+                "required_parameters": [
+                    {
+                        "name": "colisId",
+                        "type": "string",
+                        "description": "",
+                        "default": "CA107308006SI"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "nbSteps": "int"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "suivi-colis",
+                "api_name": "All",
+                "api_description": "Tout l'historique du colis depuis son envoi jusqu'au dernier \u00e9tat en cours.",
+                "required_parameters": [
+                    {
+                        "name": "colisid",
+                        "type": "string",
+                        "description": "",
+                        "default": "CA107308006SI"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "country": {
+                        "code": "str",
+                        "iso": "str",
+                        "name": "str"
+                    },
+                    "date": "str",
+                    "informations": "str",
+                    "itemId": "str",
+                    "localisation": "str",
+                    "localization": {
+                        "longName": "str",
+                        "name": "str",
+                        "url": "str"
+                    },
+                    "pays": "str",
+                    "rawDateHeure": "str",
+                    "status": "str",
+                    "typeEvenement": "str"
+                }
+            }
+        ],
+        "query": "I want to see the complete history of the package CA107308006SI, from its shipment to the current status. Can you provide me with all the details? Also, I would like to know the latest information and location of the package.",
+        "relevant APIs": [
+            [
+                "suivi-colis",
+                "All"
+            ],
+            [
+                "suivi-colis",
+                "Latest"
+            ]
+        ],
+        "query_id": 25348
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "Similar Movies",
+                "api_name": "find similar",
+                "api_description": "find similar movies for your movie",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "24168-titanic"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "movies:": [
+                        "list of list with length 1"
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Similar Movies",
+                "api_name": "get Id",
+                "api_description": "get the id of your movie",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "titanic"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "movies:": [
+                        "list of list with length 1"
+                    ]
+                }
+            }
+        ],
+        "query": "My company is organizing a movie-themed event and we're looking for movies that are similar to 'Titanic'. Can you recommend some movies with a similar genre and visual style? Additionally, it would be great if you could provide a list of movies along with their posters and release dates.",
+        "relevant APIs": [
+            [
+                "Similar Movies",
+                "find similar"
+            ],
+            [
+                "Similar Movies",
+                "get Id"
+            ]
+        ],
+        "query_id": 9581
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDB_API",
+                "api_name": "/get_movies_by_cast_name",
+                "api_description": "<br /><br />\n<b>Authentication:</b> not required",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "cast_name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "rank": "int",
+                    "title": "str",
+                    "year": "int",
+                    "director": "str",
+                    "cast": "str",
+                    "rating": "float"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDB_API",
+                "api_name": "/get_movies_by_director",
+                "api_description": "<br /><br />\n<b>Authentication:</b> not required",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "movie_director",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "rank": "int",
+                    "title": "str",
+                    "year": "int",
+                    "director": "str",
+                    "cast": "str",
+                    "rating": "float"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDB_API",
+                "api_name": "/get_movies_by_name",
+                "api_description": "<br /><br />\n<b>Authentication:</b> not required",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "Movie_name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "rank": "int",
+                    "title": "str",
+                    "year": "int",
+                    "director": "str",
+                    "cast": "str",
+                    "rating": "float"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDB_API",
+                "api_name": "/get_movies_by_year",
+                "api_description": "<br /><br />\n<b>Authentication:</b> not required",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "movie_year",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {}
+            }
+        ],
+        "query": "I'm organizing a movie trivia night and I need some questions related to movies. Can you provide me with a list of movies from the 80s, along with their directors and cast members? It would be great if the movies have a rating above 7.",
+        "relevant APIs": [
+            [
+                "IMDB_API",
+                "/get_movies_by_year"
+            ],
+            [
+                "IMDB_API",
+                "/get_movies_by_director"
+            ],
+            [
+                "IMDB_API",
+                "/get_movies_by_cast_name"
+            ]
+        ],
+        "query_id": 77096
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "With RT Ratings",
+                "api_description": "Returns the list with the Rotten Tomatoes rating included",
+                "required_parameters": [
+                    {
+                        "name": "with_rt_ratings",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "false"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"status_message\": \"str\", \"data\": {\"movie_count\": \"int\", \"limit\": \"int\", \"page_number\": \"int\", \"movies\": [{\"id\": \"int\", \"url\": \"str\", \"imdb_code\": \"str\", \"title\": \"str\", \"title_english\": \"str\", \"title_long\": \"str\", \"slug\": \"str\", \"year\": \"int\", \"rating\": \"float\", \"runtime\": \"int\", \"genres\": [\"list of str with length 1\"], \"summary\": \"str\", \"description_full\": \"str\", \"synopsis\": \"str\", \"yt_trailer_code\": \"str\", \"language\": \"str\", \"mpa_rating\": \"str\", \"background_image\": \"str\", \"background_image_original\": \"str\", \"small_cover_image\": \"str\", \"medium_cover_image\": \"str\", \"large_cover_image\": \"str\", \"state\": \"str\", \"torrents\": [{\"url\": \"str\", \"hash\": \"str\", \"quality\": \"str\", \"type\": \"str\", \"seeds\": \"int\", \"peers\": \"int\", \"size\": \"str\", \"size_bytes\": \"int\", \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 2}], \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 20}]}, \"@meta\": {\"server_time\": \"int\", \"server_timezone\": \"str\", \"api_version\":"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Order By",
+                "api_description": "Orders the results by either Ascending or Descending order",
+                "required_parameters": [
+                    {
+                        "name": "order_by",
+                        "type": "string",
+                        "description": "",
+                        "default": "desc"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Sort By",
+                "api_description": "Sorts the results by choosen value",
+                "required_parameters": [
+                    {
+                        "name": "sort_by",
+                        "type": "string",
+                        "description": "",
+                        "default": "date_added"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Genre",
+                "api_description": "Used to filter by a given genre (See http://www.imdb.com/genre/ for full list)",
+                "required_parameters": [
+                    {
+                        "name": "genre",
+                        "type": "string",
+                        "description": "",
+                        "default": "all"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Query Term",
+                "api_description": "Used for movie search, matching on: Movie Title/IMDb Code, Actor Name/IMDb Code, Director Name/IMDb Code",
+                "required_parameters": [
+                    {
+                        "name": "query_term",
+                        "type": "string",
+                        "description": "",
+                        "default": "0"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"status_message\": \"str\", \"data\": {\"movie_count\": \"int\", \"limit\": \"int\", \"page_number\": \"int\", \"movies\": [{\"id\": \"int\", \"url\": \"str\", \"imdb_code\": \"str\", \"title\": \"str\", \"title_english\": \"str\", \"title_long\": \"str\", \"slug\": \"str\", \"year\": \"int\", \"rating\": \"float\", \"runtime\": \"int\", \"genres\": [\"list of str with length 1\"], \"summary\": \"str\", \"description_full\": \"str\", \"synopsis\": \"str\", \"yt_trailer_code\": \"str\", \"language\": \"str\", \"mpa_rating\": \"str\", \"background_image\": \"str\", \"background_image_original\": \"str\", \"small_cover_image\": \"str\", \"medium_cover_image\": \"str\", \"large_cover_image\": \"str\", \"state\": \"str\", \"torrents\": [{\"url\": \"str\", \"hash\": \"str\", \"quality\": \"str\", \"type\": \"str\", \"seeds\": \"int\", \"peers\": \"int\", \"size\": \"str\", \"size_bytes\": \"int\", \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 2}], \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 20}]}, \"@meta\": {\"server_time\": \"int\", \"server_timezone\": \"str\", \"api_version\":"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Minimum Rating",
+                "api_description": "Used to filter movie by a given minimum IMDb rating",
+                "required_parameters": [
+                    {
+                        "name": "minimum_rating",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "0"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"status_message\": \"str\", \"data\": {\"movie_count\": \"int\", \"limit\": \"int\", \"page_number\": \"int\", \"movies\": [{\"id\": \"int\", \"url\": \"str\", \"imdb_code\": \"str\", \"title\": \"str\", \"title_english\": \"str\", \"title_long\": \"str\", \"slug\": \"str\", \"year\": \"int\", \"rating\": \"float\", \"runtime\": \"int\", \"genres\": [\"list of str with length 1\"], \"summary\": \"str\", \"description_full\": \"str\", \"synopsis\": \"str\", \"yt_trailer_code\": \"str\", \"language\": \"str\", \"mpa_rating\": \"str\", \"background_image\": \"str\", \"background_image_original\": \"str\", \"small_cover_image\": \"str\", \"medium_cover_image\": \"str\", \"large_cover_image\": \"str\", \"state\": \"str\", \"torrents\": [{\"url\": \"str\", \"hash\": \"str\", \"quality\": \"str\", \"type\": \"str\", \"seeds\": \"int\", \"peers\": \"int\", \"size\": \"str\", \"size_bytes\": \"int\", \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 2}], \"date_uploaded\": \"str\", \"date_uploaded_unix\": \"int\", \"_list_length\": 20}]}, \"@meta\": {\"server_time\": \"int\", \"server_timezone\": \"str\", \"api_version\":"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Quality",
+                "api_description": "Used to filter by a given quality",
+                "required_parameters": [
+                    {
+                        "name": "quality",
+                        "type": "string",
+                        "description": "",
+                        "default": "all"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Page",
+                "api_description": "Used to see the next page of movies, eg limit=15 and page=2 will show you movies 15-30",
+                "required_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "Limit",
+                "api_description": "The limit of results per page that has been set",
+                "required_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "20"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "List Movies",
+                "api_name": "List Movies",
+                "api_description": "Used to list and search through out all the available movies. Can sort, filter, search and order the results",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I want to find movies with high ratings. Can you provide me with a list of top-rated movies along with their IMDb ratings and summaries? Please sort the results by their IMDb ratings in descending order.",
+        "relevant APIs": [
+            [
+                "List Movies",
+                "Sort By"
+            ],
+            [
+                "List Movies",
+                "List Movies"
+            ]
+        ],
+        "query_id": 1301
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "totalIconsSelection",
+                "api_description": "Method that allows you to get a number stating the full quantity of SELECTION icons available at Flaticon. The number refreshes periodically according to the content available at flaticon.com.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "searchPacks",
+                "api_description": "Method that allows you to get a paged list with the results of the search. Packs returned by the search may be SELECTION packs or PREMIUM packs, according to the content.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "term to search for",
+                        "default": ""
+                    },
+                    {
+                        "name": "orderBy",
+                        "type": "STRING",
+                        "description": "Order by in results from Flaticon API. You can choose between order the results between 'priority' or 'added'. Priority order will return items ordered by an algorithm based on the downloads ratio. Added order will return items ordered by the date they were added to Flaticon.\nFor example: `https://api.flaticon.com/v2/search/packs/added?q=media&stroke=2&styleName=gradient&packId=1554346&limit=15`\n",
+                        "default": "priority"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "styleName",
+                        "type": "STRING",
+                        "description": "Filter the results by the name of style.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "Page number",
+                        "default": ""
+                    },
+                    {
+                        "name": "categoryName",
+                        "type": "STRING",
+                        "description": "Filter the results by category name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "iconType",
+                        "type": "STRING",
+                        "description": "Filter the results by icon type, valid values are `standard` and  `stickers`",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Number of max. items returned per request. In case it isn\u2019t requested, it will return 100 packs by default.",
+                        "default": 100
+                    },
+                    {
+                        "name": "familyId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by family id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "color",
+                        "type": "NUMBER",
+                        "description": "Filter the results by color id. Color id `1` means monocolor. Color id `2` means multicolor.",
+                        "default": ""
+                    },
+                    {
+                        "name": "tagsId",
+                        "type": "STRING",
+                        "description": "Filter the results by a list of tag ids separated by comma",
+                        "default": ""
+                    },
+                    {
+                        "name": "categoryId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by category id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "pack url to search for",
+                        "default": ""
+                    },
+                    {
+                        "name": "stroke",
+                        "type": "NUMBER",
+                        "description": "Filter the results by stroke id. Stroke id `1` means filled. Stroke id `2` means linear.",
+                        "default": ""
+                    },
+                    {
+                        "name": "familyName",
+                        "type": "STRING",
+                        "description": "Filter the results by family name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "designerId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by designer id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "styleId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by style id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "designerName",
+                        "type": "STRING",
+                        "description": "Filter the results by designer name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "packId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by pack id.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "searchIcons",
+                "api_description": "Method that allows you to get a paged list with the results of the search. Icons returned by the search may be SELECTION icons or PREMIUM icons. By default, it will return a list order by priority. If no order is set, it will return items order by priority. In order to avoid 403 errors when svg icon is used to show the icon in result lists you must not store data in cache more than 15 minutes",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "term to search for",
+                        "default": ""
+                    },
+                    {
+                        "name": "orderBy",
+                        "type": "STRING",
+                        "description": "Order by in results from Flaticon API. You can choose between order the results between 'priority' or 'added'. Priority order will return items ordered by an algorithm based on the downloads ratio. Added order will return items ordered by the date they were added to Flaticon.\nFor example: `https://api.flaticon.com/v2/search/icons/added?q=arrow&stroke=2&styleName=gradient&packId=1554346&limit=15`\n",
+                        "default": "priority"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "packId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by pack id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "categoryName",
+                        "type": "STRING",
+                        "description": "Filter the results by category name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "designerId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by designer id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "Page number",
+                        "default": ""
+                    },
+                    {
+                        "name": "categoryId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by category id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "tagsId",
+                        "type": "STRING",
+                        "description": "Filter the results by a list of tag ids separated by comma",
+                        "default": ""
+                    },
+                    {
+                        "name": "familyId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by family id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "icon url to search for",
+                        "default": ""
+                    },
+                    {
+                        "name": "designerName",
+                        "type": "STRING",
+                        "description": "Filter the results by designer name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "color",
+                        "type": "NUMBER",
+                        "description": "Filter the results by color id. Color id `1` means monocolor. Color id `2` means multicolor.",
+                        "default": ""
+                    },
+                    {
+                        "name": "iconType",
+                        "type": "STRING",
+                        "description": "Filter the results by icon type, valid values are `standard` and `stickers`",
+                        "default": ""
+                    },
+                    {
+                        "name": "stroke",
+                        "type": "NUMBER",
+                        "description": "Filter the results by stroke id. Stroke id `1` means filled. Stroke id `2` means linear.",
+                        "default": ""
+                    },
+                    {
+                        "name": "familyName",
+                        "type": "STRING",
+                        "description": "Filter the results by family name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Number of max. items returned per request. In case it isn\u2019t requested, it will return 100 packs by default.",
+                        "default": 100
+                    },
+                    {
+                        "name": "styleId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by style id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "styleName",
+                        "type": "STRING",
+                        "description": "Filter the results by the name of style.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "pack",
+                "api_description": "Method that allows you to get detailed information about a pack. A pack is a set of icons that share a theme. Besides, any given pack may be found in one or many styles associated or not with a family.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "packs",
+                "api_description": "Method that allows you to get a paged list with information about the packs available at Flaticon. A pack is a set of icons that share a theme. Besides, any given pack may be found in one or many styles associated or not with a family.  By default, it will return a list order by priority. If no order is set, it will return items order by priority.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "term to search for",
+                        "default": ""
+                    },
+                    {
+                        "name": "orderBy",
+                        "type": "STRING",
+                        "description": "Order by in results from Flaticon API. You can choose between order the results between 'priority' or 'added'. Priority order will return items ordered by an algorithm based on the downloads ratio. Added order will return items ordered by the date they were added to Flaticon.\nFor example: `https://api.flaticon.com/v2/search/icons/added?q=arrow&stroke=2&styleName=gradient&packId=1554346&limit=15`\n",
+                        "default": "priority"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "designerName",
+                        "type": "STRING",
+                        "description": "Filter the results by designer name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "Page number",
+                        "default": ""
+                    },
+                    {
+                        "name": "styleName",
+                        "type": "STRING",
+                        "description": "Filter the results by the name of style.",
+                        "default": ""
+                    },
+                    {
+                        "name": "categoryName",
+                        "type": "STRING",
+                        "description": "Filter the results by category name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "categoryId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by category id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "icon url to search for",
+                        "default": ""
+                    },
+                    {
+                        "name": "stroke",
+                        "type": "NUMBER",
+                        "description": "Filter the results by stroke id. Stroke id `1` means filled. Stroke id `2` means linear.",
+                        "default": ""
+                    },
+                    {
+                        "name": "styleId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by style id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "packId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by pack id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "tagsId",
+                        "type": "STRING",
+                        "description": "Filter the results by a list of tag ids separated by comma",
+                        "default": ""
+                    },
+                    {
+                        "name": "familyName",
+                        "type": "STRING",
+                        "description": "Filter the results by family name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "familyId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by family id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "color",
+                        "type": "NUMBER",
+                        "description": "Filter the results by color id. Color id `1` means monocolor. Color id `2` means multicolor.",
+                        "default": ""
+                    },
+                    {
+                        "name": "iconType",
+                        "type": "STRING",
+                        "description": "Filter the results by icon type, valid values are `standard` and `stickers`",
+                        "default": ""
+                    },
+                    {
+                        "name": "designerId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by designer id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Number of max. items returned per request. In case it isn\u2019t requested, it will return 100 packs by default.",
+                        "default": 100
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "icons",
+                "api_description": "Method that allows you to get a paged list with information about the icons available at Flaticon. By default, it will return a list order by priority. If no order is set, it will return items order by priority. In order to avoid 403 errors when svg icon is used to show the icon in result lists you must not store data in cache more than 15 minutes",
+                "required_parameters": [
+                    {
+                        "name": "orderBy",
+                        "type": "STRING",
+                        "description": "Order by in results from Flaticon API. You can choose between order the results between 'priority' or 'added'. Priority order will return items ordered by an algorithm based on the downloads ratio. Added order will return items ordered by the date they were added to Flaticon.\nFor example: `https://api.flaticon.com/v2/search/icons/added?q=arrow&stroke=2&styleName=gradient&packId=1554346&limit=15`\n",
+                        "default": "priority"
+                    },
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "term to search for",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "designerId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by designer id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "Page number",
+                        "default": ""
+                    },
+                    {
+                        "name": "categoryName",
+                        "type": "STRING",
+                        "description": "Filter the results by category name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "styleId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by style id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Number of max. items returned per request. In case it isn\u2019t requested, it will return 100 packs by default.",
+                        "default": 100
+                    },
+                    {
+                        "name": "styleName",
+                        "type": "STRING",
+                        "description": "Filter the results by the name of style.",
+                        "default": ""
+                    },
+                    {
+                        "name": "designerName",
+                        "type": "STRING",
+                        "description": "Filter the results by designer name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "stroke",
+                        "type": "NUMBER",
+                        "description": "Filter the results by stroke id. Stroke id `1` means filled. Stroke id `2` means linear.",
+                        "default": ""
+                    },
+                    {
+                        "name": "familyName",
+                        "type": "STRING",
+                        "description": "Filter the results by family name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "categoryId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by category id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "tagsId",
+                        "type": "STRING",
+                        "description": "Filter the results by a list of tag ids separated by comma",
+                        "default": ""
+                    },
+                    {
+                        "name": "packId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by pack id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "familyId",
+                        "type": "NUMBER",
+                        "description": "Filter the results by family id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "iconType",
+                        "type": "STRING",
+                        "description": "Filter the results by icon type, valid values are `standard` and `stickers`",
+                        "default": ""
+                    },
+                    {
+                        "name": "color",
+                        "type": "NUMBER",
+                        "description": "Filter the results by color id. Color id `1` means monocolor. Color id `2` means multicolor.",
+                        "default": ""
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "icon url to search for",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "styles",
+                "api_description": "Method that allows you to get a paged list with information about Flaticon styles, design formats that icons or packs have. Styles are the different versions in which an icon from a given family may appear. For example, an icon may be available in lineal, color, or lineal color styles.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Number of max. authors returned per request. In case it isn\u2019t requested, it will return 100 styles by default.",
+                        "default": 100
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "Page about which the request is made. In case it doesn\u2019t exist, it will return page 1.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "totalIcons",
+                "api_description": "Method that allows you to get a number stating the full quantity of icons available at Flaticon. The number refreshes periodically according to the content available at flaticon.com.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "totalIconsPremium",
+                "api_description": "Method that allows you to get a number stating the full quantity of PREMIUM icons available at Flaticon. The number refreshes periodically according to the content available at flaticon.com.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Flaticon",
+                "api_name": "icon",
+                "api_description": "Method that allows you to get detailed information about an icon.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "Could you provide me with the total number of icons available at Flaticon? Additionally, I would like to search for packs related to the topic of 'education' and order the results by priority.",
+        "relevant APIs": [
+            [
+                "Flaticon",
+                "totalIcons"
+            ],
+            [
+                "Flaticon",
+                "searchPacks"
+            ]
+        ],
+        "query_id": 77261
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Helper Function",
+                "api_name": "Random",
+                "api_description": "Generate Random String with custom length\nBASIC: 20 \nPRO: 30\nULTRA: 70\nMEGA: 150",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "length",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "20"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "result": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Helper Function",
+                "api_name": "Generate UUID",
+                "api_description": "Generate UUID v4 with dash or not.\nmax\nBASIC: 3\nPRO: 20\nULTRA: 50\nMEGA: 150",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "timestamp_first",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "false"
+                    },
+                    {
+                        "name": "remove_dash",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "true"
+                    },
+                    {
+                        "name": "count",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "5"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "result": [
+                        "list of str with length 3"
+                    ]
+                }
+            }
+        ],
+        "query": "I'm looking for a random string of 70 characters. Could you also generate 150 UUIDs with dashes? Thank you!",
+        "relevant APIs": [
+            [
+                "Helper Function",
+                "Random"
+            ],
+            [
+                "Helper Function",
+                "Generate UUID"
+            ]
+        ],
+        "query_id": 54801
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "URL Shortener",
+                "api_name": "short-urls/{code}/visits",
+                "api_description": "Shows clicks, referer, etc. for a specific short link.",
+                "required_parameters": [
+                    {
+                        "name": "code",
+                        "type": "string",
+                        "description": "",
+                        "default": "j95Aj"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "URL Shortener",
+                "api_name": "short-urls/{code}",
+                "api_description": "Shows information about a short link code.",
+                "required_parameters": [
+                    {
+                        "name": "code",
+                        "type": "string",
+                        "description": "",
+                        "default": "U1hAI"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "My company has been using the URL Shortener tool to track the performance of our social media posts. Can you please give me insights into the visits and referral sources for the short link with the code 'j95Aj'?",
+        "relevant APIs": [
+            [
+                "URL Shortener",
+                "short-urls/{code}/visits"
+            ],
+            [
+                "URL Shortener",
+                "short-urls/{code}"
+            ]
+        ],
+        "query_id": 37847
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Advanced Search",
+                "api_description": "This endpoint allows you to search for a movie or tvshow based on various parameters such as release year , imdb rating , genre , language etc.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "start_year",
+                        "type": "NUMBER",
+                        "description": "Enter any year between 1970 to 2020 to get results.",
+                        "default": "1970"
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "max_imdb",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "7.8"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Enter type 'movie' or 'show'",
+                        "default": "movie"
+                    },
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Enter values highestrated , lowestrated , latest , oldest to  sort results accodingly .",
+                        "default": "latest"
+                    },
+                    {
+                        "name": "min_imdb",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "6"
+                    },
+                    {
+                        "name": "genre",
+                        "type": "STRING",
+                        "description": "use comma seperated values to enter multiple genre eg : action,horror",
+                        "default": "action"
+                    },
+                    {
+                        "name": "language",
+                        "type": "STRING",
+                        "description": "use comma seperated values to enter multiple values , eg : english,german",
+                        "default": "english"
+                    },
+                    {
+                        "name": "end_year",
+                        "type": "NUMBER",
+                        "description": "Enter any year from 1970 to 2020 to  get results.",
+                        "default": "2020"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "page": "int",
+                    "results": [
+                        {
+                            "imageurl": [
+                                "list of str with length 1"
+                            ],
+                            "genre": [
+                                "list of str with length 3"
+                            ],
+                            "imdbid": "str",
+                            "title": "str",
+                            "imdbrating": "float",
+                            "released": "int",
+                            "synopsis": "str",
+                            "type": "str",
+                            "_list_length": 50
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Basic Info",
+                "api_description": "Get info on a  cast such as name , profession , birth and death year , bio , poster , best titles  etc.",
+                "required_parameters": [
+                    {
+                        "name": "peopleid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "nm0000375"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "peopleid": "str",
+                    "name": "str",
+                    "profession": [
+                        "list of str with length 3"
+                    ],
+                    "knownForTitles": [
+                        "list of str with length 4"
+                    ],
+                    "birthYear": "str",
+                    "deathYear": "str",
+                    "bio": "str",
+                    "born": "str",
+                    "birthName": "str",
+                    "poster": [
+                        "list of str with length 1"
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Params",
+                "api_description": "Get array of values that can be used as params in Advanced Search .",
+                "required_parameters": [
+                    {
+                        "name": "param",
+                        "type": "STRING",
+                        "description": "input 'genre' or 'language' to get array of genre or languages that can be used as filter in advanced search .",
+                        "default": "genre"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Search",
+                "api_description": "This endpoint allows you to search for a movie or tvshow based on the given 'title '.",
+                "required_parameters": [
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Endgame"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "*Maximum number of pages returned is 10 ",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Title Details",
+                "api_description": "Get basic information on a movie or tv show such as imdbid , title , genre , runtime , imdbrating , language , synopsis , type , imageurl  , Streaming platforms info etc.",
+                "required_parameters": [
+                    {
+                        "name": "imdbid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "tt9904802"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "imageurl": [
+                        "list of str with length 1"
+                    ],
+                    "genre": [
+                        "list of str with length 1"
+                    ],
+                    "imdbid": "str",
+                    "title": "str",
+                    "runtime": "str",
+                    "imdbrating": "float",
+                    "released": "int",
+                    "synopsis": "str",
+                    "type": "str",
+                    "language": [
+                        "list of str with length 4"
+                    ],
+                    "streamingAvailability": {
+                        "country": {
+                            "US": [
+                                {
+                                    "url": "str",
+                                    "platform": "str",
+                                    "_list_length": 9
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Additional Title Details",
+                "api_description": "Get  additional details for a movie or tv show like reviews  , quotes , plotsummary , number of votes , trailer url  , cast details etc.",
+                "required_parameters": [
+                    {
+                        "name": "imdbid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "tt7286456"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "imdbid": "str",
+                    "title": "str",
+                    "people": [
+                        {
+                            "peopleid": "str",
+                            "characters": "NoneType",
+                            "category": "str",
+                            "job": "str",
+                            "_list_length": 10
+                        }
+                    ],
+                    "numVotes": "int",
+                    "trailerUrl": [
+                        "list of str with length 3"
+                    ],
+                    "plotSummary": "str",
+                    "quotes": [
+                        "list of str with length 5"
+                    ],
+                    "reviews": [
+                        "list of str with length 5"
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "OTT Providers",
+                "api_description": "Get  information on OTT platforms we suuport .",
+                "required_parameters": [
+                    {
+                        "name": "region",
+                        "type": "STRING",
+                        "description": "currently only USA and India region is supported enter param 'US' for USA and 'IN' for India.",
+                        "default": "IN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "New Arrivals",
+                "api_description": "Get the latest arrivals from different platforms .",
+                "required_parameters": [
+                    {
+                        "name": "region",
+                        "type": "STRING",
+                        "description": "Use 'IN' for India and 'US' for USA , * currently we support only US and Indian region.",
+                        "default": "US"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "page": "int",
+                    "results": "empty list"
+                }
+            }
+        ],
+        "query": "I'm planning a romantic date night and I'm looking for a romantic movie with a high IMDb rating. Can you suggest a movie released after 2010 that falls under the romance genre? It should be available on streaming platforms like Netflix and Hulu.",
+        "relevant APIs": [
+            [
+                "OTT details",
+                "Advanced Search"
+            ],
+            [
+                "OTT details",
+                "OTT Providers"
+            ]
+        ],
+        "query_id": 43318
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code API_v33",
+                "api_name": "QR code image",
+                "api_description": "This Api takes URL, or string and returns the QR code image",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "www.google.com"
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "My friend is organizing a virtual event and wants to share the event details using a QR code. Can you help generate a QR code image for the event information? The event details can be provided as a string.",
+        "relevant APIs": [
+            [
+                "QR Code API_v33",
+                "QR code image"
+            ]
+        ],
+        "query_id": 86231
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code - Dynamic and Static",
+                "api_name": "List Specific QR Code",
+                "api_description": "From this endpoint is to get the information of a specific registered qr code, related to the respective api key",
+                "required_parameters": [
+                    {
+                        "name": "ref",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "msg": "str",
+                    "err": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code - Dynamic and Static",
+                "api_name": "List All QR Code's",
+                "api_description": "From this endpoint is to list all registered qr codes, related to their api key.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "msg": "str",
+                    "err": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "QR Code - Dynamic and Static",
+                "api_name": "Generate API Key",
+                "api_description": "From this endpoint you can generate a single api key.\n\nIt will be used to link all the qr code created, and allow any changes.\n\nImportant: Keep in mind that once generated, it is necessary that you store this key well, since it is not possible to recover it, and without it, you do not have access to change any of your QR Codes.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "msg": "str",
+                    "data": "str"
+                }
+            }
+        ],
+        "query": "My company is organizing an event and we need to create unique QR codes for each attendee. Can you generate multiple dynamic QR codes for this purpose? Additionally, provide me with the details of all the QR codes linked to my API key.",
+        "relevant APIs": [
+            [
+                "QR Code - Dynamic and Static",
+                "Generate API Key"
+            ],
+            [
+                "QR Code - Dynamic and Static",
+                "List Specific QR Code"
+            ],
+            [
+                "QR Code - Dynamic and Static",
+                "List All QR Code's"
+            ]
+        ],
+        "query_id": 71801
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "SEO - Count website pages in Google index",
+                "api_name": "countPages",
+                "api_description": "Count website pages in Google index",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "Can you help me analyze the number of pages indexed in Google for my company's website? The URL is 'www.example.com'.",
+        "relevant APIs": [
+            [
+                "SEO - Count website pages in Google index",
+                "countPages"
+            ]
+        ],
+        "query_id": 86251
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "All Purpose Complex Converter",
+                "api_name": "Convert Number To Speech| Provide Any Integer Number",
+                "api_description": "Converting any integer number to Speech",
+                "required_parameters": [
+                    {
+                        "name": "number",
+                        "type": "NUMBER",
+                        "description": "Pass Only Integer Number!",
+                        "default": "12345345483453456434354131"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "string",
+                        "description": "Select Language , By default  ( en-us ) is supported, \nHit GET Languages Endpoint to get a list of all supported languages.",
+                        "default": "en"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "All Purpose Complex Converter",
+                "api_name": "Convert Text To Speech || Provide Any Text",
+                "api_description": "Convert Any Text To Speech.",
+                "required_parameters": [
+                    {
+                        "name": "text",
+                        "type": "string",
+                        "description": "Support Both Text and Numbers. \nCan Pass Text Such as (\\\"any Thing to convert\\\")\nor \nCan Pass Any Number such as 1029383833384474",
+                        "default": "I am using All Purpose Complex Converter API for My Daily Tasks."
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "string",
+                        "description": "Select Language , By default  ( en-us ) is supported, \nHit GET Languages Endpoint to get a list of all supported languages.",
+                        "default": "en"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "All Purpose Complex Converter",
+                "api_name": "Convert Numbers To Words | Provide Any Integer Number",
+                "api_description": "Convert any number to words.",
+                "required_parameters": [
+                    {
+                        "name": "number",
+                        "type": "NUMBER",
+                        "description": "Pass only Integer Numbers! ",
+                        "default": "2356564546548979878435435453456464"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "to_convert",
+                        "type": "STRING",
+                        "description": "By Default the number will be converted to cardinal, if you wan to convert it into specific format such as ordinal, ordinal_num, year or currency than you can specify it here. ",
+                        "default": "ordinal"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "Provided Number": "int",
+                    "Converted to Words": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "All Purpose Complex Converter",
+                "api_name": "GET Languages",
+                "api_description": "Get All The Supported Languages.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "af": "str",
+                    "ar": "str",
+                    "bg": "str",
+                    "bn": "str",
+                    "bs": "str",
+                    "ca": "str",
+                    "cs": "str",
+                    "da": "str",
+                    "de": "str",
+                    "el": "str",
+                    "en": "str",
+                    "es": "str",
+                    "et": "str",
+                    "fi": "str",
+                    "fr": "str",
+                    "gu": "str",
+                    "hi": "str",
+                    "hr": "str",
+                    "hu": "str",
+                    "id": "str",
+                    "is": "str",
+                    "it": "str",
+                    "iw": "str",
+                    "ja": "str",
+                    "jw": "str",
+                    "km": "str",
+                    "kn": "str",
+                    "ko": "str",
+                    "la": "str",
+                    "lv": "str",
+                    "ml": "str",
+                    "mr": "str",
+                    "ms": "str",
+                    "my": "str",
+                    "ne": "str",
+                    "nl": "str",
+                    "no": "str",
+                    "pl": "str",
+                    "pt": "str",
+                    "ro": "str",
+                    "ru": "str",
+                    "si": "str",
+                    "sk": "str",
+                    "sq": "str",
+                    "sr": "str",
+                    "su": "str",
+                    "sv": "str",
+                    "sw": "str",
+                    "ta": "str",
+                    "te": "str",
+                    "th": "str",
+                    "tl": "str",
+                    "tr": "str",
+                    "uk": "str",
+                    "ur": "str",
+                    "vi": "str",
+                    "zh-CN": "str",
+                    "zh-TW": "str"
+                }
+            }
+        ],
+        "query": "I'm planning a surprise anniversary party for my parents and I want to create a special invitation. Can you convert the text 'Join us in celebrating 25 years of love!' into speech? Also, I need your assistance in converting the number '50' into words. Can you help me with that?",
+        "relevant APIs": [
+            [
+                "All Purpose Complex Converter",
+                "Convert Text To Speech || Provide Any Text"
+            ],
+            [
+                "All Purpose Complex Converter",
+                "Convert Numbers To Words | Provide Any Integer Number"
+            ]
+        ],
+        "query_id": 12805
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Check page or website loading speed",
+                "api_name": "getPageSpeed",
+                "api_description": "Get page or website loading speed in seconds",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "My friend is a web developer and wants to check the loading speed of his personal blog. Can you help him by providing the page or website loading speed in seconds for the URL 'www.blog.com'? It would be great if he could get recommendations to improve the loading speed as well.",
+        "relevant APIs": [
+            [
+                "Check page or website loading speed",
+                "getPageSpeed"
+            ]
+        ],
+        "query_id": 86394
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Pagepeeker",
+                "api_name": "2. Thumbnail ready",
+                "api_description": "Poll this API until it returns that the image is available.  If available, you can download through endpoint 1.  Rendering an image depends largely on how fast a particular web page is loaded (and if it contains Flash).  Average waiting time is around 20 - 60 seconds",
+                "required_parameters": [
+                    {
+                        "name": "size",
+                        "type": "STRING",
+                        "description": "t = Tiny, 90 x 68 pixels;  s= Small, 120 x 90 pixels;  m = Medium, 200 x 150 pixels; l = Large, 400 x 300 pixels;  x = Extra large, 480 x 360 pixels",
+                        "default": "m"
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "The URL to generate the thumbnail from",
+                        "default": "http://www.mashape.com/"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Pagepeeker",
+                "api_name": "1. Shoot thumbnail",
+                "api_description": "Issues a reset API call if refresh is set to 1. Else it will download if the image is ready (see endpoint 2.)",
+                "required_parameters": [
+                    {
+                        "name": "size",
+                        "type": "STRING",
+                        "description": "t = Tiny, 90 x 68 pixels;  s= Small, 120 x 90 pixels;  m = Medium, 200 x 150 pixels; l = Large, 400 x 300 pixels;  x = Extra large, 480 x 360 pixels",
+                        "default": "m"
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "The URL to generate the thumbnail from",
+                        "default": "http://www.mashape.com/"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "refresh",
+                        "type": "STRING",
+                        "description": "This parameter forces the currently generate d thumbnail to be regenerated.  It is optional and will be ignored unless it contains the value 1",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I need to automatically generate website screenshots for my company's marketing materials. Can you assist me in finding APIs that allow me to generate thumbnails of different sizes? The URL to generate the thumbnails from is 'https://www.companywebsite.com'.",
+        "relevant APIs": [
+            [
+                "Pagepeeker",
+                "2. Thumbnail ready"
+            ],
+            [
+                "Pagepeeker",
+                "1. Shoot thumbnail"
+            ]
+        ],
+        "query_id": 12688
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "UUID generator",
+                "api_name": "UUIDv4 generator",
+                "api_description": "Generate UUIDv4",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "uuid": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "UUID generator",
+                "api_name": "UUIDv5 generator",
+                "api_description": "UUIDv5 generator",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "test"
+                    },
+                    {
+                        "name": "namespace",
+                        "type": "STRING",
+                        "description": "Allowed values: \n\n- dns\n- url\n- oid\n- x500\n- nil",
+                        "default": "nil"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "uuid": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "UUID generator",
+                "api_name": "UUIDv3 generator",
+                "api_description": "UUIDv3 generator",
+                "required_parameters": [
+                    {
+                        "name": "namespace",
+                        "type": "STRING",
+                        "description": "Allowed values: \n\n- dns\n- url\n- oid\n- x500\n- nil",
+                        "default": "nil"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "test"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm working on a mobile app that requires unique identifiers for user devices. Can you recommend an API that can generate UUIDv4 for device IDs? Additionally, I need an API that can generate UUIDv3 for user session IDs based on their usernames and the 'url' namespace.",
+        "relevant APIs": [
+            [
+                "UUID generator",
+                "UUIDv4 generator"
+            ],
+            [
+                "UUID generator",
+                "UUIDv3 generator"
+            ]
+        ],
+        "query_id": 12819
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "languagelayer",
+                "api_name": "/batch",
+                "api_description": "API endpoint used to perform batch language detection",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "query[]",
+                        "type": "STRING",
+                        "description": "Append multiple \"query[]\" parameters containing query texts",
+                        "default": ""
+                    },
+                    {
+                        "name": "show_query",
+                        "type": "NUMBER",
+                        "description": "Set to \"1\" if you want the API's JSON result set to return your query text.",
+                        "default": "0"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "error": {
+                        "code": "int",
+                        "type": "str",
+                        "info": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "languagelayer",
+                "api_name": "/detect",
+                "api_description": "API endpoint used to perform standard (single) language detection",
+                "required_parameters": [
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "The full query text you would like the API to perform language detection for",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "show_query",
+                        "type": "NUMBER",
+                        "description": "Set to \"1\" if you want the API's JSON result set to return your query text",
+                        "default": "0"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "error": {
+                        "code": "int",
+                        "type": "str",
+                        "info": "str"
+                    }
+                }
+            }
+        ],
+        "query": "I'm developing a language quiz app and I need to detect the language of user-submitted sentences. Can you perform standard language detection for the following sentence: 'Je m'appelle Sophie.'? Please return the query text in the JSON result set.",
+        "relevant APIs": [
+            [
+                "languagelayer",
+                "/batch"
+            ],
+            [
+                "languagelayer",
+                "/detect"
+            ]
+        ],
+        "query_id": 80248
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "ColorMe",
+                "api_name": "SpecificColorSet",
+                "api_description": "Get a set of colors based on input color like - \"yellow\" / \"red\"",
+                "required_parameters": [
+                    {
+                        "name": "colorname",
+                        "type": "string",
+                        "description": "",
+                        "default": "yellow"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "ColorMe",
+                "api_name": "RandomColorSet",
+                "api_description": "Get a random set of colors",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm looking for a tool that can generate a variety of colors based on a specific color. Can you recommend a tool that offers this functionality? Additionally, I'm curious about a tool that can generate random colors. Can you suggest one for me?",
+        "relevant APIs": [
+            [
+                "ColorMe",
+                "SpecificColorSet"
+            ],
+            [
+                "ColorMe",
+                "RandomColorSet"
+            ]
+        ],
+        "query_id": 21400
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "About",
+                "api_description": "Get general information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "version": "str",
+                    "homepage": "str",
+                    "source_code": "str",
+                    "maintainer": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "Get a Language",
+                "api_description": "Get a language.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "10"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "name": "str",
+                    "is_archived": "bool",
+                    "source_file": "str",
+                    "compile_cmd": "NoneType",
+                    "run_cmd": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "Get Configuration",
+                "api_description": "Configuration information gives you detailed information about the configuration of Judge0.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"maintenance_mode\": \"bool\", \"enable_wait_result\": \"bool\", \"enable_compiler_options\": \"bool\", \"allowed_languages_for_compile_options\": \"empty list\", \"enable_command_line_arguments\": \"bool\", \"enable_submission_delete\": \"bool\", \"enable_callbacks\": \"bool\", \"callbacks_max_tries\": \"int\", \"callbacks_timeout\": \"float\", \"enable_additional_files\": \"bool\", \"max_queue_size\": \"int\", \"cpu_time_limit\": \"float\", \"max_cpu_time_limit\": \"float\", \"cpu_extra_time\": \"float\", \"max_cpu_extra_time\": \"float\", \"wall_time_limit\": \"float\", \"max_wall_time_limit\": \"float\", \"memory_limit\": \"int\", \"max_memory_limit\": \"int\", \"stack_limit\": \"int\", \"max_stack_limit\": \"int\", \"max_processes_and_or_threads\": \"int\", \"max_max_processes_and_or_threads\": \"int\", \"enable_per_process_and_thread_time_limit\": \"bool\", \"allow_enable_per_process_and_thread_time_limit\": \"bool\", \"enable_per_process_and_thread_memory_limit\": \"bool\", \"allow_enable_per_process_and_thread_memory_limit\": \"bool\", \"max_file_size\": \"int\", \"max_max_file_size\": \""
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "Get Languages",
+                "api_description": "Get active languages.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "name": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "Get Statuses",
+                "api_description": "Get statuses.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "description": "str"
+                }
+            }
+        ],
+        "query": "As a developer, I am interested in the current status of Judge0 Extra CE. Can you provide me with the status descriptions and the configuration information? It would be helpful for me to know the maintenance mode status, CPU time limit, and memory limit.",
+        "relevant APIs": [
+            [
+                "Judge0 Extra CE",
+                "Get Configuration"
+            ],
+            [
+                "Judge0 Extra CE",
+                "Get Statuses"
+            ]
+        ],
+        "query_id": 29724
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Youtube Search",
+                "api_name": "search",
+                "api_description": "Search video on YouTube",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "cats"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "c",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "continuation_token"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "items": [
+                        {
+                            "id": "str",
+                            "type": "str",
+                            "url": "str",
+                            "title": "str",
+                            "channel_name": "str",
+                            "channel_url": "str",
+                            "views": "int",
+                            "length": "str",
+                            "_list_length": 20
+                        }
+                    ],
+                    "next_continuation": "str"
+                }
+            }
+        ],
+        "query": "My friends and I are planning a movie night and we want to watch some entertaining YouTube Shorts. Can you fetch a variety of YouTube Shorts URLs for us using the keyword 'comedy'? We would appreciate having multiple videos to choose from. Thanks!",
+        "relevant APIs": [
+            [
+                "Youtube Search",
+                "search"
+            ]
+        ],
+        "query_id": 84908
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "ConvertTiffToFax",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "Filename of image.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "folder",
+                        "type": "STRING",
+                        "description": "Folder with image to process.",
+                        "default": ""
+                    },
+                    {
+                        "name": "storage",
+                        "type": "STRING",
+                        "description": "Your Aspose Cloud Storage name.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "ExtractImageFeatures",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "imageId",
+                        "type": "STRING",
+                        "description": "The image identifier.",
+                        "default": ""
+                    },
+                    {
+                        "name": "searchContextId",
+                        "type": "STRING",
+                        "description": "The search context identifier.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "imageData",
+                        "type": "BINARY",
+                        "description": "Input image",
+                        "default": ""
+                    },
+                    {
+                        "name": "folder",
+                        "type": "STRING",
+                        "description": "The folder.",
+                        "default": ""
+                    },
+                    {
+                        "name": "storage",
+                        "type": "STRING",
+                        "description": "The storage.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "ModifyJpeg2000",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "Filename of image.",
+                        "default": ""
+                    },
+                    {
+                        "name": "comment",
+                        "type": "STRING",
+                        "description": "The comment (can be either single or comma-separated).",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "storage",
+                        "type": "STRING",
+                        "description": "Your Aspose Cloud Storage name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "fromScratch",
+                        "type": "BOOLEAN",
+                        "description": "Specifies where additional parameters we do not support should be taken from. If this is true \u2013 they will be taken from default values for standard image, if it is false \u2013 they will be saved from current image. Default is false.",
+                        "default": false
+                    },
+                    {
+                        "name": "folder",
+                        "type": "STRING",
+                        "description": "Folder with image to process.",
+                        "default": ""
+                    },
+                    {
+                        "name": "codec",
+                        "type": "STRING",
+                        "description": "The codec (j2k or jp2).",
+                        "default": "j2k"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "FindImageDuplicates",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "searchContextId",
+                        "type": "STRING",
+                        "description": "The search context identifier.",
+                        "default": ""
+                    },
+                    {
+                        "name": "similarityThreshold",
+                        "type": "NUMBER",
+                        "description": "The similarity threshold.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "folder",
+                        "type": "STRING",
+                        "description": "The folder.",
+                        "default": ""
+                    },
+                    {
+                        "name": "storage",
+                        "type": "STRING",
+                        "description": "The storage.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "RotateFlipImage",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "method",
+                        "type": "STRING",
+                        "description": "RotateFlip method (Rotate180FlipNone, Rotate180FlipX, Rotate180FlipXY, Rotate180FlipY, Rotate270FlipNone, Rotate270FlipX, Rotate270FlipXY, Rotate270FlipY, Rotate90FlipNone, Rotate90FlipX, Rotate90FlipXY, Rotate90FlipY, RotateNoneFlipNone, RotateNoneFlipX, RotateNoneFlipXY, RotateNoneFlipY).",
+                        "default": ""
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "Filename of an image.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "storage",
+                        "type": "STRING",
+                        "description": "Your Aspose Cloud Storage name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "folder",
+                        "type": "STRING",
+                        "description": "Folder with image to process.",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "Resulting image format. Please, refer to https://docs.aspose.cloud/display/imagingcloud/Supported+File+Formats#SupportedFileFormats-CommonOperationsFormatSupportMap for possible use-cases.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "DownloadFile",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "path",
+                        "type": "STRING",
+                        "description": "File path e.g. '/folder/file.ext'",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "storageName",
+                        "type": "STRING",
+                        "description": "Storage name",
+                        "default": ""
+                    },
+                    {
+                        "name": "versionId",
+                        "type": "STRING",
+                        "description": "File version ID to download",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "GetImageFrame",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "Filename of image.",
+                        "default": ""
+                    },
+                    {
+                        "name": "frameId",
+                        "type": "NUMBER",
+                        "description": "Number of a frame.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "folder",
+                        "type": "STRING",
+                        "description": "Folder with image to process.",
+                        "default": ""
+                    },
+                    {
+                        "name": "x",
+                        "type": "NUMBER",
+                        "description": "X position of start point for cropping rectangle.",
+                        "default": ""
+                    },
+                    {
+                        "name": "rotateFlipMethod",
+                        "type": "STRING",
+                        "description": "RotateFlip method (Rotate180FlipNone, Rotate180FlipX, Rotate180FlipXY, Rotate180FlipY, Rotate270FlipNone, Rotate270FlipX, Rotate270FlipXY, Rotate270FlipY, Rotate90FlipNone, Rotate90FlipX, Rotate90FlipXY, Rotate90FlipY, RotateNoneFlipNone, RotateNoneFlipX, RotateNoneFlipXY, RotateNoneFlipY). Default is RotateNoneFlipNone.",
+                        "default": ""
+                    },
+                    {
+                        "name": "newHeight",
+                        "type": "NUMBER",
+                        "description": "New height.",
+                        "default": ""
+                    },
+                    {
+                        "name": "saveOtherFrames",
+                        "type": "BOOLEAN",
+                        "description": "If result will include all other frames or just a specified frame.",
+                        "default": false
+                    },
+                    {
+                        "name": "storage",
+                        "type": "STRING",
+                        "description": "Your Aspose Cloud Storage name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "newWidth",
+                        "type": "NUMBER",
+                        "description": "New width.",
+                        "default": ""
+                    },
+                    {
+                        "name": "rectWidth",
+                        "type": "NUMBER",
+                        "description": "Width of cropping rectangle.",
+                        "default": ""
+                    },
+                    {
+                        "name": "rectHeight",
+                        "type": "NUMBER",
+                        "description": "Height of cropping rectangle.",
+                        "default": ""
+                    },
+                    {
+                        "name": "y",
+                        "type": "NUMBER",
+                        "description": "Y position of start point for cropping rectangle.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "ObjectExists",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "path",
+                        "type": "STRING",
+                        "description": "File or folder path e.g. '/file.ext' or '/folder'",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "versionId",
+                        "type": "STRING",
+                        "description": "File version ID",
+                        "default": ""
+                    },
+                    {
+                        "name": "storageName",
+                        "type": "STRING",
+                        "description": "Storage name",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "GetImageSearchStatus",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "searchContextId",
+                        "type": "STRING",
+                        "description": "The search context identifier.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "storage",
+                        "type": "STRING",
+                        "description": "The storage.",
+                        "default": ""
+                    },
+                    {
+                        "name": "folder",
+                        "type": "STRING",
+                        "description": "The folder.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Aspose.Imaging Cloud",
+                "api_name": "GetImageFrameProperties",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "Filename with image.",
+                        "default": ""
+                    },
+                    {
+                        "name": "frameId",
+                        "type": "NUMBER",
+                        "description": "Number of a frame.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "folder",
+                        "type": "STRING",
+                        "description": "Folder with image to process.",
+                        "default": ""
+                    },
+                    {
+                        "name": "storage",
+                        "type": "STRING",
+                        "description": "Your Aspose Cloud Storage name.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I have an image named 'photo.jpg' and I want to rotate it 90 degrees clockwise and flip it vertically. Can you also save it in the 'edited_images' folder?",
+        "relevant APIs": [
+            [
+                "Aspose.Imaging Cloud",
+                "ModifyJpeg2000"
+            ],
+            [
+                "Aspose.Imaging Cloud",
+                "RotateFlipImage"
+            ],
+            [
+                "Aspose.Imaging Cloud",
+                "GetImageFrameProperties"
+            ]
+        ],
+        "query_id": 68553
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "nowyAPI",
+                "api_name": "rereer_copy",
+                "api_description": "rererer",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "messages": "str",
+                    "info": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "nowyAPI",
+                "api_name": "rereer",
+                "api_description": "rererer",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "url": "str"
+                }
+            }
+        ],
+        "query": "I'm planning a vacation with my family to a beautiful beach destination. Can you recommend some popular tourist spots, provide information about the weather forecast for the next week, and suggest nearby hotels?",
+        "relevant APIs": [
+            [
+                "nowyAPI",
+                "rereer_copy"
+            ],
+            [
+                "nowyAPI",
+                "rereer"
+            ]
+        ],
+        "query_id": 26672
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "ProxyPage",
+                "api_name": "Random proxy",
+                "api_description": "Get random proxy,\n\nchoose type and country",
+                "required_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "HTTP, HTTPS, SOCKS4, SOCKS5, CONNECT:25",
+                        "default": "HTTP"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "description": "You can specify a country for a proxy that you want to be returened\n",
+                        "default": "US"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "ip": "str",
+                    "port": "int",
+                    "latency": "int",
+                    "ssl": "bool",
+                    "is_anonymous": "bool",
+                    "types": [
+                        "list of str with length 1"
+                    ],
+                    "country": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "ProxyPage",
+                "api_name": "Tier2",
+                "api_description": "Tier 2 proxies\n\nEach proxy returned costs 1 credit\n\n\nWith our /v1/tier2 endpoint you can set different parameters for proxies that you need.\n\nYou can set type which is just your proxy type, either HTTP, HTTPS, SOCKS4, SOCKS5, CONNECT:25 (which is smtp proxy)\n\nfor limit set an integer that will tell us how many proxies you will need. Our users usually set a limit to avoid using too many credits.\n\nWith latency you can set an integer which will filter out all proxies that have a latency higher then specified.\n\nssl is a boolean parameter, you can filter out proxies that support ssl or don't\n\nis_anonymous is also a boolean statemet where you can filter anonymous proxies\n\ncountry is a parameter that you can use to set a country that you want.",
+                "required_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "HTTP"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "ssl",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "100"
+                    },
+                    {
+                        "name": "is_anonymous",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "US"
+                    },
+                    {
+                        "name": "latency",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "ip": "str",
+                    "port": "int",
+                    "latency": "int",
+                    "is_anonymous": "bool",
+                    "types": [
+                        "list of str with length 1"
+                    ],
+                    "country": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "ProxyPage",
+                "api_name": "Tier1",
+                "api_description": "List our tier 1 proxies with filters\nThis proxies are more comprehensively checked\n\n\nYou can set type which is just your proxy type, either HTTP, HTTPS\n\nfor limit set an integer that will tell us how many proxies you will need. Our users usually set a limit to avoid using too many credits.\n\nWith latency you can set an integer which will filter out all proxies that have a latency higher then specified.\n\nssl is a boolean parameter, you can filter out proxies that support ssl or don't\n\nis_anonymous is also a boolean statemet where you can filter anonymous proxies\n\ncountry is a parameter that you can use to set a country that you want.",
+                "required_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "HTTP, HTTPS, SOCKS4, SOCKS5, CONNECT:25",
+                        "default": "HTTP"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "latency",
+                        "type": "NUMBER",
+                        "description": "ms latency for a proxy, everything that is below that value is returned\n",
+                        "default": ""
+                    },
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "description": "You can specify a country for a proxy that you want to be returened\n",
+                        "default": "US"
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Limit the number of proxies returned, helps you control how many credits can be used\n",
+                        "default": "100"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "ip": "str",
+                    "port": "int",
+                    "latency": "int",
+                    "is_anonymous": "bool",
+                    "types": [
+                        "list of str with length 1"
+                    ],
+                    "country": "str"
+                }
+            }
+        ],
+        "query": "I require a tier 2 proxy with low latency and SSL support for my company's data analysis. Can you provide me with a random proxy that is anonymous and located in Germany? Additionally, I need a tier 1 proxy with high speed and located in France.",
+        "relevant APIs": [
+            [
+                "ProxyPage",
+                "Tier2"
+            ],
+            [
+                "ProxyPage",
+                "Random proxy"
+            ]
+        ],
+        "query_id": 80377
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "New mlem",
+                "api_description": "Returns one most recently published mlem image in JSON",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "url": "str",
+                    "width": "int",
+                    "height": "int",
+                    "orientation": "str",
+                    "brightness": "str",
+                    "tags": [
+                        "list of str with length 1"
+                    ],
+                    "code": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "Mlem ID",
+                "api_description": "Returns one mlem image by ID in JSON",
+                "required_parameters": [
+                    {
+                        "name": "mlemid",
+                        "type": "NUMBER",
+                        "description": "Mlem ID",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "Tags",
+                "api_description": "Returns all tags in JSON",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "Random mlem",
+                "api_description": "Returns one random mlem image in JSON",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "brightness",
+                        "type": "STRING",
+                        "description": "Image brightness: dark or bright",
+                        "default": ""
+                    },
+                    {
+                        "name": "maxheight",
+                        "type": "NUMBER",
+                        "description": "Maximum height",
+                        "default": ""
+                    },
+                    {
+                        "name": "minwidth",
+                        "type": "NUMBER",
+                        "description": "Maximum width",
+                        "default": ""
+                    },
+                    {
+                        "name": "minheight",
+                        "type": "NUMBER",
+                        "description": "Minimum height",
+                        "default": ""
+                    },
+                    {
+                        "name": "tag",
+                        "type": "STRING",
+                        "description": "Tag of mlem",
+                        "default": ""
+                    },
+                    {
+                        "name": "maxwidth",
+                        "type": "NUMBER",
+                        "description": "Minimum width",
+                        "default": ""
+                    },
+                    {
+                        "name": "orientation",
+                        "type": "STRING",
+                        "description": "Image orientation: square, landscape, portrait",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "url": "str",
+                    "width": "int",
+                    "height": "int",
+                    "orientation": "str",
+                    "brightness": "str",
+                    "tags": [
+                        "list of str with length 1"
+                    ],
+                    "code": "int"
+                }
+            }
+        ],
+        "query": "I'm writing an article about the cutest animal expressions and I need some visual examples. Can you provide me with a random mlem image with a dark brightness and portrait orientation? Also, please include the tags associated with the image.",
+        "relevant APIs": [
+            [
+                "MlemAPI",
+                "Random mlem"
+            ],
+            [
+                "MlemAPI",
+                "Tags"
+            ]
+        ],
+        "query_id": 77171
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Color to picture API",
+                "api_name": "Color to picture",
+                "api_description": "Takes prompt of picture mode (L,RGB,RGBA), color in hex (example: ff03bc), width (example: 200), height (example: 200) and makes new image in single color)",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "height",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "200"
+                    },
+                    {
+                        "name": "color",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "ff0000"
+                    },
+                    {
+                        "name": "width",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "200"
+                    },
+                    {
+                        "name": "mode",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "RGB"
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "Hello! I'm working on a design project and need a solid color image. Can you assist me in creating a picture with a single color? The color should be in hex code #ff0000, and the dimensions of the image should be 200x200 pixels.",
+        "relevant APIs": [
+            [
+                "Color to picture API",
+                "Color to picture"
+            ]
+        ],
+        "query_id": 86335
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Trending",
+                "api_description": "Get currently trending videos.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "instrumentation": {
+                        "_type": "str"
+                    },
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Video Details",
+                "api_description": "Get insights about a video, such as related videos.",
+                "required_parameters": [
+                    {
+                        "name": "modules",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "A comma-delimited list of one or more insights to request."
+                    },
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "An ID that uniquely identifies a video. The Video object's videoId field contains the ID that you set this parameter to."
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "instrumentation": {
+                        "_type": "str"
+                    },
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "value": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Video Search",
+                "api_description": "Get videos relevant for a given query.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "The user's search query string",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "safeSearch",
+                        "type": "STRING",
+                        "description": "A filter used to filter results for adult content.",
+                        "default": ""
+                    },
+                    {
+                        "name": "mkt",
+                        "type": "STRING",
+                        "description": "The market where the results come from. Typically, this is the country where the user is making the request from; however, it could be a different country if the user is not located in a country where Bing delivers results. The market must be in the form -. For example, en-US.\n\nFull list of supported markets:\nes-AR, en-AU, de-AT, nl-BE, fr-BE, pt-BR, en-CA, fr-CA, es-CL, da-DK, fi-FI, fr-FR, de-DE, zh-HK, en-IN, en-ID, en-IE, it-IT, ja-JP, ko-KR, en-MY, es-MX, nl-NL, en-NZ, no-NO, zh-CN, pl-PL, pt-PT, en-PH, ru-RU, ar-SA, en-ZA, es-ES, sv-SE, fr-CH, de-CH, zh-TW, tr-TR, en-GB, en-US, es-US",
+                        "default": ""
+                    },
+                    {
+                        "name": "count",
+                        "type": "NUMBER",
+                        "description": "The number of video results to return in the response. The actual number delivered may be less than requested.",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "type": "NUMBER",
+                        "description": "The zero-based offset that indicates the number of video results to skip before returning results.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "value": "str",
+                            "_list_length": 3
+                        }
+                    ]
+                }
+            }
+        ],
+        "query": "I'm working on a research project and need to find videos related to a specific topic. Can you help me with that? I would like to search for videos relevant to my query using the Video Search API. It would also be helpful to get insights about a video, such as related videos, using the Video Details API.",
+        "relevant APIs": [
+            [
+                "Bing Video Search",
+                "Video Search"
+            ],
+            [
+                "Bing Video Search",
+                "Video Details"
+            ]
+        ],
+        "query_id": 59905
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Trending",
+                "api_description": "Get currently trending videos.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "instrumentation": {
+                        "_type": "str"
+                    },
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Video Details",
+                "api_description": "Get insights about a video, such as related videos.",
+                "required_parameters": [
+                    {
+                        "name": "modules",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "A comma-delimited list of one or more insights to request."
+                    },
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "An ID that uniquely identifies a video. The Video object's videoId field contains the ID that you set this parameter to."
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "instrumentation": {
+                        "_type": "str"
+                    },
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "value": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Video Search",
+                "api_description": "Get videos relevant for a given query.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "The user's search query string",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "safeSearch",
+                        "type": "STRING",
+                        "description": "A filter used to filter results for adult content.",
+                        "default": ""
+                    },
+                    {
+                        "name": "mkt",
+                        "type": "STRING",
+                        "description": "The market where the results come from. Typically, this is the country where the user is making the request from; however, it could be a different country if the user is not located in a country where Bing delivers results. The market must be in the form -. For example, en-US.\n\nFull list of supported markets:\nes-AR, en-AU, de-AT, nl-BE, fr-BE, pt-BR, en-CA, fr-CA, es-CL, da-DK, fi-FI, fr-FR, de-DE, zh-HK, en-IN, en-ID, en-IE, it-IT, ja-JP, ko-KR, en-MY, es-MX, nl-NL, en-NZ, no-NO, zh-CN, pl-PL, pt-PT, en-PH, ru-RU, ar-SA, en-ZA, es-ES, sv-SE, fr-CH, de-CH, zh-TW, tr-TR, en-GB, en-US, es-US",
+                        "default": ""
+                    },
+                    {
+                        "name": "count",
+                        "type": "NUMBER",
+                        "description": "The number of video results to return in the response. The actual number delivered may be less than requested.",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "type": "NUMBER",
+                        "description": "The zero-based offset that indicates the number of video results to skip before returning results.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "value": "str",
+                            "_list_length": 3
+                        }
+                    ]
+                }
+            }
+        ],
+        "query": "I'm organizing a company event and I want to showcase some popular videos. Can you provide me with insights about trending videos and also search for videos relevant to our industry? It would be great if you could give me the titles, descriptions, and thumbnails of the trending videos as well as the videos related to our industry.",
+        "relevant APIs": [
+            [
+                "Bing Video Search",
+                "Trending"
+            ],
+            [
+                "Bing Video Search",
+                "Video Search"
+            ]
+        ],
+        "query_id": 77200
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Java Code Compiler",
+                "api_name": "Java Versions",
+                "api_description": "Java Versions",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "0": {
+                        "id": "int",
+                        "name": "str"
+                    },
+                    "1": {
+                        "id": "int",
+                        "name": "str"
+                    },
+                    "2": {
+                        "id": "int",
+                        "name": "str"
+                    },
+                    "3": {
+                        "id": "int",
+                        "name": "str"
+                    },
+                    "4": {
+                        "id": "int",
+                        "name": "str"
+                    }
+                }
+            }
+        ],
+        "query": "Hey, I'm new to Java programming and I'm not sure which version to use. Could you give me a list of Java versions and their names? It would be really helpful for me to get started.",
+        "relevant APIs": [
+            [
+                "Java Code Compiler",
+                "Java Versions"
+            ]
+        ],
+        "query_id": 86288
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Temp Email",
+                "api_name": "List Domains",
+                "api_description": "List of Domains for email",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Temp Email",
+                "api_name": "Fetch Message",
+                "api_description": "Get message of the provided message ID",
+                "required_parameters": [
+                    {
+                        "name": "message_id",
+                        "type": "string",
+                        "description": "",
+                        "default": "The ID of the message you want to fetch"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I need to create a temporary email address with the domain 'example.com'. Once created, I want to fetch the latest message from this email address.",
+        "relevant APIs": [
+            [
+                "Temp Email",
+                "List Domains"
+            ],
+            [
+                "Temp Email",
+                "Fetch Message"
+            ]
+        ],
+        "query_id": 4311
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "nowyAPI",
+                "api_name": "rereer_copy",
+                "api_description": "rererer",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "messages": "str",
+                    "info": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "nowyAPI",
+                "api_name": "rereer",
+                "api_description": "rererer",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "url": "str"
+                }
+            }
+        ],
+        "query": "I'm a teacher planning a field trip for my students and need some information. Can you provide me with a list of educational attractions in the area, the cost of admission for students, and recommendations for nearby restaurants? Additionally, we would like to see some pictures of previous field trips to inspire us.",
+        "relevant APIs": [
+            [
+                "nowyAPI",
+                "rereer_copy"
+            ],
+            [
+                "nowyAPI",
+                "rereer"
+            ]
+        ],
+        "query_id": 1236
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources/{datasource_id}/variables",
+                "api_description": "This resource list the variables of a specified data source, showing all the fields of the variables.",
+                "required_parameters": [
+                    {
+                        "name": "datasource_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables/{variable_id}",
+                "api_description": "This resource returns a variable and its details. It shows additional fields than the ones required during the creation of the variable:  last_value: Shows the last value written to the variable.",
+                "required_parameters": [
+                    {
+                        "name": "variable_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables",
+                "api_description": "Retrieves the list of all the variables owned by a user. The header X-Auth-Token is needed to have the permissions for this endpoint.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources",
+                "api_description": "This resource lists all the existing data sources of a user.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /datasources/{datasource_id}",
+                "api_description": "This resource obtains an existing data source and its details. Also, it returns additional fields besides the ones required during the creation of the data source:  number_of_variables: Shows the number of variables contained by the data source. last_activity: Returns the date of the last activity",
+                "required_parameters": [
+                    {
+                        "name": "datasource_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "Ubidots",
+                "api_name": "GET /variables/{variable_id}/values",
+                "api_description": "This resource returns the values of the specified variable.  Every value will have a timestamp which is a value in milliseconds according to the POSIX standard.",
+                "required_parameters": [
+                    {
+                        "name": "variable_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I need to retrieve the list of variables for my data source with ID 'abc123'. Additionally, I want to obtain the details of the variable with ID 'xyz789'.",
+        "relevant APIs": [
+            [
+                "Ubidots",
+                "GET /datasources/{datasource_id}/variables"
+            ],
+            [
+                "Ubidots",
+                "GET /variables/{variable_id}"
+            ]
+        ],
+        "query_id": 6504
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "About",
+                "api_description": "Get general information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "version": "str",
+                    "homepage": "str",
+                    "source_code": "str",
+                    "maintainer": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "Get a Language",
+                "api_description": "Get a language.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "10"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "name": "str",
+                    "is_archived": "bool",
+                    "source_file": "str",
+                    "compile_cmd": "NoneType",
+                    "run_cmd": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "Get Configuration",
+                "api_description": "Configuration information gives you detailed information about the configuration of Judge0.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"maintenance_mode\": \"bool\", \"enable_wait_result\": \"bool\", \"enable_compiler_options\": \"bool\", \"allowed_languages_for_compile_options\": \"empty list\", \"enable_command_line_arguments\": \"bool\", \"enable_submission_delete\": \"bool\", \"enable_callbacks\": \"bool\", \"callbacks_max_tries\": \"int\", \"callbacks_timeout\": \"float\", \"enable_additional_files\": \"bool\", \"max_queue_size\": \"int\", \"cpu_time_limit\": \"float\", \"max_cpu_time_limit\": \"float\", \"cpu_extra_time\": \"float\", \"max_cpu_extra_time\": \"float\", \"wall_time_limit\": \"float\", \"max_wall_time_limit\": \"float\", \"memory_limit\": \"int\", \"max_memory_limit\": \"int\", \"stack_limit\": \"int\", \"max_stack_limit\": \"int\", \"max_processes_and_or_threads\": \"int\", \"max_max_processes_and_or_threads\": \"int\", \"enable_per_process_and_thread_time_limit\": \"bool\", \"allow_enable_per_process_and_thread_time_limit\": \"bool\", \"enable_per_process_and_thread_memory_limit\": \"bool\", \"allow_enable_per_process_and_thread_memory_limit\": \"bool\", \"max_file_size\": \"int\", \"max_max_file_size\": \""
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "Get Languages",
+                "api_description": "Get active languages.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "name": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Judge0 Extra CE",
+                "api_name": "Get Statuses",
+                "api_description": "Get statuses.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "description": "str"
+                }
+            }
+        ],
+        "query": "I'm a software developer and I'm interested in using Judge0 for my projects. Can you give me an overview of the available languages? Additionally, I would like to know the source file and run command for the language with ID 10.",
+        "relevant APIs": [
+            [
+                "Judge0 Extra CE",
+                "Get Languages"
+            ],
+            [
+                "Judge0 Extra CE",
+                "Get a Language"
+            ]
+        ],
+        "query_id": 71638
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "logoutUser",
+                "api_description": "",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "loginUser",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "password",
+                        "type": "STRING",
+                        "description": "The password for login in clear text",
+                        "default": ""
+                    },
+                    {
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "The user name for login",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "getUserByName",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "The name that needs to be fetched. Use user1 for testing. ",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "getPetById",
+                "api_description": "Returns a single pet",
+                "required_parameters": [
+                    {
+                        "name": "petId",
+                        "type": "NUMBER",
+                        "description": "ID of pet to return",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "getInventory",
+                "api_description": "Returns a map of status codes to quantities",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Sale": "int",
+                    "totvs": "int",
+                    "sold": "int",
+                    "string": "int",
+                    "pending": "int",
+                    "dgdfgdf": "int",
+                    "available": "int",
+                    "peric": "int",
+                    "cat": "int",
+                    "not available": "int",
+                    "new-2": "int",
+                    "Available": "int",
+                    "disponible": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "tes",
+                "api_name": "getOrderById",
+                "api_description": "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
+                "required_parameters": [
+                    {
+                        "name": "orderId",
+                        "type": "NUMBER",
+                        "description": "ID of pet that needs to be fetched",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "type": "str",
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My company is conducting a survey and we need to retrieve user details by their username 'survey123'. Can you provide us with the API call for this? Additionally, we would like to get the pet details by their ID '56789' and retrieve the inventory status of the store.",
+        "relevant APIs": [
+            [
+                "tes",
+                "getUserByName"
+            ],
+            [
+                "tes",
+                "getPetById"
+            ],
+            [
+                "tes",
+                "getInventory"
+            ]
+        ],
+        "query_id": 59890
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Advanced Search",
+                "api_description": "This endpoint allows you to search for a movie or tvshow based on various parameters such as release year , imdb rating , genre , language etc.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "start_year",
+                        "type": "NUMBER",
+                        "description": "Enter any year between 1970 to 2020 to get results.",
+                        "default": "1970"
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "max_imdb",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "7.8"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Enter type 'movie' or 'show'",
+                        "default": "movie"
+                    },
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Enter values highestrated , lowestrated , latest , oldest to  sort results accodingly .",
+                        "default": "latest"
+                    },
+                    {
+                        "name": "min_imdb",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "6"
+                    },
+                    {
+                        "name": "genre",
+                        "type": "STRING",
+                        "description": "use comma seperated values to enter multiple genre eg : action,horror",
+                        "default": "action"
+                    },
+                    {
+                        "name": "language",
+                        "type": "STRING",
+                        "description": "use comma seperated values to enter multiple values , eg : english,german",
+                        "default": "english"
+                    },
+                    {
+                        "name": "end_year",
+                        "type": "NUMBER",
+                        "description": "Enter any year from 1970 to 2020 to  get results.",
+                        "default": "2020"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "page": "int",
+                    "results": [
+                        {
+                            "imageurl": [
+                                "list of str with length 1"
+                            ],
+                            "genre": [
+                                "list of str with length 3"
+                            ],
+                            "imdbid": "str",
+                            "title": "str",
+                            "imdbrating": "float",
+                            "released": "int",
+                            "synopsis": "str",
+                            "type": "str",
+                            "_list_length": 50
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Basic Info",
+                "api_description": "Get info on a  cast such as name , profession , birth and death year , bio , poster , best titles  etc.",
+                "required_parameters": [
+                    {
+                        "name": "peopleid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "nm0000375"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "peopleid": "str",
+                    "name": "str",
+                    "profession": [
+                        "list of str with length 3"
+                    ],
+                    "knownForTitles": [
+                        "list of str with length 4"
+                    ],
+                    "birthYear": "str",
+                    "deathYear": "str",
+                    "bio": "str",
+                    "born": "str",
+                    "birthName": "str",
+                    "poster": [
+                        "list of str with length 1"
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Params",
+                "api_description": "Get array of values that can be used as params in Advanced Search .",
+                "required_parameters": [
+                    {
+                        "name": "param",
+                        "type": "STRING",
+                        "description": "input 'genre' or 'language' to get array of genre or languages that can be used as filter in advanced search .",
+                        "default": "genre"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Search",
+                "api_description": "This endpoint allows you to search for a movie or tvshow based on the given 'title '.",
+                "required_parameters": [
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Endgame"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "*Maximum number of pages returned is 10 ",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Title Details",
+                "api_description": "Get basic information on a movie or tv show such as imdbid , title , genre , runtime , imdbrating , language , synopsis , type , imageurl  , Streaming platforms info etc.",
+                "required_parameters": [
+                    {
+                        "name": "imdbid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "tt9904802"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "imageurl": [
+                        "list of str with length 1"
+                    ],
+                    "genre": [
+                        "list of str with length 1"
+                    ],
+                    "imdbid": "str",
+                    "title": "str",
+                    "runtime": "str",
+                    "imdbrating": "float",
+                    "released": "int",
+                    "synopsis": "str",
+                    "type": "str",
+                    "language": [
+                        "list of str with length 4"
+                    ],
+                    "streamingAvailability": {
+                        "country": {
+                            "US": [
+                                {
+                                    "url": "str",
+                                    "platform": "str",
+                                    "_list_length": 9
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Additional Title Details",
+                "api_description": "Get  additional details for a movie or tv show like reviews  , quotes , plotsummary , number of votes , trailer url  , cast details etc.",
+                "required_parameters": [
+                    {
+                        "name": "imdbid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "tt7286456"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "imdbid": "str",
+                    "title": "str",
+                    "people": [
+                        {
+                            "peopleid": "str",
+                            "characters": "NoneType",
+                            "category": "str",
+                            "job": "str",
+                            "_list_length": 10
+                        }
+                    ],
+                    "numVotes": "int",
+                    "trailerUrl": [
+                        "list of str with length 3"
+                    ],
+                    "plotSummary": "str",
+                    "quotes": [
+                        "list of str with length 5"
+                    ],
+                    "reviews": [
+                        "list of str with length 5"
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "OTT Providers",
+                "api_description": "Get  information on OTT platforms we suuport .",
+                "required_parameters": [
+                    {
+                        "name": "region",
+                        "type": "STRING",
+                        "description": "currently only USA and India region is supported enter param 'US' for USA and 'IN' for India.",
+                        "default": "IN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "New Arrivals",
+                "api_description": "Get the latest arrivals from different platforms .",
+                "required_parameters": [
+                    {
+                        "name": "region",
+                        "type": "STRING",
+                        "description": "Use 'IN' for India and 'US' for USA , * currently we support only US and Indian region.",
+                        "default": "US"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "page": "int",
+                    "results": "empty list"
+                }
+            }
+        ],
+        "query": "I want to find a specific movie but I only remember the title 'Inception'. Can you help me search for the movie 'Inception' and provide me with its details, including the genre, runtime, IMDb rating, and streaming availability?",
+        "relevant APIs": [
+            [
+                "OTT details",
+                "Search"
+            ],
+            [
+                "OTT details",
+                "Title Details"
+            ]
+        ],
+        "query_id": 26613
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Torrent-Search",
+                "api_name": "Get from piratebay",
+                "api_description": "for piratebay",
+                "required_parameters": [
+                    {
+                        "name": "searchtopic",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Torrent-Search",
+                "api_name": "Get from eztv",
+                "api_description": "can use this for search eztv",
+                "required_parameters": [
+                    {
+                        "name": "searchtopic",
+                        "type": "string",
+                        "description": "",
+                        "default": "cars"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Name": "str",
+                    "ReleasedDate": "str",
+                    "Genre": "str",
+                    "Rating": "str",
+                    "Likes": "str",
+                    "Runtime": "str",
+                    "Language": "str",
+                    "Url": "str",
+                    "Poster": "str",
+                    "Files": [
+                        {
+                            "Quality": "str",
+                            "Type": "str",
+                            "Size": "str",
+                            "Torrent": "str",
+                            "Magnet": "str",
+                            "_list_length": 2
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Torrent-Search",
+                "api_name": "Get from yts",
+                "api_description": "You can use this for moive search",
+                "required_parameters": [
+                    {
+                        "name": "searchtopic",
+                        "type": "string",
+                        "description": "",
+                        "default": "cars"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Name": "str",
+                    "ReleasedDate": "str",
+                    "Genre": "str",
+                    "Rating": "str",
+                    "Likes": "str",
+                    "Runtime": "str",
+                    "Language": "str",
+                    "Url": "str",
+                    "Poster": "str",
+                    "Files": [
+                        {
+                            "Quality": "str",
+                            "Type": "str",
+                            "Size": "str",
+                            "Torrent": "str",
+                            "Magnet": "str",
+                            "_list_length": 2
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Torrent-Search",
+                "api_name": "Get from 1337.x",
+                "api_description": "scrape data from various torrent websites such as 1337x",
+                "required_parameters": [
+                    {
+                        "name": "searchtopic",
+                        "type": "string",
+                        "description": "",
+                        "default": "cars"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Name": "str",
+                    "Magnet": "str",
+                    "Poster": "str",
+                    "Category": "str",
+                    "Type": "str",
+                    "Language": "str",
+                    "Size": "str",
+                    "UploadedBy": "str",
+                    "Downloads": "str",
+                    "LastChecked": "str",
+                    "DateUploaded": "str",
+                    "Seeders": "str",
+                    "Leechers": "str",
+                    "Url": "str"
+                }
+            }
+        ],
+        "query": "I'm organizing a movie marathon for my family this weekend and I need a list of family-friendly movies. Can you search for movies suitable for all ages on YTS and 1337x? Please provide movie names, genres, and available torrents.",
+        "relevant APIs": [
+            [
+                "Torrent-Search",
+                "Get from yts"
+            ],
+            [
+                "Torrent-Search",
+                "Get from 1337.x"
+            ]
+        ],
+        "query_id": 12954
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "About info (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nThis endpoint will return the `About` info of the number, and the time when the value was set.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34655719560"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Is a business? (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nRequests to this endpoint will return `true` if the number is a **Whatsapp for Business** account, or `false` if it's not.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34655719560"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Validate WA number (free)",
+                "api_description": "You need a **valid token** to use this endpoint, learn how to get it on this [video](https://youtu.be/TcaAwKpAkl8). \nThe response is `true` if the phone is registered on whatsapp.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The phone number must be written as a number (including countrycode); \ndo **NOT** include: any non-number character, spaces, or anything which is not a number; do **NOT** add zeros (0) at the beginning.",
+                        "default": "34605797764"
+                    },
+                    {
+                        "name": "token",
+                        "type": "STRING",
+                        "description": "To get a free token, click [here](https://wa.me/34631428039?text=get-token) to send a whatsapp with the command `get-token`.",
+                        "default": "ENTER_HERE_A_TEMP_TOKEN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Validate WA number",
+                "api_description": "enter the number you want to validate.\nLearn how to use it on this [video](https://youtu.be/_h5ybzp9UNU).",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The whatsapp number must be written as: number (including countrycode); do **NOT** include any non-number character, spaces, or anything which is not a number. Otherwise, the request will not be processed.\nExamples: of correct numbers are: 34123456789 (for spain) or 491234567890 (for Germany).\nTIPS:\n    Do NOT include '+' before your countrycode,\n    Do NOT include a '-', or any other character or space (anything which is not a number) as part of your phone number.\n    If you do not know which is your country code check this: https://countrycode.org/\n",
+                        "default": "34605797764"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "Is a business?",
+                "api_description": "Requests to this endpoint will return `true` if the number is a **Whatsapp for Business** account, or `false` if it's not.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "The whatsapp number must be written as: `countrycode` and `number`; do NOT include any non-number character, spaces, or anything which is not a number.\nExamples: of correct numbers are: `34123456789` (for spain) or `491234567890` (for Germany).\nCountry codes can be checked here: https://countrycode.org/",
+                        "default": "34655719560"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Bulk Whatsapp Validator",
+                "api_name": "About info",
+                "api_description": "This endpoint will return the *About* state of the WA number on the query.",
+                "required_parameters": [
+                    {
+                        "name": "phone",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "34605797764"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I want to know if my friend's phone number, 34631428039, is registered on WhatsApp. Can you validate the number and provide the 'About' info? Also, let me know if it is a business account.",
+        "relevant APIs": [
+            [
+                "Bulk Whatsapp Validator",
+                "Validate WA number"
+            ],
+            [
+                "Bulk Whatsapp Validator",
+                "About info"
+            ]
+        ],
+        "query_id": 21453
+    }
+]

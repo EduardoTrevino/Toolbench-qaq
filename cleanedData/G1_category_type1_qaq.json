@@ -1,0 +1,52 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I am looking for a domain name for my new business. Can you check the availability of the domain 'mybusinessname.com'? If it's available, provide me with the WHOIS information for the domain and the pricing details.",
+        "relevant APIs": [
+            [
+                "Domain Name Search",
+                "Domain Search"
+            ],
+            [
+                "Domain Name Search",
+                "Whois"
+            ],
+            [
+                "Domain Name Search",
+                "Domain Availability"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 29746
+    }
+]
