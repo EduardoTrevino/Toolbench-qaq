@@ -7,7 +7,7 @@ import random
 from concurrent.futures import ThreadPoolExecutor,as_completed
 import argparse
 from tqdm import tqdm
-from utils import test_sets, get_steps
+from utils_mod import test_sets, get_steps
 
 abs_dir = os.path.split(__file__)[0]
 
