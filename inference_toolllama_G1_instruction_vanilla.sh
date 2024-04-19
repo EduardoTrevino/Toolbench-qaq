@@ -1,4 +1,4 @@
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 export RAPIDAPI_KEY=$(cat rapidapi.txt)
 export OUTPUT_DIR="outputs/A_G1_instruction_toolllama-2"
 export PYTHONPATH=./

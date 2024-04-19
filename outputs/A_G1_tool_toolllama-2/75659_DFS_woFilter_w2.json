@@ -1,0 +1,1062 @@
+{
+  "win": false,
+  "tree": {
+    "size": 52,
+    "max_length": 13,
+    "tree": {
+      "is_terminal": false,
+      "pruned": false,
+      "finished": false,
+      "depth": 0,
+      "node_type": "Action Input",
+      "description": "",
+      "Elo": 1000.0,
+      "child_count": 2,
+      "expand_num": 0,
+      "io_state": {},
+      "children": [
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 1,
+          "node_type": "Thought",
+          "description": "Based on the user's query, they are looking for information on the running costs of residential properties in Crawley. They specifically mentioned the estimated house prices, running costs, nearby points of interest, and broadband information. To fulfill their request, I should call the \"auto_complete_for_zoopla_v2\" function with the argument of the search term \"Crawley\". This function will help me retrieve the relevant information about residential properties in Crawley, including estimated house prices, running costs, nearby points of interest, and broadband information. By calling this function with the specified argument, I can gather the necessary data to provide a comprehensive response to the user's query.",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0,
+          "children": [
+            {
+              "is_terminal": false,
+              "pruned": false,
+              "finished": false,
+              "depth": 2,
+              "node_type": "Action",
+              "description": "auto_complete_for_zoopla_v2",
+              "Elo": 1000.0,
+              "child_count": 1,
+              "expand_num": 0,
+              "children": [
+                {
+                  "is_terminal": false,
+                  "pruned": false,
+                  "finished": false,
+                  "depth": 3,
+                  "node_type": "Action Input",
+                  "description": "{\n  \"search_term\": \"Crawley\"\n}",
+                  "Elo": 1000.0,
+                  "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+                  "observation_code": 8,
+                  "child_count": 1,
+                  "expand_num": 1,
+                  "io_state": {},
+                  "children": [
+                    {
+                      "is_terminal": false,
+                      "pruned": false,
+                      "finished": false,
+                      "depth": 4,
+                      "node_type": "Thought",
+                      "description": "I received an error message stating that I am not subscribed to the API for the \"zoopla_v2\" tool. This means that I am unable to access the necessary information on residential properties in Crawley, including estimated house prices, running costs, nearby points of interest, and broadband information. I should inform the user that I am unable to proceed with the task due to this error. To do so, I will call the \"Finish\" function with the argument \"give_up_and_restart\" to restart the task and find an alternative solution for the user's query.",
+                      "Elo": 1000.0,
+                      "child_count": 1,
+                      "expand_num": 0,
+                      "children": [
+                        {
+                          "is_terminal": false,
+                          "pruned": false,
+                          "finished": false,
+                          "depth": 5,
+                          "node_type": "Action",
+                          "description": "Finish",
+                          "Elo": 1000.0,
+                          "child_count": 1,
+                          "expand_num": 0,
+                          "children": [
+                            {
+                              "is_terminal": false,
+                              "pruned": true,
+                              "finished": false,
+                              "depth": 6,
+                              "node_type": "Action Input",
+                              "description": "{\n  \"return_type\": \"give_up_and_restart\"\n}",
+                              "Elo": 1000.0,
+                              "observation": "{\"response\":\"chose to give up and restart\"}",
+                              "observation_code": 4,
+                              "child_count": 0,
+                              "expand_num": 2,
+                              "io_state": {},
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 1,
+          "node_type": "Thought",
+          "description": "Based on the previous action, it seems that the auto_complete_for_zoopla_v2 function failed due to an unsubscribed error. To avoid repeating the same action, I should try a different approach. \n\nThought: I can use the zoopla_v2 function to get the estimated house prices, running costs, and nearby points of interest for residential properties in Crawley. Additionally, I can use the properties_get_broadband_for_zoopla_v2 function to retrieve the broadband information.\n",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0,
+          "children": [
+            {
+              "is_terminal": false,
+              "pruned": false,
+              "finished": false,
+              "depth": 2,
+              "node_type": "Action",
+              "description": "I will call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \"Crawley\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\nAction: house_prices_estimate_for_zoopla_v2",
+              "Elo": 1000.0,
+              "child_count": 1,
+              "expand_num": 0,
+              "children": [
+                {
+                  "is_terminal": false,
+                  "pruned": false,
+                  "finished": false,
+                  "depth": 3,
+                  "node_type": "Action Input",
+                  "description": "{\n  \"area\": \"Crawley\"\n}",
+                  "Elo": 1000.0,
+                  "observation": "{\"error\": \"No such function name: I will call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \\\"Crawley\\\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\\nAction: house_prices_estimate_for_zoopla_v2\", \"response\": \"\"}",
+                  "observation_code": 1,
+                  "child_count": 2,
+                  "expand_num": 3,
+                  "io_state": {},
+                  "children": [
+                    {
+                      "is_terminal": false,
+                      "pruned": false,
+                      "finished": false,
+                      "depth": 4,
+                      "node_type": "Thought",
+                      "description": "Based on the previous action, the auto_complete_for_zoopla_v2 function failed due to an unsubscribed error. To avoid repeating the same action, I should try a different approach. In this case, I can use the zoopla_v2 function to get the estimated house prices, running costs, and nearby points of interest for residential properties in Crawley. Additionally, I can use the properties_get_broadband_for_zoopla_v2 function to retrieve the broadband information. By calling the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \"Crawley\", I can obtain the estimated house prices. Then, I can call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I can call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.",
+                      "Elo": 1000.0,
+                      "child_count": 1,
+                      "expand_num": 0,
+                      "children": [
+                        {
+                          "is_terminal": false,
+                          "pruned": false,
+                          "finished": false,
+                          "depth": 5,
+                          "node_type": "Action",
+                          "description": "properties_get_running_costs_for_zoopla_v2",
+                          "Elo": 1000.0,
+                          "child_count": 1,
+                          "expand_num": 0,
+                          "children": [
+                            {
+                              "is_terminal": false,
+                              "pruned": false,
+                              "finished": false,
+                              "depth": 6,
+                              "node_type": "Action Input",
+                              "description": "{\n\"listing_id\": 123456789\n}",
+                              "Elo": 1000.0,
+                              "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+                              "observation_code": 8,
+                              "child_count": 2,
+                              "expand_num": 4,
+                              "io_state": {},
+                              "children": [
+                                {
+                                  "is_terminal": false,
+                                  "pruned": false,
+                                  "finished": false,
+                                  "depth": 7,
+                                  "node_type": "Thought",
+                                  "description": "It seems that the zoopla_v2 function is currently unavailable due to an unsubscribed error. I will try a different approach to gather the required information.\n\nThought: I can use the auto_complete_for_zoopla_v2 function to search for residential properties in Crawley. Then, I can use the properties_get_running_costs_for_zoopla_v2 function to obtain the running costs for the selected property. Finally, I can use the properties_get_nearby_for_zoopla_v2 function to retrieve the nearby points of interest for the property.\n\nFunction: {\"error\": \"No such function name: I will call the auto_complete_for_zoopla_v2 function with the search_term parameter set to \"Crawley\" to get the list of residential properties. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\", \"response\": \"\"}",
+                                  "Elo": 1000.0,
+                                  "child_count": 1,
+                                  "expand_num": 0,
+                                  "children": [
+                                    {
+                                      "is_terminal": false,
+                                      "pruned": false,
+                                      "finished": false,
+                                      "depth": 8,
+                                      "node_type": "Action",
+                                      "description": "auto_complete_for_zoopla_v2",
+                                      "Elo": 1000.0,
+                                      "child_count": 1,
+                                      "expand_num": 0,
+                                      "children": [
+                                        {
+                                          "is_terminal": false,
+                                          "pruned": false,
+                                          "finished": false,
+                                          "depth": 9,
+                                          "node_type": "Action Input",
+                                          "description": "{\n  \"search_term\": \"Crawley\"\n}",
+                                          "Elo": 1000.0,
+                                          "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+                                          "observation_code": 8,
+                                          "child_count": 2,
+                                          "expand_num": 5,
+                                          "io_state": {},
+                                          "children": [
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": false,
+                                              "depth": 10,
+                                              "node_type": "Thought",
+                                              "description": "Since the zoopla_v2 function is currently unavailable due to an unsubscribed error, I need to find an alternative approach to gather the required information. \n\nThought: I can use the auto_complete_for_zoopla_v2 function to search for residential properties in Crawley. Then, I can use the properties_get_running_costs_for_zoopla_v2 function to obtain the running costs for the selected property. Finally, I can use the properties_get_nearby_for_zoopla_v2 function to retrieve the nearby points of interest for the property.\n",
+                                              "Elo": 1000.0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": false,
+                                                  "depth": 11,
+                                                  "node_type": "Action",
+                                                  "description": "I will call the auto_complete_for_zoopla_v2 function with the search_term parameter set to \"Crawley\" to get the list of residential properties. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\nAction: Finish",
+                                                  "Elo": 1000.0,
+                                                  "child_count": 1,
+                                                  "expand_num": 0,
+                                                  "children": [
+                                                    {
+                                                      "is_terminal": false,
+                                                      "pruned": true,
+                                                      "finished": false,
+                                                      "depth": 12,
+                                                      "node_type": "Action Input",
+                                                      "description": "{\n  \"return_type\": \"give_up_and_restart\"\n}",
+                                                      "Elo": 1000.0,
+                                                      "observation": "{\"error\": \"No such function name: I will call the auto_complete_for_zoopla_v2 function with the search_term parameter set to \\\"Crawley\\\" to get the list of residential properties. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\\nAction: Finish\", \"response\": \"\"}",
+                                                      "observation_code": 1,
+                                                      "child_count": 0,
+                                                      "expand_num": 6,
+                                                      "io_state": {},
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": false,
+                                              "depth": 10,
+                                              "node_type": "Thought",
+                                              "description": "Based on the previous action and the current state, it is clear that the zoopla_v2 function is currently unavailable due to an unsubscribed error. To avoid repeating the same action, I should try a different approach.\n\nThought: Since the zoopla_v2 function is not working, I can use a different source to gather the required information. I can try using a different real estate API or search for residential properties in Crawley using a search engine. Once I have the list of properties, I can manually calculate the running costs and find nearby points of interest using other available resources. Additionally, I can search for the broadband information separately.\n",
+                                              "Elo": 1000.0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": false,
+                                                  "depth": 11,
+                                                  "node_type": "Action",
+                                                  "description": "I will search for residential properties in Crawley using a different real estate API or search engine. Then, I will manually calculate the running costs for the selected property and find nearby points of interest using available resources. Finally, I will search for the broadband information separately.\nAction: Finish",
+                                                  "Elo": 1000.0,
+                                                  "child_count": 1,
+                                                  "expand_num": 0,
+                                                  "children": [
+                                                    {
+                                                      "is_terminal": false,
+                                                      "pruned": true,
+                                                      "finished": false,
+                                                      "depth": 12,
+                                                      "node_type": "Action Input",
+                                                      "description": "{\n  \"return_type\": \"give_up_and_restart\"\n}",
+                                                      "Elo": 1000.0,
+                                                      "observation": "{\"error\": \"No such function name: I will search for residential properties in Crawley using a different real estate API or search engine. Then, I will manually calculate the running costs for the selected property and find nearby points of interest using available resources. Finally, I will search for the broadband information separately.\\nAction: Finish\", \"response\": \"\"}",
+                                                      "observation_code": 1,
+                                                      "child_count": 0,
+                                                      "expand_num": 7,
+                                                      "io_state": {},
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "is_terminal": false,
+                                  "pruned": false,
+                                  "finished": false,
+                                  "depth": 7,
+                                  "node_type": "Thought",
+                                  "description": "Based on the previous action, it seems that the auto_complete_for_zoopla_v2 function failed due to an unsubscribed error. To avoid repeating the same action, I should try a different approach. \n\nThought: I can use the zoopla_v2 function to get the estimated house prices, running costs, and nearby points of interest for residential properties in Crawley. Additionally, I can use the properties_get_broadband_for_zoopla_v2 function to retrieve the broadband information.\n",
+                                  "Elo": 1000.0,
+                                  "child_count": 1,
+                                  "expand_num": 0,
+                                  "children": [
+                                    {
+                                      "is_terminal": false,
+                                      "pruned": false,
+                                      "finished": false,
+                                      "depth": 8,
+                                      "node_type": "Action",
+                                      "description": "I will call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \"Crawley\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\nAction: house_prices_estimate_for_zoopla_v2",
+                                      "Elo": 1000.0,
+                                      "child_count": 1,
+                                      "expand_num": 0,
+                                      "children": [
+                                        {
+                                          "is_terminal": false,
+                                          "pruned": false,
+                                          "finished": false,
+                                          "depth": 9,
+                                          "node_type": "Action Input",
+                                          "description": "{\n  \"area\": \"Crawley\"\n}",
+                                          "Elo": 1000.0,
+                                          "observation": "{\"error\": \"No such function name: I will call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \\\"Crawley\\\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\\nAction: house_prices_estimate_for_zoopla_v2\", \"response\": \"\"}",
+                                          "observation_code": 1,
+                                          "child_count": 2,
+                                          "expand_num": 8,
+                                          "io_state": {},
+                                          "children": [
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": false,
+                                              "depth": 10,
+                                              "node_type": "Thought",
+                                              "description": "house_prices_estimate_for_zoopla_v2\nAction Input: {\n  \"area\": \"Crawley\"\n",
+                                              "Elo": 1000.0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": false,
+                                                  "depth": 11,
+                                                  "node_type": "Action",
+                                                  "description": "house_prices_estimate_for_zoopla_v2",
+                                                  "Elo": 1000.0,
+                                                  "child_count": 1,
+                                                  "expand_num": 0,
+                                                  "children": [
+                                                    {
+                                                      "is_terminal": false,
+                                                      "pruned": true,
+                                                      "finished": false,
+                                                      "depth": 12,
+                                                      "node_type": "Action Input",
+                                                      "description": "{\n  \"area\": \"Crawley\"\n}",
+                                                      "Elo": 1000.0,
+                                                      "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+                                                      "observation_code": 8,
+                                                      "child_count": 0,
+                                                      "expand_num": 9,
+                                                      "io_state": {},
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": false,
+                                              "depth": 10,
+                                              "node_type": "Thought",
+                                              "description": "Based on the previous action, it seems that the house_prices_estimate_for_zoopla_v2 function failed due to an unsubscribed error. To avoid repeating the same action, I should try a different approach. \n\nThought: I can use the zoopla_v2 function to get the estimated house prices, running costs, and nearby points of interest for residential properties in Crawley. Additionally, I can use the properties_get_broadband_for_zoopla_v2 function to retrieve the broadband information.\n",
+                                              "Elo": 1000.0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": false,
+                                                  "depth": 11,
+                                                  "node_type": "Action",
+                                                  "description": "I will call the zoopla_v2 function with the area parameter set to \"Crawley\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\nAction: house_prices_estimate_for_zoopla_v2",
+                                                  "Elo": 1000.0,
+                                                  "child_count": 1,
+                                                  "expand_num": 0,
+                                                  "children": [
+                                                    {
+                                                      "is_terminal": false,
+                                                      "pruned": true,
+                                                      "finished": false,
+                                                      "depth": 12,
+                                                      "node_type": "Action Input",
+                                                      "description": "{\n  \"area\": \"Crawley\"\n}",
+                                                      "Elo": 1000.0,
+                                                      "observation": "{\"error\": \"No such function name: I will call the zoopla_v2 function with the area parameter set to \\\"Crawley\\\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\\nAction: house_prices_estimate_for_zoopla_v2\", \"response\": \"\"}",
+                                                      "observation_code": 1,
+                                                      "child_count": 0,
+                                                      "expand_num": 10,
+                                                      "io_state": {},
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "is_terminal": false,
+                      "pruned": false,
+                      "finished": false,
+                      "depth": 4,
+                      "node_type": "Thought",
+                      "description": "Based on the previous action, it seems that the properties_get_running_costs_for_zoopla_v2 function failed due to an unsubscribed error. To avoid repeating the same action, I should try a different approach. \n\nThought: I can use the zoopla_v2 function to get the estimated house prices, running costs, and nearby points of interest for residential properties in Crawley. Additionally, I can use the properties_get_broadband_for_zoopla_v2 function to retrieve the broadband information.\n",
+                      "Elo": 1000.0,
+                      "child_count": 1,
+                      "expand_num": 0,
+                      "children": [
+                        {
+                          "is_terminal": false,
+                          "pruned": false,
+                          "finished": false,
+                          "depth": 5,
+                          "node_type": "Action",
+                          "description": "I will call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \"Crawley\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\nAction: properties_get_running_costs_for_zoopla_v2",
+                          "Elo": 1000.0,
+                          "child_count": 1,
+                          "expand_num": 0,
+                          "children": [
+                            {
+                              "is_terminal": false,
+                              "pruned": false,
+                              "finished": false,
+                              "depth": 6,
+                              "node_type": "Action Input",
+                              "description": "{\n  \"listing_id\": 123456789\n}",
+                              "Elo": 1000.0,
+                              "observation": "{\"error\": \"No such function name: I will call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \\\"Crawley\\\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\\nAction: properties_get_running_costs_for_zoopla_v2\", \"response\": \"\"}",
+                              "observation_code": 1,
+                              "child_count": 2,
+                              "expand_num": 11,
+                              "io_state": {},
+                              "children": [
+                                {
+                                  "is_terminal": false,
+                                  "pruned": false,
+                                  "finished": false,
+                                  "depth": 7,
+                                  "node_type": "Thought",
+                                  "description": "properties_get_running_costs_for_zoopla_v2\nAction Input: {\n  \"listing_id\": 123456789\n",
+                                  "Elo": 1000.0,
+                                  "child_count": 1,
+                                  "expand_num": 0,
+                                  "children": [
+                                    {
+                                      "is_terminal": false,
+                                      "pruned": false,
+                                      "finished": false,
+                                      "depth": 8,
+                                      "node_type": "Action",
+                                      "description": "properties_get_running_costs_for_zoopla_v2",
+                                      "Elo": 1000.0,
+                                      "child_count": 1,
+                                      "expand_num": 0,
+                                      "children": [
+                                        {
+                                          "is_terminal": false,
+                                          "pruned": false,
+                                          "finished": false,
+                                          "depth": 9,
+                                          "node_type": "Action Input",
+                                          "description": "{\n  \"listing_id\": 123456789\n}",
+                                          "Elo": 1000.0,
+                                          "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+                                          "observation_code": 8,
+                                          "child_count": 2,
+                                          "expand_num": 12,
+                                          "io_state": {},
+                                          "children": [
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": false,
+                                              "depth": 10,
+                                              "node_type": "Thought",
+                                              "description": "Since the previous action of calling the properties_get_running_costs_for_zoopla_v2 function failed due to an unsubscribed error, I should try a different approach. \n\nThought: I can use the zoopla_v2 function to get the estimated house prices, running costs, and nearby points of interest for residential properties in Crawley. Additionally, I can use the properties_get_broadband_for_zoopla_v2 function to retrieve the broadband information.\n\nFunction: \n1. Call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \"Crawley\" to get the estimated house prices.\n2. Call the properties_get_running_costs_for_zoopla_v2 function with the listing_id parameter to retrieve the running costs.\n3. Call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.",
+                                              "Elo": 1000.0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": false,
+                                                  "depth": 11,
+                                                  "node_type": "Action",
+                                                  "description": "properties_get_broadband_for_zoopla_v2",
+                                                  "Elo": 1000.0,
+                                                  "child_count": 1,
+                                                  "expand_num": 0,
+                                                  "children": [
+                                                    {
+                                                      "is_terminal": false,
+                                                      "pruned": true,
+                                                      "finished": false,
+                                                      "depth": 12,
+                                                      "node_type": "Action Input",
+                                                      "description": "{\n  \"listing_id\": 123456789\n}",
+                                                      "Elo": 1000.0,
+                                                      "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+                                                      "observation_code": 8,
+                                                      "child_count": 0,
+                                                      "expand_num": 13,
+                                                      "io_state": {},
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": false,
+                                              "depth": 10,
+                                              "node_type": "Thought",
+                                              "description": "Based on the previous action, it seems that the properties_get_broadband_for_zoopla_v2 function failed due to an unsubscribed error. To avoid repeating the same action, I should try a different approach.\n\nThought: Since I am unable to retrieve the running costs and nearby points of interest using the zoopla_v2 functions, I can try using a different tool or API to gather the required information. One possible alternative is to use a different real estate website or application that provides running costs and nearby points of interest for residential properties in Crawley.\n",
+                                              "Elo": 1000.0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": false,
+                                                  "depth": 11,
+                                                  "node_type": "Action",
+                                                  "description": "I will search for alternative real estate websites or applications that provide running costs and nearby points of interest for residential properties in Crawley.\nAction: Finish",
+                                                  "Elo": 1000.0,
+                                                  "child_count": 1,
+                                                  "expand_num": 0,
+                                                  "children": [
+                                                    {
+                                                      "is_terminal": false,
+                                                      "pruned": true,
+                                                      "finished": false,
+                                                      "depth": 12,
+                                                      "node_type": "Action Input",
+                                                      "description": "{\n  \"return_type\": \"give_up_and_restart\"\n}",
+                                                      "Elo": 1000.0,
+                                                      "observation": "{\"error\": \"No such function name: I will search for alternative real estate websites or applications that provide running costs and nearby points of interest for residential properties in Crawley.\\nAction: Finish\", \"response\": \"\"}",
+                                                      "observation_code": 1,
+                                                      "child_count": 0,
+                                                      "expand_num": 14,
+                                                      "io_state": {},
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "is_terminal": false,
+                                  "pruned": false,
+                                  "finished": false,
+                                  "depth": 7,
+                                  "node_type": "Thought",
+                                  "description": "Based on the previous action, it seems that both the house_prices_estimate_for_zoopla_v2 and properties_get_running_costs_for_zoopla_v2 functions failed due to an unsubscribed error. To avoid repeating the same action, I should try a different approach. \n\nThought: I can use the zoopla_v2 function to get the estimated house prices, running costs, and nearby points of interest for residential properties in Crawley. Additionally, I can use the properties_get_broadband_for_zoopla_v2 function to retrieve the broadband information.\n",
+                                  "Elo": 1000.0,
+                                  "child_count": 1,
+                                  "expand_num": 0,
+                                  "children": [
+                                    {
+                                      "is_terminal": false,
+                                      "pruned": false,
+                                      "finished": false,
+                                      "depth": 8,
+                                      "node_type": "Action",
+                                      "description": "I will call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \"Crawley\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with a valid listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\nAction: house_prices_estimate_for_zoopla_v2",
+                                      "Elo": 1000.0,
+                                      "child_count": 1,
+                                      "expand_num": 0,
+                                      "children": [
+                                        {
+                                          "is_terminal": false,
+                                          "pruned": false,
+                                          "finished": false,
+                                          "depth": 9,
+                                          "node_type": "Action Input",
+                                          "description": "{\n  \"area\": \"Crawley\"\n}",
+                                          "Elo": 1000.0,
+                                          "observation": "{\"error\": \"No such function name: I will call the house_prices_estimate_for_zoopla_v2 function with the area parameter set to \\\"Crawley\\\" to get the estimated house prices. Then, I will call the properties_get_running_costs_for_zoopla_v2 function with a valid listing_id parameter to retrieve the running costs. Finally, I will call the properties_get_nearby_for_zoopla_v2 function with the listing_id parameter to get the nearby points of interest.\\nAction: house_prices_estimate_for_zoopla_v2\", \"response\": \"\"}",
+                                          "observation_code": 1,
+                                          "child_count": 2,
+                                          "expand_num": 15,
+                                          "io_state": {},
+                                          "children": [
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": false,
+                                              "depth": 10,
+                                              "node_type": "Thought",
+                                              "description": "house_prices_estimate_for_zoopla_v2\nAction Input: {\n  \"area\": \"Crawley\"\n",
+                                              "Elo": 1000.0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": false,
+                                                  "depth": 11,
+                                                  "node_type": "Action",
+                                                  "description": "house_prices_estimate_for_zoopla_v2",
+                                                  "Elo": 1000.0,
+                                                  "child_count": 1,
+                                                  "expand_num": 0,
+                                                  "children": [
+                                                    {
+                                                      "is_terminal": false,
+                                                      "pruned": true,
+                                                      "finished": false,
+                                                      "depth": 12,
+                                                      "node_type": "Action Input",
+                                                      "description": "{\n  \"area\": \"Crawley\"\n}",
+                                                      "Elo": 1000.0,
+                                                      "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+                                                      "observation_code": 8,
+                                                      "child_count": 0,
+                                                      "expand_num": 16,
+                                                      "io_state": {},
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "is_terminal": false,
+                                              "pruned": false,
+                                              "finished": false,
+                                              "depth": 10,
+                                              "node_type": "Thought",
+                                              "description": "Based on the previous action, the house_prices_estimate_for_zoopla_v2 function failed due to an unsubscribed error. To avoid repeating the same action, I should try a different approach. \n\nThought: Since the previous attempt to retrieve the estimated house prices failed, I can try using a different function called properties_get_broadband_for_zoopla_v2 to fetch the broadband information for residential properties in Crawley. This will provide additional details that can be helpful to my family's move.\n",
+                                              "Elo": 1000.0,
+                                              "child_count": 1,
+                                              "expand_num": 0,
+                                              "children": [
+                                                {
+                                                  "is_terminal": false,
+                                                  "pruned": false,
+                                                  "finished": false,
+                                                  "depth": 11,
+                                                  "node_type": "Action",
+                                                  "description": "I will call the properties_get_broadband_for_zoopla_v2 function with the listing_id parameter to retrieve the broadband information.\nAction: properties_get_broadband_for_zoopla_v2",
+                                                  "Elo": 1000.0,
+                                                  "child_count": 1,
+                                                  "expand_num": 0,
+                                                  "children": [
+                                                    {
+                                                      "is_terminal": false,
+                                                      "pruned": true,
+                                                      "finished": false,
+                                                      "depth": 12,
+                                                      "node_type": "Action Input",
+                                                      "description": "{\n  \"listing_id\": 123456789\n}",
+                                                      "Elo": 1000.0,
+                                                      "observation": "{\"error\": \"No such function name: I will call the properties_get_broadband_for_zoopla_v2 function with the listing_id parameter to retrieve the broadband information.\\nAction: properties_get_broadband_for_zoopla_v2\", \"response\": \"\"}",
+                                                      "observation_code": 1,
+                                                      "child_count": 0,
+                                                      "expand_num": 17,
+                                                      "io_state": {},
+                                                      "children": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "forward_args": {
+    "single_chain_max_step": 12,
+    "tree_beam_size": 2,
+    "max_query_count": 200,
+    "answer": 1,
+    "with_filter": false
+  },
+  "compare_candidates": [],
+  "answer_generation": {
+    "valid_data": true,
+    "query_count": 17,
+    "total_tokens": 34,
+    "final_answer": "{\n  \"return_type\": \"give_up_and_restart\"\n}",
+    "finish_type": "give_up",
+    "function": [
+      {
+        "name": "house_prices_get_points_of_interest_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get nearest points of interest\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "property_id": {
+              "type": "integer",
+              "description": "The value of property_id field returned in .../house-prices/estimate endpoint.",
+              "example_value": "27175510"
+            }
+          },
+          "required": [
+            "property_id"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "house_prices_estimate_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Returned list of estimated house prices\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "area": {
+              "type": "string",
+              "description": "The value of suggestions/value json object returned in .../auto-complete endpoint with properties as search_type. You must use EXACTLY the value  returned by the endpoint.",
+              "example_value": "Greenwich Close, Crawley RH11"
+            },
+            "property_type": {
+              "type": "string",
+              "description": "One of the following detached|flat|terraced|semi&#95;detached"
+            },
+            "page_number": {
+              "type": "integer",
+              "description": "The page index for paging purpose",
+              "example_value": "1"
+            },
+            "order_by": {
+              "type": "string",
+              "description": "One of the following price&#95;paid|last&#95;sold|address|estimated&#95;value",
+              "example_value": "address"
+            },
+            "page_size": {
+              "type": "integer",
+              "description": "The number of items per response (max 40)",
+              "example_value": "40"
+            },
+            "ordering": {
+              "type": "string",
+              "description": "One of the following ascending|descending",
+              "example_value": "descending"
+            },
+            "identifier": {
+              "type": "string",
+              "description": "The value of suggestions/identifier json object returned in .../auto-complete endpoint with properties as search_type. You must use EXACTLY the value returned by the endpoint.",
+              "example_value": "west-sussex/crawley/greenwich-close"
+            }
+          },
+          "required": [
+            "area"
+          ],
+          "optional": [
+            "property_type",
+            "page_number",
+            "order_by",
+            "page_size",
+            "ordering",
+            "identifier"
+          ]
+        }
+      },
+      {
+        "name": "properties_get_broadband_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get broadband information\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "listing_id": {
+              "type": "integer",
+              "description": "The value of listing_id field returned in .../properties/list endpoint",
+              "example_value": "56354192"
+            }
+          },
+          "required": [
+            "listing_id"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "properties_get_running_costs_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get running costs\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "listing_id": {
+              "type": "integer",
+              "description": "The value of listing_id field returned in .../properties/list endpoint",
+              "example_value": "56354192"
+            },
+            "category": {
+              "type": "string",
+              "description": "One of the following residential|commercial",
+              "example_value": "residential"
+            },
+            "section": {
+              "type": "string",
+              "description": "One of the following for-sale|to-rent",
+              "example_value": "to-rent"
+            }
+          },
+          "required": [
+            "listing_id"
+          ],
+          "optional": [
+            "category",
+            "section"
+          ]
+        }
+      },
+      {
+        "name": "properties_get_area_stats_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get area stats\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "listing_id": {
+              "type": "integer",
+              "description": "The value of listing_id field returned in .../properties/list endpoint",
+              "example_value": "56354192"
+            }
+          },
+          "required": [
+            "listing_id"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "properties_get_nearby_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get nearest points of interest\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "listing_id": {
+              "type": "integer",
+              "description": "The value of listing_id field returned in .../properties/list endpoint",
+              "example_value": "56354192"
+            }
+          },
+          "required": [
+            "listing_id"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "auto_complete_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get auto complete suggestion by term or phrase\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "search_term": {
+              "type": "string",
+              "description": "",
+              "example_value": "greenwich"
+            },
+            "search_type": {
+              "type": "string",
+              "description": "One of the following properties|listings. Use  listings value to get suggestion for .../properties/list endpoint. Use properties value to get suggestion for .../house-prices/estimate endpoint.",
+              "example_value": "listings"
+            }
+          },
+          "required": [
+            "search_term"
+          ],
+          "optional": [
+            "search_type"
+          ]
+        }
+      },
+      {
+        "name": "house_prices_get_sales_history_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get sales history\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "property_id": {
+              "type": "integer",
+              "description": "The value of property_id field returned in .../house-prices/estimate endpoint.",
+              "example_value": "27175510"
+            }
+          },
+          "required": [
+            "property_id"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "house_prices_get_running_costs_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get running costs\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "property_id": {
+              "type": "integer",
+              "description": "The value of property_id field returned in .../house-prices/estimate endpoint.",
+              "example_value": "27175510"
+            }
+          },
+          "required": [
+            "property_id"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "house_prices_get_market_activity_for_zoopla_v2",
+        "description": "This is the subfunction for tool \"zoopla_v2\", you can use this tool.The description of this function is: \"Get market activity in an area\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "area": {
+              "type": "string",
+              "description": "The value of suggestions/value json object returned in .../auto-complete endpoint with properties as search_type. You must use EXACTLY the value  returned by the endpoint.",
+              "example_value": "Greenwich Close, Crawley RH11"
+            },
+            "identifier": {
+              "type": "string",
+              "description": "The value of suggestions/identifier json object returned in .../auto-complete endpoint with properties as search_type. You must use EXACTLY the value returned by the endpoint.",
+              "example_value": "west-sussex/crawley/greenwich-close"
+            }
+          },
+          "required": [
+            "area"
+          ],
+          "optional": [
+            "identifier"
+          ]
+        }
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "return_type": {
+              "type": "string",
+              "enum": [
+                "give_answer",
+                "give_up_and_restart"
+              ]
+            },
+            "final_answer": {
+              "type": "string",
+              "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+            }
+          },
+          "required": [
+            "return_type"
+          ]
+        }
+      }
+    ],
+    "chain": [],
+    "train_messages": [
+      [
+        {
+          "role": "system",
+          "content": "You are AutoGPT, you can use many tools(functions) to do the following task.\nFirst I will give you the task description, and your task start.\nAt each step, you need to give your thought to analyze the status now and what to do next, with a function call to actually excute your step.\nAfter the call, you will get the call result, and you are now in a new state.\nThen you will analyze your status now, then decide what to do next...\nAfter many (Thought-call) pairs, you finally perform the task, then you can give your finial answer.\nRemember: \n1.the state change is irreversible, you can't go back to one of the former state, if you want to restart the task, say \"I give up and restart\".\n2.All the thought is short, at most in 5 sentence.\n3.You can do more then one trys, so if your plan is to continusly try some conditions, you can do one of the conditions per try.\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.zoopla_v2: This API helps to query for properties for rent, sale in UK to create a real estate site/application such as zoopla.com\n"
+        },
+        {
+          "role": "user",
+          "content": "\nMy family is planning to move to Crawley, and we need information on the running costs of residential properties in the area. Can you provide us with the estimated house prices, along with the running costs and nearby points of interest? It would be helpful to know the broadband information as well.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the user's query, they are looking for information on the running costs of residential properties in Crawley. They specifically mentioned the estimated house prices, running costs, nearby points of interest, and broadband information. To fulfill their request, I should call the \"auto_complete_for_zoopla_v2\" function with the argument of the search term \"Crawley\". This function will help me retrieve the relevant information about residential properties in Crawley, including estimated house prices, running costs, nearby points of interest, and broadband information. By calling this function with the specified argument, I can gather the necessary data to provide a comprehensive response to the user's query.",
+          "function_call": {
+            "name": "auto_complete_for_zoopla_v2",
+            "arguments": "{\n  \"search_term\": \"Crawley\"\n}"
+          }
+        }
+      ],
+      [
+        {
+          "role": "system",
+          "content": "You are AutoGPT, you can use many tools(functions) to do the following task.\nFirst I will give you the task description, and your task start.\nAt each step, you need to give your thought to analyze the status now and what to do next, with a function call to actually excute your step.\nAfter the call, you will get the call result, and you are now in a new state.\nThen you will analyze your status now, then decide what to do next...\nAfter many (Thought-call) pairs, you finally perform the task, then you can give your finial answer.\nRemember: \n1.the state change is irreversible, you can't go back to one of the former state, if you want to restart the task, say \"I give up and restart\".\n2.All the thought is short, at most in 5 sentence.\n3.You can do more then one trys, so if your plan is to continusly try some conditions, you can do one of the conditions per try.\nLet's Begin!\nTask description: You should use functions to help handle the real time user querys. Remember:\n1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.\n2.Do not use origin tool names, use only subfunctions' names.\nYou have access of the following tools:\n1.zoopla_v2: This API helps to query for properties for rent, sale in UK to create a real estate site/application such as zoopla.com\n"
+        },
+        {
+          "role": "user",
+          "content": "\nMy family is planning to move to Crawley, and we need information on the running costs of residential properties in the area. Can you provide us with the estimated house prices, along with the running costs and nearby points of interest? It would be helpful to know the broadband information as well.\nBegin!\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on the user's query, they are looking for information on the running costs of residential properties in Crawley. They specifically mentioned the estimated house prices, running costs, nearby points of interest, and broadband information. To fulfill their request, I should call the \"auto_complete_for_zoopla_v2\" function with the argument of the search term \"Crawley\". This function will help me retrieve the relevant information about residential properties in Crawley, including estimated house prices, running costs, nearby points of interest, and broadband information. By calling this function with the specified argument, I can gather the necessary data to provide a comprehensive response to the user's query.",
+          "function_call": {
+            "name": "auto_complete_for_zoopla_v2",
+            "arguments": "{\n  \"search_term\": \"Crawley\"\n}"
+          }
+        },
+        {
+          "role": "function",
+          "name": "auto_complete_for_zoopla_v2",
+          "content": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "I received an error message stating that I am not subscribed to the API for the \"zoopla_v2\" tool. This means that I am unable to access the necessary information on residential properties in Crawley, including estimated house prices, running costs, nearby points of interest, and broadband information. I should inform the user that I am unable to proceed with the task due to this error. To do so, I will call the \"Finish\" function with the argument \"give_up_and_restart\" to restart the task and find an alternative solution for the user's query.",
+          "function_call": {
+            "name": "Finish",
+            "arguments": "{\n  \"return_type\": \"give_up_and_restart\"\n}"
+          }
+        }
+      ]
+    ],
+    "query": "My family is planning to move to Crawley, and we need information on the running costs of residential properties in the area. Can you provide us with the estimated house prices, along with the running costs and nearby points of interest? It would be helpful to know the broadband information as well."
+  }
+}

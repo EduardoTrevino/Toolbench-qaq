@@ -1,8 +1,7 @@
 export CUDA_VISIBLE_DEVICES=0,1,2,3
 export RAPIDAPI_KEY=$(cat rapidapi.txt)
-export OUTPUT_DIR="outputs/A_G1_category_toolllama-2"
+export OUTPUT_DIR="outputs/A_G1_tool_toolllama-2"
 export PYTHONPATH=./
-echo "Using GPUs: $CUDA_VISIBLE_DEVICES"
 
 mkdir $OUTPUT_DIR
 python toolbench/inference/qa_pipeline.py \
@@ -12,8 +11,7 @@ python toolbench/inference/qa_pipeline.py \
     --max_observation_length 1024 \
     --observ_compress_method truncate \
     --method DFS_woFilter_w2 \
-    --input_query_file data/instruction/G1_instruction.json \
+    --input_query_file data/instruction/G1_tool.json \
     --output_answer_file $OUTPUT_DIR \
     --rapidapi_key $RAPIDAPI_KEY \
     --use_rapidapi_key
-
