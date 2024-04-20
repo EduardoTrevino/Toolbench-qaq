@@ -4,10 +4,25 @@ from tenacity import retry, wait_random_exponential, stop_after_attempt
 from termcolor import colored
 import time
 import random
+import os
+from dotenv import load_dotenv
+import logging
 
+# logging.basicConfig(level=logging.DEBUG)
+# logger = logging.getLogger()
+
+# Load environment variables
+load_dotenv()
+
+PROXY_API_KEY = os.getenv("PROXY_API_KEY")
+PROXY_BASE_URL = os.getenv("PROXY_BASE_URL")
+
+# Configure OpenAI client with proxy settings
+openai.api_key = PROXY_API_KEY
+openai.api_base = PROXY_BASE_URL  # Set the base URL to the proxy endpoint
 
 @retry(wait=wait_random_exponential(min=1, max=40), stop=stop_after_attempt(3))
-def chat_completion_request(key, messages, functions=None,function_call=None,key_pos=None, model="gpt-3.5-turbo-16k-0613",stop=None,process_id=0, **args):
+def chat_completion_request(key, messages, functions=None,function_call=None,key_pos=None, model="gpt-3.5-turbo",stop=None,process_id=0, **args):
     use_messages = []
     for message in messages:
         if not("valid" in message.keys() and message["valid"] == False):
@@ -29,7 +44,7 @@ def chat_completion_request(key, messages, functions=None,function_call=None,key
         json_data.update({"function_call": function_call})
     
     try:
-        if model == "gpt-3.5-turbo-16k-0613":
+        if model == "gpt-3.5-turbo":
             openai.api_key = key
         else:
             raise NotImplementedError
@@ -40,12 +55,14 @@ def chat_completion_request(key, messages, functions=None,function_call=None,key
         return json_data 
 
     except Exception as e:
+        error_message = str(e) if not isinstance(e, dict) else json.dumps(e)
         print("Unable to generate ChatCompletion response")
-        print(f"OpenAI calling Exception: {e}")
-        return e
+        print(f"OpenAI calling Exception: {error_message}")
+#         logger.exception("Failed during OpenAI API call.")
+        return {"error": str(e)}
 
 class ChatGPTFunction:
-    def __init__(self, model="gpt-3.5-turbo-16k-0613", openai_key=""):
+    def __init__(self, model="gpt-3.5-turbo", openai_key=""):
         self.model = model
         self.conversation_history = []
         self.openai_key = openai_key
