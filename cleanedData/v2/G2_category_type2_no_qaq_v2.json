@@ -1,0 +1,725 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "giflayer",
+                "api_name": "/capture",
+                "api_description": "Main API endpoint used to generate GIFs",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "The video URL you would like to generate a GIF from",
+                        "default": ""
+                    },
+                    {
+                        "name": "start",
+                        "type": "NUMBER",
+                        "description": "The starting time (in seconds) of your GIF",
+                        "default": ""
+                    },
+                    {
+                        "name": "end",
+                        "type": "NUMBER",
+                        "description": "The ending time (in seconds) of your GIF",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "duration",
+                        "type": "NUMBER",
+                        "description": "The duration (in seconds) of your GIF",
+                        "default": ""
+                    },
+                    {
+                        "name": "size",
+                        "type": "STRING",
+                        "description": "resize the GIF to the dimensions of your choice (accepts width and height in pixels) (Default: 300x200)",
+                        "default": ""
+                    },
+                    {
+                        "name": "crop",
+                        "type": "STRING",
+                        "description": "Crop the GIF to the size of your choice (accepts width and height in pixels)",
+                        "default": ""
+                    },
+                    {
+                        "name": "fps",
+                        "type": "NUMBER",
+                        "description": "specify a GIF quality (Frames per Second) of your choice (Default: 15)",
+                        "default": "15"
+                    },
+                    {
+                        "name": "trailer",
+                        "type": "NUMBER",
+                        "description": "Set to \"1\" to create default trailer, or specify custom trailer parameters",
+                        "default": "0"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "error": {
+                        "code": "int",
+                        "type": "str",
+                        "info": "str"
+                    }
+                }
+            }
+        ],
+        "query": "I'm planning a family movie night and I want to create a GIF invitation. Can you generate a GIF from a video URL, starting from the 5th second and ending at the 15th second? Also, provide me with the language codes supported by the HackerRank code checker API.",
+        "relevant APIs": [
+            [
+                "HackerRank",
+                "Languages"
+            ]
+        ],
+        "query_id": 42882
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "3D Services",
+                "api_name": "version",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "3D Services",
+                "api_name": "blender-project",
+                "api_description": "(Warnig - in zip mode the return of this api is a large file (~20MB)) similar to executing blender --background ./main.blend --python ./script.py. The zip in parameter should be composed of a main.blend file and a script.py. see example here https://files.aptero.co/api/public/dl/CJTvv0V7?inline=true",
+                "required_parameters": [
+                    {
+                        "name": "mode",
+                        "type": "STRING",
+                        "description": "output mode of the query (zip or img)",
+                        "default": "img"
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "A string containing an url of a '.zip' file of the project",
+                        "default": "https://files.aptero.co/api/public/dl/CJTvv0V7?inline=true"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "3D Services",
+                "api_name": "thumbnail",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "A string containing an url of a '.glb' file",
+                        "default": "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/DamagedHelmet/glTF-Binary/DamagedHelmet.glb"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Waktu Solat",
+                "api_name": "/solat/list",
+                "api_description": "List of zones in each state along with the zone code.\nData in json format.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"Johor\": {\"JHR01\": \"str\", \"JHR02\": \"str\", \"JHR03\": \"str\", \"JHR04\": \"str\"}, \"Kedah\": {\"KDH01\": \"str\", \"KDH02\": \"str\", \"KDH03\": \"str\", \"KDH04\": \"str\", \"KDH05\": \"str\", \"KDH06\": \"str\", \"KDH07\": \"str\"}, \"Kelantan\": {\"KTN01\": \"str\", \"KTN02\": \"str\"}, \"Melaka\": {\"MLK01\": \"str\"}, \"Negeri Sembilan\": {\"NGS01\": \"str\", \"NGS02\": \"str\", \"NGS03\": \"str\"}, \"Pahang\": {\"PHG01\": \"str\", \"PHG02\": \"str\", \"PHG03\": \"str\", \"PHG04\": \"str\", \"PHG05\": \"str\", \"PHG06\": \"str\"}, \"Perlis\": {\"PLS01\": \"str\"}, \"Pulau Pinang\": {\"PNG01\": \"str\"}, \"Perak\": {\"PRK01\": \"str\", \"PRK02\": \"str\", \"PRK03\": \"str\", \"PRK04\": \"str\", \"PRK05\": \"str\", \"PRK06\": \"str\", \"PRK07\": \"str\"}, \"Sabah\": {\"SBH01\": \"str\", \"SBH02\": \"str\", \"SBH03\": \"str\", \"SBH04\": \"str\", \"SBH05\": \"str\", \"SBH06\": \"str\", \"SBH07\": \"str\", \"SBH08\": \"str\", \"SBH09\": \"str\"}, \"Selangor\": {\"SGR01\": \"str\", \"SGR02\": \"str\", \"SGR03\": \"str\"}, \"Sarawak\": {\"SWK01\": \"str\", \"SWK02\": \"str\", \"SWK03\": \"str\", \"SWK04\": \"str\", \"SWK05\": \"str\", \"SWK06\": \"str\", \"SWK07\": \"str\", \"SWK08\": \"str\", \"SWK09\":"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Waktu Solat",
+                "api_name": "/solat/time",
+                "api_description": "Display the prayer time based on selected zone.\nData in json format.",
+                "required_parameters": [
+                    {
+                        "name": "code",
+                        "type": "STRING",
+                        "description": "zone code, get from API /solat/list",
+                        "default": "SWK07"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "title": "str",
+                    "description": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Endpoint Monitor Tool",
+                "api_name": "GetUser",
+                "api_description": "Gets and returns the current user data from the associated userId.",
+                "required_parameters": [
+                    {
+                        "name": "userId",
+                        "type": "STRING",
+                        "description": "The Id of the user",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Endpoint Monitor Tool",
+                "api_name": "GetEndpointData",
+                "api_description": "This Endpoint retrieves the endpoint data from the specified UserId and EndpointId.",
+                "required_parameters": [
+                    {
+                        "name": "UserId",
+                        "type": "STRING",
+                        "description": "The Id of the user",
+                        "default": ""
+                    },
+                    {
+                        "name": "EndpointId",
+                        "type": "STRING",
+                        "description": "The Id of the endpoint requested",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Endpoint Monitor Tool",
+                "api_name": "RemoveEndpointData",
+                "api_description": "Remove an endpoint from you user account by Id.\n\n(KNOWN ISSUE with RAPIDAPI)\nSuccessfully deleting an enpoint will result with a 200, however it MAY provide an ERROR stating \"src property must be a valid json object\". This is an issue with RAPIDAPI and not our API.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "endpointId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "userId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Text2Image",
+                "api_name": "text to image",
+                "api_description": "Generate image using input text.",
+                "required_parameters": [
+                    {
+                        "name": "text",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Daring treasure hunter, map and compass, standing in desolate desert, adventurous, detailed, high detail, portrait"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "style",
+                        "type": "STRING",
+                        "description": "preset style, should be in this list:\n'3d-model',\n        'analog-film',\n        'anime',\n        'cinematic',\n        'comic-book',\n        'digital-art',\n        'enhance',\n        'fantasy-art',\n        'isometric',\n        'line-art',\n        'low-poly',\n        'modeling-compound',\n        'neon-punk',\n        'origami',\n        'photographic',\n        'pixel-art',\n        'tile-texture',",
+                        "default": "enhance"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "url": "str"
+                }
+            }
+        ],
+        "query": "I'm a developer working on a game and I need to generate thumbnails for various 3D models. Can you recommend a 3D service that can generate thumbnails from '.glb' files? Additionally, I need to fetch the prayer time data for different zones to incorporate into my game.",
+        "relevant APIs": [
+            [
+                "3D Services",
+                "thumbnail"
+            ],
+            [
+                "Waktu Solat",
+                "/solat/list"
+            ]
+        ],
+        "query_id": 43258
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "ProbablyThese",
+                "api_name": "EndPonit",
+                "api_description": "This is an End Point",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Whois by API-Ninjas",
+                "api_name": "/v1/whois",
+                "api_description": "API Ninjas Whois API endpoint. Returns domain registration details (e.g. registrar, contact information, expiration date, name servers) about a particular domain name.",
+                "required_parameters": [
+                    {
+                        "name": "domain",
+                        "type": "STRING",
+                        "description": "valid domain to check.",
+                        "default": "example.com"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "domain_name": "str",
+                    "registrar": "str",
+                    "whois_server": "str",
+                    "updated_date": "int",
+                    "creation_date": "int",
+                    "expiration_date": "int",
+                    "name_servers": [
+                        "list of str with length 2"
+                    ],
+                    "dnssec": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "QR-Generator-Api",
+                "api_name": "Generate",
+                "api_description": "Generate HTML image-tag with base64-image-string as QR code of input text (Query Parameter)",
+                "required_parameters": [
+                    {
+                        "name": "text",
+                        "type": "STRING",
+                        "description": "QR Code Text Content",
+                        "default": "enter-your-text-here"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "backColor",
+                        "type": "STRING",
+                        "description": "(Optional) Background color in hexadecimal value (Default: White = #ffffff). Note: Should start with # prefix, and each basic-color (red, green, blue) should has two hex-digits.",
+                        "default": "#ffffff"
+                    },
+                    {
+                        "name": "foreColor",
+                        "type": "STRING",
+                        "description": "(Optional) Foreground color in hexadecimal value (Default: Black = #000000). Note: Should start with # prefix, and each basic-color (red, green, blue) should has two hex-digits.",
+                        "default": "#000000"
+                    },
+                    {
+                        "name": "pixel",
+                        "type": "NUMBER",
+                        "description": "(Optional) QR Code pixel (Default: 10)",
+                        "default": 10
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "result": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Discord Lookup",
+                "api_name": "Get User Data",
+                "api_description": "Fetches user data by their ID. Automatically handles rate limits and bypasses them and it parses their creation date automatically",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "25458687581618176"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "data": {
+                        "id": "str",
+                        "username": "str",
+                        "avatar": "str",
+                        "discriminator": "str",
+                        "public_flags": "int",
+                        "flags": "int",
+                        "banner": "str",
+                        "accent_color": "NoneType",
+                        "global_name": "str",
+                        "avatar_decoration": "str",
+                        "display_name": "str",
+                        "banner_color": "NoneType",
+                        "created_at": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Discord Lookup",
+                "api_name": "Get Invite Data",
+                "api_description": "Fetches detailed data, including hidden data of invites or vanities",
+                "required_parameters": [
+                    {
+                        "name": "invite",
+                        "type": "string",
+                        "description": "",
+                        "default": "minecraft"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "data": {
+                        "code": "str",
+                        "type": "int",
+                        "expires_at": "NoneType",
+                        "guild": {
+                            "id": "str",
+                            "name": "str",
+                            "splash": "str",
+                            "banner": "str",
+                            "description": "str",
+                            "icon": "str",
+                            "features": [
+                                "list of str with length 26"
+                            ],
+                            "verification_level": "int",
+                            "vanity_url_code": "str",
+                            "premium_subscription_count": "int",
+                            "nsfw": "bool",
+                            "nsfw_level": "int",
+                            "welcome_screen": {
+                                "description": "str",
+                                "welcome_channels": [
+                                    {
+                                        "channel_id": "str",
+                                        "description": "str",
+                                        "emoji_id": "NoneType",
+                                        "emoji_name": "str",
+                                        "_list_length": 4
+                                    }
+                                ]
+                            }
+                        },
+                        "channel": {
+                            "id": "str",
+                            "name": "str",
+                            "type": "int"
+                        },
+                        "uses": "int",
+                        "max_uses": "int",
+                        "max_age": "int",
+                        "temporary": "bool",
+                        "created_at": "str"
+                    }
+                }
+            }
+        ],
+        "query": "I'm starting a new business venture and I need to make a speech announcing the new venture. Can you provide me with some inspiring quotes and words to start with? Additionally, I would like to gather news articles about successful entrepreneurs for inspiration and guidance.",
+        "relevant APIs": [
+            [
+                "ProbablyThese",
+                "EndPonit"
+            ],
+            [
+                "Whois by API-Ninjas",
+                "/v1/whois"
+            ],
+            [
+                "QR-Generator-Api",
+                "Generate"
+            ],
+            [
+                "Discord Lookup",
+                "Get User Data"
+            ]
+        ],
+        "query_id": 44164
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transitaires",
+                "api_name": "Transitaire",
+                "api_description": "R\u00e9cup\u00e8re un transitaire donn\u00e9e",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": "DOUANE_AGENCE_GONDRAND"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "codePostal": "str",
+                    "email": "str",
+                    "name": "str",
+                    "phone": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Transitaires",
+                "api_name": "Transitaires",
+                "api_description": "Renvoie tous les transiatires",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "name": "str",
+                    "phone": "str"
+                }
+            },
+            {
+                "category_name": "Logistics",
+                "tool_name": "Turkey Postal Codes",
+                "api_name": "il",
+                "api_description": "Turkish plates. 1 to 81",
+                "required_parameters": [
+                    {
+                        "name": "il",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "34"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "status": "str",
+                    "dataupdatedate": "str",
+                    "description": "str",
+                    "pagecreatedate": "str",
+                    "postakodu": [
+                        {
+                            "plaka": "int",
+                            "il": "str",
+                            "ilce": "str",
+                            "semt_bucak_belde": "str",
+                            "mahalle": "str",
+                            "pk": "str",
+                            "_list_length": 975
+                        }
+                    ]
+                }
+            }
+        ],
+        "query": "I'm planning a trip to Turkey and need information about postal codes in Istanbul. Can you provide me with the postal code and district for Istanbul province with plate number 34? Additionally, I would like to know if there are any transit agencies available in Istanbul. Please fetch their names and contact numbers.",
+        "relevant APIs": [
+            [
+                "Turkey Postal Codes",
+                "il"
+            ],
+            [
+                "Transitaires",
+                "Transitaires"
+            ]
+        ],
+        "query_id": 7
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "Java Code Compiler",
+                "api_name": "Java Versions",
+                "api_description": "Java Versions",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "0": {
+                        "id": "int",
+                        "name": "str"
+                    },
+                    "1": {
+                        "id": "int",
+                        "name": "str"
+                    },
+                    "2": {
+                        "id": "int",
+                        "name": "str"
+                    },
+                    "3": {
+                        "id": "int",
+                        "name": "str"
+                    },
+                    "4": {
+                        "id": "int",
+                        "name": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "qr code_v8",
+                "api_name": "QR Code",
+                "api_description": "For example:\nhttp://owatheowais.pythonanywhere.com//qr?url=https://www.google.com",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://www.google.com"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "All in One FIle Converter",
+                "api_name": "Get Supported File Type",
+                "api_description": "Get supported file types by providing an input file type",
+                "required_parameters": [
+                    {
+                        "name": "input",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "jpg"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "supportedFiles": [
+                        "list of str with length 7"
+                    ]
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Waktu Solat",
+                "api_name": "/solat/list",
+                "api_description": "List of zones in each state along with the zone code.\nData in json format.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"Johor\": {\"JHR01\": \"str\", \"JHR02\": \"str\", \"JHR03\": \"str\", \"JHR04\": \"str\"}, \"Kedah\": {\"KDH01\": \"str\", \"KDH02\": \"str\", \"KDH03\": \"str\", \"KDH04\": \"str\", \"KDH05\": \"str\", \"KDH06\": \"str\", \"KDH07\": \"str\"}, \"Kelantan\": {\"KTN01\": \"str\", \"KTN02\": \"str\"}, \"Melaka\": {\"MLK01\": \"str\"}, \"Negeri Sembilan\": {\"NGS01\": \"str\", \"NGS02\": \"str\", \"NGS03\": \"str\"}, \"Pahang\": {\"PHG01\": \"str\", \"PHG02\": \"str\", \"PHG03\": \"str\", \"PHG04\": \"str\", \"PHG05\": \"str\", \"PHG06\": \"str\"}, \"Perlis\": {\"PLS01\": \"str\"}, \"Pulau Pinang\": {\"PNG01\": \"str\"}, \"Perak\": {\"PRK01\": \"str\", \"PRK02\": \"str\", \"PRK03\": \"str\", \"PRK04\": \"str\", \"PRK05\": \"str\", \"PRK06\": \"str\", \"PRK07\": \"str\"}, \"Sabah\": {\"SBH01\": \"str\", \"SBH02\": \"str\", \"SBH03\": \"str\", \"SBH04\": \"str\", \"SBH05\": \"str\", \"SBH06\": \"str\", \"SBH07\": \"str\", \"SBH08\": \"str\", \"SBH09\": \"str\"}, \"Selangor\": {\"SGR01\": \"str\", \"SGR02\": \"str\", \"SGR03\": \"str\"}, \"Sarawak\": {\"SWK01\": \"str\", \"SWK02\": \"str\", \"SWK03\": \"str\", \"SWK04\": \"str\", \"SWK05\": \"str\", \"SWK06\": \"str\", \"SWK07\": \"str\", \"SWK08\": \"str\", \"SWK09\":"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "Waktu Solat",
+                "api_name": "/solat/time",
+                "api_description": "Display the prayer time based on selected zone.\nData in json format.",
+                "required_parameters": [
+                    {
+                        "name": "code",
+                        "type": "STRING",
+                        "description": "zone code, get from API /solat/list",
+                        "default": "SWK07"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "title": "str",
+                    "description": "str"
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "ViewDNS",
+                "api_name": "Abuse Contact Lookup",
+                "api_description": "Used to find the abuse contact address for a domain name. This is where you would send complaints about spam originating from that domain.",
+                "required_parameters": [
+                    {
+                        "name": "domain",
+                        "type": "STRING",
+                        "description": "the domain name to find the abuse contact for",
+                        "default": "twitter.com"
+                    },
+                    {
+                        "name": "output",
+                        "type": "STRING",
+                        "description": "the output format required ('xml' or 'json')",
+                        "default": "json"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "ViewDNS",
+                "api_name": "Chinese Firewall Test",
+                "api_description": "Checks whether a site is blocked by the Great Firewall of China. This test checks across a number of servers from various locations in mainland China to determine if access to the site provided is possible from behind the Great Firewall of China.   This test checks for symptoms of DNS poisoning, one of the more common methods used by the Chinese government to block access to websites.",
+                "required_parameters": [
+                    {
+                        "name": "domain",
+                        "type": "STRING",
+                        "description": "the domain name to test",
+                        "default": "mashape.com"
+                    },
+                    {
+                        "name": "output",
+                        "type": "STRING",
+                        "description": "the output format required ('xml' or 'json')",
+                        "default": "json"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "ViewDNS",
+                "api_name": "MAC Address Lookup",
+                "api_description": "This tool will display the name of the company that manufactured a specific network device based on its MAC Address.",
+                "required_parameters": [
+                    {
+                        "name": "mac",
+                        "type": "STRING",
+                        "description": "the MAC address to lookup",
+                        "default": "00-05-02-34-56-78"
+                    },
+                    {
+                        "name": "output",
+                        "type": "STRING",
+                        "description": "the output format required ('xml' or 'json')",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I am organizing a Java programming workshop and I need to know the supported versions of Java. Can you fetch me the list of Java versions available? Additionally, I would like to find the abuse contact address for the domain 'example.com'.",
+        "relevant APIs": [
+            [
+                "Java Code Compiler",
+                "Java Versions"
+            ],
+            [
+                "ViewDNS",
+                "Abuse Contact Lookup"
+            ]
+        ],
+        "query_id": 42635
+    }
+]

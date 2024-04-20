@@ -1,0 +1,534 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "FastAPI Project",
+                "api_name": "Explore",
+                "api_description": "explore api",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "another_interest",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "lang",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "list of str with length 2"
+                            ],
+                            "msg": "str",
+                            "type": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "FastAPI Project",
+                "api_name": "interests",
+                "api_description": "Gets interests",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "ta"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "interest_list": [
+                        {
+                            "interest": "str",
+                            "key_id": "str",
+                            "thumbnails": {
+                                "hdpi": "str",
+                                "xxxhdpi": "str",
+                                "xxhdpi": "str",
+                                "mdpi": "str",
+                                "xhdpi": "str"
+                            },
+                            "web_icon": "str",
+                            "_list_length": 14
+                        }
+                    ]
+                }
+            }
+        ],
+        "query": "I'm an aspiring photographer and I'm looking for inspiration for my next photo project. Can you provide me with a list of interests related to photography and visual arts? Additionally, I would like to explore different countries and their iconic landmarks.",
+        "relevant APIs": [
+            [
+                "FastAPI Project",
+                "interests"
+            ],
+            [
+                "FastAPI Project",
+                "Explore"
+            ]
+        ],
+        "query_id": 43269
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Daily Match List-Scheduled",
+                "api_description": "Daily match list including scheduled matches.\n\nThe data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "STRING",
+                        "description": "The date of the matches. The format is {dd/mm/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                        "default": "07/02/2021"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "homeTeam": {
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "awayTeam": {
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "status": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "date": "str",
+                    "id": "int",
+                    "tournament": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "stage": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "round": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Match Boxscore",
+                "api_description": "Live, detailed team and player statistics.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**\n\nP.S.\nFull data is available at Boxscore endpoint but can not shown in mock  response.",
+                "required_parameters": [
+                    {
+                        "name": "matchId",
+                        "type": "NUMBER",
+                        "description": "The id of the match.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Daily Match List-All",
+                "api_description": "Daily match list including scheduled, live and finished matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "STRING",
+                        "description": "Date of the match. The format is {dd/MM/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                        "default": "06/10/2020"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": "int",
+                            "quarter2": "int",
+                            "halfTime": "int",
+                            "quarter3": "int",
+                            "quarter4": "int",
+                            "regular": "int",
+                            "current": "int"
+                        },
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": "int",
+                            "quarter2": "int",
+                            "halfTime": "int",
+                            "quarter3": "int",
+                            "quarter4": "int",
+                            "regular": "int",
+                            "current": "int"
+                        },
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "status": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "date": "str",
+                    "id": "int",
+                    "tournament": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "stage": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "round": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Tournament Info",
+                "api_description": "Current season, stage structure(divisions,conferences etc.), country and many more information about a tournament.",
+                "required_parameters": [
+                    {
+                        "name": "tournamentId",
+                        "type": "NUMBER",
+                        "description": "The id of the tournament.",
+                        "default": "9"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "season": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "country": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "participantType": {
+                        "name": "str",
+                        "id": "int"
+                    },
+                    "stages": [
+                        {
+                            "rounds": [
+                                {
+                                    "name": "str",
+                                    "shortName": "str",
+                                    "id": "int",
+                                    "_list_length": 17
+                                }
+                            ],
+                            "name": "str",
+                            "shortName": "str",
+                            "id": "int",
+                            "_list_length": 2
+                        }
+                    ],
+                    "name": "str",
+                    "shortName": "str",
+                    "globalName": "str",
+                    "localName": "str",
+                    "id": "int"
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Tournament Standings",
+                "api_description": "Team Rankings for a specific competition.",
+                "required_parameters": [
+                    {
+                        "name": "tournamentId",
+                        "type": "NUMBER",
+                        "description": "The id of the tournament.",
+                        "default": "9"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Daily Match List-Results",
+                "api_description": "Daily match list including finished matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "STRING",
+                        "description": "The date of matches. The format is {dd/mm/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                        "default": "24/01/2021"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": "int",
+                            "quarter2": "int",
+                            "halfTime": "int",
+                            "quarter3": "int",
+                            "quarter4": "int",
+                            "regular": "int",
+                            "current": "int"
+                        },
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": "int",
+                            "quarter2": "int",
+                            "halfTime": "int",
+                            "quarter3": "int",
+                            "quarter4": "int",
+                            "regular": "int",
+                            "current": "int"
+                        },
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "status": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "date": "str",
+                    "id": "int",
+                    "tournament": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "stage": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "round": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Tournament List",
+                "api_description": "List of tournaments in your data coverage.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "country": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "participantType": {
+                        "name": "str",
+                        "id": "int"
+                    },
+                    "name": "str",
+                    "shortName": "str",
+                    "globalName": "str",
+                    "localName": "str",
+                    "id": "int"
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Match Team Statistics",
+                "api_description": "Provides the team statistics of the match.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**",
+                "required_parameters": [
+                    {
+                        "name": "matchId",
+                        "type": "NUMBER",
+                        "description": "The id of the match.",
+                        "default": "21587"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"homeTeam\": {\"statistics\": {\"totalFirstDowns\": \"int\", \"rushingFirstDowns\": \"int\", \"passingFirstDowns\": \"int\", \"penaltyFirstDowns\": \"int\", \"thirdDownSucceed\": \"int\", \"thirdDownAttempt\": \"int\", \"thirdDownEfficiency\": \"float\", \"fourthDownEfficiency\": \"float\", \"totalNetYards\": \"int\", \"totalOffensivePlays\": \"int\", \"averageGainPerPlay\": \"float\", \"rushingNetYards\": \"int\", \"totalRushingPlays\": \"int\", \"averageGainPerRush\": \"float\", \"passingNetYards\": \"int\", \"sackedCount\": \"int\", \"completedPasses\": \"int\", \"attemptedPasses\": \"int\", \"interceptedPasses\": \"int\", \"averageGainPerPass\": \"float\", \"penaltyNumbers\": \"int\", \"penaltyYards\": \"int\", \"turnovers\": \"int\", \"fumbleNumbers\": \"int\", \"fumblesLost\": \"int\", \"fumbleYards\": \"int\", \"passingTDs\": \"int\", \"score\": \"int\", \"extraPointsMade\": \"int\", \"extraPointsAttempted\": \"int\", \"twoPointExtraPointsAttempted\": \"int\", \"fieldGoalsMade\": \"int\", \"fieldGoalsAttempted\": \"int\", \"possessionMinute\": \"int\", \"possessionSecond\": \"int\"}, \"name\": \"str\", \"shortName\": \"str\","
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Tournament Teams",
+                "api_description": "List of teams participating in a specific tournament.",
+                "required_parameters": [
+                    {
+                        "name": "tournamentId",
+                        "type": "NUMBER",
+                        "description": "The id of the tournament.",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "isNational": "bool",
+                    "country": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "name": "str",
+                    "shortName": "str",
+                    "mediumName": "str",
+                    "id": "int"
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Match Play by Play",
+                "api_description": "Provides all match drives and plays during the match with their detailed informations.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**",
+                "required_parameters": [
+                    {
+                        "name": "matchId",
+                        "type": "NUMBER",
+                        "description": "The id of the match.",
+                        "default": "18656"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "date": "str",
+                    "id": "int",
+                    "homeTeam": {
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "awayTeam": {
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "drives": [
+                        {
+                            "id": "int",
+                            "period": "int",
+                            "startTime": "str",
+                            "playCount": "int",
+                            "yardsGained": "int",
+                            "totalFirstDowns": "int",
+                            "duration": "str",
+                            "team": {
+                                "name": "str",
+                                "shortName": "str",
+                                "id": "int"
+                            },
+                            "plays": [
+                                {
+                                    "quarter": "int",
+                                    "time": "str",
+                                    "down": "int",
+                                    "yardsToGo": "int",
+                                    "startYardTeamShortName": "str",
+                                    "startYardLine": "int",
+                                    "commentaryText": "str",
+                                    "_list_length": 8
+                                }
+                            ],
+                            "_list_length": 2
+                        }
+                    ],
+                    "tournament": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "stage": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "round": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    }
+                }
+            }
+        ],
+        "query": "My friend is a huge football fan and I want to surprise him with some interesting football facts. Can you provide me with a list of daily match results from the past week? Additionally, I would like to know the tournament details and participating teams.",
+        "relevant APIs": [
+            [
+                "Football Data",
+                "Daily Match List-Results"
+            ],
+            [
+                "Football Data",
+                "Tournament Info"
+            ],
+            [
+                "Football Data",
+                "Tournament Teams"
+            ]
+        ],
+        "query_id": 60806
+    }
+]
