@@ -1,0 +1,1127 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Unofficial Icons8 Search",
+                "api_name": "Search",
+                "api_description": "Search Icons8 repository",
+                "required_parameters": [
+                    {
+                        "name": "term",
+                        "type": "STRING",
+                        "description": "Search term",
+                        "default": "apple"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "size",
+                        "type": "NUMBER",
+                        "description": "Size of icon in px",
+                        "default": "64"
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "20"
+                    },
+                    {
+                        "name": "color",
+                        "type": "STRING",
+                        "description": "Color of icon",
+                        "default": "ff0000"
+                    },
+                    {
+                        "name": "offset",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "0"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "data": {
+                        "success": "bool",
+                        "parameters": {
+                            "amount": "int",
+                            "countAll": "int",
+                            "language": "str",
+                            "foundLanguage": "str",
+                            "offset": "int",
+                            "term": "str",
+                            "searchTranslations": {
+                                "en": "str",
+                                "ru": "str",
+                                "de": "str",
+                                "es": "str",
+                                "ja": "str",
+                                "it": "str",
+                                "hi": "str",
+                                "fr": "str",
+                                "pt": "str",
+                                "pl": "str",
+                                "ar": "str",
+                                "ko": "str",
+                                "zh": "str"
+                            }
+                        },
+                        "icons": [
+                            {
+                                "id": "str",
+                                "name": "str",
+                                "commonName": "str",
+                                "category": "str",
+                                "platform": "str",
+                                "isColor": "bool",
+                                "isExplicit": "bool",
+                                "authorId": "str",
+                                "authorName": "str",
+                                "sourceFormat": "str",
+                                "link": "str",
+                                "_list_length": 20
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "dagpi",
+                "api_name": "Blur",
+                "api_description": "Blur Image",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://picsum.photos/400/300"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "WebCap - Website Screenshot Capture",
+                "api_name": "Capture Screenshot",
+                "api_description": "This will capture the website screenshot and return a downloadable image URL",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://apple.com"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "timestamp": "int",
+                    "cache": "bool",
+                    "data": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Nexweave",
+                "api_name": "GetAllTemplates",
+                "api_description": "This API will return all the templates associated with the user's account, including Images & Video.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Nexweave",
+                "api_name": "GetTemplateDetails",
+                "api_description": "This API will return the template details including variables for a valid template.",
+                "required_parameters": [
+                    {
+                        "name": "templateId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "templateId"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Nexweave",
+                "api_name": "GetCampaignDetails",
+                "api_description": "This API will return the Campaign details including variables used in the overall Campaign.",
+                "required_parameters": [
+                    {
+                        "name": "campaignId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "campaignId"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "QrCodeGenerator",
+                "api_name": "Home",
+                "api_description": "Home endtpoint",
+                "required_parameters": [
+                    {
+                        "name": "data",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Be happy! "
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning a surprise birthday party for my sister and I want to create personalized invitations. Can you provide me with some templates and their details from Nexweave? Additionally, I need icons related to birthdays and celebrations to add to the invitations.",
+        "relevant APIs": [
+            [
+                "Nexweave",
+                "GetAllTemplates"
+            ],
+            [
+                "Nexweave",
+                "GetTemplateDetails"
+            ],
+            [
+                "Unofficial Icons8 Search",
+                "Search"
+            ]
+        ],
+        "query_id": 33481
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Youtube Videos",
+                "api_name": "/mp4",
+                "api_description": "Returns a list of MP4 files with different qualities and other details.",
+                "required_parameters": [
+                    {
+                        "name": "videoId",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "M0VWroX0gZA"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "items": [
+                        {
+                            "quality": "str",
+                            "width": "int",
+                            "height": "int",
+                            "size": "int",
+                            "url": "str",
+                            "_list_length": 12
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "QrCodeGenerator",
+                "api_name": "Home",
+                "api_description": "Home endtpoint",
+                "required_parameters": [
+                    {
+                        "name": "data",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Be happy! "
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "Mlem ID",
+                "api_description": "Returns one mlem image by ID in JSON",
+                "required_parameters": [
+                    {
+                        "name": "mlemid",
+                        "type": "NUMBER",
+                        "description": "Mlem ID",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "Random mlem",
+                "api_description": "Returns one random mlem image in JSON",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "brightness",
+                        "type": "STRING",
+                        "description": "Image brightness: dark or bright",
+                        "default": ""
+                    },
+                    {
+                        "name": "maxheight",
+                        "type": "NUMBER",
+                        "description": "Maximum height",
+                        "default": ""
+                    },
+                    {
+                        "name": "minwidth",
+                        "type": "NUMBER",
+                        "description": "Maximum width",
+                        "default": ""
+                    },
+                    {
+                        "name": "minheight",
+                        "type": "NUMBER",
+                        "description": "Minimum height",
+                        "default": ""
+                    },
+                    {
+                        "name": "tag",
+                        "type": "STRING",
+                        "description": "Tag of mlem",
+                        "default": ""
+                    },
+                    {
+                        "name": "maxwidth",
+                        "type": "NUMBER",
+                        "description": "Minimum width",
+                        "default": ""
+                    },
+                    {
+                        "name": "orientation",
+                        "type": "STRING",
+                        "description": "Image orientation: square, landscape, portrait",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "url": "str",
+                    "width": "int",
+                    "height": "int",
+                    "orientation": "str",
+                    "brightness": "str",
+                    "tags": [
+                        "list of str with length 1"
+                    ],
+                    "code": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "MlemAPI",
+                "api_name": "New mlem",
+                "api_description": "Returns one most recently published mlem image in JSON",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "url": "str",
+                    "width": "int",
+                    "height": "int",
+                    "orientation": "str",
+                    "brightness": "str",
+                    "tags": [
+                        "list of str with length 1"
+                    ],
+                    "code": "int"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Premium-Anime-Mobile-Wallpapers-Illustrations",
+                "api_name": "Anime wallpapers related to the family by pagination",
+                "api_description": "Get anime wallpapers related to the family:\nRequired GET parameter\n**page**:  1\n**sensitivity**: 1\nOn the above **page**, 1 means it will fetch the latest 10 wallpaper if the page value is 2 then It will bring the next 10 latest wallpaper \npage 1 : 0-10 \npage 2: 10-20 ......\n\nOn the above **sensitivity**, 1 means it will not fetch any 18+ or ecchi-related images if the value is 0 then it will bring all without any filter.\n\nOptional GET parameter\n**quality**:0\n\nThis API provides two types of wallpaper images\n1. Compress lower size wallpaper.\n2.  Best quality but will result in high size.\n\nif the **quality**  parameter, is not provided then by default it will provide the URL of compressed wallpaper low size if the quality parameter is set to 1 then it will provide a URL of the highest quality wallpaper ( high size ).\n\n**RESPONSE**\n**animename**  ( Depend on subscription )\nif the wallpaper is related to any anime, or game then the Japanese name of the anime will be sent otherwise illustration will be sent.\n\n**arturl**\nURL of wallpaper\n\n**sensitivity** ( Depend on subscription )\nIs wallpaper sensitive, 1 means yes 0 means no\n\n**art_id** ( Depend on subscription )\nUnique wallpaper  id which can be later used to get more info\n\n**premium** (Depend on subscription)\nWhether art is of premium category 1 means yes 0 means no.\n\n**Note: if no wallpaper found response will be**\n`{\"status\": \"empty\"}`",
+                "required_parameters": [
+                    {
+                        "name": "sensitivity",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "0"
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "quality",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Premium-Anime-Mobile-Wallpapers-Illustrations",
+                "api_name": "Anime wallpapers related to the halloween by pagination",
+                "api_description": "Get anime wallpapers related to the halloween:\nRequired GET parameter\n**page**:  1\n**sensitivity**: 1\nOn the above **page**, 1 means it will fetch the latest 10 wallpaper if the page value is 2 then It will bring the next 10 latest wallpaper \npage 1 : 0-10 \npage 2: 10-20 ......\n\nOn the above **sensitivity**, 1 means it will not fetch any 18+ or ecchi-related images if the value is 0 then it will bring all without any filter.\n\nOptional GET parameter\n**quality**:0\n\nThis API provides two types of wallpaper images\n1. Compress lower size wallpaper.\n2.  Best quality but will result in high size.\n\nif the **quality**  parameter, is not provided then by default it will provide the URL of compressed wallpaper low size if the quality parameter is set to 1 then it will provide a URL of the highest quality wallpaper ( high size ).\n\n**RESPONSE**\n**animename**  ( Depend on subscription )\nif the wallpaper is related to any anime, or game then the Japanese name of the anime will be sent otherwise illustration will be sent.\n\n**arturl**\nURL of wallpaper\n\n**sensitivity** ( Depend on subscription )\nIs wallpaper sensitive, 1 means yes 0 means no\n\n**art_id** ( Depend on subscription )\nUnique wallpaper  id which can be later used to get more info\n\n**premium** (Depend on subscription)\nWhether art is of premium category 1 means yes 0 means no.\n\n**Note: if no wallpaper found response will be**\n`{\"status\": \"empty\"}`",
+                "required_parameters": [
+                    {
+                        "name": "sensitivity",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "0"
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "quality",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Premium-Anime-Mobile-Wallpapers-Illustrations",
+                "api_name": "Anime wallpapers related to the valentine by pagination",
+                "api_description": "Get anime wallpapers related to the valentine:\nRequired GET parameter\n**page**:  1\n**sensitivity**: 1\nOn the above **page**, 1 means it will fetch the latest 10 wallpaper if the page value is 2 then It will bring the next 10 latest wallpaper \npage 1 : 0-10 \npage 2: 10-20 ......\n\nOn the above **sensitivity**, 1 means it will not fetch any 18+ or ecchi-related images if the value is 0 then it will bring all without any filter.\n\nOptional GET parameter\n**quality**:0\n\nThis API provides two types of wallpaper images\n1. Compress lower size wallpaper.\n2.  Best quality but will result in high size.\n\nif the **quality**  parameter, is not provided then by default it will provide the URL of compressed wallpaper low size if the quality parameter is set to 1 then it will provide a URL of the highest quality wallpaper ( high size ).\n\n**RESPONSE**\n**animename**  ( Depend on subscription )\nif the wallpaper is related to any anime, or game then the Japanese name of the anime will be sent otherwise illustration will be sent.\n\n**arturl**\nURL of wallpaper\n\n**sensitivity** ( Depend on subscription )\nIs wallpaper sensitive, 1 means yes 0 means no\n\n**art_id** ( Depend on subscription )\nUnique wallpaper  id which can be later used to get more info\n\n**premium** (Depend on subscription)\nWhether art is of premium category 1 means yes 0 means no.\n\n**Note: if no wallpaper found response will be**\n`{\"status\": \"empty\"}`",
+                "required_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "sensitivity",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "0"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "quality",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "art_id": "str",
+                    "animename": "str",
+                    "arturl": "str",
+                    "sensitivity": "int"
+                }
+            }
+        ],
+        "query": "I'm organizing a surprise birthday party for my sister and I want to create a personalized QR code invitation. Can you generate a QR code with the message 'You're invited to Sarah's birthday party!'? Also, I would like to include an anime wallpaper related to birthdays in the invitation.",
+        "relevant APIs": [
+            [
+                "QrCodeGenerator",
+                "Home"
+            ],
+            [
+                "Premium-Anime-Mobile-Wallpapers-Illustrations",
+                "Anime wallpapers related to the family by pagination"
+            ]
+        ],
+        "query_id": 4249
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "rgb_image_rgb__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "get_thought_image_thoughtimage__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "text",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Image",
+                "api_name": "wanted_image_wanted__get",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "link": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Instagram Media Downloader",
+                "api_name": "Get User",
+                "api_description": "Retrieve valuable user information including username, name, alternate name, description, profile image, post count, and follower count.",
+                "required_parameters": [
+                    {
+                        "name": "user",
+                        "type": "string",
+                        "description": "",
+                        "default": "cristiano"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "username": "str",
+                    "name": "str",
+                    "alternateName": "str",
+                    "description": "str",
+                    "profileImage": "str",
+                    "postsCount": "str",
+                    "followersCount": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "test-api_v2",
+                "api_name": "health check",
+                "api_description": "health check",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Blurhash URL API",
+                "api_name": "Converting URL to Blurhash",
+                "api_description": "Free api to convert url to a hash for https://blurha.sh/",
+                "required_parameters": [
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://www.pinoytechnoguide.com/wp-content/uploads/2021/10/vivo-X70-sample-picture-person-portrait-mode.jpg"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm a graphic designer and I'm looking for inspiration for a new project. Can you recommend an Instagram user who posts creative and innovative designs? Additionally, provide me with the RGB values of unique color combinations to use in my designs.",
+        "relevant APIs": [
+            [
+                "Instagram Media Downloader",
+                "Get User"
+            ],
+            [
+                "Image",
+                "rgb_image_rgb__get"
+            ]
+        ],
+        "query_id": 4109
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Any Anime",
+                "api_name": "anime gif",
+                "api_description": "Get anime gif pfp's / banners",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Any Anime",
+                "api_name": "anime",
+                "api_description": "Shows json data and image url of the anime pfp you want to use / show !",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "status": "str",
+                    "stuff": [
+                        {
+                            "name": "str",
+                            "image": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Any Anime",
+                "api_name": "anime img",
+                "api_description": "Show only the image from the api on your browser .",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Alt Bichinhos",
+                "api_name": "Get English Alt Text.",
+                "api_description": "This endpoint will return back a pet image with alt text in **English.**",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "file": "str",
+                    "alt": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Alt Bichinhos",
+                "api_name": "Get Portuguese Alt Text.",
+                "api_description": "This endpoint will return back a pet image with **Brazilian Portuguese** alt text.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "file": "str",
+                    "alt": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Alt Bichinhos",
+                "api_name": "Get German Alt Text.",
+                "api_description": "This endpoint will return back a pet image with alt text in **German.**",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "file": "str",
+                    "alt": "str"
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Video Builder",
+                "api_name": "video/{videoId}",
+                "api_description": "Read video informations and status",
+                "required_parameters": [
+                    {
+                        "name": "videoId",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "str",
+                    "message": "str",
+                    "data": {
+                        "status": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Background removal_v2",
+                "api_name": "Check Status",
+                "api_description": "Use this endpoint to check if the server is up and running.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm a blogger and I want to enhance the visual appeal of my pet-related articles. Can you provide me with anime images of pets with English alt text? Additionally, I'm interested in the availability of the anime image API.",
+        "relevant APIs": [
+            [
+                "Any Anime",
+                "anime img"
+            ],
+            [
+                "Alt Bichinhos",
+                "Get English Alt Text."
+            ]
+        ],
+        "query_id": 33457
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "Netflix_v2",
+                "api_name": "Title Seasons",
+                "api_description": "Title Seasons",
+                "required_parameters": [
+                    {
+                        "name": "ids",
+                        "type": "STRING",
+                        "description": "Title IDs (you can separate with commas)",
+                        "default": "80057281"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "en"
+                    },
+                    {
+                        "name": "offset",
+                        "type": "NUMBER",
+                        "description": "Offset",
+                        "default": "0"
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Season Limit",
+                        "default": "25"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Netflix_v2",
+                "api_name": "Season Episodes",
+                "api_description": "Season Episodes",
+                "required_parameters": [
+                    {
+                        "name": "ids",
+                        "type": "STRING",
+                        "description": "Season IDs (you can separate with commas)",
+                        "default": "80077209,80117715"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "lang",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "en"
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Episode Limit",
+                        "default": "25"
+                    },
+                    {
+                        "name": "offset",
+                        "type": "NUMBER",
+                        "description": "Offset",
+                        "default": "0"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Netflix_v2",
+                "api_name": "Languages",
+                "api_description": "Languages",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "DAILY OVRLL 0822202124848",
+                "api_name": "/status/200",
+                "api_description": "Testing",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDB_API",
+                "api_name": "/get_movies_by_name",
+                "api_description": "<br /><br />\n<b>Authentication:</b> not required",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "Movie_name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "rank": "int",
+                    "title": "str",
+                    "year": "int",
+                    "director": "str",
+                    "cast": "str",
+                    "rating": "float"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDB_API",
+                "api_name": "/get_movies_by_director",
+                "api_description": "<br /><br />\n<b>Authentication:</b> not required",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "movie_director",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "rank": "int",
+                    "title": "str",
+                    "year": "int",
+                    "director": "str",
+                    "cast": "str",
+                    "rating": "float"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "IMDB_API",
+                "api_name": "/get_movies_by_year",
+                "api_description": "<br /><br />\n<b>Authentication:</b> not required",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "movie_year",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {}
+            }
+        ],
+        "query": "I'm planning a romantic movie night with my partner. Can you suggest some romantic movies from the 2000s? Also, provide details about the seasons and episodes of the TV series 'Game of Thrones'.",
+        "relevant APIs": [
+            [
+                "IMDB_API",
+                "/get_movies_by_year"
+            ],
+            [
+                "Netflix_v2",
+                "Title Seasons"
+            ],
+            [
+                "Netflix_v2",
+                "Season Episodes"
+            ]
+        ],
+        "query_id": 33295
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Devices",
+                "tool_name": "IoTVAS",
+                "api_name": "get_expired_certs",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "firmware_hash",
+                        "type": "STRING",
+                        "description": "SHA2 hash of device firmware",
+                        "default": "ac7c090c34338ea6a3b335004755e24578e7e4eee739c5c33736f0822b64907e"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "detail": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "IoTVAS",
+                "api_name": "get_private_keys",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "firmware_hash",
+                        "type": "STRING",
+                        "description": "SHA2 hash of device firmware",
+                        "default": "90e3e68e1c61850f20c50e551816d47d484d7feb46890f5bc0a0e0dab3e3ba0b"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "detail": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "IoTVAS",
+                "api_name": "get_weak_certs",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "firmware_hash",
+                        "type": "STRING",
+                        "description": "SHA2 hash of device firmware",
+                        "default": "52841661d61e00649451cc471e9b56d169df8041926b1252bb3fd0710c27b12c"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "detail": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "football",
+                "api_name": "league",
+                "api_description": "league",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "MAC Address to Manufacturer",
+                "api_name": "maclookup",
+                "api_description": "Enter MAC Address (string) to find the manufacturer. MAC Formats Allowed: ('xx-xx-xx-xx-xx-xx', 'xx:xx:xx:xx:xx:xx', 'xxxx.xxxx.xxxx', 'xxxxxxxxxxxx')",
+                "required_parameters": [
+                    {
+                        "name": "mac_number",
+                        "type": "STRING",
+                        "description": "MAC Address Number to Find Manufacturer",
+                        "default": "14-AB-C5-D5-DA-F9"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str",
+                    "data": {
+                        "0": {
+                            "MAC OUI Number": "str",
+                            "Vendor Manufacturer": "str",
+                            "Vendor Address": "str"
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "CellPhones",
+                "api_name": "GetBrands",
+                "api_description": "Load all cell phone brands",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "name": "str",
+                    "workingPhones": "NoneType",
+                    "brandPhones": "empty list",
+                    "phones": "empty list"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "CellPhones",
+                "api_name": "GetPhoneDetails",
+                "api_description": "Get all phone specifications & photos by phone id, get the phone id from the endpoint GetPhonesByBrandId",
+                "required_parameters": [
+                    {
+                        "name": "phoneid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1859"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "brandId": "int",
+                    "title": "str",
+                    "thumbnail": "str",
+                    "releaseDate": "str",
+                    "dimension": "str",
+                    "os": "str",
+                    "storage": "str",
+                    "url": "str",
+                    "displaySize": "str",
+                    "resolution": "str",
+                    "ram": "str",
+                    "chipset": "str",
+                    "batterySize": "str",
+                    "batteryType": "str",
+                    "photosUrl": "str",
+                    "price": "NoneType",
+                    "brand": "NoneType",
+                    "phonePhotoes": [
+                        {
+                            "id": "int",
+                            "phoneId": "int",
+                            "photo": "str",
+                            "_list_length": 2
+                        }
+                    ],
+                    "phoneSpecs": [
+                        {
+                            "id": "int",
+                            "specId": "int",
+                            "phoneId": "int",
+                            "val": "str",
+                            "specTitle": "str",
+                            "spec": "NoneType",
+                            "_list_length": 30
+                        }
+                    ],
+                    "variants": "empty list"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "CellPhones",
+                "api_name": "GetPhonesByBrandId",
+                "api_description": "Use this end point to load all phone ids for a specific brand. get the brand id from the endpoint GetBrands",
+                "required_parameters": [
+                    {
+                        "name": "brandid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "237"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Devices",
+                "tool_name": "asdasd",
+                "api_name": "fasfas",
+                "api_description": "fsafasfas",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning a surprise party for my best friend's birthday. Can you help me find the latest expired certificates for their IoT device with the firmware hash 'ac7c090c34338ea6a3b335004755e24578e7e4eee739c5c33736f0822b64907e'? Additionally, fetch the weak certificates for the firmware hash '52841661d61e00649451cc471e9b56d169df8041926b1252bb3fd0710c27b12c' and provide me with the list of all cell phone brands available.",
+        "relevant APIs": [
+            [
+                "IoTVAS",
+                "get_expired_certs"
+            ],
+            [
+                "IoTVAS",
+                "get_weak_certs"
+            ],
+            [
+                "CellPhones",
+                "GetBrands"
+            ]
+        ],
+        "query_id": 50872
+    }
+]
