@@ -1,0 +1,1188 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "YTStream - Download YouTube Videos",
+                "api_name": "Download/Stream",
+                "api_description": "Stream or download info.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Youtube Video Id.",
+                        "default": "UxxajLWwzqY"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "cgeo",
+                        "type": "STRING",
+                        "description": "Country code in ISO 3166 format of the end user.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"id\": \"str\", \"title\": \"str\", \"lengthSeconds\": \"str\", \"keywords\": [\"list of str with length 18\"], \"channelTitle\": \"str\", \"channelId\": \"str\", \"description\": \"str\", \"thumbnail\": [{\"url\": \"str\", \"width\": \"int\", \"height\": \"int\", \"_list_length\": 4}], \"allowRatings\": \"bool\", \"viewCount\": \"NoneType\", \"isPrivate\": \"bool\", \"isUnpluggedCorpus\": \"bool\", \"isLiveContent\": \"bool\", \"storyboards\": [{\"width\": \"str\", \"height\": \"str\", \"thumbsCount\": \"str\", \"columns\": \"str\", \"rows\": \"str\", \"interval\": \"str\", \"storyboardCount\": \"int\", \"url\": [\"list of str with length 1\"], \"_list_length\": 3}], \"expiresInSeconds\": \"str\", \"formats\": [{\"itag\": \"int\", \"url\": \"str\", \"mimeType\": \"str\", \"bitrate\": \"int\", \"width\": \"int\", \"height\": \"int\", \"lastModified\": \"str\", \"contentLength\": \"str\", \"quality\": \"str\", \"fps\": \"int\", \"qualityLabel\": \"str\", \"projectionType\": \"str\", \"averageBitrate\": \"int\", \"audioQuality\": \"str\", \"approxDurationMs\": \"str\", \"audioSampleRate\": \"str\", \"audioChannels\": \"int\", \"_list_length"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetCategoryInfo",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "The name of the category.",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json or xml or php",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetRelatedChannels",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "Category name",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json or xml or php",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetChannelVideos",
+                "api_description": "Get a list of the videos in a channel.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "channel_id",
+                        "type": "STRING",
+                        "description": "The numeric id of the channel or its url name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "full_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back the full video information",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The ID number or username of the user. A token may be used instead.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "Number of items to show on each page. Max 50."
+                    },
+                    {
+                        "name": "summary_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back more information.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I want to plan a movie night with my friends. Can you suggest some popular movies from the 'action' category on Vimeo? Also, provide me with the download/stream information for one of the movies.",
+        "relevant APIs": [
+            [
+                "Vimeo",
+                "GetCategoryInfo"
+            ],
+            [
+                "Vimeo",
+                "GetChannelVideos"
+            ],
+            [
+                "YTStream - Download YouTube Videos",
+                "Download/Stream"
+            ]
+        ],
+        "query_id": 23236
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "bitly",
+                "api_name": "shorten",
+                "api_description": "Given a long URL, returns a bitly short URL.",
+                "required_parameters": [
+                    {
+                        "name": "longUrl",
+                        "type": "STRING",
+                        "description": "a long URL to be shortened (example: http://betaworks.com/).",
+                        "default": "http://www.mashape.com"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status_code": "int",
+                    "status_txt": "str",
+                    "data": "empty list"
+                }
+            },
+            {
+                "category_name": "Advertising",
+                "tool_name": "URL Link Shortener",
+                "api_name": "Get a list of domains",
+                "api_description": "Get a list of domains",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "active",
+                        "type": "BOOLEAN",
+                        "description": "Filter branded domains depending on whether they can be used to brand short links or not",
+                        "default": ""
+                    },
+                    {
+                        "name": "orderBy",
+                        "type": "STRING",
+                        "description": "Sorting criteria to apply to your branded domains collection among createdAt, updatedAt and fullName.",
+                        "default": "createdAt"
+                    },
+                    {
+                        "name": "last",
+                        "type": "STRING",
+                        "description": "The id of the last domain you fetched, see Infinite Scrolling section",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "How many branded domains to load",
+                        "default": "100"
+                    },
+                    {
+                        "name": "orderDir",
+                        "type": "STRING",
+                        "description": "Sorting direction to apply to your branded short links collection among desc and asc.",
+                        "default": "desc"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Filter branded domains depending on their type (owned by user, user, or service domains like rebrand.ly, service)",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Advertising",
+                "tool_name": "URL Link Shortener",
+                "api_name": "Create a new link",
+                "api_description": "Create a new link",
+                "required_parameters": [
+                    {
+                        "name": "destination",
+                        "type": "STRING",
+                        "description": "The destination URL you want your branded short link to point to",
+                        "default": "https://rapidapi.com/"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "domain[id]",
+                        "type": "STRING",
+                        "description": "The unique id of the branded domain. If not specified, rebrand.ly is used",
+                        "default": ""
+                    },
+                    {
+                        "name": "slashtag",
+                        "type": "STRING",
+                        "description": "The keyword portion of your branded short link",
+                        "default": ""
+                    },
+                    {
+                        "name": "domain[fullName]",
+                        "type": "STRING",
+                        "description": "The unique name of the branded domain, to be used in place of domain[id] in special cases. Precedence will be given to domain[id] value.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning a surprise party for my best friend's birthday. Can you help me create a short URL for the party invitation and find a suitable domain for it? Also, provide me with a list of available domains to choose from.",
+        "relevant APIs": [
+            [
+                "bitly",
+                "shorten"
+            ],
+            [
+                "URL Link Shortener",
+                "Get a list of domains"
+            ]
+        ],
+        "query_id": 20022
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetRelatedVideos",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "The name of the category.",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json or xml or php",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    },
+                    {
+                        "name": "summary_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back more information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "full_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back the full video information.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetChannelInfo",
+                "api_description": "Get the information on a single channel.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "channel_id",
+                        "type": "STRING",
+                        "description": "The numeric id of the channel or its url name.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "SearchVideos",
+                "api_description": "Search for videos.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "The search terms",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The ID number or username of the user.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    },
+                    {
+                        "name": "summary_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back more information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "full_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back the full video information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Method to sort by: relevant, newest, oldest, most_played, most_commented, or most_liked.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "YTStream - Download YouTube Videos",
+                "api_name": "Download/Stream",
+                "api_description": "Stream or download info.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Youtube Video Id.",
+                        "default": "UxxajLWwzqY"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "cgeo",
+                        "type": "STRING",
+                        "description": "Country code in ISO 3166 format of the end user.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"id\": \"str\", \"title\": \"str\", \"lengthSeconds\": \"str\", \"keywords\": [\"list of str with length 18\"], \"channelTitle\": \"str\", \"channelId\": \"str\", \"description\": \"str\", \"thumbnail\": [{\"url\": \"str\", \"width\": \"int\", \"height\": \"int\", \"_list_length\": 4}], \"allowRatings\": \"bool\", \"viewCount\": \"NoneType\", \"isPrivate\": \"bool\", \"isUnpluggedCorpus\": \"bool\", \"isLiveContent\": \"bool\", \"storyboards\": [{\"width\": \"str\", \"height\": \"str\", \"thumbsCount\": \"str\", \"columns\": \"str\", \"rows\": \"str\", \"interval\": \"str\", \"storyboardCount\": \"int\", \"url\": [\"list of str with length 1\"], \"_list_length\": 3}], \"expiresInSeconds\": \"str\", \"formats\": [{\"itag\": \"int\", \"url\": \"str\", \"mimeType\": \"str\", \"bitrate\": \"int\", \"width\": \"int\", \"height\": \"int\", \"lastModified\": \"str\", \"contentLength\": \"str\", \"quality\": \"str\", \"fps\": \"int\", \"qualityLabel\": \"str\", \"projectionType\": \"str\", \"averageBitrate\": \"int\", \"audioQuality\": \"str\", \"approxDurationMs\": \"str\", \"audioSampleRate\": \"str\", \"audioChannels\": \"int\", \"_list_length"
+            }
+        ],
+        "query": "I'm a film student and I'm working on a documentary about climate change. Can you assist me in finding videos related to 'Climate Change' on Vimeo? Additionally, provide me with information on how to download and stream these videos using the YTStream - Download YouTube Videos tool.",
+        "relevant APIs": [
+            [
+                "Vimeo",
+                "GetRelatedVideos"
+            ],
+            [
+                "Vimeo",
+                "SearchVideos"
+            ],
+            [
+                "YTStream - Download YouTube Videos",
+                "Download/Stream"
+            ]
+        ],
+        "query_id": 4279
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetRelatedChannels",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "Category name",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json or xml or php",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "SearchVideos",
+                "api_description": "Search for videos.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "The search terms",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The ID number or username of the user.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    },
+                    {
+                        "name": "summary_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back more information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "full_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back the full video information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Method to sort by: relevant, newest, oldest, most_played, most_commented, or most_liked.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetRelatedPeople",
+                "api_description": "Get a list of related people for a category.",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "The name of the category.",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json or xml or php",
+                        "default": "json"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "generated_in": "str",
+                    "stat": "str",
+                    "err": {
+                        "code": "str",
+                        "expl": "str",
+                        "msg": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "YTStream - Download YouTube Videos",
+                "api_name": "Download/Stream",
+                "api_description": "Stream or download info.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Youtube Video Id.",
+                        "default": "UxxajLWwzqY"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "cgeo",
+                        "type": "STRING",
+                        "description": "Country code in ISO 3166 format of the end user.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"status\": \"str\", \"id\": \"str\", \"title\": \"str\", \"lengthSeconds\": \"str\", \"keywords\": [\"list of str with length 18\"], \"channelTitle\": \"str\", \"channelId\": \"str\", \"description\": \"str\", \"thumbnail\": [{\"url\": \"str\", \"width\": \"int\", \"height\": \"int\", \"_list_length\": 4}], \"allowRatings\": \"bool\", \"viewCount\": \"NoneType\", \"isPrivate\": \"bool\", \"isUnpluggedCorpus\": \"bool\", \"isLiveContent\": \"bool\", \"storyboards\": [{\"width\": \"str\", \"height\": \"str\", \"thumbsCount\": \"str\", \"columns\": \"str\", \"rows\": \"str\", \"interval\": \"str\", \"storyboardCount\": \"int\", \"url\": [\"list of str with length 1\"], \"_list_length\": 3}], \"expiresInSeconds\": \"str\", \"formats\": [{\"itag\": \"int\", \"url\": \"str\", \"mimeType\": \"str\", \"bitrate\": \"int\", \"width\": \"int\", \"height\": \"int\", \"lastModified\": \"str\", \"contentLength\": \"str\", \"quality\": \"str\", \"fps\": \"int\", \"qualityLabel\": \"str\", \"projectionType\": \"str\", \"averageBitrate\": \"int\", \"audioQuality\": \"str\", \"approxDurationMs\": \"str\", \"audioSampleRate\": \"str\", \"audioChannels\": \"int\", \"_list_length"
+            }
+        ],
+        "query": "I'm planning a family movie marathon and I need a variety of films. Can you search for videos related to 'animation' on Vimeo? Also, fetch the related people in the 'animation' category to get insights from professionals. Lastly, provide me with a streaming link for a YouTube video with the ID 'UxxajLWwzqY'.",
+        "relevant APIs": [
+            [
+                "Vimeo",
+                "SearchVideos"
+            ],
+            [
+                "Vimeo",
+                "GetRelatedPeople"
+            ],
+            [
+                "YTStream - Download YouTube Videos",
+                "Download/Stream"
+            ]
+        ],
+        "query_id": 459
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "Streaming Availability",
+                "api_name": "Search By Title (FREE)",
+                "api_description": "Search movies and series by title. Maximum amount of items returned are 20, unless there are more than 20 shows with the exact given title input. In that case all the items have 100% match with the title will be returned.\n\nNo pagination is supported.",
+                "required_parameters": [
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "description": "Title to search for.",
+                        "default": "batman"
+                    },
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "description": "Regardless of this value, the given title is searched across all the platforms and all the countries. This parameter determines according to which country the streamingInfo field will be populated. Thus even if a show is not available in this country, It will be included in the results if it resembles with the given title, but the streaming information will not be available.",
+                        "default": "us"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "show_type",
+                        "type": "STRING",
+                        "description": "Type of shows to include in the results. Either `movie`, `series` or `all`. Default is `all`.",
+                        "default": "movie"
+                    },
+                    {
+                        "name": "output_language",
+                        "type": "STRING",
+                        "description": "2 letter iso code of the output language. Default is `en`. See the about page to see the list of languages supported.",
+                        "default": "en"
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"result\": [{\"type\": \"str\", \"title\": \"str\", \"overview\": \"str\", \"streamingInfo\": {\"us\": {\"apple\": [{\"type\": \"str\", \"quality\": \"str\", \"addOn\": \"str\", \"link\": \"str\", \"watchLink\": \"str\", \"audios\": [{\"language\": \"str\", \"region\": \"str\", \"_list_length\": 3}], \"subtitles\": [{\"locale\": {\"language\": \"str\", \"region\": \"str\"}, \"closedCaptions\": \"bool\", \"_list_length\": 34}], \"price\": {\"amount\": \"str\", \"currency\": \"str\", \"formatted\": \"str\"}, \"leaving\": \"int\", \"availableSince\": \"int\", \"_list_length\": 2}], \"hbo\": [{\"type\": \"str\", \"quality\": \"str\", \"addOn\": \"str\", \"link\": \"str\", \"watchLink\": \"str\", \"audios\": [{\"language\": \"str\", \"region\": \"str\", \"_list_length\": 3}], \"subtitles\": [{\"locale\": {\"language\": \"str\", \"region\": \"str\"}, \"closedCaptions\": \"bool\", \"_list_length\": 3}], \"price\": \"NoneType\", \"leaving\": \"int\", \"availableSince\": \"int\", \"_list_length\": 1}], \"hulu\": [{\"type\": \"str\", \"quality\": \"str\", \"addOn\": \"str\", \"link\": \"str\", \"watchLink\": \"str\", \"audios\": [{\"language\": \"str\", \"region\": \"str\", \"_list_"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Streaming Availability",
+                "api_name": "Search Ultra",
+                "api_description": "Search through the catalog of the given services in the given country. Provides filters such as show language, genre and keyword. Items per page is 25. Output includes all the information about the shows, such as title, IMDb ID, TMDb ID, IMDb rating, link to shows' pages in streaming services (including individual season/episode links), cast, runtime, poster and many more! Apart from the info about the given country-service combinations, output also includes information about availability in the other services for the given country.",
+                "required_parameters": [
+                    {
+                        "name": "services",
+                        "type": "STRING",
+                        "description": "A comma separated list of up to 16 services to search in. See `/v2/services` endpoint to get the supported services and their ids/names.\n\nSyntax of the values supplied in the list can be as the followings:\n\n`<sevice_id>`: Searches in the entire catalog of that service, including (if applicable) rentable, buyable shows or shows available through addons i.e. `netflix`, `prime`, `apple`\n\n`<sevice_id>.<offer_type>`: Only returns the shows that are available in that service with the given offer type. Valid offer type values are `subscription`, `free`, `rent`, `buy` and `addon`  i.e. `peacock.free` only returns the shows on Peacock that are free to watch, `prime.subscription` only returns the shows on Prime Video that are available to watch with a Prime subscription. `hulu.addon` only returns the shows on Hulu that are available via an addon,  `prime.rent` only returns the shows on Prime Video that are rentable.\n\n`<sevice_id>.addon.<addon_id>`: Only returns the shows that are available in that service with the given addon. Check `/v2/services` endpoint to fetch the available addons for a service. Some sample values are: `hulu.addon.hbo`,  `prime.addon.hbomaxus`.\n\nIf a service supports both `free` and `subscription`, then results included under `subscription` will always include the `free` shows as well.\n\nWhen multiple values are passed as a comma separated list, any show that satisfies at least one of the values will be included in the result.\n\nSome sample list values:\n\n`prime.rent,prime.buy,apple.rent,apple.buy`: Returns all the buyable/rentable shows on Amazon Prime Video and Apple TV.\n\n`prime.addon,prime.subscription`: Returns all the shows on Amazon Prime Video that are available through either a Prime Video subscription or a Prime Video Channel subscription.",
+                        "default": "netflix,prime.buy,hulu.addon.hbo,peacock.free"
+                    },
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "description": "2 letter ISO 3166-1 alpha-2 country code of the country to search in. See the about page to check the supported countries.",
+                        "default": "us"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "max_imdb_vote_count",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1000000"
+                    },
+                    {
+                        "name": "order_by",
+                        "type": "STRING",
+                        "description": "Determines the ordering of the results.\n\nPossible values are `original_title`, `imdb_vote_count`, `imdb_rating` and `year`. Default value is `original_title`",
+                        "default": "year"
+                    },
+                    {
+                        "name": "max_imdb_rating",
+                        "type": "NUMBER",
+                        "description": "Out of 100",
+                        "default": "90"
+                    },
+                    {
+                        "name": "min_imdb_rating",
+                        "type": "NUMBER",
+                        "description": "Out of 100",
+                        "default": "70"
+                    },
+                    {
+                        "name": "desc",
+                        "type": "BOOLEAN",
+                        "description": "Use descending order?\n\nPossible values are `true` and `false`. Default value is `false`.",
+                        "default": "true"
+                    },
+                    {
+                        "name": "keyword",
+                        "type": "STRING",
+                        "description": "A keyword to only search within the shows have that keyword in their overview or title.",
+                        "default": ""
+                    },
+                    {
+                        "name": "cursor",
+                        "type": "STRING",
+                        "description": "Cursor is used for pagination. After each request, the response includes a `hasMore` boolean field to tell if there are more results that did not fit the returned list size. If it is set as true, to get the rest of the result set, send a new request (with the same parameters for other fields such as show_type, services etc.), and set the cursor parameter as the `nextCursor` value of the previous request response. Do not forget to escape the cursor value before putting it into the query as it might contain characters such as `?`, `&`.\n\nThe first request naturally does not require a `cursor` parameter.",
+                        "default": ""
+                    },
+                    {
+                        "name": "year_max",
+                        "type": "NUMBER",
+                        "description": "Maximum release/air year of the show.",
+                        "default": "2025"
+                    },
+                    {
+                        "name": "min_imdb_vote_count",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "10000"
+                    },
+                    {
+                        "name": "year_min",
+                        "type": "NUMBER",
+                        "description": "Minimum release/air year of the show.",
+                        "default": "2000"
+                    },
+                    {
+                        "name": "show_original_language",
+                        "type": "STRING",
+                        "description": "A 2 letter ISO 639-1 language code to only search within the shows whose original language matches with the provided language.",
+                        "default": "en"
+                    },
+                    {
+                        "name": "genres_relation",
+                        "type": "STRING",
+                        "description": "When more than one genre is supplied in `genres` parameter, `genres_relation` chooses the matching style against\n\nWhen `or`, the endpoint returns any show that has at least one of the given genres.\nWhen `and`, it only returns the shows that have all of the given genres.\n\nDefault value is `and`.",
+                        "default": "or"
+                    },
+                    {
+                        "name": "genres",
+                        "type": "STRING",
+                        "description": "Comma separated list of genre ids to only search within the shows in those genres. See `/v2/genres` endpoint to see available genres and ids.\n\nWhen more than one genre supplied, set `genres_relation` parameter to specify between returning shows that have at least one of the given genres or returning shows that have all of the given genres",
+                        "default": "18,80"
+                    },
+                    {
+                        "name": "output_language",
+                        "type": "STRING",
+                        "description": "2 letter iso code of the output language. Default is `en`. See the about page to see the list of languages supported.",
+                        "default": "en"
+                    },
+                    {
+                        "name": "show_type",
+                        "type": "STRING",
+                        "description": "Type of shows to search in. Accepted values are `movie`, `series` or `all`. The default value is `all`.",
+                        "default": "movie"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Streaming Availability",
+                "api_name": "Genres (FREE)",
+                "api_description": "Get the id to name mapping of supported genres.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "result": {
+                        "1": "str",
+                        "10402": "str",
+                        "10749": "str",
+                        "10751": "str",
+                        "10752": "str",
+                        "10763": "str",
+                        "10764": "str",
+                        "10767": "str",
+                        "12": "str",
+                        "14": "str",
+                        "16": "str",
+                        "18": "str",
+                        "2": "str",
+                        "27": "str",
+                        "28": "str",
+                        "3": "str",
+                        "35": "str",
+                        "36": "str",
+                        "37": "str",
+                        "4": "str",
+                        "5": "str",
+                        "53": "str",
+                        "6": "str",
+                        "7": "str",
+                        "80": "str",
+                        "878": "str",
+                        "9648": "str",
+                        "99": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Search",
+                "api_description": "This endpoint allows you to search for a movie or tvshow based on the given 'title '.",
+                "required_parameters": [
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Endgame"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "*Maximum number of pages returned is 10 ",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Advanced Search",
+                "api_description": "This endpoint allows you to search for a movie or tvshow based on various parameters such as release year , imdb rating , genre , language etc.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "start_year",
+                        "type": "NUMBER",
+                        "description": "Enter any year between 1970 to 2020 to get results.",
+                        "default": "1970"
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "max_imdb",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "7.8"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Enter type 'movie' or 'show'",
+                        "default": "movie"
+                    },
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Enter values highestrated , lowestrated , latest , oldest to  sort results accodingly .",
+                        "default": "latest"
+                    },
+                    {
+                        "name": "min_imdb",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "6"
+                    },
+                    {
+                        "name": "genre",
+                        "type": "STRING",
+                        "description": "use comma seperated values to enter multiple genre eg : action,horror",
+                        "default": "action"
+                    },
+                    {
+                        "name": "language",
+                        "type": "STRING",
+                        "description": "use comma seperated values to enter multiple values , eg : english,german",
+                        "default": "english"
+                    },
+                    {
+                        "name": "end_year",
+                        "type": "NUMBER",
+                        "description": "Enter any year from 1970 to 2020 to  get results.",
+                        "default": "2020"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "page": "int",
+                    "results": [
+                        {
+                            "imageurl": [
+                                "list of str with length 1"
+                            ],
+                            "genre": [
+                                "list of str with length 3"
+                            ],
+                            "imdbid": "str",
+                            "title": "str",
+                            "imdbrating": "float",
+                            "released": "int",
+                            "synopsis": "str",
+                            "type": "str",
+                            "_list_length": 50
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "OTT details",
+                "api_name": "Additional Title Details",
+                "api_description": "Get  additional details for a movie or tv show like reviews  , quotes , plotsummary , number of votes , trailer url  , cast details etc.",
+                "required_parameters": [
+                    {
+                        "name": "imdbid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "tt7286456"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "imdbid": "str",
+                    "title": "str",
+                    "people": [
+                        {
+                            "peopleid": "str",
+                            "characters": "NoneType",
+                            "category": "str",
+                            "job": "str",
+                            "_list_length": 10
+                        }
+                    ],
+                    "numVotes": "int",
+                    "trailerUrl": [
+                        "list of str with length 3"
+                    ],
+                    "plotSummary": "str",
+                    "quotes": [
+                        "list of str with length 5"
+                    ],
+                    "reviews": [
+                        "list of str with length 5"
+                    ]
+                }
+            },
+            {
+                "category_name": "Entertainment",
+                "tool_name": "Watchmode",
+                "api_name": "Title Streaming Sources",
+                "api_description": "Get all of the streaming sources this title is available on and direct links to watch the title (web, iOS deeplinks and Android deeplinks for paid users). Streaming sources are limited to USA only for free plans.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "This ID can be the Watchmode ID of the title (returned by other endpoints such as the list-titles endpoint), or found in the mapping file: https://api.watchmode.com/datasets/title_id_map.csv.\n\nYou can also pass an IMDB ID here instead, or a TMDB type and TMDB ID combination. For example, the TMDB combination for The Shawshank Redemption is movie-278 and for Breaking Bad is tv-1396. ",
+                        "default": "3173903"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "source_id": "int",
+                    "name": "str",
+                    "type": "str",
+                    "region": "str",
+                    "ios_url": "str",
+                    "android_url": "str",
+                    "web_url": "str",
+                    "format": "str",
+                    "price": "float",
+                    "seasons": "NoneType",
+                    "episodes": "NoneType"
+                }
+            },
+            {
+                "category_name": "Entertainment",
+                "tool_name": "Watchmode",
+                "api_name": "Title Seasons",
+                "api_description": "Return all of the seasons for a TV show or mini-series.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "This ID can be the Watchmode ID of the title (returned by other endpoints such as the list-titles endpoint), or found in the mapping file: https://api.watchmode.com/datasets/title_id_map.csv.\n\nYou can also pass an IMDB ID here instead, or a TMDB type and TMDB ID combination. For example, the TMDB combination for The Shawshank Redemption is movie-278 and for Breaking Bad is tv-1396. ",
+                        "default": "3173903"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "int",
+                    "poster_url": "str",
+                    "name": "str",
+                    "overview": "NoneType",
+                    "number": "NoneType",
+                    "air_date": "str",
+                    "episode_count": "NoneType"
+                }
+            },
+            {
+                "category_name": "Entertainment",
+                "tool_name": "Watchmode",
+                "api_name": "Title Cast & Crew",
+                "api_description": "Return all people associated with the title, the \"cast\" (actors), and \"crew\" (directors, writers, cinematographers, etc). For more details on a person, pass the person-id to the /person/ endpoint.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "This ID can be the Watchmode ID of the title (returned by other endpoints such as the list-titles endpoint), or found in the mapping file: https://api.watchmode.com/datasets/title_id_map.csv.\n\nYou can also pass an IMDB ID here instead, or a TMDB type and TMDB ID combination. For example, the TMDB combination for The Shawshank Redemption is movie-278 and for Breaking Bad is tv-1396. ",
+                        "default": "3173903"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "person_id": "int",
+                    "type": "str",
+                    "full_name": "str",
+                    "headshot_url": "str",
+                    "role": "str",
+                    "episode_count": "int",
+                    "order": "NoneType"
+                }
+            }
+        ],
+        "query": "I'm hosting a company movie night and we want to watch a sci-fi movie. Can you suggest a popular sci-fi movie available for streaming in the US? Also, provide the streaming sources for the movie 'Inception'.",
+        "relevant APIs": [
+            [
+                "Streaming Availability",
+                "Search By Title (FREE)"
+            ],
+            [
+                "Watchmode",
+                "Title Streaming Sources"
+            ]
+        ],
+        "query_id": 5863
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "bitly",
+                "api_name": "shorten",
+                "api_description": "Given a long URL, returns a bitly short URL.",
+                "required_parameters": [
+                    {
+                        "name": "longUrl",
+                        "type": "STRING",
+                        "description": "a long URL to be shortened (example: http://betaworks.com/).",
+                        "default": "http://www.mashape.com"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status_code": "int",
+                    "status_txt": "str",
+                    "data": "empty list"
+                }
+            },
+            {
+                "category_name": "Advertising",
+                "tool_name": "URL Link Shortener",
+                "api_name": "Create a new link",
+                "api_description": "Create a new link",
+                "required_parameters": [
+                    {
+                        "name": "destination",
+                        "type": "STRING",
+                        "description": "The destination URL you want your branded short link to point to",
+                        "default": "https://rapidapi.com/"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "domain[id]",
+                        "type": "STRING",
+                        "description": "The unique id of the branded domain. If not specified, rebrand.ly is used",
+                        "default": ""
+                    },
+                    {
+                        "name": "slashtag",
+                        "type": "STRING",
+                        "description": "The keyword portion of your branded short link",
+                        "default": ""
+                    },
+                    {
+                        "name": "domain[fullName]",
+                        "type": "STRING",
+                        "description": "The unique name of the branded domain, to be used in place of domain[id] in special cases. Precedence will be given to domain[id] value.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Advertising",
+                "tool_name": "URL Link Shortener",
+                "api_name": "Get a list of domains",
+                "api_description": "Get a list of domains",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "active",
+                        "type": "BOOLEAN",
+                        "description": "Filter branded domains depending on whether they can be used to brand short links or not",
+                        "default": ""
+                    },
+                    {
+                        "name": "orderBy",
+                        "type": "STRING",
+                        "description": "Sorting criteria to apply to your branded domains collection among createdAt, updatedAt and fullName.",
+                        "default": "createdAt"
+                    },
+                    {
+                        "name": "last",
+                        "type": "STRING",
+                        "description": "The id of the last domain you fetched, see Infinite Scrolling section",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "How many branded domains to load",
+                        "default": "100"
+                    },
+                    {
+                        "name": "orderDir",
+                        "type": "STRING",
+                        "description": "Sorting direction to apply to your branded short links collection among desc and asc.",
+                        "default": "desc"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Filter branded domains depending on their type (owned by user, user, or service domains like rebrand.ly, service)",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning a surprise graduation party for my sister. Can you generate a short URL for the party invitation? Also, suggest some fun and unique slashtags for the event. Furthermore, provide me with a list of available domains to choose from for the short URL.",
+        "relevant APIs": [
+            [
+                "bitly",
+                "shorten"
+            ],
+            [
+                "URL Link Shortener",
+                "Create a new link"
+            ],
+            [
+                "URL Link Shortener",
+                "Get a list of domains"
+            ]
+        ],
+        "query_id": 11650
+    }
+]

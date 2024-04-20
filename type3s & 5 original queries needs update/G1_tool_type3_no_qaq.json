@@ -1,0 +1,909 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "autocomplete usa",
+                "api_name": "Autocomplete Addresses",
+                "api_description": "Autocomplete USA Addresses",
+                "required_parameters": [
+                    {
+                        "name": "address",
+                        "type": "string",
+                        "description": "",
+                        "default": "6185 Gar"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Id": "str",
+                    "RequestId": "NoneType",
+                    "ClientSessionId": "NoneType",
+                    "StatusCode": "int",
+                    "Result": [
+                        "list of str with length 10"
+                    ],
+                    "MaxAllowedUsage": "NoneType",
+                    "UsageStatistics": "NoneType",
+                    "IsError": "bool",
+                    "Errors": "empty list"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "autocomplete usa",
+                "api_name": "Autocomplete Zipcodes-Zip4",
+                "api_description": "Autocomplete USA Zipcodes-Zip4",
+                "required_parameters": [
+                    {
+                        "name": "zipcode",
+                        "type": "string",
+                        "description": "",
+                        "default": "110"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Id": "str",
+                    "RequestId": "NoneType",
+                    "ClientSessionId": "NoneType",
+                    "StatusCode": "int",
+                    "Result": [
+                        "list of str with length 10"
+                    ],
+                    "MaxAllowedUsage": "NoneType",
+                    "UsageStatistics": "NoneType",
+                    "IsError": "bool",
+                    "Errors": "empty list"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "autocomplete usa",
+                "api_name": "Autocomplete Zipcodes Lite",
+                "api_description": "Autocomplete USA Zipcodes Lite",
+                "required_parameters": [
+                    {
+                        "name": "zipcode",
+                        "type": "string",
+                        "description": "",
+                        "default": "110"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Id": "str",
+                    "RequestId": "NoneType",
+                    "ClientSessionId": "NoneType",
+                    "StatusCode": "int",
+                    "Result": [
+                        "list of str with length 6"
+                    ],
+                    "MaxAllowedUsage": "NoneType",
+                    "UsageStatistics": "NoneType",
+                    "IsError": "bool",
+                    "Errors": "empty list"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "autocomplete usa",
+                "api_name": "Autocomplete Cities",
+                "api_description": "Autocomplete USA Cities",
+                "required_parameters": [
+                    {
+                        "name": "city",
+                        "type": "string",
+                        "description": "",
+                        "default": "Sacr"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Id": "str",
+                    "RequestId": "NoneType",
+                    "ClientSessionId": "NoneType",
+                    "StatusCode": "int",
+                    "Result": [
+                        "list of str with length 9"
+                    ],
+                    "MaxAllowedUsage": "NoneType",
+                    "UsageStatistics": "NoneType",
+                    "IsError": "bool",
+                    "Errors": "empty list"
+                }
+            }
+        ],
+        "query": "I'm planning a road trip across the United States and I need to find addresses for my accommodation.",
+        "relevant APIs": [
+            [
+                "autocomplete usa",
+                "Autocomplete Addresses"
+            ],
+            [
+                "autocomplete usa",
+                "Autocomplete Cities"
+            ]
+        ],
+        "query_id": 692
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Mapping",
+                "tool_name": "Dargan",
+                "api_name": "Distance",
+                "api_description": "Gets the distance between 2 postcodes in KM",
+                "required_parameters": [
+                    {
+                        "name": "postcodeA",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "CF103NP"
+                    },
+                    {
+                        "name": "postcodeB",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "CF103RB"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "A": {
+                        "postcode": "str",
+                        "latitude": "float",
+                        "longitude": "float"
+                    },
+                    "B": {
+                        "postcode": "str",
+                        "latitude": "float",
+                        "longitude": "float"
+                    },
+                    "Distance": "float"
+                }
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "Dargan",
+                "api_name": "Geocode",
+                "api_description": "Returns the latitude and longitude for a given postcode",
+                "required_parameters": [
+                    {
+                        "name": "postcode",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "CF103NP"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "postcode": "str",
+                    "latitude": "float",
+                    "longitude": "float"
+                }
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "Dargan",
+                "api_name": "In Radius",
+                "api_description": "Find all postcodes within a certain radius (in KM) of a postcode",
+                "required_parameters": [
+                    {
+                        "name": "postcode",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "CF103NP"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "0.1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Distance": "float",
+                    "Postcode": "str"
+                }
+            }
+        ],
+        "query": "I have recently moved to Cardiff and am interested in exploring the nearby areas.",
+        "relevant APIs": [
+            [
+                "Dargan",
+                "In Radius"
+            ],
+            [
+                "Dargan",
+                "Geocode"
+            ]
+        ],
+        "query_id": 2513
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Nearby - (ArcGIS)",
+                "api_description": "Returns nearby places sorted by distance from the origin coordinates in ascending order.\n\nOnly type values from **/v2/types (ArcGIS)** are valid.\n\nMaximum returned places is 50.",
+                "required_parameters": [
+                    {
+                        "name": "lng",
+                        "type": "NUMBER",
+                        "description": "Longitude",
+                        "default": "-123.0413988"
+                    },
+                    {
+                        "name": "lat",
+                        "type": "NUMBER",
+                        "description": "Latitude",
+                        "default": "49.2803703"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "radius",
+                        "type": "NUMBER",
+                        "description": "**Meters**\nDefault: 200\nMaximum: 50000",
+                        "default": "500"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Default: 'coffee shop'",
+                        "default": "coffee shop"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "results": [
+                        {
+                            "location": {
+                                "lat": "str",
+                                "lng": "str"
+                            },
+                            "name": "str",
+                            "address": "str",
+                            "phone": "str",
+                            "distanceMeter": "str",
+                            "_list_length": 3
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Nearby - (Google)",
+                "api_description": "Returns a **JSON array of nearby places** sorted by distance from the origin coordinates in ascending order.\n\nOnly values from **/types (Google)** are valid types.\n\nMaximum places returned per request is 20.",
+                "required_parameters": [
+                    {
+                        "name": "lat",
+                        "type": "NUMBER",
+                        "description": "Latitude",
+                        "default": "49.283030"
+                    },
+                    {
+                        "name": "lng",
+                        "type": "NUMBER",
+                        "description": "Longitude",
+                        "default": "-123.118990"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Default is **cafe**.",
+                        "default": "cafe"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "NUMBER",
+                        "description": "**Meters**\nDefault: 200\nMax: 50000",
+                        "default": "200"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "place_id": "str",
+                    "location": {
+                        "lat": "float",
+                        "lng": "float"
+                    },
+                    "address": "str",
+                    "rating": "int",
+                    "distanceMeter": "float"
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Types - (Google)",
+                "api_description": "Get a list of establishment types.\n\nThese types will only work with **/nearby (Google)**.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Random (Google)",
+                "api_description": "Return a random place nearby.",
+                "required_parameters": [
+                    {
+                        "name": "lat",
+                        "type": "NUMBER",
+                        "description": "Latitude",
+                        "default": "49.2803703"
+                    },
+                    {
+                        "name": "lng",
+                        "type": "NUMBER",
+                        "description": "Longitude",
+                        "default": "-123.0413988"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Default: 'cafe'",
+                        "default": "cafe"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "NUMBER",
+                        "description": "**Meters**\nDefault: 200\nMax: 50000\n",
+                        "default": "500"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "place_id": "str",
+                    "location": {
+                        "lat": "float",
+                        "lng": "float"
+                    },
+                    "rating": "float",
+                    "address": "str",
+                    "distanceMeter": "float"
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Place Details - (Google)",
+                "api_description": "Get contact and opening hours for a place.\n\nRequires a **place id** provided by **/nearby (Google)**.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Place ID.\nThis value can be retrieved from */nearby* or */random* endpoints.",
+                        "default": "ChIJCxzX9tpwhlQRIFVwULOI2FM"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "place_id": "str",
+                    "location": {
+                        "lat": "float",
+                        "lng": "float"
+                    },
+                    "address": "str",
+                    "types": [
+                        "list of str with length 5"
+                    ],
+                    "map_url": "str",
+                    "phone": "str",
+                    "opening_hours": {
+                        "open_now": "bool",
+                        "periods": [
+                            {
+                                "close": {
+                                    "day": "int",
+                                    "time": "str"
+                                },
+                                "open": {
+                                    "day": "int",
+                                    "time": "str"
+                                },
+                                "_list_length": 4
+                            }
+                        ],
+                        "weekday_text": [
+                            "list of str with length 7"
+                        ]
+                    },
+                    "website": "str"
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Types - (ArcGIS)",
+                "api_description": "Types (categories) of establishments. These types will only work with **/v2/nearby (ArcGIS)**.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            }
+        ],
+        "query": "I'm planning a weekend getaway and need to find a nearby hotel.",
+        "relevant APIs": [
+            [
+                "Nearby Places",
+                "Nearby - (Google)"
+            ],
+            [
+                "Nearby Places",
+                "Place Details - (Google)"
+            ],
+            [
+                "Nearby Places",
+                "Random (Google)"
+            ]
+        ],
+        "query_id": 5695
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Artificial_Intelligence_Machine_Learning",
+                "tool_name": "Face Animer",
+                "api_name": "Get Result",
+                "api_description": "Enter taskId and get result. Note: you have to wait about 5 seconds after you created the job id. Otherwise response will be Null data.",
+                "required_parameters": [
+                    {
+                        "name": "taskId",
+                        "type": "STRING",
+                        "description": "Enter taskId and get result. Note: you have to wait about 5 seconds after you created the job id. Otherwise response will be Null data. ",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "data": "NoneType",
+                    "msg": "str",
+                    "time": "int",
+                    "requestId": "str"
+                }
+            },
+            {
+                "category_name": "Artificial_Intelligence_Machine_Learning",
+                "tool_name": "Face Animer",
+                "api_name": "Create Job ID",
+                "api_description": "Create Job ID",
+                "required_parameters": [
+                    {
+                        "name": "templateId",
+                        "type": "STRING",
+                        "description": "templateId could be from 0 to 21 (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21)",
+                        "default": ""
+                    },
+                    {
+                        "name": "imageUrl",
+                        "type": "STRING",
+                        "description": "Enter valid image url",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "code": "int",
+                    "data": "NoneType",
+                    "msg": "str",
+                    "time": "int",
+                    "requestId": "str"
+                }
+            }
+        ],
+        "query": "I want to enhance the emotional expression of my digital characters in a game.",
+        "relevant APIs": [
+            [
+                "Face Animer",
+                "Create Job ID"
+            ],
+            [
+                "Face Animer",
+                "Get Result"
+            ]
+        ],
+        "query_id": 8129
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "News_Media",
+                "tool_name": "News Network",
+                "api_name": "Get News",
+                "api_description": "Return list of news by selected region and category.\nVisit our [demo site](https://core-api.net/news/news.html)",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "ENUM",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "region",
+                        "type": "ENUM",
+                        "description": "ae: United Arab Emirates\nar: Argentina\nat: Austria\nau: Australia\nbe: Belgium\nbg: Bulgaria\nbr: Brazil\nca: Canada\nch: Switzerland\ncn: China \nco: Colombia\ncu: Cuba\ncz:\tCzech Republic\nde: Germany\neg: Egypt\nfr: France\ngb: United Kingdom\ngr: Greece\nhk: Hong Kong\nhu: Hungray\nid: Indonesia\nie: Ireland\nil: Israel\nin: India\nit: Italy\njp: Japan\nkr: South Korea\nlt: Lithuania\nlv: Latvia\nma: Morocco\nmx: Mexico\nmy: Malaysia\nng: Nigeria\nnl: Netherlands\nno: Norway\nnz: New Zealand\nph: Philippines\npl: Poland\npt: Portugal\nro: Romania\nrs: Serbia\nru: Russia\nsa: Saudi Arabia\nse: Sweden\nsg: Singapore\nsi: Slovenia\nsk: Slovakia\nth: Thailand\ntr: Turkey\ntw: Taiwan\nua: Ukraine\nus: United States\nve: Venuzuela\nza: South Africa",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "": {}
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "News Network",
+                "api_name": "Search News",
+                "api_description": "Search news by given keyword.\nVisit our [demo site](https://core-api.net/news/news.html)",
+                "required_parameters": [
+                    {
+                        "name": "keyword",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Joe Biden"
+                    },
+                    {
+                        "name": "language",
+                        "type": "ENUM",
+                        "description": "\nar: arabic\nde: german\nen: english\nes: Spanish\nfr: French\nhe: hebrew\nit: italian\nnl: dutch\nno: norwegian\npt: portuguese\nru: russian\nse: swedish\nzh: chinese",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "keyword": "str",
+                    "articles": [
+                        {
+                            "source": {
+                                "id": "NoneType",
+                                "name": "str"
+                            },
+                            "author": "str",
+                            "title": "str",
+                            "description": "str",
+                            "url": "str",
+                            "urlToImage": "str",
+                            "publishedAt": "str",
+                            "content": "str",
+                            "_list_length": 100
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "News Network",
+                "api_name": "Available Region List",
+                "api_description": "Return list of available regions.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "ae": "str",
+                    "ar": "str",
+                    "at": "str",
+                    "au": "str",
+                    "be": "str",
+                    "bg": "str",
+                    "br": "str",
+                    "ca": "str",
+                    "ch": "str",
+                    "cn": "str",
+                    "co": "str",
+                    "cu": "str",
+                    "cz": "str",
+                    "de": "str",
+                    "eg": "str",
+                    "fr": "str",
+                    "gb": "str",
+                    "gr": "str",
+                    "hk": "str",
+                    "hu": "str",
+                    "id": "str",
+                    "ie": "str",
+                    "il": "str",
+                    "in": "str",
+                    "it": "str",
+                    "jp": "str",
+                    "kr": "str",
+                    "lt": "str",
+                    "lv": "str",
+                    "ma": "str",
+                    "mx": "str",
+                    "my": "str",
+                    "ng": "str",
+                    "nl": "str",
+                    "no": "str",
+                    "nz": "str",
+                    "ph": "str",
+                    "pl": "str",
+                    "pt": "str",
+                    "ro": "str",
+                    "rs": "str",
+                    "ru": "str",
+                    "sa": "str",
+                    "se": "str",
+                    "sg": "str",
+                    "si": "str",
+                    "sk": "str",
+                    "th": "str",
+                    "tr": "str",
+                    "tw": "str",
+                    "ua": "str",
+                    "us": "str",
+                    "ve": "str",
+                    "za": "str"
+                }
+            }
+        ],
+        "query": "My friend wants to learn news articles in different languages.",
+        "relevant APIs": [
+            [
+                "News Network",
+                "Search News"
+            ],
+            [
+                "News Network",
+                "Available Region List"
+            ]
+        ],
+        "query_id": 13495
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Nearby - (ArcGIS)",
+                "api_description": "Returns nearby places sorted by distance from the origin coordinates in ascending order.\n\nOnly type values from **/v2/types (ArcGIS)** are valid.\n\nMaximum returned places is 50.",
+                "required_parameters": [
+                    {
+                        "name": "lng",
+                        "type": "NUMBER",
+                        "description": "Longitude",
+                        "default": "-123.0413988"
+                    },
+                    {
+                        "name": "lat",
+                        "type": "NUMBER",
+                        "description": "Latitude",
+                        "default": "49.2803703"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "radius",
+                        "type": "NUMBER",
+                        "description": "**Meters**\nDefault: 200\nMaximum: 50000",
+                        "default": "500"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Default: 'coffee shop'",
+                        "default": "coffee shop"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "results": [
+                        {
+                            "location": {
+                                "lat": "str",
+                                "lng": "str"
+                            },
+                            "name": "str",
+                            "address": "str",
+                            "phone": "str",
+                            "distanceMeter": "str",
+                            "_list_length": 3
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Nearby - (Google)",
+                "api_description": "Returns a **JSON array of nearby places** sorted by distance from the origin coordinates in ascending order.\n\nOnly values from **/types (Google)** are valid types.\n\nMaximum places returned per request is 20.",
+                "required_parameters": [
+                    {
+                        "name": "lat",
+                        "type": "NUMBER",
+                        "description": "Latitude",
+                        "default": "49.283030"
+                    },
+                    {
+                        "name": "lng",
+                        "type": "NUMBER",
+                        "description": "Longitude",
+                        "default": "-123.118990"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Default is **cafe**.",
+                        "default": "cafe"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "NUMBER",
+                        "description": "**Meters**\nDefault: 200\nMax: 50000",
+                        "default": "200"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "place_id": "str",
+                    "location": {
+                        "lat": "float",
+                        "lng": "float"
+                    },
+                    "address": "str",
+                    "rating": "int",
+                    "distanceMeter": "float"
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Types - (Google)",
+                "api_description": "Get a list of establishment types.\n\nThese types will only work with **/nearby (Google)**.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Random (Google)",
+                "api_description": "Return a random place nearby.",
+                "required_parameters": [
+                    {
+                        "name": "lat",
+                        "type": "NUMBER",
+                        "description": "Latitude",
+                        "default": "49.2803703"
+                    },
+                    {
+                        "name": "lng",
+                        "type": "NUMBER",
+                        "description": "Longitude",
+                        "default": "-123.0413988"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "Default: 'cafe'",
+                        "default": "cafe"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "NUMBER",
+                        "description": "**Meters**\nDefault: 200\nMax: 50000\n",
+                        "default": "500"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "place_id": "str",
+                    "location": {
+                        "lat": "float",
+                        "lng": "float"
+                    },
+                    "rating": "float",
+                    "address": "str",
+                    "distanceMeter": "float"
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Place Details - (Google)",
+                "api_description": "Get contact and opening hours for a place.\n\nRequires a **place id** provided by **/nearby (Google)**.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "Place ID.\nThis value can be retrieved from */nearby* or */random* endpoints.",
+                        "default": "ChIJCxzX9tpwhlQRIFVwULOI2FM"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "place_id": "str",
+                    "location": {
+                        "lat": "float",
+                        "lng": "float"
+                    },
+                    "address": "str",
+                    "types": [
+                        "list of str with length 5"
+                    ],
+                    "map_url": "str",
+                    "phone": "str",
+                    "opening_hours": {
+                        "open_now": "bool",
+                        "periods": [
+                            {
+                                "close": {
+                                    "day": "int",
+                                    "time": "str"
+                                },
+                                "open": {
+                                    "day": "int",
+                                    "time": "str"
+                                },
+                                "_list_length": 4
+                            }
+                        ],
+                        "weekday_text": [
+                            "list of str with length 7"
+                        ]
+                    },
+                    "website": "str"
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Nearby Places",
+                "api_name": "Types - (ArcGIS)",
+                "api_description": "Types (categories) of establishments. These types will only work with **/v2/nearby (ArcGIS)**.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            }
+        ],
+        "query": "I'm organizing a company team-building event and need to find nearby places for outdoor activities.",
+        "relevant APIs": [
+            [
+                "Nearby Places",
+                "Nearby - (ArcGIS)"
+            ],
+            [
+                "Nearby Places",
+                "Nearby - (Google)"
+            ]
+        ],
+        "query_id": 14198
+    }
+]

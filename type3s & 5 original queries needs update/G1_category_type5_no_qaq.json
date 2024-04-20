@@ -1,0 +1,1005 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Onboarding Project_v3",
+                "api_name": "Get User Orders",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Onboarding Project_v3",
+                "api_name": "Get Order",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Onboarding Project_v3",
+                "api_name": "Get Products",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "skip",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Onboarding Project_v3",
+                "api_name": "Get Products in Category",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "skip",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Onboarding Project_v3",
+                "api_name": "Me",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Onboarding Project_v3",
+                "api_name": "Get Categories",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "\ud83d\udc4b Onboarding Project_v3",
+                "api_name": "Get Product",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I want to check the status of my recent order. Can you fetch the details of my order, including the order status and delivery date?",
+        "relevant APIs": [
+            [
+                "\ud83d\udc4b Onboarding Project_v3",
+                "Get User Orders"
+            ],
+            [
+                "\ud83d\udc4b Onboarding Project_v3",
+                "Get Order"
+            ]
+        ],
+        "query_id": 4153
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "GetRecordsbystark_key",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "stark_key",
+                        "type": "STRING",
+                        "description": "Which stark_key's record you want to query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "error": "str",
+                    "error_code": "int",
+                    "data": {
+                        "list": "empty list",
+                        "total": "int",
+                        "current_page": "int",
+                        "page_size": "int",
+                        "total_page": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "Aggregationbalanceofastark_keybycontractaddress",
+                "api_description": "The API aggregation balances by contract address, for previous API, each NFT have an asset_id, but in this API. NFT do not have asset_id when return, but has token id",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "stark_key",
+                        "type": "STRING",
+                        "description": "The stark_key you want to check balance",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "error": "str",
+                    "error_code": "int",
+                    "data": "empty list"
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "Listallcollections",
+                "api_description": "The API lists all collections on Reddio's layer2 system.\n\nThe return field is like the following descrption\n\n| **field** | **description** |\n| --- | --- |\n| contract_address | The contract address |\n| symbol | The symbol of |\n| type | ERC721 or ERC721M |\n| total_supply | Total Supply of the token |\n| base_uri | The base uri of NFT |\n| asset_type | The asset type is calculated by reddio, the definition is [here](https://docs.starkware.co/starkex/spot/shared/starkex-specific-concepts.html#computing_asset_info_asset_type_asset_id) |",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "error": "str",
+                    "error_code": "int",
+                    "data": [
+                        {
+                            "contract_address": "str",
+                            "symbol": "str",
+                            "type": "str",
+                            "total_supply": "str",
+                            "asset_type": "str",
+                            "base_uri": "str",
+                            "_list_length": 200
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "Getnoncebystark_key",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "stark_key",
+                        "type": "STRING",
+                        "description": "which stark_key's nonce you want to get",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "error": "str",
+                    "error_code": "int",
+                    "data": "NoneType"
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "Balancesofstark_key",
+                "api_description": "The API retrieves the balance of a stark_key, each return value are as the previous field",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "STRING",
+                        "description": "set limit per page",
+                        "default": ""
+                    },
+                    {
+                        "name": "stark_key",
+                        "type": "STRING",
+                        "description": "The stark key",
+                        "default": ""
+                    },
+                    {
+                        "name": "contract_address",
+                        "type": "STRING",
+                        "description": "filter balance by contract address",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "which page(starts by 1)",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "error": "str",
+                    "error_code": "int",
+                    "data": "empty list"
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "GetMarketplaces",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "project_uuid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "eeda297e-4d35-4f11-915a-58e1a8873f17"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "data": "NoneType",
+                    "error": "str",
+                    "error_code": "int"
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "Balanceofstark_keyandasset_id",
+                "api_description": "This API retrieves the balance of a stark_key and asset_id\n\nThe return values description\n\n| **key** | **description** |\n| --- | --- |\n| asset_id | The asset's id |\n| contract_address | The contract address of ERC20/ERC721/ERC721, if the asset_id's type is ETH, it will return \"eth\" as a placeholder |\n| token_id | The NFT token ID(this field is set when type is ERC721 or ERC721M) |\n| base_uri | The NFT base uri(this field is set when type is ERC721 or ERC721M) |\n| available | The available balance on layer 2. |\n| frozen | The frozen balance on layer 2. |\n| type | Type of token, Possible enum values is ETH, ERC20, ERC721, ERC721M |\n| symbol | The symbol of ERC721/ERC721M or ERC20(\"ETH\" for ETH) |\n| decimals | The decimals of asset, for ETH is 18, ERC721/ERC721M is 1, and for ERC20, it is based the contracts, [here](https://medium.com/@jgm.orinoco/understanding-erc-20-token-contracts-a809a7310aa5) is more explain about decimals on Ethernum |\n| quantum | quantum is a starkex concept, it is auto-set when the contract is registered to reddio. [here](https://docs.starkware.co/starkex/spot/shared/starkex-specific-concepts.html) is more explain about quantum |\n| display_value | deprecated,use `available` instead |\n| display_frozen | deprecated,use `frozen` instead |\n| balance_available | The available balance represents on layer 2. Keep attention that it need to be converted with quantum and decimals if you need to use this field. All SDK hands this value, so most of the time you do not need to care about it. |\n| balance_frozen | The frozen balance represents on layer 2. Keep attention that it need to be converted with quantum and decimals if you need to use this field. All SDK hands this value, so most of the time you do not need to care about it. |",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "stark_key",
+                        "type": "STRING",
+                        "description": "The stark_key which you want to check balance",
+                        "default": ""
+                    },
+                    {
+                        "name": "asset_id",
+                        "type": "STRING",
+                        "description": "Which asset you want to check, you can get asset id in prevous assets APIs",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "error": "str",
+                    "error_code": "int",
+                    "data": "empty list"
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "GetOrderInfo",
+                "api_description": "This API is to get order related information, such as the asset id of base/quota tokens. nonce and vaults related to stark_key\n\n**If you use SDKs(including java/unity/js), you do not need to care about the order info interface, it is already handled by SDK internally**\n\nthe contract1 and contract2 values are like\n\n{type}:{contract_address}:{token_id}\n\nThere are many informations it returns\n\n| **field** | **description** |\n| --- | --- |\n| fee_rate | the upper fee_rate allowed by reddio and marketplace. that is, if reddio & marketplace charge's more then the rate, the order will fail |\n| base_token | base token asset id, in general, if you trade using ETH for NFT, then the base token is ETH's asset id |\n| fee_token | which token as a fee, in general, it is the same as base_token |\n| lower_limit | the lower price of the NFT |\n| nonce | the nonce of the stark_key |\n| contracts | the contracts info of contract1 and contract2 |\n| asset_ids | the asset ids of contract1 and contract2 |\n| vault_ids | first vault id is generated by the stark_key and first asset id, the second vault id is generated by the stark_key and second asset id(you can see the asset_ids above) |",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "stark_key",
+                        "type": "STRING",
+                        "description": "the stark_key that want to buy or sell NFT",
+                        "default": ""
+                    },
+                    {
+                        "name": "contract2",
+                        "type": "STRING",
+                        "description": "the quota contract and token id, the vaule can like ERC721:0xA21B04B6dbd1174155E242434B3Df2EeD74BaFb2:28",
+                        "default": ""
+                    },
+                    {
+                        "name": "contract1",
+                        "type": "STRING",
+                        "description": "the base contract info, if sell using ETH, then the vaule should be ETH:eth:1",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "error": "str",
+                    "error_code": "int",
+                    "data": "NoneType"
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "Listcolloction'snftowners",
+                "api_description": "The api returns a collection's nft owners.\n\nThe response field description\n\n| **field** | **description** |\n| --- | --- |\n| contract_address | the contract_address of the collection |\n| token_id | the NFT token id |\n| owner | the owner of the NFT |\n| symbol | the NFT's symbol |\n| asset_id | the token's asset id |",
+                "required_parameters": [
+                    {
+                        "name": "contract_address",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "0x6b4f24fd500bedb945fc8b93882766bb5e7cf620"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "error": "str",
+                    "error_code": "int",
+                    "data": {
+                        "list": [
+                            {
+                                "token_id": "str",
+                                "contract_address": "str",
+                                "owner": "str",
+                                "symbol": "str",
+                                "asset_id": "str",
+                                "_list_length": 4
+                            }
+                        ],
+                        "total": "int",
+                        "current_page": "int",
+                        "page_size": "int",
+                        "total_page": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Cryptography",
+                "tool_name": "Reddio NFT, Token and IPFS",
+                "api_name": "Listfilesunderproject",
+                "api_description": "It will list files under the project, the response item like\n\n| **field** | **description** |\n| --- | --- |\n| cid | [Content Identifiers](https://docs.ipfs.tech/concepts/content-addressing/#what-is-a-cid) |\n| filename | The stored file name |\n| created_at | first create time |\n| filesize | file size(in byte) |\n| endpoints | the endpoints you can view the file |",
+                "required_parameters": [
+                    {
+                        "name": "project_uuid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "eeda297e-4d35-4f11-915a-58e1a8873f17"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str",
+                    "data": "NoneType",
+                    "error": "str",
+                    "error_code": "int"
+                }
+            }
+        ],
+        "query": "I'm interested in buying NFTs and would like to know the order-related information. Could you provide me with the fee rate, base token, fee token, and lower limit using the GetOrderInfo API? Additionally, I would like to know the balance of a specific stark key and asset ID using the Balanceofstark_keyandasset_id API.",
+        "relevant APIs": [
+            [
+                "Reddio NFT, Token and IPFS",
+                "GetOrderInfo"
+            ],
+            [
+                "Reddio NFT, Token and IPFS",
+                "Balanceofstark_keyandasset_id"
+            ]
+        ],
+        "query_id": 3995
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "languagelayer",
+                "api_name": "/batch",
+                "api_description": "API endpoint used to perform batch language detection",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "query[]",
+                        "type": "STRING",
+                        "description": "Append multiple \"query[]\" parameters containing query texts",
+                        "default": ""
+                    },
+                    {
+                        "name": "show_query",
+                        "type": "NUMBER",
+                        "description": "Set to \"1\" if you want the API's JSON result set to return your query text.",
+                        "default": "0"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "error": {
+                        "code": "int",
+                        "type": "str",
+                        "info": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "languagelayer",
+                "api_name": "/detect",
+                "api_description": "API endpoint used to perform standard (single) language detection",
+                "required_parameters": [
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "The full query text you would like the API to perform language detection for",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "show_query",
+                        "type": "NUMBER",
+                        "description": "Set to \"1\" if you want the API's JSON result set to return your query text",
+                        "default": "0"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "success": "bool",
+                    "error": {
+                        "code": "int",
+                        "type": "str",
+                        "info": "str"
+                    }
+                }
+            }
+        ],
+        "query": "I'm developing a language quiz app and I need to detect the language of user-submitted sentences. Can you perform standard language detection for the following sentence: 'Je m'appelle Sophie.'? Please return the query text in the JSON result set.",
+        "relevant APIs": [
+            [
+                "languagelayer",
+                "/batch"
+            ],
+            [
+                "languagelayer",
+                "/detect"
+            ]
+        ],
+        "query_id": 80248
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "User Event Timeline",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "event_type",
+                        "type": "STRING",
+                        "description": "The type of event you wish to see the user's activity for.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Create a User With Only an Email",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "description": "The user's email.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Account Event Timeline",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "event_type",
+                        "type": "STRING",
+                        "description": "The specific event type you want to query for.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_secret",
+                        "type": "STRING",
+                        "description": "Your client secret key, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Find a User",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your client id, found on your settings page.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_secret",
+                        "type": "STRING",
+                        "description": "Your client secret key, found on your settings page.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The user's dailycred user id.",
+                        "default": ""
+                    },
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "description": "The user's email.",
+                        "default": ""
+                    },
+                    {
+                        "name": "access_token",
+                        "type": "STRING",
+                        "description": "An access token for your user.",
+                        "default": ""
+                    },
+                    {
+                        "name": "username",
+                        "type": "STRING",
+                        "description": "The user's username.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Tools",
+                "tool_name": "DailyCred",
+                "api_name": "Connect an Existing User with a New Identity Provider",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "identity_provider",
+                        "type": "STRING",
+                        "description": "The desired social network your user to authenticate with. If no identity_provider parameter is provided, it will default to email and password authentication. You can also set identity_provider to gateway to use our UI to let the user choose who to sign in with.",
+                        "default": ""
+                    },
+                    {
+                        "name": "client_id",
+                        "type": "STRING",
+                        "description": "Your DailyCred client ID",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "redirect_uri",
+                        "type": "STRING",
+                        "description": "After authentication, the user will be redirected to this url. The url must be within one of your approved domains in your account settings. If omitted we will use your account default callback.",
+                        "default": ""
+                    },
+                    {
+                        "name": "state",
+                        "type": "STRING",
+                        "description": "You can include a state parameter to help prevent cross-site request forgery. When your user is redirected back to your site after authenticating, the state parameter will be included.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I need to find a user using their email address 'admin@example.com' and view their activity timeline. Additionally, I would like to retrieve their account event timeline. Please assist me with this.",
+        "relevant APIs": [
+            [
+                "DailyCred",
+                "Find a User"
+            ],
+            [
+                "DailyCred",
+                "User Event Timeline"
+            ],
+            [
+                "DailyCred",
+                "Account Event Timeline"
+            ]
+        ],
+        "query_id": 71823
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Trending",
+                "api_description": "Get currently trending videos.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "instrumentation": {
+                        "_type": "str"
+                    },
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Video Details",
+                "api_description": "Get insights about a video, such as related videos.",
+                "required_parameters": [
+                    {
+                        "name": "modules",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "A comma-delimited list of one or more insights to request."
+                    },
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "An ID that uniquely identifies a video. The Video object's videoId field contains the ID that you set this parameter to."
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "instrumentation": {
+                        "_type": "str"
+                    },
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "value": "str",
+                            "_list_length": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Video_Images",
+                "tool_name": "Bing Video Search",
+                "api_name": "Video Search",
+                "api_description": "Get videos relevant for a given query.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "The user's search query string",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "safeSearch",
+                        "type": "STRING",
+                        "description": "A filter used to filter results for adult content.",
+                        "default": ""
+                    },
+                    {
+                        "name": "mkt",
+                        "type": "STRING",
+                        "description": "The market where the results come from. Typically, this is the country where the user is making the request from; however, it could be a different country if the user is not located in a country where Bing delivers results. The market must be in the form -. For example, en-US.\n\nFull list of supported markets:\nes-AR, en-AU, de-AT, nl-BE, fr-BE, pt-BR, en-CA, fr-CA, es-CL, da-DK, fi-FI, fr-FR, de-DE, zh-HK, en-IN, en-ID, en-IE, it-IT, ja-JP, ko-KR, en-MY, es-MX, nl-NL, en-NZ, no-NO, zh-CN, pl-PL, pt-PT, en-PH, ru-RU, ar-SA, en-ZA, es-ES, sv-SE, fr-CH, de-CH, zh-TW, tr-TR, en-GB, en-US, es-US",
+                        "default": ""
+                    },
+                    {
+                        "name": "count",
+                        "type": "NUMBER",
+                        "description": "The number of video results to return in the response. The actual number delivered may be less than requested.",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "type": "NUMBER",
+                        "description": "The zero-based offset that indicates the number of video results to skip before returning results.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "_type": "str",
+                    "errors": [
+                        {
+                            "code": "str",
+                            "subCode": "str",
+                            "message": "str",
+                            "moreDetails": "str",
+                            "parameter": "str",
+                            "value": "str",
+                            "_list_length": 3
+                        }
+                    ]
+                }
+            }
+        ],
+        "query": "I am working on a project and need to gather insights about a specific video. The video ID is '12345'. Can you provide me with the video details and related videos for this video?",
+        "relevant APIs": [
+            [
+                "Bing Video Search",
+                "Video Details"
+            ],
+            [
+                "Bing Video Search",
+                "Video Search"
+            ]
+        ],
+        "query_id": 18286
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Trending Movies",
+                "api_description": "return movie results with title , year , id",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Now Playing Movies",
+                "api_description": "return movie results with title, year, id",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Popular Movies by Year",
+                "api_description": "return movie results with title , year , id",
+                "required_parameters": [
+                    {
+                        "name": "year",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "2020"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Movie Aliases by ID",
+                "api_description": "A valid Movie ID (e.g. tt1375666)\nreturn movie aliases",
+                "required_parameters": [
+                    {
+                        "name": "movieid",
+                        "type": "STRING",
+                        "description": "A valid Movie ID (e.g. tt1375666)",
+                        "default": "tt1375666"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Movie Images by ID",
+                "api_description": "A valid Movie ID (e.g. tt1375666)\nreturn title, id, poster, fanart",
+                "required_parameters": [
+                    {
+                        "name": "movieid",
+                        "type": "STRING",
+                        "description": "A valid Movie ID (e.g. tt1375666)",
+                        "default": "tt1375666"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Movies By Title",
+                "api_description": "Result set includes all search results\nEach item includes fields:\nTitle\nYear\nMovie  ID",
+                "required_parameters": [
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "Harry Potter"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Movie by ID",
+                "api_description": "A valid Movie ID (e.g. tt1375666)\nreturn Title, Description, Year, Release Date, Rated, Runtime, Genre, Directors, Actors, Languages, Country\n Rating, votes, Popularity, id",
+                "required_parameters": [
+                    {
+                        "name": "movieid",
+                        "type": "STRING",
+                        "description": "A valid Movie ID (e.g. tt1375666)",
+                        "default": "tt1375666"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Upcoming Movies",
+                "api_description": "return movie results with title, year, id",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get TV Series Seasons By ID",
+                "api_description": "A valid TV Series ID (e.g. tt2741602)\nreturn Season number, season air date, Episode count, Season trailer",
+                "required_parameters": [
+                    {
+                        "name": "seriesid",
+                        "type": "STRING",
+                        "description": "A valid Series ID (e.g. tt2741602)",
+                        "default": "tt2741602"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Movies",
+                "tool_name": "Movies Tv Shows Database",
+                "api_name": "Get Similar TV Shows",
+                "api_description": "return tv series results with title, id, release date",
+                "required_parameters": [
+                    {
+                        "name": "seriesid",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "tt2741602"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm a filmmaker and I'm looking for inspiration for my next project. Can you give me a list of popular movies from the year 2020? I would also like to know the movie aliases and images for a specific movie with the ID tt1375666. Additionally, I'm interested in the TV series seasons and similar TV shows related to this movie.",
+        "relevant APIs": [
+            [
+                "Movies Tv Shows Database",
+                "Get Popular Movies by Year"
+            ],
+            [
+                "Movies Tv Shows Database",
+                "Get Movie Aliases by ID"
+            ],
+            [
+                "Movies Tv Shows Database",
+                "Get Movie Images by ID"
+            ],
+            [
+                "Movies Tv Shows Database",
+                "Get TV Series Seasons By ID"
+            ],
+            [
+                "Movies Tv Shows Database",
+                "Get Similar TV Shows"
+            ]
+        ],
+        "query_id": 77108
+    }
+]

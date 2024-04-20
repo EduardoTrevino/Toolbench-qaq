@@ -1,0 +1,1074 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Stock ownership",
+                "api_description": "Provides current stock ownership information.",
+                "required_parameters": [
+                    {
+                        "name": "symbol",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "MSFT"
+                    },
+                    {
+                        "name": "includeCurrentQuarter",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "true"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "symbol": "str",
+                    "date": "str",
+                    "lastInvestorsHolding": "int",
+                    "investorsHoldingChange": "int",
+                    "numberOf13Fshares": "int",
+                    "lastNumberOf13Fshares": "int",
+                    "numberOf13FsharesChange": "int",
+                    "totalInvested": "int",
+                    "lastTotalInvested": "int",
+                    "totalInvestedChange": "int",
+                    "ownershipPercent": "float",
+                    "lastOwnershipPercent": "float",
+                    "ownershipPercentChange": "float",
+                    "newPositions": "int",
+                    "lastNewPositions": "int",
+                    "newPositionsChange": "int",
+                    "increasedPositions": "int",
+                    "lastIncreasedPositions": "int",
+                    "increasedPositionsChange": "int",
+                    "closedPositions": "int",
+                    "lastClosedPositions": "int",
+                    "closedPositionsChange": "int",
+                    "reducedPositions": "int",
+                    "lastReducedPositions": "int",
+                    "reducedPositionsChange": "int",
+                    "totalCalls": "int",
+                    "lastTotalCalls": "int",
+                    "totalCallsChange": "int",
+                    "totalPuts": "int",
+                    "lastTotalPuts": "int",
+                    "totalPutsChange": "int",
+                    "putCallRatio": "float",
+                    "lastPutCallRatio": "float",
+                    "putCallRatioChange": "float"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Holder",
+                "api_description": "Provides information about the current holder structure.",
+                "required_parameters": [
+                    {
+                        "name": "symbol",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "AAPL"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Executives",
+                "api_description": "Provides information about the current composition of executives",
+                "required_parameters": [
+                    {
+                        "name": "symbol",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "MSFT"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "title": "str",
+                    "name": "str",
+                    "pay": "str",
+                    "currencyPay": "str",
+                    "yearBorn": "str",
+                    "titleSince": "NoneType"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Shares float",
+                "api_description": "Provides the amount of current shares float.",
+                "required_parameters": [
+                    {
+                        "name": "symbol",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "MSFT"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "symbol": "str",
+                    "date": "str",
+                    "freeFloat": "float",
+                    "floatShares": "int",
+                    "outstandingShares": "int"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Profile",
+                "api_description": "Provides company data e.g. sector, industry, location, executives...",
+                "required_parameters": [
+                    {
+                        "name": "symbol",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "AAPL"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "symbol": "str",
+                    "price": "float",
+                    "beta": "float",
+                    "volAvg": "float",
+                    "mktCap": "float",
+                    "lastDiv": "float",
+                    "range": "str",
+                    "changes": "float",
+                    "companyName": "str",
+                    "currency": "str",
+                    "cik": "str",
+                    "isin": "str",
+                    "cusip": "str",
+                    "exchange": "str",
+                    "exchangeShortName": "str",
+                    "industry": "str",
+                    "website": "str",
+                    "description": "str",
+                    "ceo": "str",
+                    "sector": "str",
+                    "country": "str",
+                    "fullTimeEmployees": "str",
+                    "phone": "str",
+                    "address": "str",
+                    "city": "str",
+                    "state": "str",
+                    "zip": "str",
+                    "dcfDiff": "float",
+                    "dcf": "float"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Income",
+                "api_description": "Provides either annual or quarterly income statements of an single stock company.",
+                "required_parameters": [
+                    {
+                        "name": "symbol",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "PG"
+                    },
+                    {
+                        "name": "period",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "quarter"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "symbol": "str",
+                    "date": "str",
+                    "period": "str",
+                    "reportedCurrency": "str",
+                    "calendarYear": "int",
+                    "revenue": "int",
+                    "costOfRevenue": "int",
+                    "grossProfit": "int",
+                    "grossProfitRatio": "float",
+                    "researchAndDevelopmentExpenses": "int",
+                    "generalAndAdministrativeExpenses": "int",
+                    "sellingAndMarketingExpenses": "int",
+                    "sellingGeneralAndAdministrativeExpenses": "int",
+                    "otherExpenses": "int",
+                    "operatingExpenses": "int",
+                    "costAndExpenses": "int",
+                    "interestExpense": "int",
+                    "depreciationAndAmortization": "int",
+                    "ebitda": "int",
+                    "ebitdaratio": "float",
+                    "operatingIncome": "int",
+                    "operatingIncomeRatio": "float",
+                    "totalOtherIncomeExpensesNet": "int",
+                    "incomeBeforeTax": "int",
+                    "incomeBeforeTaxRatio": "float",
+                    "incomeTaxExpense": "int",
+                    "netIncome": "int",
+                    "netIncomeRatio": "float",
+                    "eps": "float",
+                    "epsdiluted": "float",
+                    "weightedAverageShsOut": "int",
+                    "weightedAverageShsOutDil": "int"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Cashflow",
+                "api_description": "Provides either annual or quarterly cash flow statements of an single stock company.",
+                "required_parameters": [
+                    {
+                        "name": "symbol",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "TSLA"
+                    },
+                    {
+                        "name": "period",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "quarter"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"symbol\": \"str\", \"date\": \"str\", \"period\": \"str\", \"reportedCurrency\": \"str\", \"calendarYear\": \"int\", \"netIncome\": \"int\", \"depreciationAndAmortization\": \"int\", \"deferredIncomeTax\": \"int\", \"stockBasedCompensation\": \"int\", \"changeInWorkingCapital\": \"int\", \"accountsReceivables\": \"int\", \"inventory\": \"int\", \"accountsPayables\": \"int\", \"otherWorkingCapital\": \"int\", \"otherNonCashItems\": \"int\", \"netCashProvidedByOperatingActivites\": \"NoneType\", \"investmentsInPropertyPlantAndEquipment\": \"int\", \"acquisitionsNet\": \"int\", \"purchasesOfInvestments\": \"int\", \"salesMaturitiesOfInvestments\": \"int\", \"otherInvestingActivites\": \"int\", \"netCashUsedForInvestingActivites\": \"int\", \"debtRepayment\": \"int\", \"commonStockIssued\": \"int\", \"commonStockRepurchased\": \"int\", \"dividendsPaid\": \"int\", \"otherFinancingActivites\": \"int\", \"netCashUsedProvidedByFinancingActivities\": \"int\", \"effectOfForexChangesOnCash\": \"int\", \"netChangeInCash\": \"int\", \"cashAtEndOfPeriod\": \"int\", \"cashAtBeginningOfPeriod\": \"int\", \"operatingCashFlow\""
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Balance",
+                "api_description": "Provides either annual or quarterly balance sheet statements of an single stock company.",
+                "required_parameters": [
+                    {
+                        "name": "symbol",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "MSFT"
+                    },
+                    {
+                        "name": "period",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "quarter"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"symbol\": \"str\", \"date\": \"str\", \"period\": \"str\", \"reportedCurrency\": \"str\", \"cashAndCashEquivalents\": \"int\", \"shortTermInvestments\": \"int\", \"cashAndShortTermInvestments\": \"int\", \"netReceivables\": \"int\", \"inventory\": \"int\", \"otherCurrentAssets\": \"int\", \"totalCurrentAssets\": \"int\", \"propertyPlantEquipmentNet\": \"int\", \"goodwill\": \"int\", \"intangibleAssets\": \"int\", \"goodwillAndIntangibleAssets\": \"int\", \"longTermInvestments\": \"int\", \"taxAssets\": \"int\", \"otherNonCurrentAssets\": \"int\", \"totalNonCurrentAssets\": \"int\", \"otherAssets\": \"int\", \"totalAssets\": \"int\", \"accountPayables\": \"int\", \"shortTermDebt\": \"int\", \"taxPayables\": \"int\", \"deferredRevenue\": \"int\", \"otherCurrentLiabilities\": \"int\", \"totalCurrentLiabilities\": \"int\", \"longTermDebt\": \"int\", \"deferredRevenueNonCurrent\": \"int\", \"deferredTaxLiabilitiesNonCurrent\": \"int\", \"otherNonCurrentLiabilities\": \"int\", \"totalNonCurrentLiabilities\": \"int\", \"otherLiabilities\": \"int\", \"totalLiabilities\": \"int\", \"commonStock\": \"int\", \"preferredStock\": \"int"
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Crypto symbol",
+                "api_description": "Returns a list of all available crypto symbols",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Holistic Finance - Stock Data",
+                "api_name": "Forex symbol",
+                "api_description": "Returns a list of all available forex symbols",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {}
+            }
+        ],
+        "query": "I want to analyze the income statement and the balance sheet of Apple (AAPL) for the last quarter. Additionally, I need the current composition of executives and the amount of current shares float.",
+        "relevant APIs": [
+            [
+                "Holistic Finance - Stock Data",
+                "Income"
+            ],
+            [
+                "Holistic Finance - Stock Data",
+                "Balance"
+            ],
+            [
+                "Holistic Finance - Stock Data",
+                "Executives"
+            ],
+            [
+                "Holistic Finance - Stock Data",
+                "Shares float"
+            ]
+        ],
+        "query_id": 62012
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Tomorrow Sure VIP BTTS/ Goal Goal",
+                "api_description": "This endpiont delivers tomorrow sure and precise BTTS/Goal Goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Yesterday Sure VIP BTTS/Goal Goal",
+                "api_description": "This endpiont delivers yesterday BTTS/Goal Goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Today Sure VIP BTTS/Goal Goal",
+                "api_description": "This endpiont delivers daily sure and precise BTTS/Goal Goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Yesterday Sure VIP Over 2.5 Goals",
+                "api_description": "This endpiont delivers yesterday over 2.5 goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Tomorrow Sure VIP Over 2.5 Goals",
+                "api_description": "This endpiont delivers tomorrow sure and precise over 2.5 goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Today Sure VIP Over 2.5 Goals",
+                "api_description": "This endpiont delivers daily sure and precise over 2.5 goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Tomorrow Sure VIP Over 1.5 Goals",
+                "api_description": "This endpiont delivers tomorrow sure and precise over 1.5 goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Yesterday Sure VIP Over 1.5 Goals",
+                "api_description": "This endpiont delivers yesterday over 1.5 goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Today Sure VIP Over 1.5 Goals",
+                "api_description": "This endpiont delivers daily sure and precise over 1.5 goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "168predict VIP Football Predictions",
+                "api_name": "Yesterday Sure VIP Under 3.5 Goals",
+                "api_description": "This endpiont delivers yesterday under 3.5 goal forecasts. All of the forecasts have been carefully selected. Visit www.168predict.site for more information.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I'm planning to bet on tomorrow's football matches. Can you share tomorrow's over 2.5 goals predictions? I want to increase my chances of winning. Also, if possible, please provide me with yesterday's BTTS/Goal Goal predictions.",
+        "relevant APIs": [
+            [
+                "168predict VIP Football Predictions",
+                "Tomorrow Sure VIP Over 2.5 Goals"
+            ],
+            [
+                "168predict VIP Football Predictions",
+                "Yesterday Sure VIP BTTS/Goal Goal"
+            ]
+        ],
+        "query_id": 27847
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Search",
+                "tool_name": "barcode.monster",
+                "api_name": "code",
+                "api_description": "Returns code information",
+                "required_parameters": [
+                    {
+                        "name": "code",
+                        "type": "string",
+                        "description": "Barcode to search",
+                        "default": "code"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "status": "str"
+                }
+            }
+        ],
+        "query": "My company is working on a project that requires barcode information. Could you assist us by retrieving details for the barcode '543216789'?",
+        "relevant APIs": [
+            [
+                "barcode.monster",
+                "code"
+            ]
+        ],
+        "query_id": 87632
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Communication",
+                "tool_name": "Wavecell SMS",
+                "api_name": "SMS-MT - Send SMS (GET)",
+                "api_description": "Send a SMS message using Wavecell HTTP GET",
+                "required_parameters": [
+                    {
+                        "name": "password",
+                        "type": "STRING",
+                        "description": "Your Wavecell Password",
+                        "default": ""
+                    },
+                    {
+                        "name": "encoding",
+                        "type": "STRING",
+                        "description": "The encoding format of the message",
+                        "default": "ASCII"
+                    },
+                    {
+                        "name": "subaccountid",
+                        "type": "STRING",
+                        "description": "Your Wavecell Sub Account ID",
+                        "default": ""
+                    },
+                    {
+                        "name": "destination",
+                        "type": "STRING",
+                        "description": "The destination phone number (MSISDN) to send to. This must be in international format without \"+\" such as 33123456789. 33 is the country code and 123456789 is the mobile number",
+                        "default": ""
+                    },
+                    {
+                        "name": "body",
+                        "type": "STRING",
+                        "description": "The message text",
+                        "default": ""
+                    },
+                    {
+                        "name": "source",
+                        "type": "STRING",
+                        "description": "This is the sender Id the message will appear from, TPOA. Only available on agreed routes with your account manager.",
+                        "default": ""
+                    },
+                    {
+                        "name": "accountid",
+                        "type": "STRING",
+                        "description": "Your Wavecell Account ID",
+                        "default": ""
+                    },
+                    {
+                        "name": "scheduleddatetime",
+                        "type": "STRING",
+                        "description": "Specify this if you wish to schedule your message up to 7 days in advance, to be specified in UTC Time. Specify this parameter blank if you do not want to schedule your message. SET 0 IF NOT REQUIRED",
+                        "default": ""
+                    },
+                    {
+                        "name": "umid",
+                        "type": "ENUM",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Communication",
+                "tool_name": "Wavecell SMS",
+                "api_name": "Get delivery status",
+                "api_description": "This API should be used to retrieve the current delivery status of a message sent using Wavecell.",
+                "required_parameters": [
+                    {
+                        "name": "AccountID",
+                        "type": "STRING",
+                        "description": "Your Wavecell Accountid",
+                        "default": ""
+                    },
+                    {
+                        "name": "Subaccountid",
+                        "type": "STRING",
+                        "description": "Your Wavecell subaccountid",
+                        "default": ""
+                    },
+                    {
+                        "name": "Password",
+                        "type": "STRING",
+                        "description": "Your Wavecell password",
+                        "default": ""
+                    },
+                    {
+                        "name": "umid",
+                        "type": "STRING",
+                        "description": "The Unique Message ID of the SMS for which you want to retrieve the delivery status",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            }
+        ],
+        "query": "I would like to send an SMS to my friend +11112222333. The message should say 'Congratulations on your promotion!'. Additionally, I need to schedule this message to be sent next week. Can you please confirm the delivery status of this message using the unique message ID?",
+        "relevant APIs": [
+            [
+                "Wavecell SMS",
+                "SMS-MT - Send SMS (GET)"
+            ],
+            [
+                "Wavecell SMS",
+                "Get delivery status"
+            ]
+        ],
+        "query_id": 67007
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Translation",
+                "tool_name": "Nitro",
+                "api_name": "Get a Specific Order",
+                "api_description": "This endpoint retrieves a specific order.",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Translation",
+                "tool_name": "Nitro",
+                "api_name": "Account",
+                "api_description": "This endpoint retrieves an account.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Translation",
+                "tool_name": "Nitro",
+                "api_name": "Get All Orders",
+                "api_description": "This endpoint retrieves all account orders.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Translation",
+                "tool_name": "Nitro",
+                "api_name": "Rates",
+                "api_description": "This endpoint retrieves all rates.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "source_language": "str",
+                    "target_language": "str",
+                    "rate": "float"
+                }
+            }
+        ],
+        "query": "I'm planning a trip to a foreign country and need some documents translated. Before proceeding, I would like to know the rates for translation services. Can you provide me with the rates offered by Nitro for different language pairs? I need information about the source language, target language, and the corresponding rates.",
+        "relevant APIs": [
+            [
+                "Nitro",
+                "Rates"
+            ],
+            [
+                "Nitro",
+                "Get a Specific Order"
+            ]
+        ],
+        "query_id": 46403
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get Watch Playlist",
+                "api_description": "Get a watch list of tracks. This watch playlist appears when you press play on a track in YouTube Music.\n\n\nList of watch playlist items. The counterpart key is optional and only appears if a song has a corresponding video counterpart (UI song/video switcher).",
+                "required_parameters": [
+                    {
+                        "name": "video_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "1A7Qw88As64"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "lyrics": "NoneType",
+                    "playlistId": "str",
+                    "related": "str",
+                    "tracks": [
+                        {
+                            "artists": [
+                                {
+                                    "id": "str",
+                                    "name": "str",
+                                    "_list_length": 1
+                                }
+                            ],
+                            "feedbackTokens": "NoneType",
+                            "length": "str",
+                            "likeStatus": "NoneType",
+                            "thumbnail": [
+                                {
+                                    "height": "int",
+                                    "url": "str",
+                                    "width": "int",
+                                    "_list_length": 3
+                                }
+                            ],
+                            "title": "str",
+                            "videoId": "str",
+                            "videoType": "str",
+                            "views": "str",
+                            "_list_length": 25
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get Lyrics",
+                "api_description": "Returns lyrics of a song or video.",
+                "required_parameters": [
+                    {
+                        "name": "browse_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "MPLYt_ZXONnvFeQpN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "lyrics": "NoneType",
+                    "source": "NoneType"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get Song Related",
+                "api_description": "Gets related content for a song. Equivalent to the content shown in the \u201cRelated\u201d tab of the watch panel.",
+                "required_parameters": [
+                    {
+                        "name": "browse_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "MPTRt_ZXONnvFeQpN"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "contents": [
+                        {
+                            "album": {
+                                "id": "str",
+                                "name": "str"
+                            },
+                            "artists": [
+                                {
+                                    "id": "str",
+                                    "name": "str",
+                                    "_list_length": 1
+                                }
+                            ],
+                            "isExplicit": "bool",
+                            "thumbnails": [
+                                {
+                                    "height": "int",
+                                    "url": "str",
+                                    "width": "int",
+                                    "_list_length": 2
+                                }
+                            ],
+                            "title": "str",
+                            "videoId": "str",
+                            "_list_length": 20
+                        }
+                    ],
+                    "title": "str"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get Song",
+                "api_description": "Returns metadata and streaming information about a song or video.",
+                "required_parameters": [
+                    {
+                        "name": "video_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "RS0FhoKAHvA"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"microformat\": {\"microformatDataRenderer\": {\"androidPackage\": \"str\", \"appName\": \"str\", \"availableCountries\": [\"list of str with length 249\"], \"category\": \"str\", \"description\": \"str\", \"familySafe\": \"bool\", \"iosAppArguments\": \"str\", \"iosAppStoreId\": \"str\", \"linkAlternates\": [{\"hrefUrl\": \"str\", \"_list_length\": 4}], \"noindex\": \"bool\", \"ogType\": \"str\", \"pageOwnerDetails\": {\"externalChannelId\": \"str\", \"name\": \"str\", \"youtubeProfileUrl\": \"str\"}, \"paid\": \"bool\", \"publishDate\": \"str\", \"schemaDotOrgType\": \"str\", \"siteName\": \"str\", \"tags\": [\"list of str with length 41\"], \"thumbnail\": {\"thumbnails\": [{\"height\": \"int\", \"url\": \"str\", \"width\": \"int\", \"_list_length\": 1}]}, \"title\": \"str\", \"twitterCardType\": \"str\", \"twitterSiteHandle\": \"str\", \"unlisted\": \"bool\", \"uploadDate\": \"str\", \"urlApplinksAndroid\": \"str\", \"urlApplinksIos\": \"str\", \"urlCanonical\": \"str\", \"urlTwitterAndroid\": \"str\", \"urlTwitterIos\": \"str\", \"videoDetails\": {\"durationIso8601\": \"str\", \"durationSeconds\": \"str\", \"externalVideoId\": \"str\""
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get User Playlists",
+                "api_description": "Retrieve a list of playlists for a given user. Call this function again with the returned params to get the full list.",
+                "required_parameters": [
+                    {
+                        "name": "params",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "6gPgAUdxVUJXcFlCQ3BNQkNpUjVkRjl3WVdkbFgzTnVZWEJ6YUc5MFgyMTFjMmxqWDNCaFoyVmZjbVZuYVc5dVlXd1NIMDEzUzBGTWVWcENhM2h2WVhkRFJFbFBZM2h6Vms1M0xWY3paM05wVW1jYVNnQUFaVzRBQVVaU0FBRkdVZ0FCQUVaRmJYVnphV05mWkdWMFlXbHNYMkZ5ZEdsemRBQUJBVU1BQUFFQUFBRUJBRlZETkRSb1ltVlNiME5hVmxaTlZtYzFlakJHWmtsM2R3QUI4dHF6cWdvR1FBRklBRkFx"
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "UC44hbeRoCZVVMVg5z0FfIww"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get User",
+                "api_description": "Retrieve a user\u2019s page. A user may own videos or playlists.",
+                "required_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "channelId of the user",
+                        "default": "UC44hbeRoCZVVMVg5z0FfIww"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "playlists": {
+                        "browseId": "str",
+                        "params": "str",
+                        "results": [
+                            {
+                                "description": "str",
+                                "playlistId": "str",
+                                "thumbnails": [
+                                    {
+                                        "height": "int",
+                                        "url": "str",
+                                        "width": "int",
+                                        "_list_length": 2
+                                    }
+                                ],
+                                "title": "str",
+                                "_list_length": 10
+                            }
+                        ]
+                    },
+                    "videos": {
+                        "browseId": "str",
+                        "results": [
+                            {
+                                "artists": [
+                                    {
+                                        "id": "str",
+                                        "name": "str",
+                                        "_list_length": 1
+                                    }
+                                ],
+                                "playlistId": "NoneType",
+                                "thumbnails": [
+                                    {
+                                        "height": "int",
+                                        "url": "str",
+                                        "width": "int",
+                                        "_list_length": 2
+                                    }
+                                ],
+                                "title": "str",
+                                "videoId": "str",
+                                "views": "str",
+                                "_list_length": 10
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get Album",
+                "api_description": "Get information and tracks of an album.",
+                "required_parameters": [
+                    {
+                        "name": "browse_id",
+                        "type": "STRING",
+                        "description": "browseId \u2013 browseId of the album, for example returned by **search()**",
+                        "default": "MPREb_TXkYGyz3iEg"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "artists": [
+                        {
+                            "id": "str",
+                            "name": "str",
+                            "_list_length": 2
+                        }
+                    ],
+                    "audioPlaylistId": "str",
+                    "duration": "str",
+                    "duration_seconds": "int",
+                    "thumbnails": [
+                        {
+                            "height": "int",
+                            "url": "str",
+                            "width": "int",
+                            "_list_length": 4
+                        }
+                    ],
+                    "title": "str",
+                    "trackCount": "int",
+                    "tracks": [
+                        {
+                            "album": "str",
+                            "artists": [
+                                {
+                                    "id": "str",
+                                    "name": "str",
+                                    "_list_length": 2
+                                }
+                            ],
+                            "duration": "str",
+                            "duration_seconds": "int",
+                            "isAvailable": "bool",
+                            "isExplicit": "bool",
+                            "likeStatus": "str",
+                            "thumbnails": "NoneType",
+                            "title": "str",
+                            "videoId": "str",
+                            "videoType": "str",
+                            "_list_length": 7
+                        }
+                    ],
+                    "type": "str",
+                    "year": "str"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get Artist Albums",
+                "api_description": "Get information about an artist and their top releases (songs, albums, singles, videos, and related artists). The top lists contain pointers for getting the full list of releases",
+                "required_parameters": [
+                    {
+                        "name": "channel_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "UCedvOgsKFzcK3hA5taf3KoQ"
+                    },
+                    {
+                        "name": "params",
+                        "type": "STRING",
+                        "description": "\\\\\\\"params\\\\\\\" data obtained by **get_artist()**",
+                        "default": "6gPgAUdxVUJXcFlCQ3BNQkNpUjVkRjl3WVdkbFgzTnVZWEJ6YUc5MFgyMTFjMmxqWDNCaFoyVmZjbVZuYVc5dVlXd1NIMDEzUzBGTWVWcENhM2h2WVhkRFJFbFBZM2h6Vms1NlR6QlNVWE5wVW1jYVNnQUFaVzRBQVVaU0FBRkdVZ0FCQUVaRmJYVnphV05mWkdWMFlXbHNYMkZ5ZEdsemRBQUJBVU1BQUFFQUFBRUJBRlZETUhZMlJuTlJTRTVmUVRGR09EWmlSbkpZWDNwb2R3QUI4dHF6cWdvR1FBRklBRkFV"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Get Artist",
+                "api_description": "Get information about an artist and their top releases (songs, albums, singles, videos, and related artists). The top lists contain pointers for getting the full list of releases.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "channel_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "UCedvOgsKFzcK3hA5taf3KoQ"
+                    }
+                ],
+                "method": "GET",
+                "template_response": "{\"albums\": {\"browseId\": \"str\", \"params\": \"str\", \"results\": [{\"browseId\": \"str\", \"isExplicit\": \"bool\", \"thumbnails\": [{\"height\": \"int\", \"url\": \"str\", \"width\": \"int\", \"_list_length\": 2}], \"title\": \"str\", \"year\": \"str\", \"_list_length\": 10}]}, \"channelId\": \"str\", \"description\": \"str\", \"name\": \"str\", \"radioId\": \"NoneType\", \"related\": {\"browseId\": \"NoneType\", \"results\": [{\"browseId\": \"str\", \"subscribers\": \"str\", \"thumbnails\": [{\"height\": \"int\", \"url\": \"str\", \"width\": \"int\", \"_list_length\": 2}], \"title\": \"str\", \"_list_length\": 10}]}, \"shuffleId\": \"NoneType\", \"singles\": {\"browseId\": \"str\", \"params\": \"str\", \"results\": [{\"browseId\": \"str\", \"thumbnails\": [{\"height\": \"int\", \"url\": \"str\", \"width\": \"int\", \"_list_length\": 2}], \"title\": \"str\", \"year\": \"str\", \"_list_length\": 10}]}, \"songs\": {\"browseId\": \"str\", \"results\": [{\"album\": {\"id\": \"str\", \"name\": \"str\"}, \"artists\": [{\"id\": \"str\", \"name\": \"str\", \"_list_length\": 1}], \"isAvailable\": \"bool\", \"isExplicit\": \"bool\", \"likeStatus\": \"str\", \"thumbnails\": ["
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Youtube Music API (Detailed)",
+                "api_name": "Trends",
+                "api_description": "Get latest charts data from YouTube Music: Top songs, top videos, top artists and top trending videos. Global charts have no Trending section, US charts have an extra Genres section with some Genre charts.",
+                "required_parameters": [
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "description": "ISO 3166-1 Alpha-2 country code. Default: ZZ = Global\nhttps://www.iban.com/country-codes",
+                        "default": "de"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "artists": {
+                        "items": [
+                            {
+                                "browseId": "str",
+                                "rank": "str",
+                                "subscribers": "str",
+                                "thumbnails": [
+                                    {
+                                        "height": "int",
+                                        "url": "str",
+                                        "width": "int",
+                                        "_list_length": 2
+                                    }
+                                ],
+                                "title": "str",
+                                "trend": "str",
+                                "_list_length": 40
+                            }
+                        ],
+                        "playlist": "NoneType"
+                    },
+                    "countries": {
+                        "options": [
+                            "list of str with length 62"
+                        ],
+                        "selected": {
+                            "text": "str"
+                        }
+                    },
+                    "trending": {
+                        "items": [
+                            {
+                                "artists": [
+                                    {
+                                        "id": "str",
+                                        "name": "str",
+                                        "_list_length": 2
+                                    }
+                                ],
+                                "playlistId": "str",
+                                "thumbnails": [
+                                    {
+                                        "height": "int",
+                                        "url": "str",
+                                        "width": "int",
+                                        "_list_length": 1
+                                    }
+                                ],
+                                "title": "str",
+                                "videoId": "str",
+                                "views": "NoneType",
+                                "_list_length": 20
+                            }
+                        ],
+                        "playlist": "str"
+                    },
+                    "videos": {
+                        "items": [
+                            {
+                                "artists": [
+                                    {
+                                        "id": "str",
+                                        "name": "str",
+                                        "_list_length": 3
+                                    }
+                                ],
+                                "playlistId": "str",
+                                "thumbnails": [
+                                    {
+                                        "height": "int",
+                                        "url": "str",
+                                        "width": "int",
+                                        "_list_length": 2
+                                    }
+                                ],
+                                "title": "str",
+                                "videoId": "str",
+                                "views": "str",
+                                "_list_length": 40
+                            }
+                        ],
+                        "playlist": "str"
+                    }
+                }
+            }
+        ],
+        "query": "I'm organizing a party and need some upbeat songs to create a playlist. Can you suggest some trending songs and artists? I would like to include the top songs and videos from different genres. Please provide me with a list of trending music.",
+        "relevant APIs": [
+            [
+                "Youtube Music API (Detailed)",
+                "Trends"
+            ],
+            [
+                "Youtube Music API (Detailed)",
+                "Get Song"
+            ]
+        ],
+        "query_id": 75338
+    }
+]
