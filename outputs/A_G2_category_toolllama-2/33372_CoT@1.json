@@ -1,0 +1,410 @@
+{
+  "win": false,
+  "try_count": 1,
+  "trys": [
+    {
+      "chain": [
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 1,
+          "node_type": "Thought",
+          "description": "I am calling the 'get_5000img_for_random_anime_img' function from the 'Random anime img' tool to fetch 5000 random anime images. This will help the user find inspiration for their anime-themed party decorations. By providing a variety of anime images, the user can explore different styles and themes for their party setup. Additionally, this function call aligns with the user's request for random anime images from the 'Random anime img' tool.",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 2,
+          "node_type": "Action",
+          "description": "get_5000img_for_random_anime_img",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 3,
+          "node_type": "Action Input",
+          "description": "{}",
+          "Elo": 1000.0,
+          "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+          "observation_code": 8,
+          "child_count": 1,
+          "expand_num": 0,
+          "io_state": {}
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 4,
+          "node_type": "Thought",
+          "description": "I am calling the 'trending_for_bing_video_search' function from the 'bing_video_search' tool to fetch the trending videos related to anime. By doing this, I can provide the user with a selection of popular anime videos to play during their party. This function call will help the user find engaging and relevant content that aligns with their anime-themed party theme.",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 5,
+          "node_type": "Action",
+          "description": "trending_for_bing_video_search",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 6,
+          "node_type": "Action Input",
+          "description": "{}",
+          "Elo": 1000.0,
+          "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+          "observation_code": 8,
+          "child_count": 1,
+          "expand_num": 0,
+          "io_state": {}
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 7,
+          "node_type": "Thought",
+          "description": "I am calling the 'trending_for_bing_video_search' function from the 'bing_video_search' tool to fetch the trending videos related to anime. This will help the user find engaging and relevant content for their anime-themed party. By providing a selection of popular anime videos, the user can create a lively and entertaining atmosphere during the event. Additionally, this function call aligns with the user's request to find trending videos related to anime from the 'bing_video_search' tool.",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 8,
+          "node_type": "Action",
+          "description": "Finish",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": true,
+          "finished": false,
+          "depth": 9,
+          "node_type": "Action Input",
+          "description": "{\n  \"return_type\": \"give_up_and_restart\"\n}",
+          "Elo": 1000.0,
+          "observation": "{\"response\":\"chose to give up and restart\"}",
+          "observation_code": 4,
+          "child_count": 0,
+          "expand_num": 0,
+          "io_state": {}
+        }
+      ],
+      "win": false
+    }
+  ],
+  "compare_candidates": [],
+  "forward_args": {
+    "single_chain_max_step": 12,
+    "pass_at": 1,
+    "answer": 1
+  },
+  "answer_generation": {
+    "valid_data": false,
+    "final_answer": "",
+    "function": [
+      {
+        "name": "image_anime_diffusion_for_image_diffusion",
+        "description": "This is the subfunction for tool \"image_diffusion\", you can use this tool.The description of this function is: \"design to generate weeb stuff.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "steps": {
+              "type": "integer",
+              "description": "maximum 50",
+              "example_value": "25"
+            },
+            "image_num": {
+              "type": "integer",
+              "description": "maximum 4",
+              "example_value": "1"
+            },
+            "width": {
+              "type": "integer",
+              "description": "maximum width/height 1024",
+              "example_value": "512"
+            },
+            "cfg": {
+              "type": "integer",
+              "description": "maximum 20",
+              "example_value": "7.5"
+            },
+            "height": {
+              "type": "integer",
+              "description": "maximum width/height 1024",
+              "example_value": "512"
+            },
+            "prompt": {
+              "type": "string",
+              "description": "Describe your fantasy in prompt",
+              "example_value": "1girl"
+            },
+            "negative_prompt": {
+              "type": "string",
+              "description": "negative prompt. v2 dont need this parameter."
+            }
+          },
+          "required": [
+            "steps",
+            "image_num",
+            "width",
+            "cfg",
+            "height",
+            "prompt"
+          ],
+          "optional": [
+            "negative_prompt"
+          ]
+        }
+      },
+      {
+        "name": "image_stable_diffusion_for_image_diffusion",
+        "description": "This is the subfunction for tool \"image_diffusion\", you can use this tool.The description of this function is: \"Most stable and fast diffusion to generate safe image `stuff.`\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "prompt": {
+              "type": "string",
+              "description": "Describe your fantasy in prompt",
+              "example_value": "a painting of a woman with long hair, by Mandy Jurgens, charlie bowater art style, inspired by Mandy Jurgens, style of charlie bowater, mandy jurgens art, mandy jurgens 8 k 1 5 0 mpx, gorgeous digital painting, by Charlie Bowater, charlie bowater rich deep colors, trending in art station"
+            },
+            "ratio": {
+              "type": "string",
+              "description": "Available ratio.\n\n> 1:1\n> 9:16\n> 16:9\n> 4:3\n> 3:2\n> 2:3\n> 5:4\n> 4:5\n> 8:10\n> 3:1\n> 3:4",
+              "example_value": "1:1"
+            },
+            "style": {
+              "type": "string",
+              "description": "Available styles\n> **CREATIVE**\n>> default style is **CREATIVE** \n\n> **REALISTIC**\n> **ANIME**",
+              "example_value": "CREATIVE"
+            },
+            "json": {
+              "type": "boolean",
+              "description": "Get a json response instead of image buffer ",
+              "example_value": "true"
+            },
+            "hiresfix": {
+              "type": "boolean",
+              "description": "Enable High Resolution Fix\n",
+              "example_value": "true"
+            },
+            "negative_prompt": {
+              "type": "string",
+              "description": "Describe negative prompt as you want."
+            },
+            "cfg": {
+              "type": "string",
+              "description": "CFG Scale\n\n> Min 3.0\n>  Max 16.0",
+              "example_value": "7.5"
+            }
+          },
+          "required": [
+            "prompt",
+            "ratio"
+          ],
+          "optional": [
+            "style",
+            "json",
+            "hiresfix",
+            "negative_prompt",
+            "cfg"
+          ]
+        }
+      },
+      {
+        "name": "image_stable_prompter_for_image_diffusion",
+        "description": "This is the subfunction for tool \"image_diffusion\", you can use this tool.The description of this function is: \"generate prompt from image url for stable diffusion\"",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "optional": []
+        }
+      },
+      {
+        "name": "download_youtube_mp3_for_youtube_mp3_downloader",
+        "description": "This is the subfunction for tool \"youtube_mp3_downloader\", you can use this tool.The description of this function is: \"Update: 17 May 2023: API is fixed & it is now 100% working. Converts any YouTube video into Mp3 downloadable files. No Ads. No wild redirects.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "description": "",
+              "example_value": "https://www.youtube.com/watch?v=hN5MBlGv2Ac"
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "download_mp3_custom_audio_quality_for_youtube_mp3_downloader",
+        "description": "This is the subfunction for tool \"youtube_mp3_downloader\", you can use this tool.The description of this function is: \"Download YouTube to Mp3 in various audio quality: 320 Kbps, 192Kbps, 256Kbps, 128Kbps & 64Kbps. (Specify the quality in the field)\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "description": "",
+              "example_value": "https://www.youtube.com/watch?v=LjyCyatq5XE"
+            },
+            "quality": {
+              "type": "integer",
+              "description": "Select the audio quality of the output mp3. Allowed values are:\n320\n192\n256\n128\n64"
+            }
+          },
+          "required": [
+            "url",
+            "quality"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "get_5000img_for_random_anime_img",
+        "description": "This is the subfunction for tool \"random_anime_img\", you can use this tool.The description of this function is: \"randomly selects around 5000 images\"",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "optional": []
+        }
+      },
+      {
+        "name": "random_img_anime_for_random_anime_img",
+        "description": "This is the subfunction for tool \"random_anime_img\", you can use this tool.The description of this function is: \"Random link\"",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "optional": []
+        }
+      },
+      {
+        "name": "trending_for_bing_video_search",
+        "description": "This is the subfunction for tool \"bing_video_search\", you can use this tool.The description of this function is: \"Get currently trending videos.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "optional": []
+        }
+      },
+      {
+        "name": "video_search_for_bing_video_search",
+        "description": "This is the subfunction for tool \"bing_video_search\", you can use this tool.The description of this function is: \"Get videos relevant for a given query.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "q": {
+              "type": "string",
+              "description": "The user's search query string"
+            },
+            "safesearch": {
+              "type": "string",
+              "description": "A filter used to filter results for adult content."
+            },
+            "mkt": {
+              "type": "string",
+              "description": "The market where the results come from. Typically, this is the country where the user is making the request from; however, it could be a different country if the user is not located in a country where Bing delivers results. The market must be in the form -"
+            },
+            "count": {
+              "type": "integer",
+              "description": "The number of video results to return in the response. The actual number delivered may be less than requested."
+            },
+            "offset": {
+              "type": "integer",
+              "description": "The zero-based offset that indicates the number of video results to skip before returning results."
+            }
+          },
+          "required": [
+            "q"
+          ],
+          "optional": [
+            "safesearch",
+            "mkt",
+            "count",
+            "offset"
+          ]
+        }
+      },
+      {
+        "name": "video_details_for_bing_video_search",
+        "description": "This is the subfunction for tool \"bing_video_search\", you can use this tool.The description of this function is: \"Get insights about a video, such as related videos.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "modules": {
+              "type": "string",
+              "description": "",
+              "example_value": "A comma-delimited list of one or more insights to request."
+            },
+            "is_id": {
+              "type": "string",
+              "description": "",
+              "example_value": "An ID that uniquely identifies a video. The Video object's videoId field contains the ID that you set this parameter to."
+            }
+          },
+          "required": [
+            "modules",
+            "is_id"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "return_type": {
+              "type": "string",
+              "enum": [
+                "give_answer",
+                "give_up_and_restart"
+              ]
+            },
+            "final_answer": {
+              "type": "string",
+              "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+            }
+          },
+          "required": [
+            "return_type"
+          ]
+        }
+      }
+    ],
+    "query_count": 3,
+    "total_tokens": 6,
+    "train_messages": [],
+    "chain": [],
+    "query": "I'm organizing an anime-themed party and I need some inspiration for decorations. Can you provide me with random anime images from the 'Random anime img' tool? Additionally, I would like to find trending videos on Bing related to anime to play during the party."
+  }
+}

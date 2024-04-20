@@ -1,0 +1,406 @@
+{
+  "win": false,
+  "try_count": 1,
+  "trys": [
+    {
+      "chain": [
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 1,
+          "node_type": "Thought",
+          "description": "Based on the user's request, I need to fetch a specific mlem image with ID 10 using the Mlem ID API. This API call is necessary to retrieve the requested image. By providing the Mlem ID as the argument, I can ensure that the API fetches the correct image. This way, I can fulfill the user's request and provide them with the desired mlem image.",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 2,
+          "node_type": "Action",
+          "description": "mlem_id_for_mlemapi",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 3,
+          "node_type": "Action Input",
+          "description": "{\n  \"mlemid\": 10\n}",
+          "Elo": 1000.0,
+          "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+          "observation_code": 8,
+          "child_count": 1,
+          "expand_num": 0,
+          "io_state": {}
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 4,
+          "node_type": "Thought",
+          "description": "I need to fetch the details of the user's recent order with ID 3 using the getOrderById API. This API call is necessary to retrieve the specific order details that the user requested. By providing the order ID as the argument, I can ensure that the API fetches the correct order. This way, I can fulfill the user's request and provide them with the desired order details.",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 5,
+          "node_type": "Action",
+          "description": "getmlem_id_for_mlemapi",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 6,
+          "node_type": "Action Input",
+          "description": "{\n  \"mlemid\": 10\n}",
+          "Elo": 1000.0,
+          "observation": "{\"error\": \"No such function name: getmlem_id_for_mlemapi\", \"response\": \"\"}",
+          "observation_code": 1,
+          "child_count": 1,
+          "expand_num": 0,
+          "io_state": {}
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 7,
+          "node_type": "Thought",
+          "description": "mlem_id_for_mlemapi\nAction Input: {\n  \"mlemid\": 10\n",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 8,
+          "node_type": "Action",
+          "description": "mlem_id_for_mlemapi",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 9,
+          "node_type": "Action Input",
+          "description": "{\n  \"mlemid\": 10\n}",
+          "Elo": 1000.0,
+          "observation": "{\"error\": \"Unsubscribed error...\", \"response\": \"{'message': 'You are not subscribed to this API.'}\"}",
+          "observation_code": 8,
+          "child_count": 1,
+          "expand_num": 0,
+          "io_state": {}
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 10,
+          "node_type": "Thought",
+          "description": "getorderbyid_for_tes\nAction Input: {\n  \"orderid\": 3\n",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": false,
+          "finished": false,
+          "depth": 11,
+          "node_type": "Action",
+          "description": "getorderbyid_for_tes",
+          "Elo": 1000.0,
+          "child_count": 1,
+          "expand_num": 0
+        },
+        {
+          "is_terminal": false,
+          "pruned": true,
+          "finished": false,
+          "depth": 12,
+          "node_type": "Action Input",
+          "description": "{\n  \"orderid\": 3\n}",
+          "Elo": 1000.0,
+          "observation": "{\"error\": \"\", \"response\": \"{'id': 3, 'petId': 3, 'quantity': 3, 'shipDate': '2125-03-23T01:23:44.009+0000', 'status': 'placed', 'complete': True}\"}",
+          "observation_code": 0,
+          "child_count": 0,
+          "expand_num": 0,
+          "io_state": {}
+        }
+      ],
+      "win": false
+    }
+  ],
+  "compare_candidates": [],
+  "forward_args": {
+    "single_chain_max_step": 12,
+    "pass_at": 1,
+    "answer": 1
+  },
+  "answer_generation": {
+    "valid_data": false,
+    "final_answer": "",
+    "function": [
+      {
+        "name": "getorderbyid_for_tes",
+        "description": "This is the subfunction for tool \"tes\", you can use this tool.The description of this function is: \"For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "orderid": {
+              "type": "integer",
+              "description": "ID of pet that needs to be fetched"
+            }
+          },
+          "required": [
+            "orderid"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "loginuser_for_tes",
+        "description": "This is the subfunction for tool \"tes\", you can use this tool.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "password": {
+              "type": "string",
+              "description": "The password for login in clear text"
+            },
+            "username": {
+              "type": "string",
+              "description": "The user name for login"
+            }
+          },
+          "required": [
+            "password",
+            "username"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "getuserbyname_for_tes",
+        "description": "This is the subfunction for tool \"tes\", you can use this tool.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "username": {
+              "type": "string",
+              "description": "The name that needs to be fetched. Use user1 for testing. "
+            }
+          },
+          "required": [
+            "username"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "mlem_id_for_mlemapi",
+        "description": "This is the subfunction for tool \"mlemapi\", you can use this tool.The description of this function is: \"Returns one mlem image by ID in JSON\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "mlemid": {
+              "type": "integer",
+              "description": "Mlem ID"
+            }
+          },
+          "required": [
+            "mlemid"
+          ],
+          "optional": []
+        }
+      },
+      {
+        "name": "random_mlem_for_mlemapi",
+        "description": "This is the subfunction for tool \"mlemapi\", you can use this tool.The description of this function is: \"Returns one random mlem image in JSON\"",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "optional": []
+        }
+      },
+      {
+        "name": "new_mlem_for_mlemapi",
+        "description": "This is the subfunction for tool \"mlemapi\", you can use this tool.The description of this function is: \"Returns one most recently published mlem image in JSON\"",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "optional": []
+        }
+      },
+      {
+        "name": "image_anime_diffusion_for_image_diffusion",
+        "description": "This is the subfunction for tool \"image_diffusion\", you can use this tool.The description of this function is: \"design to generate weeb stuff.\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "steps": {
+              "type": "integer",
+              "description": "maximum 50",
+              "example_value": "25"
+            },
+            "image_num": {
+              "type": "integer",
+              "description": "maximum 4",
+              "example_value": "1"
+            },
+            "width": {
+              "type": "integer",
+              "description": "maximum width/height 1024",
+              "example_value": "512"
+            },
+            "cfg": {
+              "type": "integer",
+              "description": "maximum 20",
+              "example_value": "7.5"
+            },
+            "height": {
+              "type": "integer",
+              "description": "maximum width/height 1024",
+              "example_value": "512"
+            },
+            "prompt": {
+              "type": "string",
+              "description": "Describe your fantasy in prompt",
+              "example_value": "1girl"
+            },
+            "negative_prompt": {
+              "type": "string",
+              "description": "negative prompt. v2 dont need this parameter."
+            }
+          },
+          "required": [
+            "steps",
+            "image_num",
+            "width",
+            "cfg",
+            "height",
+            "prompt"
+          ],
+          "optional": [
+            "negative_prompt"
+          ]
+        }
+      },
+      {
+        "name": "image_stable_prompter_for_image_diffusion",
+        "description": "This is the subfunction for tool \"image_diffusion\", you can use this tool.The description of this function is: \"generate prompt from image url for stable diffusion\"",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "optional": []
+        }
+      },
+      {
+        "name": "image_stable_diffusion_for_image_diffusion",
+        "description": "This is the subfunction for tool \"image_diffusion\", you can use this tool.The description of this function is: \"Most stable and fast diffusion to generate safe image `stuff.`\"",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "prompt": {
+              "type": "string",
+              "description": "Describe your fantasy in prompt",
+              "example_value": "a painting of a woman with long hair, by Mandy Jurgens, charlie bowater art style, inspired by Mandy Jurgens, style of charlie bowater, mandy jurgens art, mandy jurgens 8 k 1 5 0 mpx, gorgeous digital painting, by Charlie Bowater, charlie bowater rich deep colors, trending in art station"
+            },
+            "ratio": {
+              "type": "string",
+              "description": "Available ratio.\n\n> 1:1\n> 9:16\n> 16:9\n> 4:3\n> 3:2\n> 2:3\n> 5:4\n> 4:5\n> 8:10\n> 3:1\n> 3:4",
+              "example_value": "1:1"
+            },
+            "style": {
+              "type": "string",
+              "description": "Available styles\n> **CREATIVE**\n>> default style is **CREATIVE** \n\n> **REALISTIC**\n> **ANIME**",
+              "example_value": "CREATIVE"
+            },
+            "json": {
+              "type": "boolean",
+              "description": "Get a json response instead of image buffer ",
+              "example_value": "true"
+            },
+            "hiresfix": {
+              "type": "boolean",
+              "description": "Enable High Resolution Fix\n",
+              "example_value": "true"
+            },
+            "negative_prompt": {
+              "type": "string",
+              "description": "Describe negative prompt as you want."
+            },
+            "cfg": {
+              "type": "string",
+              "description": "CFG Scale\n\n> Min 3.0\n>  Max 16.0",
+              "example_value": "7.5"
+            }
+          },
+          "required": [
+            "prompt",
+            "ratio"
+          ],
+          "optional": [
+            "style",
+            "json",
+            "hiresfix",
+            "negative_prompt",
+            "cfg"
+          ]
+        }
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "return_type": {
+              "type": "string",
+              "enum": [
+                "give_answer",
+                "give_up_and_restart"
+              ]
+            },
+            "final_answer": {
+              "type": "string",
+              "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+            }
+          },
+          "required": [
+            "return_type"
+          ]
+        }
+      }
+    ],
+    "query_count": 4,
+    "total_tokens": 8,
+    "train_messages": [],
+    "chain": [],
+    "query": "I'm looking for a specific mlem image with ID 10. Can you fetch the image using the Mlem ID API? Additionally, I would like to retrieve the details of my recent order with ID 3. Please use the getOrderById API to fetch the order details."
+  }
+}
