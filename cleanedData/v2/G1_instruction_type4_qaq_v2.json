@@ -1,0 +1,2575 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Business",
+                "tool_name": "Passbook",
+                "api_name": "Download Pass",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "passtypeidentifier",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "pass.example.id1"
+                    },
+                    {
+                        "name": "serialnumber",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "27f145d2-5713-4a8d-af64-b269f95ade3b"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "Passbook",
+                "api_name": "List Passes",
+                "api_description": "",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm attending a conference and I need to have my pass ready on my phone. Can you help me download a pass with the passTypeIdentifier 'pass.example.id1' and the serialNumber '27f145d2-5713-4a8d-af64-b269f95ade3b'? It would be great if you could also provide me with a list of all available passes.",
+        "relevant APIs": [
+            [
+                "Passbook",
+                "List Passes"
+            ],
+            [
+                "Passbook",
+                "Download Pass"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 33112
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Daily Match List-Scheduled",
+                "api_description": "Daily match list including scheduled matches.\n\nThe data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "STRING",
+                        "description": "The date of the matches. The format is {dd/mm/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                        "default": "07/02/2021"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "homeTeam": {
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "awayTeam": {
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "status": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "date": "str",
+                    "id": "int",
+                    "tournament": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "stage": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "round": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Match Boxscore",
+                "api_description": "Live, detailed team and player statistics.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**\n\nP.S.\nFull data is available at Boxscore endpoint but can not shown in mock  response.",
+                "required_parameters": [
+                    {
+                        "name": "matchId",
+                        "type": "NUMBER",
+                        "description": "The id of the match.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Daily Match List-All",
+                "api_description": "Daily match list including scheduled, live and finished matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "STRING",
+                        "description": "Date of the match. The format is {dd/MM/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                        "default": "06/10/2020"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": "int",
+                            "quarter2": "int",
+                            "halfTime": "int",
+                            "quarter3": "int",
+                            "quarter4": "int",
+                            "regular": "int",
+                            "current": "int"
+                        },
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": "int",
+                            "quarter2": "int",
+                            "halfTime": "int",
+                            "quarter3": "int",
+                            "quarter4": "int",
+                            "regular": "int",
+                            "current": "int"
+                        },
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "status": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "date": "str",
+                    "id": "int",
+                    "tournament": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "stage": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "round": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Tournament Info",
+                "api_description": "Current season, stage structure(divisions,conferences etc.), country and many more information about a tournament.",
+                "required_parameters": [
+                    {
+                        "name": "tournamentId",
+                        "type": "NUMBER",
+                        "description": "The id of the tournament.",
+                        "default": "9"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "season": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "country": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "participantType": {
+                        "name": "str",
+                        "id": "int"
+                    },
+                    "stages": [
+                        {
+                            "rounds": [
+                                {
+                                    "name": "str",
+                                    "shortName": "str",
+                                    "id": "int",
+                                    "_list_length": 17
+                                }
+                            ],
+                            "name": "str",
+                            "shortName": "str",
+                            "id": "int",
+                            "_list_length": 2
+                        }
+                    ],
+                    "name": "str",
+                    "shortName": "str",
+                    "globalName": "str",
+                    "localName": "str",
+                    "id": "int"
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Tournament Standings",
+                "api_description": "Team Rankings for a specific competition.",
+                "required_parameters": [
+                    {
+                        "name": "tournamentId",
+                        "type": "NUMBER",
+                        "description": "The id of the tournament.",
+                        "default": "9"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Daily Match List-Results",
+                "api_description": "Daily match list including finished matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
+                "required_parameters": [
+                    {
+                        "name": "date",
+                        "type": "STRING",
+                        "description": "The date of matches. The format is {dd/mm/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                        "default": "24/01/2021"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": "int",
+                            "quarter2": "int",
+                            "halfTime": "int",
+                            "quarter3": "int",
+                            "quarter4": "int",
+                            "regular": "int",
+                            "current": "int"
+                        },
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": "int",
+                            "quarter2": "int",
+                            "halfTime": "int",
+                            "quarter3": "int",
+                            "quarter4": "int",
+                            "regular": "int",
+                            "current": "int"
+                        },
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "status": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "date": "str",
+                    "id": "int",
+                    "tournament": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "stage": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "round": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Tournament List",
+                "api_description": "List of tournaments in your data coverage.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "country": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "participantType": {
+                        "name": "str",
+                        "id": "int"
+                    },
+                    "name": "str",
+                    "shortName": "str",
+                    "globalName": "str",
+                    "localName": "str",
+                    "id": "int"
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Match Team Statistics",
+                "api_description": "Provides the team statistics of the match.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**",
+                "required_parameters": [
+                    {
+                        "name": "matchId",
+                        "type": "NUMBER",
+                        "description": "The id of the match.",
+                        "default": "21587"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"homeTeam\": {\"statistics\": {\"totalFirstDowns\": \"int\", \"rushingFirstDowns\": \"int\", \"passingFirstDowns\": \"int\", \"penaltyFirstDowns\": \"int\", \"thirdDownSucceed\": \"int\", \"thirdDownAttempt\": \"int\", \"thirdDownEfficiency\": \"float\", \"fourthDownEfficiency\": \"float\", \"totalNetYards\": \"int\", \"totalOffensivePlays\": \"int\", \"averageGainPerPlay\": \"float\", \"rushingNetYards\": \"int\", \"totalRushingPlays\": \"int\", \"averageGainPerRush\": \"float\", \"passingNetYards\": \"int\", \"sackedCount\": \"int\", \"completedPasses\": \"int\", \"attemptedPasses\": \"int\", \"interceptedPasses\": \"int\", \"averageGainPerPass\": \"float\", \"penaltyNumbers\": \"int\", \"penaltyYards\": \"int\", \"turnovers\": \"int\", \"fumbleNumbers\": \"int\", \"fumblesLost\": \"int\", \"fumbleYards\": \"int\", \"passingTDs\": \"int\", \"score\": \"int\", \"extraPointsMade\": \"int\", \"extraPointsAttempted\": \"int\", \"twoPointExtraPointsAttempted\": \"int\", \"fieldGoalsMade\": \"int\", \"fieldGoalsAttempted\": \"int\", \"possessionMinute\": \"int\", \"possessionSecond\": \"int\"}, \"name\": \"str\", \"shortName\": \"str\","
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Tournament Teams",
+                "api_description": "List of teams participating in a specific tournament.",
+                "required_parameters": [
+                    {
+                        "name": "tournamentId",
+                        "type": "NUMBER",
+                        "description": "The id of the tournament.",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "isNational": "bool",
+                    "country": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "name": "str",
+                    "shortName": "str",
+                    "mediumName": "str",
+                    "id": "int"
+                }
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Football Data",
+                "api_name": "Match Play by Play",
+                "api_description": "Provides all match drives and plays during the match with their detailed informations.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**",
+                "required_parameters": [
+                    {
+                        "name": "matchId",
+                        "type": "NUMBER",
+                        "description": "The id of the match.",
+                        "default": "18656"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "date": "str",
+                    "id": "int",
+                    "homeTeam": {
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "awayTeam": {
+                        "name": "str",
+                        "shortName": "str",
+                        "mediumName": "str",
+                        "id": "int"
+                    },
+                    "drives": [
+                        {
+                            "id": "int",
+                            "period": "int",
+                            "startTime": "str",
+                            "playCount": "int",
+                            "yardsGained": "int",
+                            "totalFirstDowns": "int",
+                            "duration": "str",
+                            "team": {
+                                "name": "str",
+                                "shortName": "str",
+                                "id": "int"
+                            },
+                            "plays": [
+                                {
+                                    "quarter": "int",
+                                    "time": "str",
+                                    "down": "int",
+                                    "yardsToGo": "int",
+                                    "startYardTeamShortName": "str",
+                                    "startYardLine": "int",
+                                    "commentaryText": "str",
+                                    "_list_length": 8
+                                }
+                            ],
+                            "_list_length": 2
+                        }
+                    ],
+                    "tournament": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "stage": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    },
+                    "round": {
+                        "name": "str",
+                        "shortName": "str",
+                        "id": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My friend is a huge football fan and I want to surprise him with some interesting football facts. Can you provide me with a list of daily match results from the past week? Additionally, I would like to know the tournament details and participating teams.",
+        "relevant APIs": [
+            [
+                "Football Data",
+                "Daily Match List-Results"
+            ],
+            [
+                "Football Data",
+                "Tournament Info"
+            ],
+            [
+                "Football Data",
+                "Tournament Teams"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 60806
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "COVID-19 INDIA",
+                "api_name": "Get Info",
+                "api_description": "Get Covid Latest Information",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"21/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"20/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"19/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"18/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"17/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"16/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"15/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"14/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"13/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"12/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"11/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"10/05/2023\": [{\"info\": \"str\", \"text\": \"str\", \"link\": \"str\", \"_list_length\": 1}], \"09/05/2023\": ["
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "COVID-19 INDIA",
+                "api_name": "Get Details",
+                "api_description": "Coronavirus India Live Updates (State)",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"Andaman and Nicobar Islands\": {\"slno\": \"int\", \"state\": \"str\", \"confirm\": \"str\", \"cured\": \"str\", \"death\": \"int\", \"total\": \"int\"}, \"Andhra Pradesh\": {\"slno\": \"int\", \"state\": \"str\", \"confirm\": \"str\", \"cured\": \"str\", \"death\": \"int\", \"total\": \"int\"}, \"Arunachal Pradesh\": {\"slno\": \"int\", \"state\": \"str\", \"confirm\": \"str\", \"cured\": \"str\", \"death\": \"int\", \"total\": \"int\"}, \"Assam\": {\"slno\": \"int\", \"state\": \"str\", \"confirm\": \"str\", \"cured\": \"str\", \"death\": \"int\", \"total\": \"int\"}, \"Bihar\": {\"slno\": \"int\", \"state\": \"str\", \"confirm\": \"str\", \"cured\": \"str\", \"death\": \"int\", \"total\": \"int\"}, \"Chandigarh\": {\"slno\": \"int\", \"state\": \"str\", \"confirm\": \"str\", \"cured\": \"str\", \"death\": \"int\", \"total\": \"int\"}, \"Chhattisgarh\": {\"slno\": \"int\", \"state\": \"str\", \"confirm\": \"str\", \"cured\": \"str\", \"death\": \"int\", \"total\": \"int\"}, \"Dadra and Nagar Haveli and Daman and Diu\": {\"slno\": \"int\", \"state\": \"str\", \"confirm\": \"str\", \"cured\": \"str\", \"death\": \"int\", \"total\": \"int\"}, \"Delhi\": {\"slno\": \"int\", \"state\": \"str\", \"con"
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "COVID-19 INDIA",
+                "api_name": "Get Latest Updates",
+                "api_description": "Coronavirus India Live Guidelines, Bills, etc",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"Developed and hosted by\": \"str\", \"21/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"20/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"19/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"18/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"17/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"16/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"15/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"14/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"13/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"12/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"11/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"10/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"09/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"08/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"07/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"06/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"05/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"04/05/2023\": [{\"info\": \"str\", \"_list_length\": 1}], \"03/05/2023\": [{\"info\": \"str\""
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm interested in the COVID-19 situation in India. Can you provide me with the latest updates on active, recovered, and deaths cases in the country? Additionally, I would like to know the guidelines and bills related to the coronavirus. Please organize this information into a comprehensive report.",
+        "relevant APIs": [
+            [
+                "COVID-19 INDIA",
+                "Get Info"
+            ],
+            [
+                "COVID-19 INDIA",
+                "Get Latest Updates"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 17952
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Events",
+                "tool_name": "\ud83d\udc4b Demo Project",
+                "api_name": "Get Categories",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "categories": [
+                        {
+                            "category": "NoneType",
+                            "_list_length": 872
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Events",
+                "tool_name": "\ud83d\udc4b Demo Project",
+                "api_name": "Get Product",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Events",
+                "tool_name": "\ud83d\udc4b Demo Project",
+                "api_name": "Get Products in Category",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "skip",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "products": "empty list",
+                    "summary": {
+                        "count": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Events",
+                "tool_name": "\ud83d\udc4b Demo Project",
+                "api_name": "Get Order",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Events",
+                "tool_name": "\ud83d\udc4b Demo Project",
+                "api_name": "Get User Orders",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Events",
+                "tool_name": "\ud83d\udc4b Demo Project",
+                "api_name": "Get Products",
+                "api_description": " ",
+                "required_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "skip",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "products": [
+                        {
+                            "id": "int",
+                            "name": "str",
+                            "category": "NoneType",
+                            "_list_length": 10
+                        }
+                    ],
+                    "summary": {
+                        "count": "int"
+                    }
+                }
+            },
+            {
+                "category_name": "Events",
+                "tool_name": "\ud83d\udc4b Demo Project",
+                "api_name": "Me",
+                "api_description": " ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "statusCode": "int",
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I am a business owner who wants to analyze the performance of my products. Can you provide me with a list of available products in the Demo Project catalog? Additionally, give me the details of a specific order with ID ORD456.",
+        "relevant APIs": [
+            [
+                "\ud83d\udc4b Demo Project",
+                "Get Products"
+            ],
+            [
+                "\ud83d\udc4b Demo Project",
+                "Get Order"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 55721
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetRelatedChannels",
+                "api_description": "",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "Category name",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json or xml or php",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetVideoFromUser",
+                "api_description": "Get all videos credited to a user (both uploaded and appears).",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The ID number or username of the user. A token may be used instead.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Method to sort by: newest, oldest, most_played, most_commented, or most_liked.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "STRING",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    },
+                    {
+                        "name": "summary_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back more information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "full_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back the full video information.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetVideosByTag",
+                "api_description": "Get a list of videos that have the specified tag.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/php/xml",
+                        "default": ""
+                    },
+                    {
+                        "name": "tag",
+                        "type": "STRING",
+                        "description": "The tag to get",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "Page number to show",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "STRING",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    },
+                    {
+                        "name": "summary_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back more information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "full_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back the full video information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Method to sort by: relevant, newest, oldest, most_played, most_commented, or most_liked.",
+                        "default": "most_commented"
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetAllChannels",
+                "api_description": "Get a list of all public channels.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "STRING",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Method to sort by: newest, oldest, alphabetical, most_videos, most_subscribed, or most_recently_updated.",
+                        "default": "most_recently_updated"
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetChannelVideos",
+                "api_description": "Get a list of the videos in a channel.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "channel_id",
+                        "type": "STRING",
+                        "description": "The numeric id of the channel or its url name.",
+                        "default": ""
+                    },
+                    {
+                        "name": "full_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back the full video information",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The ID number or username of the user. A token may be used instead.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "Number of items to show on each page. Max 50."
+                    },
+                    {
+                        "name": "summary_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back more information.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetRelatedTags",
+                "api_description": "Get a list of related tags for a category.",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "The Name of category",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json or xml or php",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "SearchVideos",
+                "api_description": "Search for videos.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "The search terms",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "user_id",
+                        "type": "STRING",
+                        "description": "The ID number or username of the user.",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    },
+                    {
+                        "name": "summary_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back more information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "full_response",
+                        "type": "BOOLEAN",
+                        "description": "Set this parameter to get back the full video information.",
+                        "default": ""
+                    },
+                    {
+                        "name": "sort",
+                        "type": "STRING",
+                        "description": "Method to sort by: relevant, newest, oldest, most_played, most_commented, or most_liked.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetChannelInfo",
+                "api_description": "Get the information on a single channel.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/xml/php",
+                        "default": ""
+                    },
+                    {
+                        "name": "channel_id",
+                        "type": "STRING",
+                        "description": "The numeric id of the channel or its url name.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetRelatedPeople",
+                "api_description": "Get a list of related people for a category.",
+                "required_parameters": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "description": "The name of the category.",
+                        "default": ""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json or xml or php",
+                        "default": "json"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "generated_in": "str",
+                    "stat": "str",
+                    "err": {
+                        "code": "str",
+                        "expl": "str",
+                        "msg": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Vimeo",
+                "api_name": "GetVideosComment",
+                "api_description": "Get a list of the comments on a video.",
+                "required_parameters": [
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "json/php/xml",
+                        "default": ""
+                    },
+                    {
+                        "name": "video_id",
+                        "type": "STRING",
+                        "description": "The ID of the video.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "page",
+                        "type": "NUMBER",
+                        "description": "The page number to show.",
+                        "default": ""
+                    },
+                    {
+                        "name": "per_page",
+                        "type": "NUMBER",
+                        "description": "Number of items to show on each page. Max 50.",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm a film student doing research on videos with the tag 'animation'. Can you provide me with videos that have this tag? I would like to see the most commented videos first.",
+        "relevant APIs": [
+            [
+                "Vimeo",
+                "GetVideosByTag"
+            ],
+            [
+                "Vimeo",
+                "SearchVideos"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 77514
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Mapping",
+                "tool_name": "LocationIQ",
+                "api_name": "Matrix",
+                "api_description": "Computes duration of the fastest route between all pairs of supplied coordinates. Returns the durations or distances or both between the coordinate pairs. Note that the distances are not the shortest distance between two coordinates, but rather the distances of the fastest routes.",
+                "required_parameters": [
+                    {
+                        "name": "coordinates",
+                        "type": "STRING",
+                        "description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}). polyline follows Google's polyline format with precision 5",
+                        "default": "\"-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550\""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "radiuses",
+                        "type": "STRING",
+                        "description": "Limits the search to given radius in meters Radiuses array length should be same as coordinates array, eaach value separated by semi-colon. Input Value - {radius};{radius}[;{radius} ...] Radius has following format :- double >= 0 or unlimited (default)",
+                        "default": "\"500;200;300\""
+                    },
+                    {
+                        "name": "annotations",
+                        "type": "STRING",
+                        "description": "Returns additional metadata for each coordinate along the route geometry.  [ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+                        "default": "\"distance\""
+                    },
+                    {
+                        "name": "fallback_coordinate",
+                        "type": "STRING",
+                        "description": "When using a fallback_speed, use the user-supplied coordinate (input), or the snapped location (snapped) for calculating distances. [ input (default), or snapped ]",
+                        "default": "\"snapped\""
+                    },
+                    {
+                        "name": "generate_hints",
+                        "type": "STRING",
+                        "description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter. Input Value - true (default), false Format - Base64 String",
+                        "default": "\"false\""
+                    },
+                    {
+                        "name": "fallback_speed",
+                        "type": "NUMBER",
+                        "description": "If no route found between a source/destination pair, calculate the as-the-crow-flies distance,  then use this speed to estimate duration. double > 0",
+                        "default": 25.65
+                    },
+                    {
+                        "name": "sources",
+                        "type": "NUMBER",
+                        "description": "Use location with given index as source. [ {index};{index}[;{index} ...] or all (default) ] => index\t 0 <= integer < #locations",
+                        "default": 0
+                    },
+                    {
+                        "name": "exclude",
+                        "type": "STRING",
+                        "description": "Additive list of classes to avoid, order does not matter. input Value - {class}[,{class}] Format - A class name determined by the profile or none.",
+                        "default": "\"toll\""
+                    },
+                    {
+                        "name": "destinations",
+                        "type": "NUMBER",
+                        "description": "Use location with given index as destination. [ {index};{index}[;{index} ...] or all (default) ]",
+                        "default": 2
+                    },
+                    {
+                        "name": "bearings",
+                        "type": "STRING",
+                        "description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction. List of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nInput Value :- {bearing};{bearing}[;{bearing} ...] Bearing follows the following format : bearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+                        "default": "\"10,20;40,30;30,9\""
+                    },
+                    {
+                        "name": "approaches",
+                        "type": "STRING",
+                        "description": "Keep waypoints on curb side. Input Value - {approach};{approach}[;{approach} ...] Format - curb or unrestricted (default)",
+                        "default": "\"curb;curb;curb\""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "LocationIQ",
+                "api_name": "autocomplete",
+                "api_description": "The Autocomplete API is a variant of the Search API that returns place predictions in response to an HTTP request.  The request specifies a textual search string and optional geographic bounds.  The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types. The Autocomplete API can match on full words as well as substrings. Applications can therefore send queries as the user types, to provide on-the-fly place predictions.",
+                "required_parameters": [
+                    {
+                        "name": "normalizecity",
+                        "type": "NUMBER",
+                        "description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 1 for SDKs.",
+                        "default": 1
+                    },
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "Address to geocode",
+                        "default": "\"Empire state\""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "viewbox",
+                        "type": "STRING",
+                        "description": "The preferred area to find search results.  To restrict results to those within the viewbox, use along with the bounded option. Tuple of 4 floats. Any two corner points of the box - `max_lon,max_lat,min_lon,min_lat` or `min_lon,min_lat,max_lon,max_lat` - are accepted in any order as long as they span a real box. ",
+                        "default": "\"-132.84908,47.69382,-70.44674,30.82531\""
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Limit the number of returned results. Default is 10.",
+                        "default": 10
+                    },
+                    {
+                        "name": "countrycodes",
+                        "type": "STRING",
+                        "description": "Limit search to a list of countries.",
+                        "default": "\"us\""
+                    },
+                    {
+                        "name": "tag",
+                        "type": "STRING",
+                        "description": "Restricts the autocomplete search results to elements of specific OSM class and type.  Example - To restrict results to only class place and type city: tag=place:city, To restrict the results to all of OSM class place: tag=place",
+                        "default": "\"place\""
+                    },
+                    {
+                        "name": "accept-language",
+                        "type": "STRING",
+                        "description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native",
+                        "default": "\"en\""
+                    },
+                    {
+                        "name": "bounded",
+                        "type": "NUMBER",
+                        "description": "Restrict the results to only items contained with the viewbox",
+                        "default": 1
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "LocationIQ",
+                "api_name": "reverse",
+                "api_description": "Reverse geocoding is the process of converting a coordinate or location (latitude, longitude) to a readable address or place name. This permits the identification of nearby street addresses, places, and/or area subdivisions such as a neighborhood, county, state, or country.",
+                "required_parameters": [
+                    {
+                        "name": "normalizecity",
+                        "type": "NUMBER",
+                        "description": "Normalizes village to city level data to city",
+                        "default": 1
+                    },
+                    {
+                        "name": "lat",
+                        "type": "NUMBER",
+                        "description": "Latitude of the location to generate an address for.",
+                        "default": 40.7487727
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "Format to geocode. Only JSON supported for SDKs",
+                        "default": "\"json\""
+                    },
+                    {
+                        "name": "lon",
+                        "type": "NUMBER",
+                        "description": "Longitude of the location to generate an address for.",
+                        "default": -73.9849336
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "addressdetails",
+                        "type": "NUMBER",
+                        "description": "Include a breakdown of the address into elements. Defaults to 1.",
+                        "default": 1
+                    },
+                    {
+                        "name": "accept-language",
+                        "type": "STRING",
+                        "description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native",
+                        "default": "\"en\""
+                    },
+                    {
+                        "name": "postaladdress",
+                        "type": "NUMBER",
+                        "description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+                        "default": 0
+                    },
+                    {
+                        "name": "namedetails",
+                        "type": "NUMBER",
+                        "description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+                        "default": 0
+                    },
+                    {
+                        "name": "showdistance",
+                        "type": "NUMBER",
+                        "description": "Returns the straight line distance (meters) between the input location and the result's location. Value is set in the distance key of the response. Defaults to 0 [0,1]",
+                        "default": 0
+                    },
+                    {
+                        "name": "statecode",
+                        "type": "NUMBER",
+                        "description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
+                        "default": 0
+                    },
+                    {
+                        "name": "extratags",
+                        "type": "NUMBER",
+                        "description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+                        "default": 0
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "LocationIQ",
+                "api_name": "balance",
+                "api_description": "The Balance API provides a count of request credits left in the user's account for the day. Balance is reset at midnight UTC everyday (00:00 UTC).",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "error": "str"
+                }
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "LocationIQ",
+                "api_name": "search",
+                "api_description": "The Search API allows converting addresses, such as a street address, into geographic coordinates (latitude and longitude). These coordinates can serve various use-cases, from placing markers on a map to helping algorithms determine nearby bus stops. This process is also known as Forward Geocoding.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "Address to geocode",
+                        "default": "\"Empire state building\""
+                    },
+                    {
+                        "name": "format",
+                        "type": "STRING",
+                        "description": "Format to geocode. Only JSON supported for SDKs",
+                        "default": "\"json\""
+                    },
+                    {
+                        "name": "normalizecity",
+                        "type": "NUMBER",
+                        "description": "For responses with no city value in the address section, the next available element in this order - city_district, locality, town, borough, municipality, village, hamlet, quarter, neighbourhood - from the address section will be normalized to city. Defaults to 1 for SDKs.",
+                        "default": 1
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "addressdetails",
+                        "type": "NUMBER",
+                        "description": "Include a breakdown of the address into elements. Defaults to 0.",
+                        "default": 1
+                    },
+                    {
+                        "name": "bounded",
+                        "type": "NUMBER",
+                        "description": "Restrict the results to only items contained with the viewbox",
+                        "default": 1
+                    },
+                    {
+                        "name": "statecode",
+                        "type": "NUMBER",
+                        "description": "Adds state or province code when available to the statecode key inside the address element. Currently supported for addresses in the USA, Canada and Australia. Defaults to 0",
+                        "default": 0
+                    },
+                    {
+                        "name": "limit",
+                        "type": "NUMBER",
+                        "description": "Limit the number of returned results. Default is 10.",
+                        "default": 10
+                    },
+                    {
+                        "name": "extratags",
+                        "type": "NUMBER",
+                        "description": "Include additional information in the result if available, e.g. wikipedia link, opening hours.",
+                        "default": 0
+                    },
+                    {
+                        "name": "postaladdress",
+                        "type": "NUMBER",
+                        "description": "Returns address inside the postaladdress key, that is specifically formatted for each country. Currently supported for addresses in Germany. Defaults to 0 [0,1]",
+                        "default": 0
+                    },
+                    {
+                        "name": "namedetails",
+                        "type": "NUMBER",
+                        "description": "Include a list of alternative names in the results. These may include language variants, references, operator and brand.",
+                        "default": 1
+                    },
+                    {
+                        "name": "accept-language",
+                        "type": "STRING",
+                        "description": "Preferred language order for showing search results, overrides the value specified in the Accept-Language HTTP header. Defaults to en. To use native language for the response when available, use accept-language=native",
+                        "default": "\"en\""
+                    },
+                    {
+                        "name": "countrycodes",
+                        "type": "STRING",
+                        "description": "Limit search to a list of countries.",
+                        "default": "\"us\""
+                    },
+                    {
+                        "name": "dedupe",
+                        "type": "NUMBER",
+                        "description": "Sometimes you have several objects in OSM identifying the same place or object in reality. The simplest case is a street being split in many different OSM ways due to different characteristics. Nominatim will attempt to detect such duplicates and only return one match; this is controlled by the dedupe parameter which defaults to 1. Since the limit is, for reasons of efficiency, enforced before and not after de-duplicating, it is possible that de-duplicating leaves you with less results than requested.",
+                        "default": 1
+                    },
+                    {
+                        "name": "matchquality",
+                        "type": "NUMBER",
+                        "description": "Returns additional information about quality of the result in a matchquality object. Read more Defaults to 0 [0,1]",
+                        "default": 0
+                    },
+                    {
+                        "name": "viewbox",
+                        "type": "STRING",
+                        "description": "The preferred area to find search results.  To restrict results to those within the viewbox, use along with the bounded option. Tuple of 4 floats. Any two corner points of the box - `max_lon,max_lat,min_lon,min_lat` or `min_lon,min_lat,max_lon,max_lat` - are accepted in any order as long as they span a real box. ",
+                        "default": "\"-132.84908,47.69382,-70.44674,30.82531\""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "LocationIQ",
+                "api_name": "Matching",
+                "api_description": "Matching API matches or snaps given GPS points to the road network in the most plausible way.  Please note the request might result multiple sub-traces.  Large jumps in the timestamps (> 60s) or improbable transitions lead to trace splits if a complete matching could not be found. The algorithm might not be able to match all points. Outliers are removed if they can not be matched successfully.",
+                "required_parameters": [
+                    {
+                        "name": "coordinates",
+                        "type": "STRING",
+                        "description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}). polyline follows Google's polyline format with precision 5",
+                        "default": "\"-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550\""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "radiuses",
+                        "type": "STRING",
+                        "description": "Limits the search to given radius in meters Radiuses array length should be same as coordinates array, eaach value separated by semi-colon. Input Value - {radius};{radius}[;{radius} ...] Radius has following format :- double >= 0 or unlimited (default)",
+                        "default": "\"None\""
+                    },
+                    {
+                        "name": "generate_hints",
+                        "type": "STRING",
+                        "description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter. Input Value - true (default), false Format - Base64 String",
+                        "default": "\"false\""
+                    },
+                    {
+                        "name": "bearings",
+                        "type": "STRING",
+                        "description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction. List of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nInput Value :- {bearing};{bearing}[;{bearing} ...] Bearing follows the following format : bearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+                        "default": "\"None\""
+                    },
+                    {
+                        "name": "tidy",
+                        "type": "STRING",
+                        "description": "Allows the input track modification to obtain better matching quality for noisy tracks. [ true, false (default) ]",
+                        "default": "\"false\""
+                    },
+                    {
+                        "name": "gaps",
+                        "type": "STRING",
+                        "description": "Allows the input track splitting based on huge timestamp gaps between points. [ split (default), ignore ]",
+                        "default": "\"ignore\""
+                    },
+                    {
+                        "name": "waypoints",
+                        "type": "STRING",
+                        "description": "Treats input coordinates indicated by given indices as waypoints in returned Match object. Default is to treat all input coordinates as waypoints. [ {index};{index};{index}... ]",
+                        "default": "\"0;1;2\""
+                    },
+                    {
+                        "name": "annotations",
+                        "type": "STRING",
+                        "description": "Returns additional metadata for each coordinate along the route geometry.  [ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+                        "default": "\"false\""
+                    },
+                    {
+                        "name": "steps",
+                        "type": "STRING",
+                        "description": "Returned route steps for each route leg [ true, false (default) ]",
+                        "default": "\"true\""
+                    },
+                    {
+                        "name": "geometries",
+                        "type": "STRING",
+                        "description": "Returned route geometry format (influences overview and per step) [ polyline (default), polyline6, geojson ]",
+                        "default": "\"polyline\""
+                    },
+                    {
+                        "name": "exclude",
+                        "type": "STRING",
+                        "description": "Additive list of classes to avoid, order does not matter. input Value - {class}[,{class}] Format - A class name determined by the profile or none.",
+                        "default": "\"toll\""
+                    },
+                    {
+                        "name": "timestamps",
+                        "type": "STRING",
+                        "description": "Timestamps for the input locations in seconds since UNIX epoch. Timestamps need to be monotonically increasing. [ {timestamp};{timestamp}[;{timestamp} ...]  integer seconds since UNIX epoch",
+                        "default": "\"200;300;900\""
+                    },
+                    {
+                        "name": "overview",
+                        "type": "STRING",
+                        "description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all. [ simplified (default), full, false ]",
+                        "default": "\"simplified\""
+                    },
+                    {
+                        "name": "approaches",
+                        "type": "STRING",
+                        "description": "Keep waypoints on curb side. Input Value - {approach};{approach}[;{approach} ...] Format - curb or unrestricted (default)",
+                        "default": "\"curb;curb;curb\""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "LocationIQ",
+                "api_name": "Directions",
+                "api_description": "Finds the fastest route between coordinates in the supplied order.",
+                "required_parameters": [
+                    {
+                        "name": "coordinates",
+                        "type": "STRING",
+                        "description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}). polyline follows Google's polyline format with precision 5",
+                        "default": "\"-0.16102,51.523854;-0.15797,51.52326;-0.161593,51.522550\""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "continue_straight",
+                        "type": "STRING",
+                        "description": "Forces the route to keep going straight at waypoints constraining uturns there even if it would be faster. Default value depends on the profile [ default (default), true, false ]",
+                        "default": "\"default\""
+                    },
+                    {
+                        "name": "geometries",
+                        "type": "STRING",
+                        "description": "Returned route geometry format (influences overview and per step) [ polyline (default), polyline6, geojson ]",
+                        "default": "\"polyline\""
+                    },
+                    {
+                        "name": "exclude",
+                        "type": "STRING",
+                        "description": "Additive list of classes to avoid, order does not matter. input Value - {class}[,{class}] Format - A class name determined by the profile or none.",
+                        "default": "\"toll\""
+                    },
+                    {
+                        "name": "generate_hints",
+                        "type": "STRING",
+                        "description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter. Input Value - true (default), false Format - Base64 String",
+                        "default": "\"false\""
+                    },
+                    {
+                        "name": "steps",
+                        "type": "STRING",
+                        "description": "Returned route steps for each route leg [ true, false (default) ]",
+                        "default": "\"true\""
+                    },
+                    {
+                        "name": "bearings",
+                        "type": "STRING",
+                        "description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction. List of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nInput Value :- {bearing};{bearing}[;{bearing} ...] Bearing follows the following format : bearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+                        "default": "\"10,20;40,30;30,9\""
+                    },
+                    {
+                        "name": "annotations",
+                        "type": "STRING",
+                        "description": "Returns additional metadata for each coordinate along the route geometry.  [ true, false (default), nodes, distance, duration, datasources, weight, speed ]",
+                        "default": "\"false\""
+                    },
+                    {
+                        "name": "radiuses",
+                        "type": "STRING",
+                        "description": "Limits the search to given radius in meters Radiuses array length should be same as coordinates array, eaach value separated by semi-colon. Input Value - {radius};{radius}[;{radius} ...] Radius has following format :- double >= 0 or unlimited (default)",
+                        "default": "\"500;200;300\""
+                    },
+                    {
+                        "name": "approaches",
+                        "type": "STRING",
+                        "description": "Keep waypoints on curb side. Input Value - {approach};{approach}[;{approach} ...] Format - curb or unrestricted (default)",
+                        "default": "\"curb;curb;curb\""
+                    },
+                    {
+                        "name": "alternatives",
+                        "type": "NUMBER",
+                        "description": "Search for alternative routes. Passing a number alternatives=n searches for up to n alternative routes. [ true, false (default), or Number ]",
+                        "default": 0
+                    },
+                    {
+                        "name": "overview",
+                        "type": "STRING",
+                        "description": "Add overview geometry either full, simplified according to highest zoom level it could be display on, or not at all. [ simplified (default), full, false ]",
+                        "default": "\"simplified\""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Mapping",
+                "tool_name": "LocationIQ",
+                "api_name": "Nearest",
+                "api_description": "Snaps a coordinate to the street network and returns the nearest n matches. Where coordinates only supports a single {longitude},{latitude} entry.",
+                "required_parameters": [
+                    {
+                        "name": "coordinates",
+                        "type": "STRING",
+                        "description": "String of format {longitude},{latitude};{longitude},{latitude}[;{longitude},{latitude} ...] or polyline({polyline}) or polyline6({polyline6}). polyline follows Google's polyline format with precision 5",
+                        "default": "\"-0.16102,51.523854\""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "exclude",
+                        "type": "STRING",
+                        "description": "Additive list of classes to avoid, order does not matter. input Value - {class}[,{class}] Format - A class name determined by the profile or none.",
+                        "default": "\"toll\""
+                    },
+                    {
+                        "name": "number",
+                        "type": "NUMBER",
+                        "description": "Number of nearest segments that should be returned. [ integer >= 1 (default 1) ]",
+                        "default": 3
+                    },
+                    {
+                        "name": "bearings",
+                        "type": "STRING",
+                        "description": "Limits the search to segments with given bearing in degrees towards true north in clockwise direction. List of positive integer pairs separated by semi-colon and bearings array should be equal to length of coordinate array.\nInput Value :- {bearing};{bearing}[;{bearing} ...] Bearing follows the following format : bearing\t{value},{range} integer 0 .. 360,integer 0 .. 180",
+                        "default": "\"10,20\""
+                    },
+                    {
+                        "name": "generate_hints",
+                        "type": "STRING",
+                        "description": "Adds a Hint to the response which can be used in subsequent requests, see hints parameter. Input Value - true (default), false Format - Base64 String",
+                        "default": "\"false\""
+                    },
+                    {
+                        "name": "approaches",
+                        "type": "STRING",
+                        "description": "Keep waypoints on curb side. Input Value - {approach};{approach}[;{approach} ...] Format - curb or unrestricted (default)",
+                        "default": "\"curb\""
+                    },
+                    {
+                        "name": "radiuses",
+                        "type": "STRING",
+                        "description": "Limits the search to given radius in meters Radiuses array length should be same as coordinates array, eaach value separated by semi-colon. Input Value - {radius};{radius}[;{radius} ...] Radius has following format :- double >= 0 or unlimited (default)",
+                        "default": "\"1000\""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "Can you suggest the nearest tourist attractions to my current location? Additionally, provide me with the duration and distance to each attraction.",
+        "relevant APIs": [
+            [
+                "LocationIQ",
+                "Nearest"
+            ],
+            [
+                "LocationIQ",
+                "Matrix"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 44774
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Weather",
+                "tool_name": "Stormglass Complete",
+                "api_name": "Get Tide Extreme Data",
+                "api_description": "**Stormglass Tide Extreme Data**\n\nRetrieve information about high and low tide for a single coordinate. If nothing is specified, the returned values will be in relative to Mean Sea Level - MSL.",
+                "required_parameters": [
+                    {
+                        "name": "lng",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "apiKey",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "lat",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "endDate",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "startDate",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "datum",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Weather",
+                "tool_name": "Stormglass Complete",
+                "api_name": "Get Tide Sea-level Data",
+                "api_description": "**Stormglass Tide Sea-level Data**\n\nRetrieve the sea level given in meters hour by hour for a single coordinate. If nothing is specified the returned values will be in relative to Mean Sea Level - MSL.",
+                "required_parameters": [
+                    {
+                        "name": "params",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "apiKey",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "lat",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "lng",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "datum",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "startDate",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "endDate",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Weather",
+                "tool_name": "Stormglass Complete",
+                "api_name": "GET Astronomy Data",
+                "api_description": "Stormglass Astronomy Data\n\nRetrieve sunrise, sunset, moonrise, moonset and moon phase for a single coordinate.",
+                "required_parameters": [
+                    {
+                        "name": "lat",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "lng",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "startDate",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "endDate",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "method": "GET"
+            },
+            {
+                "category_name": "Weather",
+                "tool_name": "Stormglass Complete",
+                "api_name": "Get Tide Station Area Data",
+                "api_description": "**Stormglass Tide Station Area Data**\n\nThe Tide Stations Area Request will list all available tide stations within a defined geographic area.\n\nTop right and bottom left coordinate draws a box with the selected coordinates. \nAll stations with in the area of this box are queried.",
+                "required_parameters": [
+                    {
+                        "name": "botLng",
+                        "type": "string",
+                        "description": "",
+                        "default": "Bottom right Lng"
+                    },
+                    {
+                        "name": "apiKey",
+                        "type": "string",
+                        "description": "",
+                        "default": "Stormglass API Key"
+                    },
+                    {
+                        "name": "topLng",
+                        "type": "string",
+                        "description": "",
+                        "default": "Top left Lng"
+                    },
+                    {
+                        "name": "topLat",
+                        "type": "string",
+                        "description": "",
+                        "default": "Top left Lat"
+                    },
+                    {
+                        "name": "botLat",
+                        "type": "string",
+                        "description": "",
+                        "default": "Bottom right  Lat"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm a photographer and want to capture the beauty of the beach during sunrise and sunset. Can you provide me with the astronomy data for a specific location? It would be great to know the sunrise and sunset times. Additionally, I would like to retrieve the high and low tide information for that location.",
+        "relevant APIs": [
+            [
+                "Stormglass Complete",
+                "GET Astronomy Data"
+            ],
+            [
+                "Stormglass Complete",
+                "Get Tide Extreme Data"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 38494
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Music",
+                "tool_name": "Indie Songs : DistroKid & Unsigned",
+                "api_name": "Get songs with ALL metadata and stats (play counts)",
+                "api_description": "Get all tracks with full metadata including recent Spotify play counts.\n\nAlso Apple song URL, Spotify song URL, Composer name, ISRC, Label, Release date, Genres, Apple IDs, Spotify IDs are included.",
+                "required_parameters": [
+                    {
+                        "name": "offset",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "0"
+                    },
+                    {
+                        "name": "limit",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "20"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Indie Songs : DistroKid & Unsigned",
+                "api_name": "Get Top 50 indie songs",
+                "api_description": "Get TOP 50 indie songs based on their daily stream increase ratio",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Indie Songs : DistroKid & Unsigned",
+                "api_name": "Search indie songs by filters",
+                "api_description": "Search song by track name,  artist name, label, release date, ISRC, composer name, genre",
+                "required_parameters": [
+                    {
+                        "name": "by",
+                        "type": "STRING",
+                        "description": "'trackname', 'artistname', 'isrc', 'label',  'genre', 'composer_name', or 'release_date'",
+                        "default": "trackname"
+                    },
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "love"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Music",
+                "tool_name": "Indie Songs : DistroKid & Unsigned",
+                "api_name": "Get CSV of Top 50 Indie Songs",
+                "api_description": "Get TOP 50 indie songs by their daily stream increase in a CSV format using URL",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm a music enthusiast and I want to discover new indie songs. Can you give me a list of the top 50 indie songs based on their daily stream increase ratio? Additionally, I would like to know the full metadata, including recent Spotify play counts, for these songs.",
+        "relevant APIs": [
+            [
+                "Indie Songs : DistroKid & Unsigned",
+                "Get Top 50 indie songs"
+            ],
+            [
+                "Indie Songs : DistroKid & Unsigned",
+                "Get songs with ALL metadata and stats (play counts)"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 41444
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "News_Media",
+                "tool_name": "Climate Change Live_v27",
+                "api_name": "Home page",
+                "api_description": "This is the API's home page",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Climate Change Live_v27",
+                "api_name": "Get individual news source news",
+                "api_description": "This API gets news from individual news source",
+                "required_parameters": [
+                    {
+                        "name": "newspaperId",
+                        "type": "string",
+                        "description": "",
+                        "default": "guardian"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "News_Media",
+                "tool_name": "Climate Change Live_v27",
+                "api_name": "Get all climate change news",
+                "api_description": "This endpoint will return back all news about Climate Change from all over the world.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm working on a research paper about climate change and I need a comprehensive list of all the climate change news articles available. Can you fetch those for me? I also require articles specifically from The Guardian. Additionally, it would be helpful if you can provide me with the API's home page for further reference.",
+        "relevant APIs": [
+            [
+                "Climate Change Live_v27",
+                "Get all climate change news"
+            ],
+            [
+                "Climate Change Live_v27",
+                "Get individual news source news"
+            ],
+            [
+                "Climate Change Live_v27",
+                "Home page"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 55323
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Business",
+                "tool_name": "SignNow",
+                "api_name": "[Embedded signing] Get role ids",
+                "api_description": "This endpoint returns details of specific document\n\nThe Document object contains:\n\n- Metadata: file name, size, extension, ID;\n- Fields, elements (texts, checks and signatures),\n- Invites, status of the invites,\n- Roles,\n- Timestamps (date created, date updated)\n\nDocument is a fundamental object of every e-signature operation. It\u2019s impossible to send an invite without selecting or [uploading a document](https://docs.signnow.com/docs/signnow/reference/operations/create-a-document) first. In signNow you can add other objects to the document called [fillable fields](https://docs.signnow.com/docs/signnow/branches/v1.2/reference/operations/update-a-document-document-id-adds-fields-to-a-document). When the document is signed, it can be [downloaded in PDF file format](https://docs.signnow.com/docs/signnow/reference/operations/get-a-document-download). Documents in signNow can be [turned into a template](https://docs.signnow.com/docs/signnow/reference/operations/create-a-template). API also allows you to create [event subscriptions](https://docs.signnow.com/docs/signnow/reference/operations/create-a-api-v-2-event) triggered by a specific document.",
+                "required_parameters": [
+                    {
+                        "name": "document_id",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "404": "str"
+                }
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "SignNow",
+                "api_name": "Get field and field invite id",
+                "api_description": "The endpoint returns field and field invite ids.",
+                "required_parameters": [
+                    {
+                        "name": "document_id",
+                        "type": "string",
+                        "description": "id of the document",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "404": "str"
+                }
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "SignNow",
+                "api_name": "Get role ids",
+                "api_description": "This endpoint returns details of specific document\n\nThe Document object contains:\n\n- Metadata: file name, size, extension, ID;\n- Fields, elements (texts, checks and signatures),\n- Invites, status of the invites,\n- Roles,\n- Timestamps (date created, date updated)\n\nDocument is a fundamental object of every e-signature operation. It\u2019s impossible to send an invite without selecting or [uploading a document](https://docs.signnow.com/docs/signnow/reference/operations/create-a-document) first. In signNow you can add other objects to the document called [fillable fields](https://docs.signnow.com/docs/signnow/branches/v1.2/reference/operations/update-a-document-document-id-adds-fields-to-a-document). When the document is signed, it can be [downloaded in PDF file format](https://docs.signnow.com/docs/signnow/reference/operations/get-a-document-download). Documents in signNow can be [turned into a template](https://docs.signnow.com/docs/signnow/reference/operations/create-a-template). API also allows you to create [event subscriptions](https://docs.signnow.com/docs/signnow/reference/operations/create-a-api-v-2-event) triggered by a specific document.",
+                "required_parameters": [
+                    {
+                        "name": "document_id",
+                        "type": "string",
+                        "description": "",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "404": "str"
+                }
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "SignNow",
+                "api_name": "Get signing links",
+                "api_description": "The endpoint allows to get all existing signing links and IDs of these signing links.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "error": "str",
+                    "code": "int"
+                }
+            },
+            {
+                "category_name": "Business",
+                "tool_name": "SignNow",
+                "api_name": "Get role ids for template",
+                "api_description": "The endpoint allows to get role ids for a template.",
+                "required_parameters": [
+                    {
+                        "name": "template_id",
+                        "type": "string",
+                        "description": "ID of the template.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "404": "str"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I have a document with ID '123abc' and I need to get the role IDs and field IDs. Can you provide me with the details?",
+        "relevant APIs": [
+            [
+                "SignNow",
+                "Get role ids"
+            ],
+            [
+                "SignNow",
+                "Get field and field invite id"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 49991
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Social",
+                "tool_name": "Zodiac Sign API",
+                "api_name": "Getallsign",
+                "api_description": "Get all sign. This returns all the available signs",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "Aquarius": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Aries": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Cancer": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Capricorn": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Gemini": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Leo": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Libra": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Pisces": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Sagittarius": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Scorpio": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Taurus": {
+                        "date": "str",
+                        "personality": "str"
+                    },
+                    "Virgo": {
+                        "date": "str",
+                        "personality": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Social",
+                "tool_name": "Zodiac Sign API",
+                "api_name": "SearchZodiacbySign",
+                "api_description": "Search Zodiac by sign. This returns the value of the selected sign",
+                "required_parameters": [
+                    {
+                        "name": "sign",
+                        "type": "STRING",
+                        "description": "Ensure the first letter of the value is in capital letter",
+                        "default": "Gemini"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "date": "str",
+                    "personality": "str"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I want to surprise my partner with a personalized gift based on their zodiac sign. Can you provide me with the personality traits and dates for all the zodiac signs? Also, I'd like to search for the personality traits of the Virgo sign.",
+        "relevant APIs": [
+            [
+                "Zodiac Sign API",
+                "Getallsign"
+            ],
+            [
+                "Zodiac Sign API",
+                "SearchZodiacbySign"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 56226
+    }
+]
