@@ -1,0 +1,2103 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Finance",
+                "tool_name": "stocks_archive",
+                "api_name": "ping",
+                "api_description": "Check that server is still alive",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "datetime": "str",
+                    "version": "str",
+                    "uptime": "float"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "stocks_archive",
+                "api_name": "tickerData",
+                "api_description": "Returns a list of ticker records",
+                "required_parameters": [
+                    {
+                        "name": "period",
+                        "type": "STRING",
+                        "description": "Ticker period",
+                        "default": "1h"
+                    },
+                    {
+                        "name": "startDate",
+                        "type": "STRING",
+                        "description": "Start date",
+                        "default": "2010-04-12T14:30"
+                    },
+                    {
+                        "name": "tickerName",
+                        "type": "STRING",
+                        "description": "Ticker name",
+                        "default": "gold"
+                    },
+                    {
+                        "name": "endDate",
+                        "type": "STRING",
+                        "description": "End date",
+                        "default": "2010-04-20T12:30"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "records": [
+                        {
+                            "closeDateTime": "str",
+                            "open": "float",
+                            "close": "float",
+                            "high": "float",
+                            "low": "float",
+                            "volume": "int",
+                            "_list_length": 142
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "stocks_archive",
+                "api_name": "tickersList",
+                "api_description": "Returns a list of available tickers",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My friend is a financial advisor and he needs to analyze the historical data for the gold ticker from April 12, 2010, 14:30 to April 20, 2010, 12:30. Can you fetch the ticker data for this period and provide the records including close date-time, open price, close price, highest price, lowest price, and volume? Also, he wants to know if the stocks_archive tool is still functional. Please ping the server and provide the server time, version, and uptime.",
+        "relevant APIs": [
+            [
+                "stocks_archive",
+                "tickerData"
+            ],
+            [
+                "stocks_archive",
+                "ping"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 28240
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Dividend",
+                "api_description": "Contains the annual dividends (split-adjusted without special dividend)\n\nAPI_Dividend\nSyntax:\n\nshareuid = unique identifier for the share searched\nfrom = Start date of the searched period in American notation year-month-day with leading 0\nto = End date of the searched period in American notation year-month-day with leading 0",
+                "required_parameters": [
+                    {
+                        "name": "from",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "1962-01-01"
+                    },
+                    {
+                        "name": "shareuid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "2"
+                    },
+                    {
+                        "name": "API_Dividend",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "to",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-03-31"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "year": "str",
+                    "dividend": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Index_Isin",
+                "api_description": "Determine shareuid\nTo query the fundamental data via our API, you need the Shareuid for the share you are looking for. You can either determine this yourself via the API, or take it from the Excel table.\nIMPORTANT! The currency that is output in the API_Fundamentals results is also included here.\n\nSyntax:\n\nisin = search shareuid with ISIN",
+                "required_parameters": [
+                    {
+                        "name": "API_Index",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "isin",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "US4592001014"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "shareuid": "str",
+                    "isin": "str",
+                    "wkn": "str",
+                    "currency": "str",
+                    "shortname": "str",
+                    "name": "str",
+                    "country": "str",
+                    "indizes": "str",
+                    "sector": "str",
+                    "lastbalanceupdate": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Index_Name",
+                "api_description": "Determine shareuid\nTo query the fundamental data via our API, you need the Shareuid for the share you are looking for. You can either determine this yourself via the API, or take it from the Excel table.\nIMPORTANT! The currency that is output in the API_Fundamentals results is also included here.\n\nSyntax:\n\nname = search shareuid with company name",
+                "required_parameters": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "ibm"
+                    },
+                    {
+                        "name": "API_Index",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "shareuid": "str",
+                    "isin": "str",
+                    "wkn": "str",
+                    "currency": "str",
+                    "shortname": "str",
+                    "name": "str",
+                    "country": "str",
+                    "indizes": "str",
+                    "sector": "str",
+                    "lastbalanceupdate": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Index_Wkn",
+                "api_description": "Determine shareuid\nTo query the fundamental data via our API, you need the Shareuid for the share you are looking for. You can either determine this yourself via the API, or take it from the Excel table.\nIMPORTANT! The currency that is output in the API_Fundamentals results is also included here.\n\nSyntax:\n\nwkn = search shareuid with WKN",
+                "required_parameters": [
+                    {
+                        "name": "wkn",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "851399"
+                    },
+                    {
+                        "name": "API_Index",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "shareuid": "str",
+                    "isin": "str",
+                    "wkn": "str",
+                    "currency": "str",
+                    "shortname": "str",
+                    "name": "str",
+                    "country": "str",
+                    "indizes": "str",
+                    "sector": "str",
+                    "lastbalanceupdate": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Pricetobook",
+                "api_description": "contains the price-book ratio (P / B ratio) for each past trading day",
+                "required_parameters": [
+                    {
+                        "name": "API_Pricetobook",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "shareuid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "2"
+                    },
+                    {
+                        "name": "to",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-03-15"
+                    },
+                    {
+                        "name": "from",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2019-12-15"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "date": "str",
+                    "pb": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Pricetocashflow",
+                "api_description": "Contains the price-cash-flow ratio (P / C ratio) for each past trading day\n\nAPI_Pricetocashflow\nSyntax:\n \n\nshareuid = unique identifier for the share searched\nfrom = Start date of the searched period in American notation year-month-day with leading 0\nto = End date of the searched period in American notation year-month-day with leading 0",
+                "required_parameters": [
+                    {
+                        "name": "to",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-03-15"
+                    },
+                    {
+                        "name": "from",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-01-06"
+                    },
+                    {
+                        "name": "shareuid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "2"
+                    },
+                    {
+                        "name": "API_Pricetocashflow",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Pricetoearning",
+                "api_description": "Contains the price-earnings ratio (P / E ratio) for each past trading day\n\nAPI_Pricetoearning\nSyntax:\n \n\nshareuid = unique identifier for the share searched\nfrom = Start date of the searched period in American notation year-month-day with leading 0\nto = End date of the searched period in American notation year-month-day with leading 0",
+                "required_parameters": [
+                    {
+                        "name": "to",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-05-15"
+                    },
+                    {
+                        "name": "API_Pricetoearning",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "from",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-04-15"
+                    },
+                    {
+                        "name": "shareuid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "2"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Pricetosales",
+                "api_description": "Contains the price turnover ratio (P / S ratio) for each past trading day.\n\nAPI_Pricetosales\nSyntax:\n \n\nshareuid = unique identifier for the share searched\nfrom = Start date of the searched period in American notation year-month-day with leading 0\nto = End date of the searched period in American notation year-month-day with leading 0",
+                "required_parameters": [
+                    {
+                        "name": "shareuid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "2"
+                    },
+                    {
+                        "name": "to",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-06-08"
+                    },
+                    {
+                        "name": "API_Pricetosales",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "from",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-05-15"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Roa",
+                "api_description": "Contains the profitability (ROA ratio) for the financial year.\n\nAPI_Roa\nSyntax:\n \n\nshareuid = unique identifier for the share searched\nfrom = Start date of the searched period in American notation year-month-day with leading 0\nto = End date of the searched period in American notation year-month-day with leading 0",
+                "required_parameters": [
+                    {
+                        "name": "API_Roa",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    },
+                    {
+                        "name": "to",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-06-08"
+                    },
+                    {
+                        "name": "from",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2018-05-15"
+                    },
+                    {
+                        "name": "shareuid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "2"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Finanzoo API_Fundamentals",
+                "api_name": "API_Roe",
+                "api_description": "Contains the equity ratio (ROE ratio) for the financial year.\n\nAPI_Roe\nSyntax:\n \n\nshareuid = unique identifier for the share searched\nfrom = Start date of the searched period in American notation year-month-day with leading 0\nto = End date of the searched period in American notation year-month-day with leading 0",
+                "required_parameters": [
+                    {
+                        "name": "from",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2018-05-08"
+                    },
+                    {
+                        "name": "shareuid",
+                        "type": "NUMBER",
+                        "description": "",
+                        "default": "2"
+                    },
+                    {
+                        "name": "to",
+                        "type": "DATE (YYYY-MM-DD)",
+                        "description": "",
+                        "default": "2020-06-08"
+                    },
+                    {
+                        "name": "API_Roe",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "1"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "Retrieve the shareuid for a company named 'Microsoft Corporation' in order to access its fundamental data. Also, find the price-earnings ratio (P/E ratio) for the share with ISIN US5949181045 from 2020-01-01 to 2021-01-01.",
+        "relevant APIs": [
+            [
+                "Finanzoo API_Fundamentals",
+                "API_Index_Name"
+            ],
+            [
+                "Finanzoo API_Fundamentals",
+                "API_Pricetoearning"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 44845
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "Simple YouTube Search",
+                "api_name": "Search",
+                "api_description": "Make youtube search",
+                "required_parameters": [
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "never+gonna+give+you+up"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "type",
+                        "type": "ENUM",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "safesearch",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "false"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "results": [
+                        {
+                            "uploadedAt": "str",
+                            "id": "str",
+                            "tags": {},
+                            "nsfw": "bool",
+                            "private": "bool",
+                            "description": "NoneType",
+                            "url": "str",
+                            "unlisted": "bool",
+                            "channel": {
+                                "name": "str",
+                                "icon": "str",
+                                "id": "str"
+                            },
+                            "thumbnail": {
+                                "url": "str",
+                                "height": "int",
+                                "id": "str",
+                                "width": "int"
+                            },
+                            "ratings": {
+                                "likes": "int",
+                                "dislikes": "int"
+                            },
+                            "shorts": "bool",
+                            "title": "str",
+                            "live": "bool",
+                            "duration_formatted": "str",
+                            "views": "int",
+                            "duration": "int",
+                            "shorts_url": "str",
+                            "type": "str",
+                            "_list_length": 19
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Simple YouTube Search",
+                "api_name": "Playlist",
+                "api_description": "YouTube playlist data",
+                "required_parameters": [
+                    {
+                        "name": "list",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "result": {
+                        "link": "str",
+                        "thumbnail": {
+                            "url": "str",
+                            "height": "int",
+                            "id": "NoneType",
+                            "width": "int"
+                        },
+                        "id": "str",
+                        "videos": [
+                            {
+                                "uploadedAt": "NoneType",
+                                "id": "str",
+                                "tags": {},
+                                "nsfw": "bool",
+                                "private": "bool",
+                                "description": "NoneType",
+                                "url": "str",
+                                "unlisted": "bool",
+                                "channel": {
+                                    "name": "str",
+                                    "icon": "NoneType",
+                                    "id": "str"
+                                },
+                                "thumbnail": {
+                                    "url": "str",
+                                    "height": "int",
+                                    "id": "str",
+                                    "width": "int"
+                                },
+                                "ratings": {
+                                    "likes": "int",
+                                    "dislikes": "int"
+                                },
+                                "shorts": "bool",
+                                "title": "str",
+                                "live": "bool",
+                                "duration_formatted": "str",
+                                "views": "int",
+                                "duration": "int",
+                                "shorts_url": "str",
+                                "type": "str",
+                                "_list_length": 41
+                            }
+                        ],
+                        "video_count": "int",
+                        "title": "str",
+                        "views": "int",
+                        "last_update": "str",
+                        "url": "str",
+                        "channel": {
+                            "url": "str",
+                            "name": "str",
+                            "icon": "str",
+                            "id": "str"
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Simple YouTube Search",
+                "api_name": "Video",
+                "api_description": "Get particular video",
+                "required_parameters": [
+                    {
+                        "name": "search",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://www.youtube.com/watch?v=fBNz5xF-Kx4"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "result": {
+                        "uploadedAt": "str",
+                        "id": "str",
+                        "tags": [
+                            "list of str with length 4"
+                        ],
+                        "nsfw": "bool",
+                        "private": "bool",
+                        "description": "str",
+                        "url": "str",
+                        "unlisted": "bool",
+                        "channel": {
+                            "name": "str",
+                            "icon": "str",
+                            "id": "str"
+                        },
+                        "thumbnail": {
+                            "url": "str",
+                            "height": "int",
+                            "id": "str",
+                            "width": "int"
+                        },
+                        "ratings": {
+                            "likes": "int",
+                            "dislikes": "int"
+                        },
+                        "shorts": "bool",
+                        "title": "str",
+                        "live": "bool",
+                        "duration_formatted": "str",
+                        "views": "int",
+                        "duration": "int",
+                        "shorts_url": "str",
+                        "type": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I want to learn about the history of art through YouTube videos. Can you provide me with a curated playlist of videos that cover different art movements, famous artists, and their iconic works?",
+        "relevant APIs": [
+            [
+                "Simple YouTube Search",
+                "Search"
+            ],
+            [
+                "Simple YouTube Search",
+                "Playlist"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 42348
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Communication",
+                "tool_name": "LINE Messaging",
+                "api_name": "Get content",
+                "api_description": "Gets image, video, and audio data sent by users.",
+                "required_parameters": [
+                    {
+                        "name": "messageId",
+                        "type": "STRING",
+                        "description": "Message ID",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Communication",
+                "tool_name": "LINE Messaging",
+                "api_name": "Get rich menu ID of user",
+                "api_description": "Gets the ID of the rich menu linked to a user.",
+                "required_parameters": [
+                    {
+                        "name": "userId",
+                        "type": "STRING",
+                        "description": "User ID. Found in the source object of webhook event objects. Do not use the LINE ID used in LINE.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Communication",
+                "tool_name": "LINE Messaging",
+                "api_name": "Download rich menu image",
+                "api_description": "Downloads an image associated with a rich menu.",
+                "required_parameters": [
+                    {
+                        "name": "richMenuId",
+                        "type": "STRING",
+                        "description": "ID of the rich menu with the image to be downloaded",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Communication",
+                "tool_name": "LINE Messaging",
+                "api_name": "Get rich menu list",
+                "api_description": "Gets a list of all uploaded rich menus.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Communication",
+                "tool_name": "LINE Messaging",
+                "api_name": "Get rich menu",
+                "api_description": "Gets a rich menu via a rich menu ID.",
+                "required_parameters": [
+                    {
+                        "name": "richMenuId",
+                        "type": "STRING",
+                        "description": "ID of an uploaded rich menu",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Communication",
+                "tool_name": "LINE Messaging",
+                "api_name": "Get profile",
+                "api_description": "Gets user profile information.",
+                "required_parameters": [
+                    {
+                        "name": "userId",
+                        "type": "STRING",
+                        "description": "User ID that is returned in a webhook event object. Do not use the LINE ID found on LINE.",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Communication",
+                "tool_name": "LINE Messaging",
+                "api_name": "Get default rich menu ID",
+                "api_description": "Gets the ID of the default rich menu set with the Messaging API.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "Communication",
+                "tool_name": "LINE Messaging",
+                "api_name": "Get number of sent reply messages",
+                "api_description": "Gets the number of messages sent with the /bot/message/reply endpoint.",
+                "required_parameters": [
+                    {
+                        "name": "date\t",
+                        "type": "STRING",
+                        "description": "Date the messages were sent. Format: yyyyMMdd (Example: 20191231) Timezone: UTC+9",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "Could you please provide me with the ID of the rich menu linked to the user with the ID '12345'? Furthermore, I would like to download the image associated with the rich menu having the ID '67890'.",
+        "relevant APIs": [
+            [
+                "LINE Messaging",
+                "Get rich menu ID of user"
+            ],
+            [
+                "LINE Messaging",
+                "Download rich menu image"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 66927
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Finance",
+                "tool_name": "Funds",
+                "api_name": "v1GetFundLatestPrice",
+                "api_description": "Get fund latest price",
+                "required_parameters": [
+                    {
+                        "name": "isin",
+                        "type": "STRING",
+                        "description": "Fund's ISIN",
+                        "default": "LU0690375182"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "name": "str",
+                    "market": "str",
+                    "price": "float",
+                    "humanDate": "str",
+                    "epochSecs": "int"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "Funds",
+                "api_name": "v1GetFundHistoricalPrices",
+                "api_description": "Get fund's historical prices",
+                "required_parameters": [
+                    {
+                        "name": "isin",
+                        "type": "STRING",
+                        "description": "Fund's ISIN",
+                        "default": "LU0690375182"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "to",
+                        "type": "STRING",
+                        "description": "Finishing date. Format YYYY-MM-DD.",
+                        "default": "2020-12-31"
+                    },
+                    {
+                        "name": "from",
+                        "type": "STRING",
+                        "description": "Starting date. Format YYYY-MM-DD.",
+                        "default": "2015-01-25"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "humanDate": "str",
+                    "epochSecs": "int",
+                    "price": "float"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I need to analyze the performance of a mutual fund. Could you fetch the latest price and historical prices of the fund with ISIN LU0690375182? It would be great if you could provide the prices from 2015-01-25 to 2020-12-31.",
+        "relevant APIs": [
+            [
+                "Funds",
+                "v1GetFundLatestPrice"
+            ],
+            [
+                "Funds",
+                "v1GetFundHistoricalPrices"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 45533
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Medical",
+                "tool_name": "Drug Info and Price History",
+                "api_name": "Drug Info",
+                "api_description": "Returns information about the given drug",
+                "required_parameters": [
+                    {
+                        "name": "drug",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "advil"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": "{\"product_ndc\": \"str\", \"generic_name\": \"str\", \"labeler_name\": \"str\", \"brand_name\": \"str\", \"active_ingredients\": [{\"name\": \"str\", \"strength\": \"str\", \"_list_length\": 2}], \"finished\": \"bool\", \"packaging\": [{\"package_ndc\": \"str\", \"description\": \"str\", \"marketing_start_date\": \"str\", \"sample\": \"bool\", \"_list_length\": 21}], \"listing_expiration_date\": \"str\", \"openfda\": {\"manufacturer_name\": [\"list of str with length 1\"], \"rxcui\": [\"list of str with length 1\"], \"spl_set_id\": [\"list of str with length 1\"], \"is_original_packager\": [\"list of bool with length 1\"], \"nui\": [\"list of str with length 3\"], \"pharm_class_moa\": [\"list of str with length 1\"], \"pharm_class_cs\": [\"list of str with length 1\"], \"pharm_class_epc\": [\"list of str with length 1\"], \"unii\": [\"list of str with length 2\"]}, \"marketing_category\": \"str\", \"dosage_form\": \"str\", \"spl_id\": \"str\", \"product_type\": \"str\", \"route\": [\"list of str with length 1\"], \"marketing_start_date\": \"str\", \"product_id\": \"str\", \"application_number\": \"str\", \"br"
+            },
+            {
+                "category_name": "Medical",
+                "tool_name": "Drug Info and Price History",
+                "api_name": "genericname",
+                "api_description": "Given a brand name, returns a generic name",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "drug",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "advil"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "generic_name": "str"
+                }
+            },
+            {
+                "category_name": "Medical",
+                "tool_name": "Drug Info and Price History",
+                "api_name": "Price History",
+                "api_description": "Returns an array of price histories when given a valid drug ID.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "My friend is experiencing a headache and wants to know if 'advil' is a suitable medication. Can you give us information about this drug, including the generic name and active ingredients? We would also like to know the price history of 'advil'.",
+        "relevant APIs": [
+            [
+                "Drug Info and Price History",
+                "Drug Info"
+            ],
+            [
+                "Drug Info and Price History",
+                "genericname"
+            ],
+            [
+                "Drug Info and Price History",
+                "Price History"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 49830
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Sports",
+                "tool_name": "FDJ",
+                "api_name": "Odds",
+                "api_description": "Latest Odds for FDJ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "FDJ",
+                "api_name": "Matches",
+                "api_description": "Latest Matches for FDJ",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm a fan of FDJ and I'm curious about the odds of their past games. Can you give me the historical odds data for the matches? It would be great to know the outcomes as well.",
+        "relevant APIs": [
+            [
+                "FDJ",
+                "Odds"
+            ],
+            [
+                "FDJ",
+                "Matches"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 19189
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Location",
+                "tool_name": "Senegal API",
+                "api_name": "Directions Between 2 Locations",
+                "api_description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.\n\nBelow Example: **Directions from a hospital in Koalack to Dakar**",
+                "required_parameters": [
+                    {
+                        "name": "start_lon",
+                        "type": "NUMBER",
+                        "description": "Longitude of the starting point (required)",
+                        "default": "-16.0755888102153"
+                    },
+                    {
+                        "name": "end_lon",
+                        "type": "NUMBER",
+                        "description": "Longitude of the ending point (required)",
+                        "default": "-17.447938"
+                    },
+                    {
+                        "name": "end_lat",
+                        "type": "NUMBER",
+                        "description": "Latitude of the ending point (required)",
+                        "default": "14.693425"
+                    },
+                    {
+                        "name": "start_lat",
+                        "type": "NUMBER",
+                        "description": "Latitude of the starting point (required)",
+                        "default": "14.14129815"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "distance_unit",
+                        "type": "STRING",
+                        "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                        "default": "km"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "distance": "str",
+                    "duration": "str",
+                    "steps": [
+                        {
+                            "direction": "str",
+                            "distance": "str",
+                            "duration": "str",
+                            "instruction": "str",
+                            "location": [
+                                "list of float with length 2"
+                            ],
+                            "_list_length": 15
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Senegal API",
+                "api_name": "Measure Distance",
+                "api_description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.\n\nBelow Example: **Distance from a hospital in Koalack to Dakar**",
+                "required_parameters": [
+                    {
+                        "name": "lon2",
+                        "type": "NUMBER",
+                        "description": "Longitude of the second location (required)",
+                        "default": "-17.447938"
+                    },
+                    {
+                        "name": "lat2",
+                        "type": "NUMBER",
+                        "description": "Latitude of the second location (required)",
+                        "default": "14.693425"
+                    },
+                    {
+                        "name": "lon1",
+                        "type": "NUMBER",
+                        "description": "Longitude of the first location (required)",
+                        "default": "-16.0755888102153"
+                    },
+                    {
+                        "name": "lat1",
+                        "type": "NUMBER",
+                        "description": "Latitude of the first location (required)",
+                        "default": "14.14129815"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "unit",
+                        "type": "STRING",
+                        "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                        "default": "km"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "distance": "str",
+                    "duration": "str",
+                    "unit": "str"
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Senegal API",
+                "api_name": "Reverse Geocode",
+                "api_description": "This endpoint allows you to perform reverse geocoding in Senegal by providing query parameters for latitude and longitude. It returns the name of the city where the location is located.",
+                "required_parameters": [
+                    {
+                        "name": "lon",
+                        "type": "STRING",
+                        "description": "The longitude of the location.",
+                        "default": "-17.447938"
+                    },
+                    {
+                        "name": "lat",
+                        "type": "STRING",
+                        "description": "The latitude of the location.",
+                        "default": "14.693425"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "amenity": "str",
+                    "boundingbox": [
+                        "list of str with length 4"
+                    ],
+                    "category": "str",
+                    "city": "str",
+                    "country": "str",
+                    "display_name": "str",
+                    "region": "str",
+                    "suburb": "str"
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Senegal API",
+                "api_name": "Facilities Lookup",
+                "api_description": "This endpoint allows you to get facilities in Senegal like hospital, bank, college, etc. by providing optional query parameters for facility type, region and city. It returns a list of facilities that match the query parameters.",
+                "required_parameters": [
+                    {
+                        "name": "region",
+                        "type": "STRING",
+                        "description": "The region where the facility is located",
+                        "default": "Dakar"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                        "default": "hospital"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "city",
+                        "type": "STRING",
+                        "description": "The city where the facility is located",
+                        "default": "Touba"
+                    },
+                    {
+                        "name": "limit",
+                        "type": "STRING",
+                        "description": "The number of facilities to query.",
+                        "default": "10"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "hospital": [
+                        {
+                            "ISO3166-2-lvl4": "str",
+                            "address": "str",
+                            "amenity": "str",
+                            "country_code": "str",
+                            "county": "str",
+                            "display_name": "str",
+                            "latitude": "str",
+                            "longitude": "str",
+                            "postcode": "str",
+                            "region": "str",
+                            "road": "str",
+                            "suburb": "str",
+                            "village": "str",
+                            "website": "str",
+                            "_list_length": 10
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Location",
+                "tool_name": "Senegal API",
+                "api_name": "Geocode",
+                "api_description": "This endpoint allows you to lookup locations in Senegal by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+                "required_parameters": [
+                    {
+                        "name": "address",
+                        "type": "STRING",
+                        "description": "he name of the location to look up.",
+                        "default": "Dakar"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "display_name": "str",
+                    "latitude": "str",
+                    "longitude": "str"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I am planning a family trip to Senegal and I need to find the distance and duration between two locations. Please provide me with the directions from Dakar to Saly Portudal. Also, I would like to know the facilities available in the region of Mbour. Can you give me a list of hospitals and colleges in that area?",
+        "relevant APIs": [
+            [
+                "Senegal API",
+                "Directions Between 2 Locations"
+            ],
+            [
+                "Senegal API",
+                "Facilities Lookup"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 39392
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Sports",
+                "tool_name": "sport_v2",
+                "api_name": "copy of endpoint:  Soccer - Sports Open Data",
+                "api_description": " Sports Open Data",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "sport_v2",
+                "api_name": "Soccer - Sports Open Data",
+                "api_description": " Sports Open Data",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I work for a sports company and we are planning to organize a soccer event. Can you give us a list of popular soccer players who are available for appearances or endorsements? It would be great to know their contact information and their previous endorsement deals.",
+        "relevant APIs": [
+            [
+                "sport_v2",
+                "copy of endpoint:  Soccer - Sports Open Data"
+            ],
+            [
+                "sport_v2",
+                "Soccer - Sports Open Data"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 44159
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "Search",
+                "api_description": "Search all Giphy GIFs for a word or phrase. Punctuation will be stripped and ignored. Use a plus or url encode for phrases.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "search query term or phrase",
+                        "default": "funny cat"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "STRING",
+                        "description": "number of results to return, maximum 100. Default 25.",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "type": "STRING",
+                        "description": "results offset, defaults to 0.",
+                        "default": ""
+                    },
+                    {
+                        "name": "rating",
+                        "type": "STRING",
+                        "description": "limit results to those rated (y,g, pg, pg-13 or r)",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "Get GIF by ID",
+                "api_description": "Returns meta data about a GIF, by GIF id. In the below example, the GIF ID is \"feqkVgjJpYtjy\"",
+                "required_parameters": [
+                    {
+                        "name": "gif_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "feqkVgjJpYtjy"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "data": {},
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "Get GIFs by ID",
+                "api_description": "A multiget version of the get GIF by ID endpoint. In this case the IDs are feqkVgjJpYtjy and 7rzbxdu0ZEXLy",
+                "required_parameters": [
+                    {
+                        "name": "ids",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "feqkVgjJpYtjy,7rzbxdu0ZEXLy"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "Translate",
+                "api_description": "This is prototype endpoint for using Giphy as a translation engine for a GIF dialect. The translate API draws on search, but uses the Giphy \"special sauce\" to handle translating from one vocabulary to another. In this case, words and phrases to GIFs. Use a plus or url encode for phrases.",
+                "required_parameters": [
+                    {
+                        "name": "s",
+                        "type": "STRING",
+                        "description": "term or phrase to translate into a GIF",
+                        "default": "superman"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "rating",
+                        "type": "STRING",
+                        "description": "limit results to those rated (y,g, pg, pg-13 or r).",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "Random",
+                "api_description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the Giphy catalog.",
+                "required_parameters": [
+                    {
+                        "name": "tag",
+                        "type": "STRING",
+                        "description": "the GIF tag to limit randomness by",
+                        "default": ""
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "rating",
+                        "type": "STRING",
+                        "description": "limit results to those rated (y,g, pg, pg-13 or r).",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "Trending GIFs",
+                "api_description": "Fetch GIFs currently trending online. The data returned mirrors that used to create The Hot 100 list of GIFs on Giphy. Returns 25 results by default.",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "STRING",
+                        "description": "limits the number of results returned. By default returns 25 results.",
+                        "default": ""
+                    },
+                    {
+                        "name": "rating",
+                        "type": "STRING",
+                        "description": "limit results to those rated (y,g, pg, pg-13 or r).",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "Sticker Search",
+                "api_description": "Replicates the functionality and requirements of the classic Giphy search, but returns animated stickers rather than gifs.",
+                "required_parameters": [
+                    {
+                        "name": "q",
+                        "type": "STRING",
+                        "description": "search query term or phrase",
+                        "default": "cat"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "STRING",
+                        "description": "number of results to return, maximum 100. Default 25",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "type": "STRING",
+                        "description": "results offset, defaults to 0",
+                        "default": ""
+                    },
+                    {
+                        "name": "rating",
+                        "type": "STRING",
+                        "description": "limit results to those rated (y,g, pg, pg-13 or r).",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "STICKER Roulette",
+                "api_description": "Returns a spotaneously selected sticker from Giphy's sticker collection. Optionally limit scope of result to a specific tag. Like the GIF random endpoint, Punctuation will be stripped and ignored. Use a hyphen for phrases. Example oops, birthday or thank-you. Search terms should be URL encoded.",
+                "required_parameters": [
+                    {
+                        "name": "tag",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "oops"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "STICKER Trending",
+                "api_description": "Get the latest stickers trending on Giphy with this endpoint.",
+                "required_parameters": [
+                    {
+                        "name": "s",
+                        "type": "STRING",
+                        "description": "term or phrase to translate into a GIF",
+                        "default": "hungry"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "limit",
+                        "type": "STRING",
+                        "description": "number of results to return, maximum 100. Default: 25",
+                        "default": ""
+                    },
+                    {
+                        "name": "offset",
+                        "type": "STRING",
+                        "description": "results offset, defaults to 0",
+                        "default": ""
+                    },
+                    {
+                        "name": "fmt",
+                        "type": "STRING",
+                        "description": "return results in html or json format.",
+                        "default": ""
+                    },
+                    {
+                        "name": "rating",
+                        "type": "STRING",
+                        "description": "limit results to those rated (y,g, pg, pg-13 or r).",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "Media",
+                "tool_name": "Giphy",
+                "api_name": "STICKER Translate",
+                "api_description": "Using the same alogirithm as the GIF translate endpoint, the sticker translate endpoint turns words into stickers.",
+                "required_parameters": [
+                    {
+                        "name": "s",
+                        "type": "STRING",
+                        "description": "term or phrase to translate into a gif",
+                        "default": "hungry"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "data": "empty list",
+                    "meta": {
+                        "status": "int",
+                        "msg": "str",
+                        "response_id": "str"
+                    }
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I need a GIF that represents the word 'oops' for a project. Can you provide me with a random sticker GIF that has the tag 'oops'? Additionally, fetch the latest trending stickers and return 10 results.",
+        "relevant APIs": [
+            [
+                "Giphy",
+                "STICKER Roulette"
+            ],
+            [
+                "Giphy",
+                "STICKER Trending"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 9956
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Sports",
+                "tool_name": "Betcity",
+                "api_name": "Odds",
+                "api_description": "Latest Odds by Betcity",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "Betcity",
+                "api_name": "Matches",
+                "api_description": "Latest matches by Betcity",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I am curious about the odds for the upcoming boxing matches. Can you provide me with the latest odds for the Tyson Fury vs. Anthony Joshua and Canelo Alvarez vs. Gennady Golovkin fights? Additionally, I would like to see the latest matches in the boxing world.",
+        "relevant APIs": [
+            [
+                "Betcity",
+                "Odds"
+            ],
+            [
+                "Betcity",
+                "Matches"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 44066
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Sports",
+                "tool_name": "sport_v2",
+                "api_name": "copy of endpoint:  Soccer - Sports Open Data",
+                "api_description": " Sports Open Data",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "Sports",
+                "tool_name": "sport_v2",
+                "api_name": "Soccer - Sports Open Data",
+                "api_description": " Sports Open Data",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET"
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm a soccer coach and I'm planning a training session for my team. Can you suggest some effective soccer drills and exercises to improve their passing and ball control skills? It would be great if the drills cater to different age groups and skill levels.",
+        "relevant APIs": [
+            [
+                "sport_v2",
+                "copy of endpoint:  Soccer - Sports Open Data"
+            ],
+            [
+                "sport_v2",
+                "Soccer - Sports Open Data"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 77908
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "eCommerce",
+                "tool_name": "Hepsiburada Data",
+                "api_name": "Get Comments from product id",
+                "api_description": "Retrieve comments based on a product id.",
+                "required_parameters": [
+                    {
+                        "name": "product_id",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "hbcv00000c2fqc"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "comments": "empty list",
+                    "stars": "empty list"
+                }
+            },
+            {
+                "category_name": "QAQ",
+                "tool_name": "qaq",
+                "api_name": "get_qaq",
+                "api_description": "Conditionally requests user for an input, and returns their input or a predefined message stating no user input is required for answering the query.",
+                "required_parameters": [
+                    {
+                        "name": "requires_input",
+                        "type": "int",
+                        "description": "A flag to determine if user input is needed (1) or not (0)",
+                        "default": 0
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "input_question",
+                        "type": "string",
+                        "description": "The question to ask the user to gather more information for answering the query",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm interested in analyzing customer feedback on Hepsiburada. Can you help me retrieve comments and star ratings for a specific product? I would like to explore the comments and ratings for the product with the ID 'hbcv00000c2fqc'. Thank you!",
+        "relevant APIs": [
+            [
+                "Hepsiburada Data",
+                "Get Comments from product id"
+            ],
+            [
+                "qaq",
+                "get_qaq"
+            ]
+        ],
+        "query_id": 85155
+    }
+]
