@@ -36,7 +36,7 @@ class OpenaiPoolRequest:
         if os.path.exists(__pool_file):
             self.pool = json.load(open(__pool_file))
             self.now_pos = random.randint(-1, len(self.pool))
-        print(__pool_file)
+        print("right here", __pool_file)
         if os.environ.get('OPENAI_KEY',None) is not None:
             self.pool.append({
                 'api_key':os.environ.get('OPENAI_KEY'),
@@ -50,11 +50,15 @@ class OpenaiPoolRequest:
         self.now_pos = (self.now_pos + 1) % len(self.pool)
         key_pos = self.now_pos
         item = self.pool[key_pos]
-        print(len(self.pool))
         kwargs['api_key'] = item['api_key']
         if item.get('organization',None) is not None:
             kwargs['organization'] = item['organization'] 
-        return openai.ChatCompletion.create(messages=messages,**kwargs)
+
+        client = openai.OpenAI(api_key=item['api_key'], base_url="https://cmu.litellm.ai")
+        # print(client)
+        complete = client.chat.completions.create(model="gpt-3.5-turbo", messages=messages)
+        # print(complete)
+        return complete
     
     def __call__(self,messages,**kwargs):
         return self.request(messages,**kwargs)

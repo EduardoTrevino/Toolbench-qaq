@@ -1,5 +1,5 @@
 export CONVERTED_ANSWER_PATH=../../model_predictions_converted/
-export SAVE_PATH=pass_rate_results_toolllama_no_qaq_type3
+export SAVE_PATH=pass_rate_results_toolllama_no_qaq_type3_v2
 export CANDIDATE_MODEL=toolllama
 export API_POOL_FILE=openai_key_json_file.json
 
