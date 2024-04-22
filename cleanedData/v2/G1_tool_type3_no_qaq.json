@@ -1,0 +1,614 @@
+[
+    {
+        "api_list": [
+            {
+                "category_name": "Finance",
+                "tool_name": "stocks_archive",
+                "api_name": "ping",
+                "api_description": "Check that server is still alive",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "datetime": "str",
+                    "version": "str",
+                    "uptime": "float"
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "stocks_archive",
+                "api_name": "tickerData",
+                "api_description": "Returns a list of ticker records",
+                "required_parameters": [
+                    {
+                        "name": "period",
+                        "type": "STRING",
+                        "description": "Ticker period",
+                        "default": "1h"
+                    },
+                    {
+                        "name": "startDate",
+                        "type": "STRING",
+                        "description": "Start date",
+                        "default": "2010-04-12T14:30"
+                    },
+                    {
+                        "name": "tickerName",
+                        "type": "STRING",
+                        "description": "Ticker name",
+                        "default": "gold"
+                    },
+                    {
+                        "name": "endDate",
+                        "type": "STRING",
+                        "description": "End date",
+                        "default": "2010-04-20T12:30"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "records": [
+                        {
+                            "closeDateTime": "str",
+                            "open": "float",
+                            "close": "float",
+                            "high": "float",
+                            "low": "float",
+                            "volume": "int",
+                            "_list_length": 142
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Finance",
+                "tool_name": "stocks_archive",
+                "api_name": "tickersList",
+                "api_description": "Returns a list of available tickers",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "message": "str"
+                }
+            }
+        ],
+        "query": "I'm a stock market analyst and I need to analyze the trends for gold. Can you fetch the ticker data for gold ? Please include the open, lcose, high, low prices, and volume for each record. Also, it would be great if you could provide the server time, version, and uptime to ensure the server is running smoothy.",
+        "relevant APIs": [
+            [
+                "stocks_archive",
+                "tickerData"
+            ],
+            [
+                "stocks_archive",
+                "ping"
+            ]
+        ],
+        "query_id": 19696
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "Pocket Cube Solver",
+                "api_name": "getRandomSolution",
+                "api_description": "Returns json data consisting of a random optimal solution of a given cube position.",
+                "required_parameters": [
+                    {
+                        "name": "position",
+                        "type": "string",
+                        "description": "",
+                        "default": "GBWGYOGYRYOORWROBRWYGWBB"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "position": "str",
+                    "depth": "int",
+                    "sol": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Pocket Cube Solver",
+                "api_name": "getAllSolutions",
+                "api_description": "Returns json data consisting of all the solutions of a given cube position.",
+                "required_parameters": [
+                    {
+                        "name": "position",
+                        "type": "string",
+                        "description": "",
+                        "default": "GBWGYOGYRYOORWROBRWYGWBB"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "position": "str",
+                    "depth": "int",
+                    "sols": [
+                        "list of str with length 9"
+                    ]
+                }
+            }
+        ],
+        "query": "I have been struggling to solve a pocket cube, and I'm looking for a random optimal solution to the cube's current position. Could you please provide me with a solution that is both efficient and effective? Additionally, I would like to explore all possible solutions for this cube position. Your assistance will greatly help me improve my solving skills.",
+        "relevant APIs": [
+            [
+                "Pocket Cube Solver",
+                "getRandomSolution"
+            ],
+            [
+                "Pocket Cube Solver",
+                "getAllSolutions"
+            ]
+        ],
+        "query_id": 42934
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "Simple YouTube Search",
+                "api_name": "Search",
+                "api_description": "Make youtube search",
+                "required_parameters": [
+                    {
+                        "name": "query",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "never+gonna+give+you+up"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "type",
+                        "type": "ENUM",
+                        "description": "",
+                        "default": ""
+                    },
+                    {
+                        "name": "safesearch",
+                        "type": "BOOLEAN",
+                        "description": "",
+                        "default": "false"
+                    }
+                ],
+                "method": "GET",
+                "template_response": {
+                    "results": [
+                        {
+                            "uploadedAt": "str",
+                            "id": "str",
+                            "tags": {},
+                            "nsfw": "bool",
+                            "private": "bool",
+                            "description": "NoneType",
+                            "url": "str",
+                            "unlisted": "bool",
+                            "channel": {
+                                "name": "str",
+                                "icon": "str",
+                                "id": "str"
+                            },
+                            "thumbnail": {
+                                "url": "str",
+                                "height": "int",
+                                "id": "str",
+                                "width": "int"
+                            },
+                            "ratings": {
+                                "likes": "int",
+                                "dislikes": "int"
+                            },
+                            "shorts": "bool",
+                            "title": "str",
+                            "live": "bool",
+                            "duration_formatted": "str",
+                            "views": "int",
+                            "duration": "int",
+                            "shorts_url": "str",
+                            "type": "str",
+                            "_list_length": 19
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Simple YouTube Search",
+                "api_name": "Playlist",
+                "api_description": "YouTube playlist data",
+                "required_parameters": [
+                    {
+                        "name": "list",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "result": {
+                        "link": "str",
+                        "thumbnail": {
+                            "url": "str",
+                            "height": "int",
+                            "id": "NoneType",
+                            "width": "int"
+                        },
+                        "id": "str",
+                        "videos": [
+                            {
+                                "uploadedAt": "NoneType",
+                                "id": "str",
+                                "tags": {},
+                                "nsfw": "bool",
+                                "private": "bool",
+                                "description": "NoneType",
+                                "url": "str",
+                                "unlisted": "bool",
+                                "channel": {
+                                    "name": "str",
+                                    "icon": "NoneType",
+                                    "id": "str"
+                                },
+                                "thumbnail": {
+                                    "url": "str",
+                                    "height": "int",
+                                    "id": "str",
+                                    "width": "int"
+                                },
+                                "ratings": {
+                                    "likes": "int",
+                                    "dislikes": "int"
+                                },
+                                "shorts": "bool",
+                                "title": "str",
+                                "live": "bool",
+                                "duration_formatted": "str",
+                                "views": "int",
+                                "duration": "int",
+                                "shorts_url": "str",
+                                "type": "str",
+                                "_list_length": 41
+                            }
+                        ],
+                        "video_count": "int",
+                        "title": "str",
+                        "views": "int",
+                        "last_update": "str",
+                        "url": "str",
+                        "channel": {
+                            "url": "str",
+                            "name": "str",
+                            "icon": "str",
+                            "id": "str"
+                        }
+                    }
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Simple YouTube Search",
+                "api_name": "Video",
+                "api_description": "Get particular video",
+                "required_parameters": [
+                    {
+                        "name": "search",
+                        "type": "STRING",
+                        "description": "",
+                        "default": "https://www.youtube.com/watch?v=fBNz5xF-Kx4"
+                    }
+                ],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "result": {
+                        "uploadedAt": "str",
+                        "id": "str",
+                        "tags": [
+                            "list of str with length 4"
+                        ],
+                        "nsfw": "bool",
+                        "private": "bool",
+                        "description": "str",
+                        "url": "str",
+                        "unlisted": "bool",
+                        "channel": {
+                            "name": "str",
+                            "icon": "str",
+                            "id": "str"
+                        },
+                        "thumbnail": {
+                            "url": "str",
+                            "height": "int",
+                            "id": "str",
+                            "width": "int"
+                        },
+                        "ratings": {
+                            "likes": "int",
+                            "dislikes": "int"
+                        },
+                        "shorts": "bool",
+                        "title": "str",
+                        "live": "bool",
+                        "duration_formatted": "str",
+                        "views": "int",
+                        "duration": "int",
+                        "shorts_url": "str",
+                        "type": "str"
+                    }
+                }
+            }
+        ],
+        "query": "I am a filmmaker and I want to analyze the popularity of different movie trailers on YouTube. Can you provide a list of trailers for recent movies and their details and ratings? Additionally, I would like to search for trailers and include the results in the analysis.",
+        "relevant APIs": [
+            [
+                "Simple YouTube Search",
+                "Search"
+            ],
+            [
+                "Simple YouTube Search",
+                "Playlist"
+            ],
+            [
+                "Simple YouTube Search",
+                "Video"
+            ]
+        ],
+        "query_id": 50919
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Food",
+                "tool_name": "ComfyFood",
+                "api_name": "Get all Recipes 2",
+                "api_description": "return more recipes",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "recipes": [
+                        {
+                            "Id": "str",
+                            "Name": "str",
+                            "Description": "str",
+                            "Steps": "str",
+                            "Official": "bool",
+                            "Ingredients": "str",
+                            "ImageName": "str",
+                            "RecipeCategories": [
+                                {
+                                    "Name": "str",
+                                    "ImageName": "str",
+                                    "_list_length": 1
+                                }
+                            ],
+                            "_list_length": 7
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Food",
+                "tool_name": "ComfyFood",
+                "api_name": "Get all Recipes 1",
+                "api_description": "returns all the recipes from comfyfood's website",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "recipes": [
+                        {
+                            "Id": "str",
+                            "Name": "str",
+                            "Description": "str",
+                            "Steps": "str",
+                            "Official": "bool",
+                            "Ingredients": "str",
+                            "ImageName": "str",
+                            "RecipeCategories": [
+                                {
+                                    "Name": "str",
+                                    "ImageName": "str",
+                                    "_list_length": 3
+                                }
+                            ],
+                            "_list_length": 7
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Food",
+                "tool_name": "ComfyFood",
+                "api_name": "Get all recipes 3",
+                "api_description": "return more recipes",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "recipes": [
+                        {
+                            "Id": "str",
+                            "Name": "str",
+                            "Description": "str",
+                            "Steps": "str",
+                            "Official": "bool",
+                            "Ingredients": "str",
+                            "ImageName": "str",
+                            "RecipeCategories": [
+                                {
+                                    "Name": "str",
+                                    "ImageName": "str",
+                                    "_list_length": 1
+                                }
+                            ],
+                            "_list_length": 5
+                        }
+                    ]
+                }
+            },
+            {
+                "category_name": "Food",
+                "tool_name": "ComfyFood",
+                "api_name": "Get All Categories",
+                "api_description": "Returns all categories",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "categories": [
+                        {
+                            "Name": "str",
+                            "ImageName": "str",
+                            "_list_length": 36
+                        }
+                    ]
+                }
+            }
+        ],
+        "query": "My friends and I are planning a themed dinner party and we need recipe ideas. Can you suggest some official recipes from the XY category? Additionally, provide the recipe names, descriptions, and images.",
+        "relevant APIs": [
+            [
+                "ComfyFood",
+                "Get all Recipes 2"
+            ],
+            [
+                "ComfyFood",
+                "Get All Categories"
+            ]
+        ],
+        "query_id": 66203
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Data",
+                "tool_name": "Free stopwords",
+                "api_name": "Categories",
+                "api_description": "Will list all available word categories. Check this before calling /stopwords",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "category_id": "str",
+                    "category_name": "str",
+                    "category_description": "str",
+                    "parent_category": "str",
+                    "words": "str"
+                }
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Free stopwords",
+                "api_name": "Stopwords",
+                "api_description": "Will return the exact extract words to use in your data analysis or application",
+                "required_parameters": [],
+                "optional_parameters": [
+                    {
+                        "name": "langs",
+                        "type": "STRING",
+                        "description": "Comma seperated list of language isocodes",
+                        "default": ""
+                    },
+                    {
+                        "name": "details",
+                        "type": "BOOLEAN",
+                        "description": "Boolean (1 or 0) indication weather you want details about each word",
+                        "default": "0"
+                    },
+                    {
+                        "name": "categories",
+                        "type": "STRING",
+                        "description": "Comma seperated list of categories. Use /categories to get ID's",
+                        "default": ""
+                    }
+                ],
+                "method": "GET",
+                "template_response": {}
+            },
+            {
+                "category_name": "Data",
+                "tool_name": "Free stopwords",
+                "api_name": "Languages",
+                "api_description": "Will list all available stopword languages including how many words each language contains.",
+                "required_parameters": [],
+                "optional_parameters": [],
+                "method": "GET",
+                "template_response": {
+                    "id": "str",
+                    "language_isocode2": "str",
+                    "language_isocode3": "str",
+                    "language_name": "str",
+                    "words": "str"
+                }
+            }
+        ],
+        "query": "I am developing a text analysis tool and I need a list of stopwords for different languages. Can you provide me with stopwords for specific languages I want ? It would be helpful if you could also include details about each word.",
+        "relevant APIs": [
+            [
+                "Free stopwords",
+                "Stopwords"
+            ],
+            [
+                "Free stopwords",
+                "Languages"
+            ]
+        ],
+        "query_id": 76966
+    },
+    {
+        "api_list": [
+            {
+                "category_name": "Food",
+                "tool_name": "CamRest676",
+                "api_name": "bookRestaurant",
+                "api_description": "Returns the restaurants the user is looking for",
+                "required_parameters": [
+                    {
+                        "name": "pricerange",
+                        "type": "STRING",
+                        "description": "pricerange desired by the user",
+                        "default": "moderate"
+                    },
+                    {
+                        "name": "area",
+                        "type": "STRING",
+                        "description": "area where the restaurant is located",
+                        "default": "elarea"
+                    }
+                ],
+                "optional_parameters": [
+                    {
+                        "name": "food",
+                        "type": "STRING",
+                        "description": "type of food",
+                        "default": "spanish"
+                    },
+                    {
+                        "name": "restaurantName",
+                        "type": "STRING",
+                        "description": "a restaurant",
+                        "default": "McDonalds"
+                    }
+                ],
+                "method": "GET"
+            }
+        ],
+        "query": "Could you assist me in finding a resturant for a business lucnh? I need a resturant in the elarea that serves food. It would be great if you could provide some recomendations.",
+        "relevant APIs": [
+            [
+                "CamRest676",
+                "bookRestaurant"
+            ]
+        ],
+        "query_id": 88197
+    }
+]
