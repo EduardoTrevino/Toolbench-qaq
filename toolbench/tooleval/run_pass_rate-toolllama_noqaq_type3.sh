@@ -1,6 +1,6 @@
-export CONVERTED_ANSWER_PATH=../../model_predictions_converted/
+export CONVERTED_ANSWER_PATH=../../model_predictions_converted
 export SAVE_PATH=pass_rate_G1_chatgpt_cot
-export CANDIDATE_MODEL=chatgpt_cot
+export CANDIDATE_MODEL=GPT
 export API_POOL_FILE=openai_key_json_file.json
 
 python eval_pass_rate.py \

@@ -16,7 +16,18 @@ answer_status_mapping = {
     "AnswerStatus.Unsolved": AnswerStatus.Unsolved,
     "AnswerStatus.Unsure": AnswerStatus.Unsure
 }
-test_sets = ["G1_category_no_qaq_type3"]
+test_sets = ["G1_category_type1_no_qaq_v2_chatgpt",
+             "G1_category_type2_no_qaq_v2_chatgpt",
+             "G1_category_type3_no_qaq_v2_chatgpt",
+                "G1_category_type4_no_qaq_v2_chatgpt",
+                "G1_instruction_type1_no_qaq_v2_chatgpt",
+                "G1_instruction_type2_no_qaq_v2_chatgpt",
+                "G1_instruction_type3_no_qaq_v2_chatgpt",
+                "G1_instruction_type4_no_qaq_v2_chatgpt",
+                "G1_tool_type1_no_qaq_v2_chatgpt",
+                "G1_tool_type2_no_qaq_v2_chatgpt",
+                "G1_tool_type3_no_qaq_v2_chatgpt",
+                "G1_tool_type4_no_qaq_v2_chatgpt"]
 
 def get_steps(example):
     answer_details = example["answer"]["answer_details"][0]

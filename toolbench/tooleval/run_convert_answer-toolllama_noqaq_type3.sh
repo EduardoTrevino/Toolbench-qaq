@@ -6,10 +6,16 @@ mkdir -p ${CONVERTED_ANSWER_PATH}/${MODEL_NAME}
 
 
 for test_set in G1_category_type1_no_qaq_v2_chatgpt \
+                G1_category_type2_no_qaq_v2_chatgpt \
+                G1_category_type3_no_qaq_v2_chatgpt \
                 G1_category_type4_no_qaq_v2_chatgpt \
                 G1_instruction_type1_no_qaq_v2_chatgpt \
+                G1_instruction_type2_no_qaq_v2_chatgpt \
+                G1_instruction_type3_no_qaq_v2_chatgpt \
                 G1_instruction_type4_no_qaq_v2_chatgpt \
                 G1_tool_type1_no_qaq_v2_chatgpt \
+                G1_tool_type2_no_qaq_v2_chatgpt \
+                G1_tool_type3_no_qaq_v2_chatgpt \
                 G1_tool_type4_no_qaq_v2_chatgpt
 
 do
