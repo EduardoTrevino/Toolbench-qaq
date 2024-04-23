@@ -55,9 +55,8 @@ class OpenaiPoolRequest:
             kwargs['organization'] = item['organization'] 
 
         client = openai.OpenAI(api_key=item['api_key'], base_url="https://cmu.litellm.ai")
-        # print(client)
-        complete = client.chat.completions.create(model="gpt-3.5-turbo", messages=messages)
-        # print(complete)
+        complete = client.chat.completions.create(model="gpt-3.5-turbo", messages=messages, tools = kwargs["tools"])
+        print("break")
         return complete
     
     def __call__(self,messages,**kwargs):
